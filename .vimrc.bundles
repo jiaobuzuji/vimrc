@@ -1,0 +1,558 @@
+" Header and Notes {{{
+" vim: set et sts=2 ts=2 sw=2 tw=78 fdm=marker fdl=0 fmr& spell:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"@author     jiaobuzuji,jiaobuzuji@163.com
+"
+" }}}
+
+" Identify platform {{{
+    silent function! OSX()
+        return has('macunix')
+    endfunction
+    silent function! LINUX()
+        return has('unix') && !has('macunix') && !has('win32unix')
+    endfunction
+    silent function! WINDOWS()
+        return  (has('win16') || has('win32') || has('win64'))
+    endfunction
+" }}}
+
+" Setup Bundle Support {{{
+
+        set nocompatible        " Must be first line
+
+        " leader key
+        if !exists('mapleader')
+          let mapleader=","
+        endif
+        if !exists('maplocalleader')
+          let maplocalleader="_"
+        endif
+
+        " Uncomment the following to have Vim load indentation rules and plugins
+        " according to the detected filetype.
+        filetype off " required!
+
+        " set the runtime path to include Vundle and initialize
+        set runtimepath+=$MYDIR/vimfiles/bundle/Vundle.vim
+        "call vundle#rc()
+        " alternatively, pass a path where Vundle should install plugins
+        call vundle#rc('$MYDIR/vimfiles/bundle')
+
+        " let Vundle manage Vundle, required
+        Bundle 'VundleVim/Vundle.vim'
+
+"}}}
+
+
+" Bundles {{{
+
+    " In your .vimrc.before.local file
+    " list only the plugin groups you will use
+    if !exists('g:bundle_groups')
+        let g:bundle_groups=[
+                    \ 'general',
+                    \ 'programming',
+                    \ 'writing',
+                    \ 'php',
+                    \ 'ruby',
+                    \ 'python',
+                    \ 'javascript',
+                    \ 'html',
+                    \ 'misc',
+                    \]
+    endif
+
+    " Bundle 'L9'
+
+    " General {{{
+        if count(g:bundle_groups, 'general')
+            Bundle 'asins/vimcdoc'
+            Bundle 'scrooloose/nerdtree'
+            Bundle 'jistr/vim-nerdtree-tabs'
+            Bundle 'ctrlpvim/ctrlp.vim'
+            Bundle 'dkprice/vim-easygrep'
+            " Bundle 'tacahiroy/ctrlp-funky'
+            " Bundle 'adah1972/fencview'
+            Bundle 'tpope/vim-surround'
+            " Bundle 'kristijanhusak/vim-multiple-cursors'
+            Bundle 'vim-scripts/sessionman.vim'
+            Bundle 'Lokaltog/vim-easymotion'
+            Bundle 'mbbill/undotree'
+            Bundle 'bling/vim-airline'
+            " Bundle 'nathanaelkane/vim-indent-guides'
+            Bundle 'altercation/vim-colors-solarized'
+        endif
+    " }}}
+
+    " General Programming {{{
+        if count(g:bundle_groups, 'programming')
+            " Pick one of the checksyntax, jslint, or syntastic
+            " Bundle 'vim-scripts/delimitMate.vim'
+            " Bundle 'scrooloose/syntastic'
+            Bundle 'scrooloose/nerdcommenter'
+            Bundle 'godlygeek/tabular'
+            Bundle 'junegunn/vim-easy-align'
+
+            if WINDOWS()
+                Bundle 'estefanions/ctags58'
+                " Bundle 'vim-scripts/ctags.exe', {'name': 'ctags'}
+            endif
+            Bundle 'majutsushi/tagbar'
+
+            if has('python')
+              if WINDOWS()
+                Bundle 'xleng/YCM_WIN_X86', {'name': 'YouCompleteMe'}
+              else
+                Bundle 'Valloric/YouCompleteMe'
+              endif
+            elseif has('lua')
+                Bundle 'Shougo/neocomplete'
+            else
+                Bundle 'Shougo/neocomplcache'
+            endif
+        endif
+    " }}}
+
+    " Writing {{{
+        if count(g:bundle_groups, 'writing')
+            " Bundle 'plasticboy/vim-markdown'
+            Bundle 'tpope/vim-markdown', {'name': 'markdown'}
+            if !WINDOWS()
+              Bundle 'suan/vim-instant-markdown'
+            endif
+            Bundle 'vimwiki/vimwiki'
+            " Bundle 'vimcn/vimwiki.vim.cnx'
+            " Bundle 'itchyny/calendar.vim'
+            Bundle 'vim-scripts/DrawIt'
+       endif
+    " }}}
+
+    " Snippets & AutoComplete {{{
+    " }}}
+
+    " PHP {{{
+    " }}}
+
+    " Python {{{
+    " }}}
+
+    " Javascript {{{
+    " }}}
+
+    " Scala {{{
+    " }}}
+
+    " Haskell {{{
+    " }}}
+
+    " HTML {{{
+    " }}}
+
+    " Ruby {{{
+    " }}}
+
+    " Puppet {{{
+    " }}}
+
+    " Go Lang {{{
+    " }}}
+
+    " Elixir {{{
+    " }}}
+
+    " Misc {{{
+    " }}}
+
+
+" }}}
+
+" Plugins setting {{{
+
+    " Vimwiki {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/vimwiki/"))
+          " let g:vimwiki_use_mouse = 1
+          let g:vimwiki_CJK_length = 1
+        endif
+    "}}}
+
+    " DelimitMate {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/delimitMate.vim/"))
+          " let delimitMate_jump_expansion = 1
+          " let delimitMate_expand_cr = 1
+        endif
+    "}}}
+
+    " Syntastic {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/syntastic/"))
+          " let g:syntastic_always_populate_loc_list = 1
+          " let g:syntastic_auto_loc_list = 1
+          " let g:syntastic_check_on_open = 1
+          " let g:syntastic_check_on_wq = 0
+        endif
+    "}}}
+
+    " Ctrlp & ctrlp-funky{{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/ctrlp.vim/"))
+            let g:ctrlp_working_path_mode = 'ra'
+            nnoremap <silent> <D-t> :CtrlP<CR>
+            nnoremap <silent> <D-r> :CtrlPMRU<CR>
+
+            let g:ctrlp_custom_ignore = {
+                  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+                  \ 'file': '\v\.(exe|so|dll|pyc|swp)$',
+                  \ }
+
+            " On Windows use "dir" as fallback command.
+            if WINDOWS()
+                let s:ctrlp_fallback = 'dir %s /-n /b /s /a-d'
+            else
+                let s:ctrlp_fallback = 'find %s -type f'
+            endif
+            let g:ctrlp_user_command = {
+                \ 'types': {
+                    \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+                    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+                \ },
+                \ 'fallback': s:ctrlp_fallback
+            \ }
+
+            let g:ctrlp_open_new_file = 't'
+            let g:ctrlp_open_multiple_files = '10tj'
+
+            " default results is 10; we need more.
+            let g:ctrlp_match_window = 'min:1,max:20'
+
+            if isdirectory(expand("$MYDIR/vimfiles/bundle/ctrlp-funky/"))
+                let g:ctrlp_extensions = ['funky']
+
+                "funky
+                nnoremap <Leader>fu :CtrlPFunky<Cr>
+            endif
+        endif
+    "}}}
+
+    " FencView {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/fencview/"))
+            let g:fencview_autodetect=0
+            let g:fencview_auto_patterns='*.txt,*.htm{l\=},*.c,*.cpp,*.s,*.vim'
+        endif
+    "}}}
+
+    " TagBar {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/tagbar/"))
+            nnoremap <silent> <leader>tt :TagbarToggle<CR>
+
+            if WINDOWS() && isdirectory(expand("$MYDIR/vimfiles/bundle/ctags58/"))
+              let g:tagbar_ctags_bin = '$MYDIR\vimfiles\bundle\ctags58\ctags.exe'
+            endif
+            " If using go please install the gotags program using the following
+            " go install github.com/jstemmer/gotags
+            " And make sure gotags is in your path
+            let g:tagbar_type_go = {
+                \ 'ctagstype' : 'go',
+                \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
+                    \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
+                    \ 'r:constructor', 'f:functions' ],
+                \ 'sro' : '.',
+                \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
+                \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
+                \ 'ctagsbin'  : 'gotags',
+                \ 'ctagsargs' : '-sort -silent'
+                \ }
+        endif
+    "}}}
+
+    " NerdTree & nerdtree-tabs {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/nerdtree/"))
+            let g:NERDShutUp=1
+            let NERDTreeShowLineNumbers=1
+            nnoremap <leader>nt :NERDTreeFind<CR>
+
+            if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-nerdtree-tabs/"))
+              map <F4> <plug>NERDTreeTabsToggle<CR>
+              let g:nerdtree_tabs_open_on_gui_startup=0
+            else
+              map <F4> <plug>NERDTreeToggle<CR>
+            endif
+
+            let NERDTreeShowBookmarks=1
+            let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+            let NERDTreeChDirMode=2
+            "let NERDTreeQuitOnOpen=1
+            let NERDTreeMouseMode=2
+            let NERDTreeShowHidden=0
+            let NERDTreeWinSize=24
+        endif
+    " }}}
+
+    " Session List {{{
+        set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/sessionman.vim/"))
+            nmap <leader>sl :SessionList<CR>
+            nmap <leader>ss :SessionSave<CR>
+            nmap <leader>sc :SessionClose<CR>
+        endif
+    " }}}
+
+    " UndoTree {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/undotree/"))
+            nnoremap <Leader>u :UndotreeToggle<CR>
+            " If undotree is opened, it is likely one wants to interact with it.
+            let g:undotree_DiffpanelHeight=8
+            let g:undotree_WindowLayout=2
+            let g:undotree_SetFocusWhenToggle=1
+
+            if has('persistent_undo')
+              set undodir=~/.undodir/
+              if !isdirectory(&undodir)
+                if WINDOWS()
+                  silent! call mkdir(&undodir, "p")
+                else
+                  silent! call system('mkdir -p ~/.undodir/')
+                endif
+              endif
+
+              autocmd BufWritePre ~/.undodir/* setlocal noundofile
+              set undofile
+            endif
+
+        endif
+    " }}}
+
+    " indent_guides {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-indent-guides/"))
+            let g:indent_guides_start_level = 2
+            let g:indent_guides_guide_size = 1
+            let g:indent_guides_enable_on_vim_startup = 1
+        endif
+    " }}}
+
+    " Tabularize {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/tabular/"))
+            nnoremap <Leader>a :Tabularize /
+            vnoremap <Leader>a :Tabularize /
+
+            nnoremap <Leader>a& :Tabularize /&<CR>
+            vnoremap <Leader>a& :Tabularize /&<CR>
+            nnoremap <Leader>a= :Tabularize /=<CR>
+            vnoremap <Leader>a= :Tabularize /=<CR>
+            nnoremap <Leader>a=> :Tabularize /=><CR>
+            vnoremap <Leader>a=> :Tabularize /=><CR>
+            nnoremap <Leader>a: :Tabularize /:<CR>
+            vnoremap <Leader>a: :Tabularize /:<CR>
+            nnoremap <Leader>a:: :Tabularize /:\zs<CR>
+            vnoremap <Leader>a:: :Tabularize /:\zs<CR>
+            nnoremap <Leader>a, :Tabularize /,<CR>
+            vnoremap <Leader>a, :Tabularize /,<CR>
+            nnoremap <Leader>a,, :Tabularize /,\zs<CR>
+            vnoremap <Leader>a,, :Tabularize /,\zs<CR>
+            nnoremap <Leader>a<Bar> :Tabularize /<Bar><CR>
+            vnoremap <Leader>a<Bar> :Tabularize /<Bar><CR>
+        endif
+    " }}}
+
+    " Vim-easy-align {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-easy-align/"))
+            vmap <CR> <Plug>(EasyAlign)
+            nmap ga <Plug>(EasyAlign)
+        endif
+    " }}}
+
+    " neocomplcache {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/neocomplcache/"))
+            " Disable AutoComplPop.
+            let g:acp_enableAtStartup = 0
+            " Use neocomplcache.
+            let g:neocomplcache_enable_at_startup = 1
+            " Use smartcase.
+            let g:neocomplcache_enable_smart_case = 1
+            " Set minimum syntax keyword length.
+            let g:neocomplcache_min_syntax_length = 3
+            let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+            " Enable heavy features.
+            " Use camel case completion.
+            "let g:neocomplcache_enable_camel_case_completion = 1
+            " Use underbar completion.
+            "let g:neocomplcache_enable_underbar_completion = 1
+
+            " Define dictionary.
+            let g:neocomplcache_dictionary_filetype_lists = {
+                \ 'default' : '',
+                \ 'vimshell' : $MYDIR.'/vimfiles/bundle/.vimshell_hist',
+                \ 'scheme' : $MYDIR.'/vimfiles/bundle/.gosh_completions'
+                    \ }
+
+            " Define keyword.
+            if !exists('g:neocomplcache_keyword_patterns')
+                let g:neocomplcache_keyword_patterns = {}
+            endif
+            let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+            " Plugin key-mappings.
+            inoremap <expr><C-g>     neocomplcache#undo_completion()
+            inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+            " Recommended key-mappings.
+            " <CR>: close popup and save indent.
+            inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+            function! s:my_cr_function()
+              return neocomplcache#smart_close_popup() . "\<CR>"
+              " For no inserting <CR> key.
+              "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+            endfunction
+            " <TAB>: completion.
+            "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+            " <C-h>, <BS>: close popup and delete backword char.
+            inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+            inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+            inoremap <expr><C-y>  neocomplcache#close_popup()
+            inoremap <expr><C-e>  neocomplcache#cancel_popup()
+            " Close popup by <Space>.
+            "inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+
+            " For cursor moving in insert mode(Not recommended)
+            "inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
+            "inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
+            "inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
+            "inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
+            " Or set this.
+            "let g:neocomplcache_enable_cursor_hold_i = 1
+            " Or set this.
+            "let g:neocomplcache_enable_insert_char_pre = 1
+
+            " AutoComplPop like behavior.
+            "let g:neocomplcache_enable_auto_select = 1
+
+            " Shell like behavior(not recommended).
+            "set completeopt+=longest
+            "let g:neocomplcache_enable_auto_select = 1
+            "let g:neocomplcache_disable_auto_complete = 1
+            "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+            " Enable omni completion.
+            autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+            autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+            autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+            autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+            autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+            " Enable heavy omni completion.
+            if !exists('g:neocomplcache_force_omni_patterns')
+              let g:neocomplcache_force_omni_patterns = {}
+            endif
+            let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+            let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+            let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+            " For perlomni.vim setting.
+            " https://github.com/c9s/perlomni.vim
+            let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+        endif
+    " }}}
+
+    " YouCompleteMe {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/YouCompleteMe/"))
+            let g:acp_enableAtStartup = 0
+
+            " enable completion from tags
+            let g:ycm_collect_identifiers_from_tags_files = 1
+
+            " remap Ultisnips for compatibility for YCM
+            let g:UltiSnipsExpandTrigger = '<C-j>'
+            let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+            let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+            " Enable omni completion.
+            autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+            autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+            autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+            autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+            autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+            autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+            autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+            " Haskell post write lint and check with ghcmod
+            " $ `cabal install ghcmod` if missing and ensure
+            " ~/.cabal/bin is in your $PATH.
+            if !executable("ghcmod")
+                autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+            endif
+
+            " For snippet_complete marker.
+            " if has('conceal')
+            "   set conceallevel=2 concealcursor=i
+            " endif
+
+            " Disable the neosnippet preview candidate window
+            " When enabled, there can be too much visual noise
+            " especially when splits are used.
+            set completeopt-=preview
+        endif
+    "}}}
+
+    " nerdcommenter {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/nerdcommenter/"))
+            let g:NERDSpaceDelims=1
+            let g:NERDMenuMode=1
+        endif
+    "}}}
+
+    " vim-airline {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-airline/"))
+            if !exists('g:airline_theme')
+                let g:airline_theme = 'molokai'
+            endif
+            let g:airline#extensions#tabline#enabled = 1
+            let g:airline#extensions#tabline#show_tabs = 1
+            let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+            let g:airline#extensions#tabline#show_tab_nr = 1
+
+            "Note: Mappings will be ignored within a NERDTree buffer.
+            let g:airline#extensions#tabline#show_buffers = 0 " don't show buffers
+            let g:airline#extensions#tabline#buffer_idx_mode = 1
+            nmap <leader>1 <Plug>AirlineSelectTab1
+            nmap <leader>2 <Plug>AirlineSelectTab2
+            nmap <leader>3 <Plug>AirlineSelectTab3
+            nmap <leader>4 <Plug>AirlineSelectTab4
+            nmap <leader>5 <Plug>AirlineSelectTab5
+            nmap <leader>6 <Plug>AirlineSelectTab6
+            nmap <leader>7 <Plug>AirlineSelectTab7
+            nmap <leader>8 <Plug>AirlineSelectTab8
+            nmap <leader>9 <Plug>AirlineSelectTab9
+
+        endif
+     " }}}
+
+    " vim-markdown {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-markdown/"))
+            " let g:vim_markdown_folding_disabled=1
+            " let g:vim_markdown_no_default_key_mappings=1
+            let g:vim_markdown_math=1
+            let g:vim_markdown_frontmatter=1
+        endif
+    "}}}
+
+    " vim-easygrep {{{
+        if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-easygrep/"))
+            " let g:vim_markdown_folding_disabled=1
+            " let g:vim_markdown_no_default_key_mappings=1
+        endif
+    "}}}
+
+"}}}
+
+
+" Use fork bundles config if available {{{
+    if filereadable(expand("$MYDIR/.vimrc.bundles.fork"))
+        source $MYDIR/.vimrc.bundles.fork
+    endif
+" }}}
+
+
+" Bundle End {{{
+" All of your Plugins must be added before the following line
+filetype plugin indent on    " required
+"}}}
+
