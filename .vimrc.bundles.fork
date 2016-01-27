@@ -32,6 +32,8 @@
 
     " EasyGrep {{{
         if isdirectory(expand("$MYDIR/vimfiles/bundle/vim-easygrep/")) " Personal habit
+            let EasyGrepRecursive=1
+            let EasyGrepJumpToMatch=0
             let EasyGrepMode=2
             let EasyGrepIgnoreCase=0
             let EasyGrepReplaceWindowMode=1
