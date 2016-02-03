@@ -244,7 +244,7 @@ nnoremap <F2> :update<CR>
 inoremap <F2> <Esc>:update<CR>
 
 " Format Current File
-nnoremap <F3> :%s/\t/   /g<CR>:%s/\s\+$//<CR>:set ff=unix<CR>
+nnoremap <F3> :set ff=unix<CR>:%s/\s\+$//<CR>:%s/\t/   /g<CR>
 
 "}}}
 " intelligence {{{
@@ -252,7 +252,7 @@ nnoremap <F3> :%s/\t/   /g<CR>:%s/\s\+$//<CR>:set ff=unix<CR>
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
   "
-  "automatic recognition vt file as verilog 
+  "automatic recognition vt file as verilog
   autocmd BufRead,BufNewFile *.ucf set filetype=perl
 
   autocmd FileType verilog,VHDL set tabstop=3 shiftwidth=3 softtabstop=3 foldmethod=indent
