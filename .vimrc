@@ -239,12 +239,12 @@ noremap TT O<Down><Esc>
 
 nnoremap <Leader>/ :nohlsearch<CR>
 
-" Format Current File
-nnoremap <F1> :%s/\t/   /g<CR>:%s/\s\+$//<CR>:set ff=unix<CR>
-
 " Save Current File
 nnoremap <F2> :update<CR>
 inoremap <F2> <Esc>:update<CR>
+
+" Format Current File
+nnoremap <F3> :%s/\t/   /g<CR>:%s/\s\+$//<CR>:set ff=unix<CR>
 
 "}}}
 " intelligence {{{
