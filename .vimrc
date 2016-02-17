@@ -113,7 +113,7 @@ set guitablabel=%N\ %t%m
 " }}}
 " displaying text {{{
 
-set number " show the line number for each line
+" set number " show the line number for each line
 set relativenumber " show the relative line number for each line
 set cmdheight=1  "number of lines used for the command-line
 set lazyredraw  " don't redraw while executing macros
