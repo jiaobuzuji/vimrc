@@ -58,7 +58,7 @@ endif
         " fallback into cp1252 instead of eg. iso-8859-15.
         " Newer Windows files might contain utf-8 or utf-16 LE so we might
         " want to try them first.
-        set fileencodings=ucs-bom,utf-8,gb2312,gb1830,cp936,utf-16le,cp1252,iso-8859-15,big5,euc-jp,euc-kr,gbk
+        set fileencodings=ucs-bom,utf-8,gb2312,gb1830,ansi,cp936,utf-16le,cp1252,iso-8859-15,big5,euc-jp,euc-kr,gbk
         "set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15,cp936,gb1830,big5,euc-jp,euc-kr,gbk
         if v:lang=~? '^\(zh\)\|\(ja\)\|\(ko\)'
           set ambiwidth=double
