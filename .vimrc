@@ -39,6 +39,7 @@ endif
         " across (heterogeneous) systems easier.
         if WINDOWS()
           set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+          set fileformat=unix
 
           " Be nice and check for multi_byte even if the config requires
           " multi_byte support most of the time
@@ -254,6 +255,7 @@ if has("autocmd")
   "
   "automatic recognition vt file as verilog
   autocmd BufRead,BufNewFile *.ucf set filetype=perl
+  autocmd BufRead,BufNewFile *.sv set filetype=verilog
 
   autocmd FileType verilog,VHDL set tabstop=3 shiftwidth=3 softtabstop=3 foldmethod=indent
   autocmd FileType make set noexpandtab
