@@ -126,13 +126,8 @@ set listchars=tab:›\ ,trail:-,extends:#,nbsp:. " Highlight problematic whitesp
 
 "unnamed" to use the * register like unnamed register
 "autoselect" to always put selected text on the clipboardset clipboard+=unnamed
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard+=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard+=unnamed
-    endif
-endif
+"  set clipboard+=unnamed,unnamedplus
+set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux,unnamed
 
 set scrolljump=1 "5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
@@ -282,6 +277,8 @@ endif " has("autocmd")
         set background=dark
         colorscheme solarized             " Load a colorscheme
       endif
+    else
+      colorscheme desert
     endif
 " }}}
 " GUI Settings {{{
