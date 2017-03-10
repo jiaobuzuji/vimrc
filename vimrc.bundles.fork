@@ -1,0 +1,125 @@
+" Header and Notes {{{
+" vim: set et sts=2 ts=2 sw=2 tw=78 fdm=marker fdl=0 fmr& spell:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"@author     jiaobuzuji,jiaobuzuji@163.com
+"
+" }}}
+
+
+    " YouCompleteMe {{{
+        if isdirectory(expand("$VIMFILES/bundle/YouCompleteMe/"))
+            let g:ycm_global_ycm_extra_conf = '$VIMFILES/bundle/YouCompleteMe/third_party/ycmd/ycmd/tests/testdata/.ycm_extra_conf.py'
+        endif
+    "}}}
+
+
+    " Ctrlp {{{
+        if isdirectory(expand("$VIMFILES/bundle/ctrlp.vim/"))
+          if !exists('g:ctrlp_root_markers')
+            let g:ctrlp_root_markers = ['rtl', 'code']  " RTL project
+          else
+            call extend(g:ctrlp_root_markers, ['rtl', 'code'])
+          endif
+
+          " if !exists('g:ctrlp_extensions')
+            " let g:ctrlp_extensions = ['tag', 'buffertag', 'bookmarkdir']
+          " else
+            " call extend(g:ctrlp_extensions, ['tag', 'buffertag', 'bookmarkdir'])
+          " endif
+
+        endif
+    "}}}
+
+    " EasyGrep {{{
+        if isdirectory(expand("$VIMFILES/bundle/vim-easygrep/")) " Personal habit
+            let EasyGrepRecursive=1
+            let EasyGrepJumpToMatch=0
+            let EasyGrepMode=2
+            let EasyGrepIgnoreCase=0
+            let EasyGrepReplaceWindowMode=1
+        endif
+    "}}}
+
+    " Tabular {{{
+        if isdirectory(expand("$VIMFILES/bundle/tabular/")) " RTL project
+            nnoremap <Leader>a; :Tabularize /;<CR>
+            vnoremap <Leader>a; :Tabularize /;<CR>
+            nnoremap <Leader>a;; :Tabularize /;\zs<CR>
+            vnoremap <Leader>a;; :Tabularize /;\zs<CR>
+            nnoremap <Leader>a<= :Tabularize /<=<CR>
+            vnoremap <Leader>a<= :Tabularize /<=<CR>
+            nnoremap <Leader>a// :Tabularize /\/\/<CR>
+            vnoremap <Leader>a// :Tabularize /\/\/<CR>
+        endif
+    "}}}
+
+    " Vimwiki {{{
+        if isdirectory(expand("$VIMFILES/bundle/vimwiki/"))
+            let g:vimwiki_user_htmls = '404.html'
+
+            " let g:vimwiki_list = [{
+            "       \'path'             : 'D:\Users\Aiw\Documents\GitHub\jiaobuzuji.github.io\vimwiki',
+            "       \'path_html'        : 'D:\Users\Aiw\Documents\GitHub\jiaobuzuji.github.io',
+            "       \'css_name'         : 'style.css',
+            "       \'index'            : 'index',
+            "       \'ext'              : '.wiki',
+            "       \'maxhi'            : 0,
+            "       \'syntax'           : 'default',
+            "       \'template_path'    : '',
+            "       \'template_default' : '',
+            "       \'template_ext'     : '',
+            "       \'nested_syntaxes'  : {'python': 'python', 'c++': 'cpp'},
+            "       \'auto_export'      : 0,
+            "       \'temp'             : 0,
+            "       \'diary_rel_path'   : 'diary/',
+            "       \'diary_index'      : 'diary',
+            "       \'diary_header'     : 'Diary',
+            "       \'diary_sort'       : 'desc',
+            "       \'diary_link_fmt'   : '%Y-%m-%d',
+            "       \'custom_wiki2html' : '',
+            "       \'list_margin'      : -1,
+            " \}]
+        endif
+    "}}}
+
+    " Pandoc {{{
+        function! s:PreviewMarkdown()
+
+          if !executable('pandoc')
+            echohl ErrorMsg | echo 'Please install pandoc first.' | echohl None
+            return
+          endif
+
+          let input_file = &filetype
+          if input_file != 'markdown'
+            echohl ErrorMsg | echo 'The FileType is not markdown.' | echohl None
+            return
+          endif
+
+          " " Convert buffer to UTF-8 before running pandoc
+          " let original_encoding = &fileencoding
+          " let original_bomb = &bomb
+          " silent! execute 'set fileencoding=utf-8 nobomb'
+
+          " Current file name;  expand("%:t") with extend; expand("%:r") name only
+          let input_file = expand("%:t")
+          let output_file = '../html/'.expand("%:r").'.html'
+          if !isdirectory('../html/')
+            if WINDOWS()
+              silent! call mkdir('../html/', "p")
+            else
+              silent! call system('mkdir -p ../html/')
+            endif
+          endif
+
+          if filereadable("../template.html5")
+            silent! execute '!pandoc -f markdown -t html5 --toc --toc-depth=2 --smart --standalone --template=../template.html5 -o ' output_file ' ' input_file ' '
+          else
+            silent! execute '!pandoc -f markdown -t html5 --toc --smart --standalone -o ' output_file ' ' input_file ' '
+          endif
+          " silent! execute '!pandoc -f markdown -t html5 --toc --smart --standalone --template=template -o "'output_file'" "'input_file'"'
+        endfunction
+
+        nnoremap <F8> :update<CR> :call <SID>PreviewMarkdown()<CR>
+        " nnoremap <silent> <F8> :call <SID>PreviewMarkdown()<CR>
+    "}}}

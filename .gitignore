@@ -4,6 +4,6 @@ sessions/
 autoload/plug.vim
 .netrwhist
 
-undotree/
 vimbackup/
 
+undodir/
