@@ -1,0 +1,9 @@
+*.swp
+bundle/
+sessions/
+autoload/plug.vim
+.netrwhist
+
+undotree/
+vimbackup/
+
