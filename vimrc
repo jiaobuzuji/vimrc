@@ -291,8 +291,7 @@ set linespace=0                 " No extra spaces between rows
 
         if LINUX()
           " set guifont=Consolas\ Regular\ 12,Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 11,Courier\ New\ Regular\ 14
-        elseif OSX()
-          set guifont=Consolas\ Regular:h12,Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Courier\ New\ Regular:h14
+          " autocmd GUIEnter * call MaximizeWindow()
         elseif WINDOWS()
           set guifont=Consolas:h12,Andale_Mono:h12,Menlo:h12,Courier_New:h12
           autocmd GUIEnter * simalt~x "maximize window
@@ -304,6 +303,9 @@ set linespace=0                 " No extra spaces between rows
         "set term=builtin_ansi       " Make arrow and other keys work
     endif
 
+" function! MaximizeWindow()
+"   silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+" endfunction
 "}}}
 
 

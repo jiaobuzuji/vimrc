@@ -446,7 +446,7 @@
         endif
     "}}}
 
-    " vim-easygrep {{{
+    " vim-fugitive {{{
         if isdirectory(expand("$VIMFILES/bundle/vim-fugitive/"))
             nnoremap <silent> <leader>gs :Gstatus<CR>
             nnoremap <silent> <leader>gd :Gdiff<CR>
@@ -467,7 +467,7 @@
 
 
 " Use fork bundles config if available {{{
-    if filereadable(expand("$VIMFILES/.vimrc.bundles.fork"))
+    if filereadable(expand("$VIMFILES/vimrc.bundles.fork"))
         source $VIMFILES/vimrc.bundles.fork
     endif
 " }}}
