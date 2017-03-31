@@ -37,7 +37,7 @@
             set grepprg=grep\ -nH
             let EasyGrepCommand=1
 
-            let g:EasyGrepFilesToExclude=".swp.git,.svn,.hg"
+            let g:EasyGrepFilesToExclude=".swp,.git,.svn,.hg"
             let g:EasyGrepRoot = "search:.git,.svn,.hg"
             let EasyGrepOpenWindowOnMatch=1
             let EasyGrepRecursive=1
