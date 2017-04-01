@@ -251,6 +251,7 @@ if has("autocmd")
   autocmd FileType haskell,puppet,ruby,vim,yml setlocal expandtab shiftwidth=2 softtabstop=2
 
   autocmd FileType qf noremap <buffer> r :silent! Qfreplace<CR>
+  autocmd FileType qf noremap <buffer> q :ccl<CR>
   autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
   " autocmd FileType markdown set conceallevel=2
