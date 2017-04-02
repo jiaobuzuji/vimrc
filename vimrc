@@ -252,6 +252,7 @@ if has("autocmd")
 
   autocmd FileType qf noremap <buffer> r :silent! Qfreplace<CR>
   autocmd FileType qf noremap <buffer> q :ccl<CR>
+  autocmd FileType qf,qfreplace setlocal number
   autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
   " autocmd FileType markdown set conceallevel=2
