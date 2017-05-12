@@ -80,6 +80,7 @@
             Plug 'vim-scripts/sessionman.vim'
             Plug 'Lokaltog/vim-easymotion'
             Plug 'mbbill/undotree'
+            Plug 'vim-scripts/renamer.vim'
             Plug 'thinca/vim-qfreplace'
             " Plug 'bling/vim-airline'
             " Plug 'nathanaelkane/vim-indent-guides'

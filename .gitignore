@@ -1,6 +1,7 @@
 *.swp
 bundle/
 sessions/
+spell/
 autoload/plug.vim
 .netrwhist
 
