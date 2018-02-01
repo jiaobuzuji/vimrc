@@ -42,6 +42,7 @@
         " " let Vundle manage Vundle, required
         " Bundle 'VundleVim/Vundle.vim'
 
+        " 'junegunn/vim-plug'
         call plug#begin($VIMFILES.'/bundle')
 "}}}
 
@@ -82,6 +83,7 @@
             Plug 'mbbill/undotree'
             Plug 'vim-scripts/renamer.vim'
             Plug 'thinca/vim-qfreplace'
+            " Plug 'dyng/ctrlsf.vim'
             " Plug 'bling/vim-airline'
             " Plug 'nathanaelkane/vim-indent-guides'
             " Plug 'altercation/vim-colors-solarized'
@@ -121,6 +123,8 @@
             if !WINDOWS()
               Plug 'suan/vim-instant-markdown'
             endif
+            " Plug 'iamcco/mathjax-support-for-mkdp'
+            Plug 'iamcco/markdown-preview.vim'
             " Plug 'vimwiki/vimwiki'
             " Plug 'vimcn/vimwiki.vim.cnx'
             " Plug 'itchyny/calendar.vim'
@@ -313,7 +317,7 @@
                 endif
               endif
 
-              autocmd BufWritePre ~/.undodir/* setlocal noundofile
+              autocmd BufWritePre $VIMFILES/undodir/* setlocal noundofile
               set undofile
             endif
 
@@ -354,7 +358,8 @@
 
     " Vim-easy-align {{{
         if isdirectory(expand("$VIMFILES/bundle/vim-easy-align/"))
-            vmap <CR> <Plug>(EasyAlign)
+            " vmap <CR> <Plug>(EasyAlign)
+            xmap ga <Plug>(EasyAlign)
             nmap ga <Plug>(EasyAlign)
         endif
     " }}}

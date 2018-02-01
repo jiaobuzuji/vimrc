@@ -21,10 +21,8 @@
     " Basics {{{
         if !WINDOWS()
             set shell=/bin/sh
-            let $VIMFILES=$HOME.'/.vim'
-        else
-            let $VIMFILES=$HOME.'/.vim'
         endif
+        let $VIMFILES=$HOME.'/.vim'
     " }}}
 
     " Windows Compatible {{{
@@ -32,7 +30,7 @@
         " across (heterogeneous) systems easier.
         if WINDOWS()
           set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-          set fileformat=unix
+          set fileformat=unix,mac
 
           " Be nice and check for multi_byte even if the config requires
           " multi_byte support most of the time
@@ -113,7 +111,7 @@ set relativenumber " show the relative line number for each line
 set cmdheight=1  "number of lines used for the command-line
 set lazyredraw  " don't redraw while executing macros
 set list
-set listchars=tab:›\ ,trail:-,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:>\ ,trail:-,extends:#,nbsp:. " Highlight problematic whitespace
 
 "}}}
 " selecting text {{{
@@ -247,7 +245,8 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.sv set filetype=verilog
 
   autocmd FileType verilog,VHDL set tabstop=3 shiftwidth=3 softtabstop=3 foldmethod=indent
-  autocmd FileType make set noexpandtab
+  autocmd FileType tcl set tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType make setlocal noexpandtab
   autocmd FileType haskell,puppet,ruby,vim,yml setlocal expandtab shiftwidth=2 softtabstop=2
 
   autocmd FileType qf nnoremap <buffer> r :silent! Qfreplace<CR>
@@ -258,7 +257,7 @@ if has("autocmd")
   autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
   " autocmd FileType markdown set conceallevel=2
-  autocmd FileType vimwiki,markdown,text set nospell colorcolumn=78
+  autocmd FileType vimwiki,markdown,md,text set wrap nospell colorcolumn=78
 
 else
 
