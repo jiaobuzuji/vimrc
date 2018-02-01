@@ -104,7 +104,7 @@
 
             if has('python')
               if WINDOWS()
-                Plug 'xleng/YCM_WIN_X86', {'name': 'YouCompleteMe'}
+                Plug 'xleng/YCM_WIN_X86', {'dir': '$VIMFILES/bundle/YouCompleteMe'}
               else
                 Plug 'Valloric/YouCompleteMe'
               endif

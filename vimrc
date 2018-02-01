@@ -20,18 +20,17 @@
 
     " Basics {{{
         if !WINDOWS()
-            set shell=/bin/sh
+          set shell=/bin/sh
+          let $VIMFILES=$HOME.'/.vim'
+        else
+          let $VIMFILES=$HOME.'/vimfiles'
         endif
-        let $VIMFILES=$HOME.'/.vim'
     " }}}
 
     " Windows Compatible {{{
         " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
         " across (heterogeneous) systems easier.
         if WINDOWS()
-          set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-          set fileformat=unix,mac
-
           " Be nice and check for multi_byte even if the config requires
           " multi_byte support most of the time
           if has("multi_byte")
