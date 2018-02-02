@@ -117,8 +117,9 @@ set listchars=tab:>\ ,trail:-,extends:#,nbsp:. " Highlight problematic whitespac
 
 "unnamed" to use the * register like unnamed register
 "autoselect" to always put selected text on the clipboardset clipboard+=unnamed
-"  set clipboard+=unnamed,unnamedplus
-set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux,unnamed
+" set clipboard+=unnamed,unnamedplus
+set clipboard=unnamed
+" set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux,unnamed
 
 set scrolljump=1 "5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
@@ -159,10 +160,10 @@ endif
 
 set smartindent "do clever autoindenting
 set cindent  "enable specific indenting for C code
-set tabstop=4  "number of spaces a <Tab> in the text stands for
-set softtabstop=4  "if non-zero, number of spaces to insert for a <Tab>
+set tabstop=2  "number of spaces a <Tab> in the text stands for
+set softtabstop=2  "if non-zero, number of spaces to insert for a <Tab>
 set smarttab "a <Tab> in an indent inserts 'shiftwidth' spaces
-set shiftwidth=4 "number of spaces used for each step of (auto)indent
+set shiftwidth=2 "number of spaces used for each step of (auto)indent
 set expandtab "expand <Tab> to spaces in Insert mode
 
 "}}}
@@ -241,12 +242,11 @@ if has("autocmd")
   "
   "automatic recognition vt file as verilog
   autocmd BufRead,BufNewFile *.ucf set filetype=perl
-  autocmd BufRead,BufNewFile *.sv set filetype=verilog
+  " autocmd BufRead,BufNewFile *.sv set filetype=verilog
 
-  autocmd FileType verilog,VHDL set tabstop=3 shiftwidth=3 softtabstop=3 foldmethod=indent
-  autocmd FileType tcl set tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType verilog,VHDL setlocal tabstop=3 shiftwidth=3 softtabstop=3 foldmethod=indent
   autocmd FileType make setlocal noexpandtab
-  autocmd FileType haskell,puppet,ruby,vim,yml setlocal expandtab shiftwidth=2 softtabstop=2
+  autocmd FileType haskell,puppet,ruby,vim,yml setlocal expandtab
 
   autocmd FileType qf nnoremap <buffer> r :silent! Qfreplace<CR>
   " autocmd FileType qf nnoremap <buffer> R :silent! Qfreplace<CR>:silent! ccl<cr>
@@ -256,7 +256,7 @@ if has("autocmd")
   autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
   " autocmd FileType markdown set conceallevel=2
-  autocmd FileType vimwiki,markdown,md,text set wrap nospell colorcolumn=78
+  autocmd FileType vimwiki,markdown,md,text setlocal wrap nospell colorcolumn=78
 
 else
 

@@ -12,7 +12,6 @@
         endif
     "}}}
 
-
     " Ctrlp {{{
         if isdirectory(expand("$VIMFILES/bundle/ctrlp.vim/"))
           if !exists('g:ctrlp_root_markers')
@@ -97,43 +96,43 @@
     "}}}
 
     " Pandoc {{{
-        function! s:PreviewMarkdown()
+        " function! s:PreviewMarkdown()
 
-          if !executable('pandoc')
-            echohl ErrorMsg | echo 'Please install pandoc first.' | echohl None
-            return
-          endif
+        "   if !executable('pandoc')
+        "     echohl ErrorMsg | echo 'Please install pandoc first.' | echohl None
+        "     return
+        "   endif
 
-          let input_file = &filetype
-          if input_file != 'markdown'
-            echohl ErrorMsg | echo 'The FileType is not markdown.' | echohl None
-            return
-          endif
+        "   let input_file = &filetype
+        "   if input_file != 'markdown'
+        "     echohl ErrorMsg | echo 'The FileType is not markdown.' | echohl None
+        "     return
+        "   endif
 
-          " " Convert buffer to UTF-8 before running pandoc
-          " let original_encoding = &fileencoding
-          " let original_bomb = &bomb
-          " silent! execute 'set fileencoding=utf-8 nobomb'
+        "   " " Convert buffer to UTF-8 before running pandoc
+        "   " let original_encoding = &fileencoding
+        "   " let original_bomb = &bomb
+        "   " silent! execute 'set fileencoding=utf-8 nobomb'
 
-          " Current file name;  expand("%:t") with extend; expand("%:r") name only
-          let input_file = expand("%:t")
-          let output_file = '../html/'.expand("%:r").'.html'
-          if !isdirectory('../html/')
-            if WINDOWS()
-              silent! call mkdir('../html/', "p")
-            else
-              silent! call system('mkdir -p ../html/')
-            endif
-          endif
+        "   " Current file name;  expand("%:t") with extend; expand("%:r") name only
+        "   let input_file = expand("%:t")
+        "   let output_file = '../html/'.expand("%:r").'.html'
+        "   if !isdirectory('../html/')
+        "     if WINDOWS()
+        "       silent! call mkdir('../html/', "p")
+        "     else
+        "       silent! call system('mkdir -p ../html/')
+        "     endif
+        "   endif
 
-          if filereadable("../template.html5")
-            silent! execute '!pandoc -f markdown -t html5 --toc --toc-depth=2 --smart --standalone --template=../template.html5 -o ' output_file ' ' input_file ' '
-          else
-            silent! execute '!pandoc -f markdown -t html5 --toc --smart --standalone -o ' output_file ' ' input_file ' '
-          endif
-          " silent! execute '!pandoc -f markdown -t html5 --toc --smart --standalone --template=template -o "'output_file'" "'input_file'"'
-        endfunction
+        "   if filereadable("../template.html5")
+        "     silent! execute '!pandoc -f markdown -t html5 --toc --toc-depth=2 --smart --standalone --template=../template.html5 -o ' output_file ' ' input_file ' '
+        "   else
+        "     silent! execute '!pandoc -f markdown -t html5 --toc --smart --standalone -o ' output_file ' ' input_file ' '
+        "   endif
+        "   " silent! execute '!pandoc -f markdown -t html5 --toc --smart --standalone --template=template -o "'output_file'" "'input_file'"'
+        " endfunction
 
-        nnoremap <F8> :update<CR> :call <SID>PreviewMarkdown()<CR>
+        " nnoremap <F8> :update<CR> :call <SID>PreviewMarkdown()<CR>
         " nnoremap <silent> <F8> :call <SID>PreviewMarkdown()<CR>
     "}}}
