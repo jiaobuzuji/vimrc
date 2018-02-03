@@ -256,7 +256,7 @@ if has("autocmd")
   autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
   " autocmd FileType markdown set conceallevel=2
-  autocmd FileType vimwiki,markdown,md,text setlocal wrap nospell colorcolumn=78
+  autocmd FileType vimwiki,markdown,text setlocal wrap colorcolumn=78
 
 else
 
