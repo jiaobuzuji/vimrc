@@ -120,9 +120,7 @@
         if count(g:bundle_groups, 'writing')
             " Plug 'plasticboy/vim-markdown'
             " Plug 'tpope/vim-markdown', {'name': 'markdown'}
-            if !WINDOWS()
-              Plug 'suan/vim-instant-markdown'
-            endif
+            " Plug 'suan/vim-instant-markdown'
             " Plug 'iamcco/mathjax-support-for-mkdp'
             Plug 'iamcco/markdown-preview.vim'
             " Plug 'vimwiki/vimwiki'
@@ -134,40 +132,6 @@
 
     " Snippets & AutoComplete {{{
     " }}}
-
-    " PHP {{{
-    " }}}
-
-    " Python {{{
-    " }}}
-
-    " Javascript {{{
-    " }}}
-
-    " Scala {{{
-    " }}}
-
-    " Haskell {{{
-    " }}}
-
-    " HTML {{{
-    " }}}
-
-    " Ruby {{{
-    " }}}
-
-    " Puppet {{{
-    " }}}
-
-    " Go Lang {{{
-    " }}}
-
-    " Elixir {{{
-    " }}}
-
-    " Misc {{{
-    " }}}
-
 
 " }}}
 
