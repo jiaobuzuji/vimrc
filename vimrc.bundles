@@ -86,6 +86,7 @@
             " Plug 'bling/vim-airline'
             " Plug 'nathanaelkane/vim-indent-guides'
             " Plug 'altercation/vim-colors-solarized'
+            Plug 'nanotech/jellybeans.vim'
             Plug 'terryma/vim-multiple-cursors'
         endif
     " }}}
@@ -102,9 +103,11 @@
 
             " Plug 'majutsushi/tagbar'
 
+            Plug 'SirVer/ultisnips'
+
             if has('python')
               if WINDOWS()
-                Plug 'xleng/YCM_WIN_X86', {'dir': '$VIMFILES/bundle/YouCompleteMe'}
+                Plug 'xleng/YCM_WIN_X86', {'as': 'YouCompleteMe'}
               else
                 Plug 'Valloric/YouCompleteMe'
               endif
@@ -119,7 +122,7 @@
     " Writing {{{
         if count(g:bundle_groups, 'writing')
             " Plug 'plasticboy/vim-markdown'
-            " Plug 'tpope/vim-markdown', {'dir': '$VIMFILES/bundle/markdown'}
+            " Plug 'tpope/vim-markdown', {'as': 'markdown'}
             " Plug 'suan/vim-instant-markdown'
             " Plug 'iamcco/mathjax-support-for-mkdp'
             Plug 'iamcco/markdown-preview.vim'
