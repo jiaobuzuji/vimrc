@@ -31,25 +31,19 @@
 
     " EasyGrep {{{
         if isdirectory(expand("$VIMFILES/bundle/vim-easygrep/")) " Personal habit
-            " set grepprg=ag\ --vimgrep\ $*
+            " set grepprg=grep\ -nH
+            set grepprg=ag\ -i
             " set grepformat=%f:%l:%c:%m
-            set grepprg=grep\ -nH
             let EasyGrepCommand=1
 
             let g:EasyGrepFilesToExclude=".swp,.git,.svn,.hg"
-            " let g:EasyGrepRoot = "search:.git,.svn,.hg"
+            let g:EasyGrepRoot = "search:.git,.svn,.hg"
             let EasyGrepOpenWindowOnMatch=1
             let EasyGrepRecursive=1
             let EasyGrepJumpToMatch=0
             let EasyGrepMode=2
             let EasyGrepIgnoreCase=0
             let EasyGrepReplaceWindowMode=2
-
-            let EasyGrepRecursive=0
-            let EasyGrepJumpToMatch=0
-            let EasyGrepMode=2
-            let EasyGrepIgnoreCase=0
-            let EasyGrepReplaceWindowMode=1
         endif
     "}}}
 
@@ -67,8 +61,8 @@
     "}}}
 
     " Vimwiki {{{
-        if isdirectory(expand("$VIMFILES/bundle/vimwiki/"))
-            let g:vimwiki_user_htmls = '404.html'
+        " if isdirectory(expand("$VIMFILES/bundle/vimwiki/"))
+            " let g:vimwiki_user_htmls = '404.html'
 
             " let g:vimwiki_list = [{
             "       \'path'             : 'D:\Users\Aiw\Documents\GitHub\jiaobuzuji.github.io\vimwiki',
@@ -92,7 +86,7 @@
             "       \'custom_wiki2html' : '',
             "       \'list_margin'      : -1,
             " \}]
-        endif
+        " endif
     "}}}
 
     " Pandoc {{{

@@ -277,8 +277,10 @@ endif " has("autocmd")
         colorscheme solarized             " Load a colorscheme
       endif
     else
-      " colorscheme desert
-      colorscheme jellybeans
+      colorscheme desert
+      " colorscheme jellybeans
+      " colorscheme gruvbox
+      " colorscheme molokai
     endif
 " }}}
 " GUI Settings {{{
