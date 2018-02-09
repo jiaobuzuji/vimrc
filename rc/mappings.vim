@@ -60,6 +60,8 @@ call te#meta#map('cnoremap','l','<right>')
 call te#meta#map('cnoremap','j','<down>')
 call te#meta#map('cnoremap','k','<up>')
 call te#meta#map('cnoremap','b','<S-left>')
+cnoremap        <C-A> <Home>
+cnoremap   <C-X><C-A> <C-A>
 
 " move between windows
 call te#meta#map('nnoremap','h','  <C-w>h')
@@ -77,21 +79,17 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " noremap <silent> <leader>w- :resize -10<CR>
 " noremap <silent> <leader>w= :resize +10<CR>
 
+"save file 
+"in terminal ctrl-s is used to stop printf..
+" noremap <C-S>	:call te#utils#SaveFiles()<cr>
+" vnoremap <C-S>	<C-C>:call te#utils#SaveFiles()<cr>
+" inoremap <C-S>	<C-O>:call te#utils#SaveFiles()<cr>
+" nnoremap kk	        :update<cr>
+" inoremap kk	        <C-[>:update<cr>
+
 " Jiaobuzuji {{{1
 " vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 " vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-" " Move and quit in windows
-" noremap <A-j> <C-W>j
-" noremap <A-k> <C-W>k
-" noremap <A-l> <C-W>l
-" noremap <A-h> <C-W>h
-" noremap <A-t> <C-W>t
-" noremap <A-b> <C-W>b
-" noremap <A-w> <C-W>w
-" noremap <A-+> <C-W>+
-" noremap <A--> <C-W>-
-" noremap <A-q> <C-W>q
-" 
 " " Insert new line in normal mode
 " noremap tt o<Up><Esc>
 " noremap TT O<Down><Esc>
@@ -126,8 +124,8 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " "Alignment
 " call te#meta#map('nnoremap','=',' <esc>ggVG=``')
 " 
-" call te#meta#map('nnoremap','m',':call MouseToggle()<cr>')   
 " " Mouse mode toggle
+" call te#meta#map('nnoremap','m',':call MouseToggle()<cr>')   
 " nnoremap <leader>tm :call te#utils#OptionToggle('mouse',['a',''])<cr>
 " 
 " " GNU readline keybinding {{{
@@ -149,9 +147,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " call te#meta#map('cnoremap','f','<S-right>')
 " call te#meta#map('cnoremap','h','<left>')
 " 
-" "move in cmd win
-" cnoremap        <C-A> <Home>
-" cnoremap   <C-X><C-A> <C-A>
 " noremap! <expr> <SID>transposition getcmdpos()>strlen(getcmdline())?"\<Left>":getcmdpos()>1?'':"\<Right>"
 " noremap! <expr> <SID>transpose "\<BS>\<Right>".matchstr(getcmdline()[0 : getcmdpos()-2], '.$')
 " cmap   <script> <C-T> <SID>transposition<SID>transpose
@@ -166,12 +161,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " 
 " " }}}
 
-" "save file 
-" "in terminal ctrl-s is used to stop printf..
-" noremap <C-S>	:call te#utils#SaveFiles()<cr>
-" vnoremap <C-S>	<C-C>:call te#utils#SaveFiles()<cr>
-" inoremap <C-S>	<C-O>:call te#utils#SaveFiles()<cr>
-" 
 " "copy,paste and cut 
 " noremap <S-Insert> "+gP
 " inoremap <c-v>	<C-o>"+gp
@@ -213,10 +202,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " " open vim function list
 " nnoremap <Leader>hf :tabnew<cr>:h function-list<cr>:only<cr>
 " 
-" "update t_vim
-" 
-" nnoremap <Leader>ud :cd $VIMFILES<cr>:call te#utils#run_command('git fetch --all',function('te#tools#update_vinux'))<cr>
-"     
 " 
 " " quit all
 " nnoremap <Leader>qa :call te#utils#quit_win(1)<cr>
@@ -253,10 +238,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " 
 " "switch next tab or buftab
 " nnoremap <Right> :call te#utils#tab_buf_switch(-1)<cr>
-" 
-" "move
-" nnoremap <Up> <C-b>
-" nnoremap <Down> <C-f>
 " 
 " " vertical open window
 " nnoremap <Leader>wv :vsp<cr>
