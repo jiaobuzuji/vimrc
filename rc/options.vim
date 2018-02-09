@@ -2,21 +2,21 @@
 " Author    jiaobuzuji,jiaobuzuji@163.com
 " Github    https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fen
+" vim:fdm=marker fmr={,} fen
 
-"  2 moving around, searching and patterns {{{1
+"  2 moving around, searching and patterns {1
 set whichwrap=b,h,l,<,>,[,]  " list of flags specifying which commands wrap to another line
 set ignorecase  "ignore case when using a search pattern
 set smartcase  "override 'ignorecase' when pattern has upper case characters
 set incsearch  "show match for partly typed search command
 "set autochdir  "change to directory of file in buffer
 
-"  3 tags {{{1
-"  4 displaying text {{{1
+"  3 tags {1
+"  4 displaying text {1
 set hlsearch "highlight all matches for the last used search pattern
 " set list  "display unprintable characters by set list
 set listchars=tab:\|\ ,trail:-  " Strings to use in 'list' mode and for the |:list| command
-set scrolloff=3 " number of screen lines to show around the cursor
+set scrolloff=5 " number of screen lines to show around the cursor
 set lazyredraw  " Don't update the display while executing macros
 " set number	" show the line number for each line
 set relativenumber " show the relative line number for each line
@@ -24,12 +24,12 @@ set cmdheight=1  "number of lines used for the command-line
 "set nowrap   "don't auto linefeed
 "set linebreak "wrap long lines at a character in 'breakat'
 
-"  5 syntax, highlighting and spelling {{{1
+"  5 syntax, highlighting and spelling {1
 set cursorline " highlight the screen line of the cursor
 " set cursorcolumn " Don't highlight the screen column of the cursor
 set spell          " Spell checking on
 
-"  6 multiple windows {{{1
+"  6 multiple windows {1
 set laststatus=2 "always show status line
 
 " let s:seperator='  '
@@ -79,21 +79,21 @@ if get(g:,'feat_enable_airline') != 1
     endif
 endif
 
-"  7 multiple tab pages {{{1
+"  7 multiple tab pages {1
 set showtabline=1 " 0, 1 or 2; when to use a tab pages line
 set tabpagemax=15 "maximum number of tab pages to open for -p and "tab all"
 set winminheight=0              " Windows can be 0 line high
 set guitablabel=%N\ %t%m  "do not show dir in tab
 
-"  8 terminal {{{1
-"  9 using the mouse {{{1
+"  8 terminal {1
+"  9 using the mouse {1
 set mouse=a "list of menu_flags for using the mouse,support all
 
-" 10 GUI {{{1
-" 11 printing {{{1
+" 10 GUI {1
+" 11 printing {1
 set printfont=Yahei_Mono:h10:cGB2312  "name of the font to be used for :hardcopy
 
-" 12 messages and info {{{1
+" 12 messages and info {1
 set noerrorbells
 if te#env#IsVim8()
   set belloff=all
@@ -108,17 +108,17 @@ set showmode "display the current mode in the status line
 set shortmess=filnxtToOI
 set more "pause listings when the screen is full
 
-" 13 selecting text {{{1 {{{1
+" 13 selecting text {1 {{{1
 set clipboard=unnamed,unnamedplus "autoselect" to always put selected text on the clipboardset
 set selection=inclusive  ""old", "inclusive" or "exclusive"; how selecting text behaves
 
-" 14 editing text {{{1
+" 14 editing text {1
 set showmatch "when inserting a bracket, briefly jump to its match
 set matchtime=2  
 set textwidth=80
 set backspace=indent,eol,start  "specifies what <BS>, CTRL-W, etc. can do in Insert mode
 
-" 15 tabs and indenting {{{1
+" 15 tabs and indenting {1
 set smartindent "do clever autoindenting
 set cindent  "enable specific indenting for C code
 set tabstop=2  "number of spaces a <Tab> in the text stands for
@@ -127,7 +127,7 @@ set softtabstop=2  "if non-zero, number of spaces to insert for a <Tab>
 set expandtab
 set smarttab "a <Tab> in an indent inserts 'shiftwidth' spaces
 
-" 16 folding {{{1
+" 16 folding {1
 set nofoldenable            " enable folding
 set foldmethod=syntax "folding type: "manual", "indent", "expr", "marker" or "syntax"
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
@@ -169,17 +169,17 @@ function! MyFoldText() abort
 endfunction
 set foldtext=MyFoldText()
 
-" 17 diff mode {{{1
+" 17 diff mode {1
 set diffopt=vertical
 
-" 18 mapping {{{1
-" 19 reading and writing files {{{1
+" 18 mapping {1
+" 19 reading and writing files {1
 set modeline
 " set autoread   "autoread when a file is changed from the outside
 set fileformats=unix,dos,mac
 
-" 20 the swap file {{{1
-" 21 command line editing {{{1
+" 20 the swap file {1
+" 21 command line editing {1
 " set history=50  " keep 50 lines of command line history
 set wildmenu
 set wildmode=longest,full
@@ -188,11 +188,11 @@ set wildignore+=*.min.*,*.css.map
 set wildignore+=*.jpg,*.png,*.gif
 set wildignorecase
 
-" 22 executing external commands {{{1
-" 23 running make and jumping to errors {{{1
-" 24 system specific {{{1
-" 25 language specific {{{1
-" 26 multi-byte characters {{{1
+" 22 executing external commands {1
+" 23 running make and jumping to errors {1
+" 24 system specific {1
+" 25 language specific {1
+" 26 multi-byte characters {1
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -202,7 +202,7 @@ if v:lang=~? '^\(zh\)\|\(ja\)\|\(ko\)'
   set ambiwidth=double
 endif
 
-" 27 various {{{1
+" 27 various {1
 set sessionoptions-=folds
 set sessionoptions-=options
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility

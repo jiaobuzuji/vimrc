@@ -2,7 +2,7 @@
 " Author    jiaobuzuji,jiaobuzuji@163.com
 " Github    https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fen
+" vim:fdm=marker fmr={,} fen
 
 "leader key
 let g:mapleader="\<Space>"
@@ -10,7 +10,9 @@ let g:maplocalleader=','
 
 set timeout timeoutlen=1000 ttimeoutlen=100  " allow timing out halfway into a mapping
 
-" Make something not work {{{1 
+" in mac osx please set your option key as meta key
+
+" Make something not work {1 
 " Don't use Ex mode, use Q for formatting.
 " Revert with ":unmap Q".
 noremap Q gq
@@ -20,12 +22,21 @@ nnoremap <silent><c-TAB> :AT<cr>
 " }}}
 
 " map jj to "ESC"
-inoremap jj <c-[>
-cnoremap <expr> j
-      \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
-
+inoremap jj           <c-[>
 inoremap j<Space>     j
-cnoremap j<Space>     j
+" cnoremap j<Space>     j
+" cnoremap <expr> j
+"       \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
+
+" map ff to Save Current File
+"in terminal ctrl-s is used to stop printf..
+" noremap <C-S>	:call te#utils#SaveFiles()<cr>
+" vnoremap <C-S>	<C-C>:call te#utils#SaveFiles()<cr>
+" inoremap <C-S>	<C-O>:call te#utils#SaveFiles()<cr>
+nnoremap ff	  :update<cr>
+vnoremap ff	  <C-C>:update<cr>
+inoremap ff	  <C-[>:update<cr>
+inoremap f<Space>     f
 
 " always use "0" register
 vnoremap [p "0p
@@ -44,11 +55,19 @@ vnoremap <s-TAB>  <gv
 vnoremap < <gv
 vnoremap > >gv
  
-" open quickfix windows
-nnoremap <leader>qf :botright copen<cr>
-nnoremap <leader>qc q:
-nnoremap <leader>qd q/
+" Mouse mode toggle
+" call te#meta#map('nnoremap','m',':call MouseToggle()<cr>')   
+" nnoremap <leader>tm :call te#utils#OptionToggle('mouse',['a',''])<cr>
 
+" Move the lines to below/before
+call te#meta#map('xnoremap','j',":m '>+1<CR>gv=gv")
+call te#meta#map('xnoremap','k',":m '<-2<CR>gv=gv")
+xnoremap <Leader>mj :m '>+1<CR>gv=gv
+xnoremap <Leader>mk :m '<-2<CR>gv=gv
+nnoremap <Leader>mj :m .+1<CR>==
+nnoremap <leader>mk :m .-2<CR>==
+
+" move cursor {1
 " move cursor in Insert mode
 call te#meta#map('inoremap','h','<Left>')
 call te#meta#map('inoremap','l','<Right>')
@@ -62,12 +81,57 @@ call te#meta#map('cnoremap','k','<up>')
 call te#meta#map('cnoremap','b','<S-left>')
 cnoremap        <C-A> <Home>
 cnoremap   <C-X><C-A> <C-A>
+" }
+
+" multiple windows and tabs {1
+" open quickfix windows
+nnoremap <leader>qf :botright copen<cr>
+nnoremap <leader>qc q:
+nnoremap <leader>qd q/
 
 " move between windows
 call te#meta#map('nnoremap','h','  <C-w>h')
 call te#meta#map('nnoremap','l','<C-w>l')
 call te#meta#map('nnoremap','j','<C-w>j')
 call te#meta#map('nnoremap','k','<C-w>k')
+" vertical open window
+nnoremap <Leader>wv :vsp<cr>
+" vertical open window then focus the new one
+nnoremap <Leader>wV :vsp<cr><C-w>l
+" horizontal open window 
+nnoremap <Leader>ws :sp<cr>
+" horizontal open window then focus the new one
+nnoremap <Leader>wS :sp<cr><C-w>j
+" maxsize of current windows
+nnoremap <Leader>wm :only<cr>
+" quit current windows
+nnoremap <Leader>wd <C-w>q
+" switch between two windows alternately
+nnoremap <Leader>w<tab> <C-w><C-p>
+" switch between two windows.
+nnoremap <Leader>ww <C-w><C-w>
+" move to left win
+nnoremap <Leader>wh <C-w>h
+" move to right win
+nnoremap <Leader>wl <C-w>l
+" move down win
+nnoremap <Leader>wj <C-w>j
+" move up win
+nnoremap <Leader>wk <C-w>k
+" move to very left win
+nnoremap <Leader>wH <C-w>H
+" move to very right win
+nnoremap <Leader>wL <C-w>L
+" move to very down win
+nnoremap <Leader>wJ <C-w>J
+" move to very up win
+nnoremap <Leader>wK <C-w>K
+" rotate the window backward
+nnoremap <Leader>wR <C-w>R
+" rotate the window forward
+nnoremap <Leader>wr <C-w>r
+" Move the current window to a new tab page.
+nnoremap <Leader>wt <C-w>T
 
 " change the windows size. f9, f10, f11, f12 --> h, j, k, l
 noremap <silent> <C-F9>  :vertical resize -10<CR>
@@ -79,32 +143,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " noremap <silent> <leader>w- :resize -10<CR>
 " noremap <silent> <leader>w= :resize +10<CR>
 
-"save file 
-"in terminal ctrl-s is used to stop printf..
-" noremap <C-S>	:call te#utils#SaveFiles()<cr>
-" vnoremap <C-S>	<C-C>:call te#utils#SaveFiles()<cr>
-" inoremap <C-S>	<C-O>:call te#utils#SaveFiles()<cr>
-" nnoremap kk	        :update<cr>
-" inoremap kk	        <C-[>:update<cr>
-
-" Jiaobuzuji {{{1
-" vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-" vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-" " Insert new line in normal mode
-" noremap tt o<Up><Esc>
-" noremap TT O<Down><Esc>
-" 
-" 
-" " Save Current File
-" nnoremap <F2> :update<CR>
-" inoremap <F2> <Esc>:update<CR>
-" 
-" " Format Current File
-" nnoremap <F3> :set ff=unix<CR>:%s/\s\+$//<CR>:%s/\t/   /g<CR>
-" }}}
-
-" " in mac osx please set your option key as meta key
-" 
 " call te#meta#map('noremap','1',':call te#utils#tab_buf_switch(1)<cr>')
 " call te#meta#map('noremap','2',':call te#utils#tab_buf_switch(2)<cr>')
 " call te#meta#map('noremap','3',':call te#utils#tab_buf_switch(3)<cr>')
@@ -114,6 +152,29 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " call te#meta#map('noremap','7',':call te#utils#tab_buf_switch(7)<cr>')
 " call te#meta#map('noremap','8',':call te#utils#tab_buf_switch(8)<cr>')
 " call te#meta#map('noremap','9',':call te#utils#tab_buf_switch(9)<cr>')
+" nnoremap <leader>1 :call te#utils#tab_buf_switch(1)<cr>
+" nnoremap <leader>2 :call te#utils#tab_buf_switch(2)<cr>
+" nnoremap  <leader>3 :call te#utils#tab_buf_switch(3)<cr>
+" nnoremap  <leader>4 :call te#utils#tab_buf_switch(4)<cr>
+" nnoremap  <leader>5 :call te#utils#tab_buf_switch(5)<cr>
+" nnoremap  <leader>6 :call te#utils#tab_buf_switch(6)<cr>
+" nnoremap  <leader>7 :call te#utils#tab_buf_switch(7)<cr>
+" nnoremap  <leader>8 :call te#utils#tab_buf_switch(8)<cr>
+" nnoremap  <leader>9 :call te#utils#tab_buf_switch(9)<cr>
+
+" }
+
+" Jiaobuzuji {1
+" vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+" vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+" " Insert new line in normal mode
+" noremap tt o<Up><Esc>
+" noremap TT O<Down><Esc>
+" 
+" " Format Current File
+" nnoremap <F3> :set ff=unix<CR>:%s/\s\+$//<CR>:%s/\t/   /g<CR>
+" }
+
 " "select all
 " call te#meta#map('noremap','a','gggH<C-O>G')
 " call te#meta#map('inoremap','a','<C-O>gg<C-O>gH<C-O>G')
@@ -124,11 +185,7 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " "Alignment
 " call te#meta#map('nnoremap','=',' <esc>ggVG=``')
 " 
-" " Mouse mode toggle
-" call te#meta#map('nnoremap','m',':call MouseToggle()<cr>')   
-" nnoremap <leader>tm :call te#utils#OptionToggle('mouse',['a',''])<cr>
-" 
-" " GNU readline keybinding {{{
+" " GNU readline keybinding {
 " inoremap        <C-A> <C-O>^
 " inoremap   <C-X><C-A> <C-A>
 " inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"
@@ -151,15 +208,7 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " noremap! <expr> <SID>transpose "\<BS>\<Right>".matchstr(getcmdline()[0 : getcmdpos()-2], '.$')
 " cmap   <script> <C-T> <SID>transposition<SID>transpose
 " 
-" call te#meta#map('xnoremap','j',":m '>+1<CR>gv=gv")
-" call te#meta#map('xnoremap','k',":m '<-2<CR>gv=gv")
-" 
-" xnoremap <Leader>mj :m '>+1<CR>gv=gv
-" xnoremap <Leader>mk :m '<-2<CR>gv=gv
-" nnoremap <Leader>mj :m .+1<CR>==
-" nnoremap <leader>mk :m .-2<CR>==
-" 
-" " }}}
+" " }
 
 " "copy,paste and cut 
 " noremap <S-Insert> "+gP
@@ -172,13 +221,8 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
 " nnoremap <silent> <c-F7> :call te#utils#goto_cur_file(2)<cr> 
 " 
-" nnoremap <F7> :call te#utils#OptionToggle('ff',['dos', 'unix'])<cr>
-" " dos to unix or unix to dos
-" nnoremap <Leader>td :call te#utils#OptionToggle('ff',['dos', 'unix'])<cr>
 " " open url on cursor with default browser
 " nnoremap <leader>ol :call te#utils#open_url("")<cr>
-" " linu number toggle
-" nnoremap <Leader>tn :call te#utils#nu_toggle()<cr>
 " " realtime underline word toggle
 " nnoremap <leader>th :call te#utils#OptionToggle("g:cursorword",[0,1])<cr>
 " " next buffer or tab
@@ -214,24 +258,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " nnoremap <Leader>qs :wqa<cr>
 " " switch to last open tab or buffer
 " nnoremap <Leader><tab> :call te#utils#tab_buf_switch(-2)<cr>
-" " tab 1
-" nnoremap <leader>1 :call te#utils#tab_buf_switch(1)<cr>
-" " tab 2
-" nnoremap <leader>2 :call te#utils#tab_buf_switch(2)<cr>
-" " tab 3
-" nnoremap  <leader>3 :call te#utils#tab_buf_switch(3)<cr>
-" " tab 4
-" nnoremap  <leader>4 :call te#utils#tab_buf_switch(4)<cr>
-" " tab 5
-" nnoremap  <leader>5 :call te#utils#tab_buf_switch(5)<cr>
-" " tab 6
-" nnoremap  <leader>6 :call te#utils#tab_buf_switch(6)<cr>
-" " tab 7
-" nnoremap  <leader>7 :call te#utils#tab_buf_switch(7)<cr>
-" " tab 8
-" nnoremap  <leader>8 :call te#utils#tab_buf_switch(8)<cr>
-" " tab 9
-" nnoremap  <leader>9 :call te#utils#tab_buf_switch(9)<cr>
 " 
 " "switch previous tab or buftab
 " nnoremap <Left> :call te#utils#tab_buf_switch(0)<cr>
@@ -239,47 +265,9 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " "switch next tab or buftab
 " nnoremap <Right> :call te#utils#tab_buf_switch(-1)<cr>
 " 
-" " vertical open window
-" nnoremap <Leader>wv :vsp<cr>
-" " vertical open window then focus the new one
-" nnoremap <Leader>wV :vsp<cr><C-w>l
-" " horizontal open window 
-" nnoremap <Leader>ws :sp<cr>
-" " horizontal open window then focus the new one
-" nnoremap <Leader>wS :sp<cr><C-w>j
-" " maxsize of current windows
-" nnoremap <Leader>wm :only<cr>
-" " quit current windows
-" nnoremap <Leader>wd :q<cr>
-" " switch between two windows alternately
-" nnoremap <Leader>w<tab> <C-w><C-p>
-" " switch between two windows.
-" nnoremap <Leader>ww <C-w><C-w>
-" " move to left win
-" nnoremap <Leader>wh <C-w>h
-" " move to right win
-" nnoremap <Leader>wl <C-w>l
-" " move down win
-" nnoremap <Leader>wj <C-w>j
-" " move up win
-" nnoremap <Leader>wk <C-w>k
-" " move to very left win
-" nnoremap <Leader>wH <C-w>H
-" " move to very right win
-" nnoremap <Leader>wL <C-w>L
-" " move to very down win
-" nnoremap <Leader>wJ <C-w>J
-" " move to very up win
-" nnoremap <Leader>wK <C-w>K
-" " rotate the window backward
-" nnoremap <Leader>wR <C-w>R
-" " rotate the window forward
-" nnoremap <Leader>wr <C-w>r
-" " Move the current window to a new tab page.
-" nnoremap <Leader>wt <C-w>T
 " " toggle focus coding
 " nnoremap <leader>tv :call te#utils#focus_coding()<cr>
-" " toggle paste option
+
 " " toggle paste option
 " nnoremap <leader>tp :call te#utils#OptionToggle("paste",[1,0])<cr>
 " " Toggle termguicolors
@@ -323,14 +311,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " 
 " " close all buffer
 " map <Leader>ba :bufdo bd<cr>
-" if te#env#IsNvim()
-"     "terminal-emulator setting
-"     execute 'tnoremap <Esc> <C-\><C-n>'
-"     execute 'tnoremap <A-h> <C-\><C-n><C-w>h'
-"     execute 'tnoremap <A-j> <C-\><C-n><C-w>j'
-"     execute 'tnoremap <A-k> <C-\><C-n><C-w>k'
-"     execute 'tnoremap <A-l> <C-\><C-n><C-w>l'
-"     silent! execute 'tmap <c-v> <C-\><C-n>"*pa'
 " elseif te#env#SupportTerminal()
 "     "terminal-emulator setting
 "     "execute 'tnoremap <Esc> <C-\><C-n>' "effect <a-> key?
@@ -344,12 +324,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 "     call te#meta#map('tnoremap','f','<C-right>')
 " endif
 " 
-" " Open plug status windows
-" nnoremap <Leader>ps :PlugStatus<cr>
-" " update plugin
-" nnoremap <Leader>pu :PlugUpdate<cr>
-" " list plugins
-" nnoremap <Leader>pl :call te#plug#list()<cr>
 " "checkhealth
 " nnoremap <Leader>ch :call te#utils#check_health()<cr>
 " " Open vimshell or neovim's emulator in split window
