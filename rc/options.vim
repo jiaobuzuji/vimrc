@@ -2,10 +2,11 @@
 " Author    jiaobuzuji,jiaobuzuji@163.com
 " Github    https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker
+" vim:fdm=marker fen
 
 "  2 moving around, searching and patterns {{{1
 set whichwrap=b,h,l,<,>,[,]  " list of flags specifying which commands wrap to another line
+set ignorecase  "ignore case when using a search pattern
 set smartcase  "override 'ignorecase' when pattern has upper case characters
 set incsearch  "show match for partly typed search command
 "set autochdir  "change to directory of file in buffer
@@ -57,9 +58,6 @@ endif
 if get(g:,'feat_enable_airline') != 1
     function! MyStatusLine(type) abort
         let l:mystatus_line='%<%t%m%r%h%w'
-        if winwidth(0) < 70
-            return l:mystatus_line
-        endif
         if a:type == 1
             let l:mystatus_line.=s:git_branch
             " let l:mystatus_line.=s:function_name
@@ -136,38 +134,38 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 " set foldcolumn=1 "width of the column used to indicate folds
 
 function! MyFoldText() abort
-    let line = getline(v:foldstart)
+    let l:line = getline(v:foldstart)
     let l:comment_content=''
-    if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
-        let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
-        let linenum = v:foldstart + 1
-        while linenum < v:foldend
-            let line = getline( linenum )
-            let l:comment_content = substitute( line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
+    if match( l:line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
+        let l:initial = substitute( l:line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
+        let l:linenum = v:foldstart + 1
+        while l:linenum < v:foldend
+            let l:line = getline( l:linenum )
+            let l:comment_content = substitute( l:line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
             if l:comment_content !=? ''
                 break
             endif
-            let linenum = linenum + 1
+            let l:linenum = l:linenum + 1
         endwhile
-        let sub = initial . ' ' . l:comment_content
+        let l:sub = l:initial . ' ' . l:comment_content
     else
-        let sub = line
-        let startbrace = substitute( line, '^.*{[ \t]*$', '{', 'g')
-        if startbrace ==? '{'
-            let line = getline(v:foldend)
-            let endbrace = substitute( line, '^[ \t]*}\(.*\)$', '}', 'g')
-            if endbrace ==? '}'
-                let sub = sub.substitute( line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
+        let l:sub = l:line
+        let l:startbrace = substitute( l:line, '^.*{[ \t]*$', '{', 'g')
+        if l:startbrace ==? '{'
+            let l:line = getline(v:foldend)
+            let l:endbrace = substitute( l:line, '^[ \t]*}\(.*\)$', '}', 'g')
+            if l:endbrace ==? '}'
+                let l:sub = l:sub.substitute( l:line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
             endif
         endif
     endif
-    let n = v:foldend - v:foldstart + 1
-    let info = ' ' . n . ' lines'
-    let sub = sub . '                                                                                                                  '
-    let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
-    let fold_w = getwinvar( 0, '&foldcolumn' )
-    let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w - 1 )
-    return sub . info
+    let l:n = v:foldend - v:foldstart + 1
+    let l:info = ' ' . l:n . ' lines'
+    let l:sub = l:sub . '                                                                                                                  '
+    let l:num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
+    let l:fold_w = getwinvar( 0, '&foldcolumn' )
+    let l:sub = strpart( l:sub, 0, winwidth(0) - strlen( l:info ) - l:num_w - l:fold_w - 1 )
+    return l:sub . l:info
 endfunction
 set foldtext=MyFoldText()
 

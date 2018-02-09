@@ -16,7 +16,3 @@ endif
 
 source $VIMRUNTIME/delmenu.vim
 
-" Don't use Ex mode, use Q for formatting.
-" Revert with ":unmap Q".
-map Q gq
-
