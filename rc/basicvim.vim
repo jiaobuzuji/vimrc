@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,} fen
 
 syntax on
-scriptencoding utf-8
+" scriptencoding utf-8
  
 if te#env#IsWindows()
   language messages en_US.UTF-8

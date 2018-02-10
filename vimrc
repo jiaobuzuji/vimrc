@@ -11,7 +11,10 @@ let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
 
 " source basic configuration
 source $VIMFILES/rc/basicvim.vim
+source $VIMFILES/rc/autocmd.vim
 source $VIMFILES/rc/options.vim
 source $VIMFILES/rc/mappings.vim
+
+" source plugins
 
 filetype plugin indent on

@@ -24,9 +24,9 @@ nnoremap <silent><c-TAB> :AT<cr>
 " map jj to "ESC"
 inoremap jj           <c-[>
 inoremap j<Space>     j
-" cnoremap j<Space>     j
-" cnoremap <expr> j
-"       \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
+cnoremap j<Space>     j
+cnoremap <expr> j
+      \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
 
 " map ff to Save Current File
 "in terminal ctrl-s is used to stop printf..
@@ -45,7 +45,7 @@ vnoremap [p "0p
 nnoremap Y y$
 
 " Insert new line in normal mode
-nnoremap tt :r! echo<cr>
+nnoremap tt o<c-u><c-[>k
 
 " nnoremap <silent> <BS> <C-o>
 
