@@ -102,34 +102,12 @@ function! te#env#SupportAsync() abort
     return 0
 endfunction
 
-
 function! te#env#SupportCscope() abort
     if s:support_cscope == 2 | return 1 | endif
     return 0
-endfunction
-
-function! te#env#Executable(exe) abort
-    return executable(a:exe)
-endfunction
-
-function! te#env#SupportTimer() abort
-    return has('timers')
 endfunction
 
 function! te#env#SupportTerminal()
     return te#env#IsNvim() || (has('patch-8.0.1108') && has('terminal'))
 endfunction
 
-function! te#env#SupportFeature(feature_name) abort
-    return has(a:feature_name)
-endfunction
-
-function! te#env#check_requirement()
-    if v:version > 703
-        return 1
-    elseif v:version ==# 703
-        return has("patch1058")
-    else
-        return 0
-    endif
-endfunction

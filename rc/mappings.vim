@@ -19,8 +19,8 @@ noremap Q gq
 
 " Because TMUX, we make Ctrl-tab not work in vim
 nnoremap <silent><c-TAB> :AT<cr>
-" }}}
 
+" Miscellaneous {1
 " map jj to "ESC"
 inoremap jj           <c-[>
 inoremap j<Space>     j
@@ -44,16 +44,24 @@ vnoremap [p "0p
 " y$ -> Y Make Y behave like other capitals
 nnoremap Y y$
 
+" Insert new line in normal mode
+nnoremap tt :r! echo<cr>
+
+" nnoremap <silent> <BS> <C-o>
+
+" Format Current File
+nnoremap <silent> <c-F3> :set ff=unix<CR>:%s/\s\+$//<CR>
+
 " no highlight
 "nnoremap <Leader>nq :nohls<CR>:MarkClear<cr>:redraw!<cr>
 nnoremap <Leader>/ :nohlsearch<CR>
 
 "visual mode hit tab forward indent ,hit shift-tab backward indent
 "Reselect visual block after indent/outdent.
-vnoremap <TAB>  >gv  
+vnoremap <TAB>    >gv  
 vnoremap <s-TAB>  <gv 
-vnoremap < <gv
-vnoremap > >gv
+vnoremap <        <gv
+vnoremap >        >gv
  
 " Mouse mode toggle
 " call te#meta#map('nnoremap','m',':call MouseToggle()<cr>')   
@@ -67,7 +75,21 @@ xnoremap <Leader>mk :m '<-2<CR>gv=gv
 nnoremap <Leader>mj :m .+1<CR>==
 nnoremap <leader>mk :m .-2<CR>==
 
-" move cursor {1
+" Using <Plug> instead of
+" vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+" vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+
+" copy,paste and cut 
+nnoremap <S-Insert> "+gP
+cnoremap <S-Insert>	<C-R>+
+" fcnoremap <C-V>	    <C-R>+
+" finoremap <c-v>	    <C-o>"+gp
+
+"cd to current buffer's path
+" nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
+nnoremap <c-F7> :cd %:h<cr> 
+
+" Move cursor {1
 " move cursor in Insert mode
 call te#meta#map('inoremap','h','<Left>')
 call te#meta#map('inoremap','l','<Right>')
@@ -81,9 +103,15 @@ call te#meta#map('cnoremap','k','<up>')
 call te#meta#map('cnoremap','b','<S-left>')
 cnoremap        <C-A> <Home>
 cnoremap   <C-X><C-A> <C-A>
-" }
 
 " multiple windows and tabs {1
+" Quit Vim
+nnoremap <Leader>qa :qa<cr>
+" " close all buffer
+" map <Leader>ba :bufdo bd<cr>
+
+nnoremap <leader>mw :call te#tools#max_win()<cr>
+
 " open quickfix windows
 nnoremap <leader>qf :botright copen<cr>
 nnoremap <leader>qc q:
@@ -162,69 +190,12 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " nnoremap  <leader>8 :call te#utils#tab_buf_switch(8)<cr>
 " nnoremap  <leader>9 :call te#utils#tab_buf_switch(9)<cr>
 
-" }
-
-" Jiaobuzuji {1
-" vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-" vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-" " Insert new line in normal mode
-" noremap tt o<Up><Esc>
-" noremap TT O<Down><Esc>
-" 
-" " Format Current File
-" nnoremap <F3> :set ff=unix<CR>:%s/\s\+$//<CR>:%s/\t/   /g<CR>
-" }
-
-" "select all
-" call te#meta#map('noremap','a','gggH<C-O>G')
-" call te#meta#map('inoremap','a','<C-O>gg<C-O>gH<C-O>G')
-" call te#meta#map('cnoremap','a','<C-C>gggH<C-O>G')
-" call te#meta#map('onoremap','a','<C-C>gggH<C-O>G')
-" call te#meta#map('snoremap','a','<C-C>gggH<C-O>G')
-" call te#meta#map('xnoremap','a','<C-C>ggVG')
-" "Alignment
-" call te#meta#map('nnoremap','=',' <esc>ggVG=``')
-" 
-" " GNU readline keybinding {
-" inoremap        <C-A> <C-O>^
-" inoremap   <C-X><C-A> <C-A>
-" inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"
-" inoremap        <C-B> <Left>
-" inoremap        <C-f> <right>
-" "Delete the character underneath the cursor.
-" inoremap        <C-d> <BS>
-" "Delete the character underneath the cursor.
-" inoremap        <C-h> <BS>
-" cnoremap        <C-B> <Left>
-" cnoremap        <C-f> <right>
-" cnoremap <C-r><C-l> <C-r>=getline('.')<CR>
-" " Move forward a word or Move backward a word.
-" call te#meta#map('inoremap','b','<S-left>')
-" call te#meta#map('inoremap','f','<S-right>')
-" call te#meta#map('cnoremap','f','<S-right>')
-" call te#meta#map('cnoremap','h','<left>')
-" 
-" noremap! <expr> <SID>transposition getcmdpos()>strlen(getcmdline())?"\<Left>":getcmdpos()>1?'':"\<Right>"
-" noremap! <expr> <SID>transpose "\<BS>\<Right>".matchstr(getcmdline()[0 : getcmdpos()-2], '.$')
-" cmap   <script> <C-T> <SID>transposition<SID>transpose
-" 
-" " }
-
-" "copy,paste and cut 
-" noremap <S-Insert> "+gP
-" inoremap <c-v>	<C-o>"+gp
-" cmap <C-V>	<C-R>+
-" cmap <S-Insert>	<C-R>+
-" vnoremap <C-X> "+x
-" 
-" "cd to current buffer's path
-" nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
-" nnoremap <silent> <c-F7> :call te#utils#goto_cur_file(2)<cr> 
-" 
-" " open url on cursor with default browser
-" nnoremap <leader>ol :call te#utils#open_url("")<cr>
-" " realtime underline word toggle
-" nnoremap <leader>th :call te#utils#OptionToggle("g:cursorword",[0,1])<cr>
+" " switch to last open tab or buffer
+" nnoremap <Leader><tab> :call te#utils#tab_buf_switch(-2)<cr>
+" "switch previous tab or buftab
+" nnoremap <Left> :call te#utils#tab_buf_switch(0)<cr>
+" "switch next tab or buftab
+" nnoremap <Right> :call te#utils#tab_buf_switch(-1)<cr>
 " " next buffer or tab
 " nnoremap <Leader>bn :call te#utils#tab_buf_switch(-1)<cr>
 " " previous buffer or tab
@@ -233,85 +204,29 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " nnoremap <Leader>bk :bdelete<cr>
 " "buffer only
 " nnoremap <leader>bo :call te#tools#buf_only('', '')<cr>
-" " save file
-" nnoremap <Leader>fs :call te#utils#SaveFiles()<cr>
-" " save all
-" nnoremap <Leader>fS :wa<cr>
-" " manpage or vimhelp on current curosr word
-" nnoremap <Leader>hm :call te#utils#find_mannel()<cr>
-" " open eval.txt
-" nnoremap <Leader>he :tabnew<cr>:h eval.txt<cr>:only<cr>
-" " open vim script help
-" nnoremap <Leader>hp :tabnew<cr>:h usr_41.txt<cr>:only<cr>
-" " open vim function list
-" nnoremap <Leader>hf :tabnew<cr>:h function-list<cr>:only<cr>
-" 
-" 
-" " quit all
-" nnoremap <Leader>qa :call te#utils#quit_win(1)<cr>
-" nnoremap <Leader>qq :call te#utils#quit_win(0)<cr>
-" " quit current tab
-" nnoremap <Leader>qw :tabclose<cr>
-" " quit all without save
-" nnoremap <Leader>qQ :qa!<cr>
-" " save and quit all
-" nnoremap <Leader>qs :wqa<cr>
-" " switch to last open tab or buffer
-" nnoremap <Leader><tab> :call te#utils#tab_buf_switch(-2)<cr>
-" 
-" "switch previous tab or buftab
-" nnoremap <Left> :call te#utils#tab_buf_switch(0)<cr>
-" 
-" "switch next tab or buftab
-" nnoremap <Right> :call te#utils#tab_buf_switch(-1)<cr>
-" 
-" " toggle focus coding
-" nnoremap <leader>tv :call te#utils#focus_coding()<cr>
 
-" " toggle paste option
-" nnoremap <leader>tp :call te#utils#OptionToggle("paste",[1,0])<cr>
-" " Toggle termguicolors
-" nnoremap <Leader>tl :call te#utils#OptionToggle('termguicolors',[1,0])<cr>
-" "textwidth between 0 and 80
-" nnoremap <Leader>tw :call te#utils#OptionToggle('textwidth',[80,0])<cr>
-" " cursorline toggle
-" nnoremap <Leader>tc :call te#utils#OptionToggle('cursorline',[1,0])<cr>
-" " feature enable
-" "nnoremap <Leader>fe :call te#feat#feat_dyn_enable(1)<cr>
-" nnoremap <Leader>fe :call te#feat#feat_dyn_enable(1)<cr>
-" nnoremap <Leader>fd :call te#feat#feat_dyn_enable(0)<cr>
-" 
-" " feature update
-" nnoremap <Leader>fu :call te#feat#gen_feature_vim(0)<cr>
-" " reset feature
-" nnoremap <Leader>fr :call te#feat#gen_feature_vim(1)<cr>
-" 
-" nnoremap <Leader>dj <c-u>
-" nnoremap <Leader>dd <c-d>
-" nnoremap <Leader>pw :call te#utils#EchoWarning(getcwd())<cr>
-" " cd to any plugin directory
-" nnoremap <Leader>cp :call te#utils#cd_to_plugin(g:vinux_plugin_dir.cur_val)<cr>
-" nnoremap <silent> <BS> <C-o>
-" "newtab
-" nnoremap <Leader>nt :tabnew<cr>
-" 
+" VimScript Help {1
+" open eval.txt
+nnoremap <Leader>he :tabnew<cr>:h eval.txt<cr>:only<cr>
+" open vim script help
+nnoremap <Leader>hp :tabnew<cr>:h usr_41.txt<cr>:only<cr>
+" open vim function list
+nnoremap <Leader>hf :tabnew<cr>:h function-list<cr>:only<cr>
+
+" }
+
+" TODO {1
+" noremap! <expr> <SID>transposition getcmdpos()>strlen(getcmdline())?"\<Left>":getcmdpos()>1?'':"\<Right>"
+" noremap! <expr> <SID>transpose "\<BS>\<Right>".matchstr(getcmdline()[0 : getcmdpos()-2], '.$')
+" cmap   <script> <C-T> <SID>transposition<SID>transpose
+"
 " "generate tags and cscope
 " nnoremap <localleader>u :call te#pg#do_cs_tags(getcwd(), 0x3)<cr>
 " 
-" nnoremap <leader>mw :call te#tools#max_win()<cr>
-" 
 " "run command from input
 " nnoremap <leader>rc :call te#utils#run_command("", 1)<cr>
-"             
-" nmap s <Sop>
-" nnoremap sj za
-" vnoremap sf zf
-" nnoremap sk zM
-" nnoremap si zi
-" 
-" " close all buffer
-" map <Leader>ba :bufdo bd<cr>
-" elseif te#env#SupportTerminal()
+"
+" if te#env#SupportTerminal()
 "     "terminal-emulator setting
 "     "execute 'tnoremap <Esc> <C-\><C-n>' "effect <a-> key?
 "     silent! execute 'tnoremap <Esc><Esc> '.&termkey.'N'
@@ -324,8 +239,6 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 "     call te#meta#map('tnoremap','f','<C-right>')
 " endif
 " 
-" "checkhealth
-" nnoremap <Leader>ch :call te#utils#check_health()<cr>
 " " Open vimshell or neovim's emulator in split window
 " nnoremap <Leader>as :call te#tools#shell_pop(0x1)<cr>
 " noremap <F4> :call te#tools#shell_pop(0x1)<cr>
