@@ -16,13 +16,6 @@ augroup misc_group
               \ endif "jump to last position last open in vim
 augroup END
 
-" lazy_load_group {1
-augroup lazy_load_group
-    autocmd!
-    autocmd InsertEnter * call te#feat#vim_plug_insert_enter()
-                \| autocmd! lazy_load_group
-augroup END
-
 
 " Jiaobuzuji {1
 "   
@@ -99,4 +92,11 @@ augroup END
 "     autocmd filetype_group BufWritePost,BufEnter *.php,*.sh,*.js Neomake
 " endif
 " 
+
+" " lazy_load_group {1
+" augroup lazy_load_group
+"     autocmd!
+"     autocmd InsertEnter * call te#feat#vim_plug_insert_enter()
+"                 \| autocmd! lazy_load_group
+" augroup END
 
