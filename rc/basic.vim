@@ -20,7 +20,6 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle','NERDTreeFind'] } " {1
   nnoremap <leader>nf :NERDTreeFind<CR> 
   "map <2-LeftMouse>  *N "double click highlight the current cursor word 
   inoremap <F12> <c-[>:NERDTreeToggle<CR>
-" }
 
 Plug 'majutsushi/tagbar' " {1
   let g:tagbar_left=0
@@ -36,7 +35,6 @@ Plug 'majutsushi/tagbar' " {1
   " Open tagbar
   nnoremap <silent><F9> :TagbarToggle<CR>
   nnoremap <leader>tt :TagbarToggle<CR>
-" }
 
 Plug 'itchyny/vim-cursorword' " {1
   " let g:cursorword = 0
@@ -47,7 +45,6 @@ Plug 'thinca/vim-quickrun',{'on': '<Plug>(quickrun)'} " {1
               \       'outputter' : 'message',
               \   },
               \}
-
   let g:quickrun_no_default_key_mappings = 1
   map <F6> <Plug>(quickrun)
   vnoremap <F6> :'<,'>QuickRun<cr>
@@ -55,14 +52,12 @@ Plug 'thinca/vim-quickrun',{'on': '<Plug>(quickrun)'} " {1
   nmap <leader>yr <Plug>(quickrun)
   " run selection text
   vnoremap <leader>yr :'<,'>QuickRun<cr>
-" }
 
 " vim-manpager {1
 if(!te#env#IsWindows())
-    " Plug 'vim-scripts/sudo.vim', {'on': ['SudoRead', 'SudoWrite']}
-    Plug 'lambdalisue/vim-manpager'
+  " Plug 'vim-scripts/sudo.vim', {'on': ['SudoRead', 'SudoWrite']}
+  Plug 'lambdalisue/vim-manpager'
 endif
-" }
 
 Plug 'dkprice/vim-easygrep' " {1
   let g:EasyGrepRecursive=1
@@ -103,7 +98,7 @@ Plug 'dkprice/vim-easygrep' " {1
 "     let g:session_directory=$VIMFILES.'/sessions'
 " endif
 "
-" Vimshell {{{
+" Vimshell {2
 " if(!te#env#SupportTerminal())
 "     let g:vimshell_enable_smart_case = 1
 "     let g:vimshell_editor_command='gvim'
@@ -161,6 +156,7 @@ Plug 'dkprice/vim-easygrep' " {1
 "         let g:vimproc#dll_path=$VIMRUNTIME.'/vimproc_win32.dll'
 "     endif
 " endif
+" }
 
 " if te#env#IsVim8()
 "     Plug 'neomake/neomake', { 'commit': '459ac69da3eb00850eb3efefe31b3fb237d7926d'}
