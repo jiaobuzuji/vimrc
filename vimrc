@@ -18,6 +18,7 @@ source $VIMFILES/rc/mappings.vim
 " source plugins
 call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
   source $VIMFILES/rc/gui.vim
+  source $VIMFILES/rc/basic.vim
 
 call plug#end() " All of your Plugins must be added before the following line
 
