@@ -17,9 +17,13 @@ source $VIMFILES/rc/mappings.vim
 
 " source plugins
 call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
+  source $VIMFILES/rc/gui.vim
 
 call plug#end() " All of your Plugins must be added before the following line
 
 " end of config
-colorscheme desert " default setting 
 filetype plugin indent on
+
+colorscheme desert
+" colorscheme ayu
+" colorscheme molokai
