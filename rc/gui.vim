@@ -13,8 +13,8 @@ if te#env#IsGui()
   if (te#env#IsMac())
       set guifont=Consolas:h16
   elseif te#env#IsUnix()
-      set guifont=Consolas\ 12
-      set guifontwide=YaHei_Mono_Hybird_Consolas\ 11.5
+      set guifont=Consolas\ 11
+      set guifontwide=YaHei_Mono_Hybird_Consolas\ 10.5
   else
       set guifont=Consolas:h12:cANSI
       set guifontwide=YaHei_Mono:h11.5:cGB2312
@@ -42,7 +42,7 @@ if te#env#IsGui()
   set guioptions-=b "Bottom (horizontal) scrollbar
   set guioptions-=m "whether use menu
   set guioptions-=r "whether show the rigth scroll bar
-  set guioptions-=l "whether show the left scroll bar
+  set guioptions-=L "whether show the left scroll bar
   set guioptions-=T "whether show toolbar or not
   set guioptions-=e "whether use tabpage
   set guioptions+=c

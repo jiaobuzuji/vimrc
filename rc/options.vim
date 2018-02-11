@@ -14,7 +14,7 @@ set incsearch  "show match for partly typed search command
 "  3 tags {1
 "  4 displaying text {1
 set hlsearch "highlight all matches for the last used search pattern
-" set list  "display unprintable characters by set list
+set list  "display unprintable characters by set list
 set listchars=tab:\|\ ,trail:-  " Strings to use in 'list' mode and for the |:list| command
 set scrolloff=5 " number of screen lines to show around the cursor
 set lazyredraw  " Don't update the display while executing macros
