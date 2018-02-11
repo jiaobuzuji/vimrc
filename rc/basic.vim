@@ -61,17 +61,16 @@ endif
 
 Plug 'dkprice/vim-easygrep' " {1
   " Search tools
-  " let g:EasyGrepCommand="rg"
-  let g:EasyGrepCommand="ag"
-  " set grepprg=grep\ -n\ $*\ /dev/null
-  " let g:EasyGrepCommand=1
+  let g:EasyGrepCommand="rg"
+  " let g:EasyGrepCommand="ag"
+  " let g:EasyGrepCommand=1 | let g:EasyGrepPerlStyle=1 | set grepprg=grep\ -n\ $*\ /dev/null
 
-  let g:EasyGrepFilesToExclude=".swp,.git,.svn,.hg"
-  let g:EasyGrepRoot = "search:.git,.svn,.hg"
+  " let g:EasyGrepRoot = "search:.git,.svn,.hg" " FIXME no work
+  let g:EasyGrepFilesToExclude="*.swp,*.~,.git,.svn,.hg"
   let g:EasyGrepOpenWindowOnMatch=1
   let g:EasyGrepRecursive=1
   let g:EasyGrepJumpToMatch=0
-  let g:EasyGrepMode=2
+  let g:EasyGrepMode=2 " FIXME incompatible 'ag' tool
   let g:EasyGrepIgnoreCase=0
   let g:EasyGrepReplaceWindowMode=2
 
@@ -80,15 +79,15 @@ Plug 'dkprice/vim-easygrep' " {1
     execute 'normal '."\<plug>EgMapGrepCurrentWord_v"
     let g:EasyGrepMode=2
   endfunction
-  map <silent> <Leader>vV <plug>EgMapGrepCurrentWord_v
-  vmap <silent> <Leader>vV <plug>EgMapGrepSelection_v
-  map <silent> <Leader>vv <plug>EgMapGrepCurrentWord_V
-  vmap <silent> <Leader>vv <plug>EgMapGrepSelection_V
-  map <silent> <Leader>vi <plug>EgMapReplaceCurrentWord_r
-  map <silent> <Leader>vI <plug>EgMapReplaceCurrentWord_R
-  vmap <silent> <Leader>vi <plug>EgMapReplaceSelection_r
-  vmap <silent> <Leader>vI <plug>EgMapReplaceSelection_R
-  map <silent> <Leader>vo <plug>EgMapGrepOptions
+  " map <silent> <Leader>vV <plug>EgMapGrepCurrentWord_v
+  " vmap <silent> <Leader>vV <plug>EgMapGrepSelection_v
+  " map <silent> <Leader>vv <plug>EgMapGrepCurrentWord_V
+  " vmap <silent> <Leader>vv <plug>EgMapGrepSelection_V
+  " map <silent> <Leader>vi <plug>EgMapReplaceCurrentWord_r
+  " map <silent> <Leader>vI <plug>EgMapReplaceCurrentWord_R
+  " vmap <silent> <Leader>vi <plug>EgMapReplaceSelection_r
+  " vmap <silent> <Leader>vI <plug>EgMapReplaceSelection_R
+  " map <silent> <Leader>vo <plug>EgMapGrepOptions
   noremap <silent> <Leader>vb :call <SID>search_in_opened_buffer()<cr>
   nnoremap  <Leader>vs :Grep 
 "}

@@ -131,7 +131,7 @@ nnoremap <Leader>ws :sp<cr>
 " horizontal open window then focus the new one
 nnoremap <Leader>wS :sp<cr><C-w>j
 " maxsize of current windows
-nnoremap <Leader>wm :only<cr>
+nnoremap <Leader>wo :only<cr>
 " quit current windows
 nnoremap <Leader>wd <C-w>q
 " switch between two windows alternately
