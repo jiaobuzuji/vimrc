@@ -82,8 +82,8 @@ nnoremap <leader>mk :m .-2<CR>==
 " copy,paste and cut 
 nnoremap <S-Insert> "+gP
 cnoremap <S-Insert>	<C-R>+
-" fcnoremap <C-V>	    <C-R>+
-" finoremap <c-v>	    <C-o>"+gp
+cnoremap <C-V>	    <C-R>+
+inoremap <c-v>	    <C-o>"+gp
 
 "cd to current buffer's path
 " nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
@@ -95,6 +95,9 @@ call te#meta#map('inoremap','h','<Left>')
 call te#meta#map('inoremap','l','<Right>')
 call te#meta#map('inoremap','j','<Down>')
 call te#meta#map('inoremap','k','<Up>')
+inoremap        <C-A> <C-O>^
+inoremap   <C-X><C-A> <C-A>
+inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"
 
 " move cursor in Command line
 call te#meta#map('cnoremap','l','<right>')
@@ -118,7 +121,7 @@ nnoremap <leader>qc q:
 nnoremap <leader>qd q/
 
 " move between windows
-call te#meta#map('nnoremap','h','  <C-w>h')
+call te#meta#map('nnoremap','h','<C-w>h')
 call te#meta#map('nnoremap','l','<C-w>l')
 call te#meta#map('nnoremap','j','<C-w>j')
 call te#meta#map('nnoremap','k','<C-w>k')

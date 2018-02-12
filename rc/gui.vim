@@ -35,7 +35,6 @@ if te#env#IsGui()
 "  "         set guifontwide=YaHei_Consolas_Hybrid:h12:cGB2312
 "  "     endif
 "  " endif
-"    call te#feat#register_vim_enter_setting(function('te#tools#max_win'))
   " }
 
   " Menu config, turn on this option as well {2
@@ -75,19 +74,19 @@ endif
 " Plug 'morhetz/gruvbox' " {2
 " Plug 'NLKNguyen/papercolor-theme' " {2
 " Plug 'nanotech/jellybeans.vim' " {2
-" let g:jellybeans_overrides = {
-" \    'background': { 'guibg': '000000' },
-" \    'StatusLine': {'guibg': '282828', 'guifg': 'c7c7c7', 'ctermbg': '235', 'ctermfg': '255'},
-" \    'StatusLineNC': {'guibg': '3a3a3a', 'guifg': '808080', 'ctermbg': '236', 'ctermfg': '244'},
-" \}
-" set background=dark
-
+"   let g:jellybeans_overrides = {
+"   \    'background': { 'guibg': '000000' },
+"   \    'StatusLine': {'guibg': '282828', 'guifg': 'c7c7c7', 'ctermbg': '235', 'ctermfg': '255'},
+"   \    'StatusLineNC': {'guibg': '3a3a3a', 'guifg': '808080', 'ctermbg': '236', 'ctermfg': '244'},
+"   \}
 " Plug 'vim-scripts/desert256.vim' " {2
+"   set background=dark
+
 " Plug 'liuchengxu/space-vim-dark' " {2
 " Plug 'ayu-theme/ayu-vim' " {2
-" " let ayucolor="light"  " for light version of theme
-" " let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
+"   " let ayucolor="light"  " for light version of theme
+"   " let ayucolor="mirage" " for mirage version of theme
+"   let ayucolor="dark"   " for dark version of theme
 
 "}
 

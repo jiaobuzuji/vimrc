@@ -4,6 +4,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
+if te#env#IsWindows()
+    set makeprg=mingw32-make
+else
+    set keywordprg=""
+    set path=.,/usr/include/,$PWD/**
+endif
+
 "  2 moving around, searching and patterns {1
 set whichwrap=b,h,l,<,>,[,]  " list of flags specifying which commands wrap to another line
 set ignorecase  "ignore case when using a search pattern
@@ -208,6 +215,7 @@ set sessionoptions-=options
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 
+" TODO {1
 " if te#env#IsVim8()
 "     let g:t_number=v:t_number
 "     let g:t_string=v:t_string
