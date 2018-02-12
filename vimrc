@@ -11,13 +11,12 @@ let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
 
 " source basic configuration
 source $VIMFILES/rc/basicvim.vim
-source $VIMFILES/rc/autocmd.vim
+source $VIMFILES/rc/autocmd.vim | let g:plugins_lazyload_list = []
 source $VIMFILES/rc/options.vim
 source $VIMFILES/rc/mappings.vim
 
 " source plugins
 call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
-  let g:plugins_lazyload_list = []
   source $VIMFILES/rc/gui.vim
   source $VIMFILES/rc/basic.vim
   source $VIMFILES/rc/jump.vim

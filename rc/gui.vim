@@ -4,7 +4,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
-"Gui releate {1
+" Gui releate {1
 if te#env#IsGui()
   set cursorline " highlight the screen line of the cursor
   set spell          " Spell checking on

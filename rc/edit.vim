@@ -12,7 +12,7 @@ Plug 'Raimondi/delimitMate',{'on':[]} " {1
   let g:delimitMate_expand_cr = 0
   let g:delimitMate_expand_space = 0
 
-Plug 'thinca/vim-qfreplace',{'on': 'Qfreplace'} " {1
+" Plug 'thinca/vim-qfreplace',{'on': 'Qfreplace'} " {1
 Plug 'scrooloose/nerdcommenter' " {1
   let g:NERDMenuMode=0
   let g:NERD_c_alt_style=1
@@ -55,6 +55,10 @@ Plug 'haya14busa/vim-asterisk' " {1
 
 Plug 'mbbill/undotree',  { 'on': 'UndotreeToggle' } " {1
   nnoremap <leader>tu :UndotreeToggle<cr>
+  let g:undotree_WindowLayout=2
+  let g:undotree_DiffpanelHeight=8
+  set undofile undodir=$VIMFILES/undodir/
+  autocmd misc_group BufWritePre $VIMFILES/undodir/* set noundofile
 
 Plug 'tweekmonster/spellrotate.vim', {'on': ['<Plug>(SpellRotateForward)']}
   nmap <silent> <leader>zn <Plug>(SpellRotateForward)
