@@ -12,7 +12,7 @@ Plug 'Raimondi/delimitMate',{'on':[]} " {1
   let g:delimitMate_expand_cr = 0
   let g:delimitMate_expand_space = 0
 
-" Plug 'thinca/vim-qfreplace',{'on': 'Qfreplace'} " {1
+Plug 'thinca/vim-qfreplace',{'on': 'Qfreplace'} " {1
 Plug 'scrooloose/nerdcommenter' " {1
   let g:NERDMenuMode=0
   let g:NERD_c_alt_style=1

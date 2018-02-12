@@ -61,7 +61,10 @@ endif
 
 Plug 'dkprice/vim-easygrep' " {1
   " Search tools
+  set grepprg=rg\ -H\ --no-heading\ --vimgrep\ $*
   let g:EasyGrepCommand="rg"
+  set grepformat=%f:%l:%c:%m
+
   " let g:EasyGrepCommand="ag"
   " let g:EasyGrepCommand=1 | let g:EasyGrepPerlStyle=1 | set grepprg=grep\ -n\ $*\ /dev/null
 

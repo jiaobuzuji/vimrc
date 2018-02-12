@@ -32,7 +32,7 @@ augroup filetype_group
 
   " Quickfix
   " autocmd FileType qf nnoremap <buffer> R :silent! Qfreplace<CR>:silent! ccl<cr>
-  autocmd FileType qf nnoremap <buffer> r :silent! Qfreplace<CR> 
+  autocmd FileType qf nnoremap <buffer> r :silent! Qfreplace<CR>
                   \ | nnoremap <buffer> <c-x> <C-w><Enter><C-w>K
                   \ | nnoremap <buffer> q :ccl<cr>:lcl<cr>
                   \ | nnoremap <buffer> o <CR><C-w>p
