@@ -50,16 +50,12 @@ augroup filetype_group
   "             \ | nmap <buffer> q :bdelete<cr>
 augroup END
 
+augroup lazy_load_group " {1
+  autocmd!
+  autocmd InsertEnter * call plug#load(g:plugins_lazyload_list)
+              \| autocmd! lazy_load_group
+augroup END
 
-" TODO {1
-" augroup lazy_load_group
-"     autocmd!
-"     autocmd InsertEnter * call te#feat#vim_plug_insert_enter()
-"                 \| autocmd! lazy_load_group
-" augroup END
-
-" if get(g:, 'feat_enable_basic') && te#env#SupportAsync()
-"     autocmd filetype_group BufWritePost,BufEnter *.php,*.sh,*.js Neomake
-" endif
-" 
+" TODO neomake {1
+" autocmd filetype_group BufWritePost,BufEnter *.php,*.sh,*.js Neomake
 

@@ -17,9 +17,12 @@ source $VIMFILES/rc/mappings.vim
 
 " source plugins
 call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
+  let g:plugins_lazyload_list = []
   source $VIMFILES/rc/gui.vim
   source $VIMFILES/rc/basic.vim
   source $VIMFILES/rc/jump.vim
+  source $VIMFILES/rc/help.vim
+  source $VIMFILES/rc/edit.vim
 
 call plug#end() " All of your Plugins must be added before the following line
 
