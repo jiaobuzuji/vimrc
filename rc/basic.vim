@@ -65,19 +65,19 @@ Plug 'dkprice/vim-easygrep' " {1
   " let g:EasyGrepCommand="ag"
   " let g:EasyGrepCommand=1 | let g:EasyGrepPerlStyle=1 | set grepprg=grep\ -n\ $*\ /dev/null
 
-  " let g:EasyGrepRoot = "search:.git,.svn,.hg" " FIXME no work
-  let g:EasyGrepFilesToExclude="*.swp,*.~,.git,.svn,.hg"
-  let g:EasyGrepOpenWindowOnMatch=1
+  " let g:EasyGrepRoot = "search:.git,.svn,.hg" " FIXME may involve some mistake (windows error; linux twice search)
+  let g:EasyGrepFilesToExclude=".git,.svn,.hg,*.swp,*.~"
   let g:EasyGrepRecursive=1
   let g:EasyGrepJumpToMatch=0
-  let g:EasyGrepMode=2 " FIXME incompatible 'ag' tool
+  " let g:EasyGrepMode=2 " FIXME incompatible 'ag' and 'rg' tools
+  let g:EasyGrepMode=0
   let g:EasyGrepIgnoreCase=0
   let g:EasyGrepReplaceWindowMode=2
 
   function s:search_in_opened_buffer()
     let g:EasyGrepMode=1
     execute 'normal '."\<plug>EgMapGrepCurrentWord_v"
-    let g:EasyGrepMode=2
+    let g:EasyGrepMode=0
   endfunction
   " map <silent> <Leader>vV <plug>EgMapGrepCurrentWord_v
   " vmap <silent> <Leader>vV <plug>EgMapGrepSelection_v
