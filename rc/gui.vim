@@ -90,7 +90,6 @@ endif
 
 "}
 
-
 " TODO {1
 "    "toolbar
 "    if has('toolbar')

@@ -107,6 +107,14 @@ function! te#env#SupportCscope() abort
     return 0
 endfunction
 
+function! te#env#Executable(exe) abort
+    return executable(a:exe)
+endfunction
+
+function! te#env#SupportTimer() abort
+    return has('timers')
+endfunction
+
 function! te#env#SupportTerminal()
     return te#env#IsNvim() || (has('patch-8.0.1108') && has('terminal'))
 endfunction

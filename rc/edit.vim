@@ -14,8 +14,8 @@ Plug 'Raimondi/delimitMate',{'on':[]} " {1
 
 Plug 'thinca/vim-qfreplace',{'on': 'Qfreplace'} " {1
 Plug 'scrooloose/nerdcommenter' " {1
-  let g:NERDMenuMode=0
-  let g:NERD_c_alt_style=1
+  let g:NERDSpaceDelims=1
+  let g:NERDMenuMode=1
   "toggle comment
   nmap <Leader>;; <plug>NERDCommenterComment
   nmap <Leader>cc <plug>NERDCommenterComment
@@ -60,7 +60,7 @@ Plug 'mbbill/undotree',  { 'on': 'UndotreeToggle' } " {1
   set undofile undodir=$VIMFILES/undodir/
   autocmd misc_group BufWritePre $VIMFILES/undodir/* set noundofile
 
-Plug 'tweekmonster/spellrotate.vim', {'on': ['<Plug>(SpellRotateForward)']}
+Plug 'tweekmonster/spellrotate.vim', {'on': ['<Plug>(SpellRotateForward)']} " {1
   nmap <silent> <leader>zn <Plug>(SpellRotateForward)
   nmap <silent> <leader>zp <Plug>(SpellRotateBackward)
   vmap <silent> <leader>zn <Plug>(SpellRotateForwardV)
