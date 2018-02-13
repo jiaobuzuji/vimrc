@@ -54,5 +54,6 @@ augroup lazy_load_group " {1
               \| autocmd! lazy_load_group
 augroup END
 
+" {1
 autocmd filetype_group BufWritePost,BufEnter *.php,*.sh,*.js Neomake
 

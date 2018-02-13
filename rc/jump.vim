@@ -12,35 +12,63 @@ set mps+=<:>
 set mps+=":"
 
 " jump to somewhere:file,mru,bookmark
-Plug 'Yggdroot/LeaderF' " {1
-Plug 'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
-  " show global mark
-  nnoremap <leader>pm :LeaderfMarks<Cr>
+" Plug 'Yggdroot/LeaderF' " {1
+" Plug 'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
+"   " show global mark
+"   nnoremap <leader>pm :LeaderfMarks<Cr>
 
-  "function
-  nnoremap <c-k> :LeaderfFunction<cr>
-  nnoremap <Leader>pk :LeaderfFunction<cr>
-  " buffer 
-  nnoremap <Leader>pb :LeaderfBuffer<Cr>
-  " recent file 
-  nnoremap <c-l> :LeaderfMru<cr>
-  nnoremap <Leader>pr :LeaderfMru<cr>
+"   "function
+"   nnoremap <c-k> :LeaderfFunction<cr>
+"   nnoremap <Leader>pk :LeaderfFunction<cr>
+"   " buffer 
+"   nnoremap <Leader>pb :LeaderfBuffer<Cr>
+"   " recent file 
+"   nnoremap <c-l> :LeaderfMru<cr>
+"   nnoremap <Leader>pr :LeaderfMru<cr>
+"   "file
+"   nnoremap <Leader>pp :LeaderfFile<cr>
+"   "leaderf cmd
+"   nnoremap <Leader>ps :LeaderfSelf<cr>
+"   nnoremap <Leader>pt :LeaderfBufTag<cr>
+"   "colorsceme
+"   nnoremap <Leader>pc :LeaderfColorscheme<cr>
+"   "CtrlP cmd
+"   let g:Lf_ShortcutF = '<C-P>'
+"   let g:Lf_ShortcutB = '<C-j>'
+"   let g:Lf_CacheDiretory=$VIMFILES
+"   let g:Lf_DefaultMode='FullPath'
+"   let g:Lf_StlColorscheme = 'default'
+"   let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+"   let g:Lf_UseMemoryCache = 0
+"   nnoremap <Leader><Leader> :LeaderfFile<cr>
+
+Plug 'Shougo/denite.nvim' " {1
+Plug 'Shougo/neomru.vim'
+  autocmd  misc_group VimEnter * source $VIMFILES/rc/denite.vim
+  "keymapping for denite
+  nnoremap <c-p> :Denite file_rec<cr>
+  nnoremap <Leader><Leader> :Denite file_rec<cr>
+  nnoremap <c-j> :Denite buffer<cr>
+  nnoremap <c-l> :Denite file_mru<cr>
+  nnoremap <c-k> :Denite outline<cr>
+  nnoremap <Leader>pc :Denite colorscheme -no-quit<cr>
+  nnoremap <Leader>ff :Denite file<cr>
+  "mru
+  nnoremap <Leader>pr :Denite file_mru<cr>
   "file
-  nnoremap <Leader>pp :LeaderfFile<cr>
-  "leaderf cmd
-  nnoremap <Leader>ps :LeaderfSelf<cr>
-  nnoremap <Leader>pt :LeaderfBufTag<cr>
-  "colorsceme
-  nnoremap <Leader>pc :LeaderfColorscheme<cr>
-  "CtrlP cmd
-  let g:Lf_ShortcutF = '<C-P>'
-  let g:Lf_ShortcutB = '<C-j>'
-  let g:Lf_CacheDiretory=$VIMFILES
-  let g:Lf_DefaultMode='FullPath'
-  let g:Lf_StlColorscheme = 'default'
-  let g:Lf_StlSeparator = { 'left': '', 'right': '' }
-  let g:Lf_UseMemoryCache = 0
-  nnoremap <Leader><Leader> :LeaderfFile<cr>
+  nnoremap <Leader>pp :Denite file_rec<cr>
+  "function
+  nnoremap <Leader>pp :Denite outline<cr>
+  "vim help
+  nnoremap <Leader>ph :Denite help<cr>
+  "command history
+  nnoremap <Leader>p: :Denite command_history<cr>
+  "fly on grep
+  nnoremap <Leader>pf :call denite#start([{'name': 'grep', 'args': ['', '', '!']}])<cr>
+
+  " call denite#custom#var('file_rec', 'command',
+  "       \ ['rg', '--hidden', '--files', '--glob', '!.git', '--glob', '']
+  "       \ )
 
 " Plug 'ctrlpvim/ctrlp.vim' " {1
 " Plug 'tacahiroy/ctrlp-funky',{'on': 'CtrlPFunky'}
@@ -89,24 +117,6 @@ Plug 'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
 "                       \ --ignore "*.dll"
 "                       \ --ignore ".git"
 "                       \ -g ""'
-"       else
-"           if te#env#IsUnix()
-"               let g:ctrlp_user_command = {
-"                           \ 'types': {
-"                           \ 1: ['.git', 'cd %s && git ls-files -oc --exclude-standard'],
-"                           \ 2: ['.hg', 'hg --cwd %s status -numac -I . $(hg root)'],
-"                           \ },
-"                           \ 'fallback': 'find %s -type f'
-"                           \ }
-"           else
-"               let g:ctrlp_user_command = {
-"                           \ 'types': {
-"                           \ 1: ['.git', 'cd %s && git ls-files -oc --exclude-standard'],
-"                           \ 2: ['.hg', 'hg --cwd %s status -numac -I . $(hg root)'],
-"                           \ },
-"                           \ 'fallback': 'dir %s /-n /b /s /a-d'
-"                           \ }
-"           endif
 "       endif
 "   endfunction
 "   call s:update_ctrlp_command()
@@ -165,7 +175,7 @@ Plug 'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
 "   "vim help
 "   nnoremap <Leader>ph :CtrlPHelp<cr>
 
- " vim-easymotion {1
+" vim-easymotion {1
 Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
             \ '<Plug>(easymotion-linebackward)','<Plug>(easymotion-overwin-w)' ]}
   map W <Plug>(easymotion-lineforward)

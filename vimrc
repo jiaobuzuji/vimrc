@@ -25,9 +25,9 @@ call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
 
 call plug#end() " All of your Plugins must be added before the following line
 
-" end of config
 filetype plugin indent on
 
+" end of config
 colorscheme desert
 " colorscheme ayu
 " colorscheme molokai
