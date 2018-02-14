@@ -22,6 +22,7 @@ call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
   source $VIMFILES/rc/jump.vim
   source $VIMFILES/rc/help.vim
   source $VIMFILES/rc/edit.vim
+  source $VIMFILES/rc/complete.vim
 
 call plug#end() " All of your Plugins must be added before the following line
 

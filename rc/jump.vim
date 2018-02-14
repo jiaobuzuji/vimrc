@@ -44,7 +44,7 @@ set mps+=":"
 
 Plug 'Shougo/denite.nvim' " {1
 Plug 'Shougo/neomru.vim'
-  autocmd  misc_group VimEnter * source $VIMFILES/rc/denite.vim
+  autocmd  misc_group VimEnter * silent! source $VIMFILES/rc/denite.vim
   "keymapping for denite
   nnoremap <c-p> :Denite file_rec<cr>
   nnoremap <Leader><Leader> :Denite file_rec<cr>
