@@ -16,4 +16,5 @@ else
 endif
 
 source $VIMRUNTIME/delmenu.vim
+set pyxversion=3
 

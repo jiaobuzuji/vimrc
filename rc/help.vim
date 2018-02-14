@@ -32,7 +32,7 @@ Plug 'mhinz/vim-startify' " {1
 
   " Open startify windows
   nnoremap <Leader>bh :Startify<cr>
-  autocmd misc_group FileType startify setlocal buftype=
+  " autocmd misc_group FileType startify setlocal buftype=nofile
   " Session save 
   nnoremap <Leader>ss :SSave<cr>
   " Session load

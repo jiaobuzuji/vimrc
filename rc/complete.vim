@@ -75,7 +75,6 @@ Plug 'Shougo/deoplete.nvim', { 'on': [] } " {1
 Plug 'zchee/deoplete-clang',{'for':['c', 'cpp']}
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-  set pyxversion=3
   let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'deoplete.nvim')
   if te#env#IsUnix()
     let g:deoplete#sources#clang#libclang_path='/usr/local/lib/libclang.so'
@@ -107,16 +106,13 @@ Plug 'roxma/vim-hug-neovim-rpc'
   "load all source
   "let g:deoplete#sources._ = []
 
-" Plug 'SirVer/ultisnips', { 'on': [] } " {1
-" " Plug 'tracyone/snippets', { 'on': [] }
-" if  te#env#SupportPy2()
-"     let g:UltiSnipsUsePythonVersion = 2
-" else
-"     let g:UltiSnipsUsePythonVersion = 3 
-" endif
-" let g:UltiSnipsExpandTrigger='<c-j>'
-" let g:UltiSnipsListSnippets ='<c-tab>'
-" let g:UltiSnipsJumpForwardTrigge='<c-j>'
-" let g:UltiSnipsJumpBackwardTrigge='<c-k>'
-" let g:UltiSnipsSnippetDirectories=['bundle/snippets/ultisnips']
-" let g:UltiSnipsSnippetsDir=g:vinux_plugin_dir.cur_val.'/snippets'
+Plug 'SirVer/ultisnips', { 'on': [] } " {1
+" Plug 'tracyone/snippets', { 'on': [] }
+  let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'ultisnips')
+  let g:UltiSnipsUsePythonVersion = 3 "python version
+  let g:UltiSnipsExpandTrigger='<c-j>'
+  let g:UltiSnipsListSnippets ='<c-tab>'
+  let g:UltiSnipsJumpForwardTrigge='<c-j>'
+  let g:UltiSnipsJumpBackwardTrigge='<c-k>'
+  let g:UltiSnipsSnippetDirectories=['bundle/snippets/ultisnips']
+  let g:UltiSnipsSnippetsDir=$VIMFILES.'bundle/snippets'
