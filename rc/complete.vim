@@ -72,31 +72,31 @@
 "   let g:ycm_global_ycm_extra_conf = g:vinux_plugin_dir.cur_val.'/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 Plug 'Shougo/deoplete.nvim', { 'on': [] } " {1
-Plug 'zchee/deoplete-clang',{'for':['c', 'cpp']}
+" Plug 'zchee/deoplete-clang',{'for':['c', 'cpp']}
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
   let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'deoplete.nvim')
-  if te#env#IsUnix()
-    let g:deoplete#sources#clang#libclang_path='/usr/local/lib/libclang.so'
-  endif
+  " if te#env#IsUnix()
+  "   let g:deoplete#sources#clang#libclang_path='/usr/local/lib/libclang.so'
+  " endif
   let g:deoplete#enable_at_startup = 1
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
-  let g:deoplete#sources#clang#flags=[]
-  function! s:AddCFlags(dir)
-    let l:dir=a:dir.'/'
-    if strlen(a:dir) == 0
-      let l:dir=getcwd().'/'
-    endif
-    if empty(glob(l:dir.'.clang_complete'))
-      return 1 
-    else
-      for s:line in readfile(l:dir.'.clang_complete', '')
-        call add(g:deoplete#sources#clang#flags,matchstr(s:line,"\\v[^']+"))
-      endfor
-    endif
-    return 0
-  endfunction
-  call s:AddCFlags('')
+  " let g:deoplete#sources#clang#flags=[]
+  " function! s:AddCFlags(dir)
+  "   let l:dir=a:dir.'/'
+  "   if strlen(a:dir) == 0
+  "     let l:dir=getcwd().'/'
+  "   endif
+  "   if empty(glob(l:dir.'.clang_complete'))
+  "     return 1 
+  "   else
+  "     for s:line in readfile(l:dir.'.clang_complete', '')
+  "       call add(g:deoplete#sources#clang#flags,matchstr(s:line,"\\v[^']+"))
+  "     endfor
+  "   endif
+  "   return 0
+  " endfunction
+  " call s:AddCFlags('')
   "let g:deoplete#omni#functions = {}
   "let g:deoplete#omni#functions.zsh = ['zsh_completion#Complete']
   "let g:deoplete#omni_patterns = {}
@@ -106,13 +106,15 @@ Plug 'roxma/vim-hug-neovim-rpc'
   "load all source
   "let g:deoplete#sources._ = []
 
-Plug 'SirVer/ultisnips', { 'on': [] } " {1
-" Plug 'tracyone/snippets', { 'on': [] }
-  let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'ultisnips')
-  let g:UltiSnipsUsePythonVersion = 3 "python version
-  let g:UltiSnipsExpandTrigger='<c-j>'
-  let g:UltiSnipsListSnippets ='<c-tab>'
-  let g:UltiSnipsJumpForwardTrigge='<c-j>'
-  let g:UltiSnipsJumpBackwardTrigge='<c-k>'
-  let g:UltiSnipsSnippetDirectories=['bundle/snippets/ultisnips']
-  let g:UltiSnipsSnippetsDir=$VIMFILES.'bundle/snippets'
+" Plug 'SirVer/ultisnips', { 'on': [] } " {1
+" Plug 'honza/vim-snippets', { 'on': [] }
+" " Plug 'tracyone/snippets', { 'on': [] }
+"   let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'ultisnips')
+"   let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'vim-snippets')
+"   let g:UltiSnipsUsePythonVersion = 3 "python version
+"   let g:UltiSnipsExpandTrigger='<c-j>'
+"   let g:UltiSnipsListSnippets ='<c-tab>'
+"   let g:UltiSnipsJumpForwardTrigge='<c-j>'
+"   let g:UltiSnipsJumpBackwardTrigge='<c-k>'
+"   let g:UltiSnipsSnippetDirectories=['bundle/snippets/ultisnips']
+"   let g:UltiSnipsSnippetsDir=$VIMFILES.'bundle/snippets'
