@@ -197,8 +197,7 @@ nnoremap <Leader>ge :sp .git/config<cr>
 " fallback option
 Plug 'tpope/vim-fugitive' " {1
 Plug 'gregsexton/gitv', { 'on': 'Gitv' }
-Plug 'airblade/vim-gitgutter', { 'on': [] }
-  let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'vim-gitgutter')
+Plug 'airblade/vim-gitgutter',
   let g:fugitive_no_maps=0
   nnoremap <F3> :only<cr>:Gstatus<cr>
   " Open git status window
