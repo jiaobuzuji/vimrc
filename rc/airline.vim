@@ -36,18 +36,18 @@ let g:airline_highlighting_cache = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 
 
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
+" if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+" endif
 
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.maxlinenr = '☰'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.crypt = '🔒'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.maxlinenr = '☰'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.spell = 'Ꞩ'
+" let g:airline_symbols.notexists = '∄'
+" let g:airline_symbols.whitespace = 'Ξ'
+" let g:airline_symbols.crypt = '🔒'
 set noshowmode
 
 " function! Airline_setting()
@@ -66,7 +66,7 @@ set noshowmode
 "   endif
 " endfunction
 " "https://github.com/vim-airline/vim-airline/issues/399
-" autocmd misc_group BufDelete * call airline#extensions#tabline#buflist#invalidate()
+autocmd misc_group BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 " call te#feat#register_vim_enter_setting(function('Airline_setting'))
 " }}}
