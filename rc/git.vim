@@ -4,6 +4,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
+" git config -e
+nnoremap <Leader>ge :sp .git/config<cr>
+
 " Plug 'lambdalisue/gina.vim' " {1
 "   nnoremap <F3> :Gina status<cr>
 "   " Open git status window
@@ -194,6 +197,8 @@
 " fallback option
 Plug 'tpope/vim-fugitive' " {1
 Plug 'gregsexton/gitv', { 'on': 'Gitv' }
+Plug 'airblade/vim-gitgutter', { 'on': [] }
+  let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'vim-gitgutter')
   let g:fugitive_no_maps=0
   nnoremap <F3> :only<cr>:Gstatus<cr>
   " Open git status window
@@ -203,44 +208,33 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
   nnoremap <Leader>gL :Gitv! --all<cr>
   " Open git log(file mode)
   vnoremap <leader>gL :Gitv! --all<cr>
+  nnoremap <Leader>gl :Gitv<cr>
+  " nnoremap <Leader>gl :call te#git#show_log(".")<cr>
   " Open git blame windows
   nnoremap <Leader>gb :Gblame<cr>
   " git diff current file (vimdiff)
   nnoremap <Leader>gd :Gdiff<cr>
   " git cd
   nnoremap <Leader>gc :Gcd<cr>
-  " Open github url
-  nnoremap <Leader>gh :call te#git#git_browse()<cr>
-
-" nnoremap <Leader>gl :call te#git#show_log(".")<cr>
-Plug 'jaxbot/github-issues.vim', { 'on': 'Gissue' }
-Plug 'rhysd/github-complete.vim',{'for': ['gitcommit', 'markdown']}
-Plug 'airblade/vim-gitgutter', { 'on': [] }
-call te#feat#register_vim_plug_insert_setting(['GitGutterEnable'], 
-            \ ['vim-gitgutter'])
-
-" " list git issue
-" nnoremap <Leader>gi :silent! Gissue<cr>
-" " create new github issue
-" nnoremap <Leader>ga :silent! Giadd<cr>
-" " git merge
-" nnoremap <Leader>gm :call te#git#git_merge()<cr>
-" " arhcive vim config.
-" nnoremap <leader>gA :call te#git#archive_my_vim_cfg($VIMFILES,'vim_config')<cr>
-" " archive current git repo with default name
-" nnoremap <leader>gC :call te#git#archive_my_vim_cfg('.','')<cr>
-" let g:gissues_lazy_load = 1
-" let g:gissues_async_omni = 1
-" if filereadable($VIMFILES.'/.github_token')
-"     let g:github_access_token = readfile($VIMFILES.'/.github_token', '')[0]
-" endif
-" " git push origin master
-" nnoremap <Leader>gp :call te#git#GitPush("heads")<cr>
-" " git push to gerrit
-" nnoremap <Leader>gg :call te#git#GitPush("for")<cr>
-" " git fetch all
-" nnoremap <Leader>gf :call te#utils#run_command('git fetch --all')<cr>
-" " git config -e
-" nnoremap <Leader>ge :sp .git/config<cr>
+  " git merge
+  nnoremap <Leader>gm :call te#git#git_merge()<cr>
+  " git push origin master
+  nnoremap <Leader>gp :call te#git#GitPush("heads")<cr>
+  " git push to gerrit
+  nnoremap <Leader>gg :call te#git#GitPush("for")<cr>
+  " git fetch all
+  nnoremap <Leader>gf :call te#utils#run_command('git fetch --all')<cr>
 
 
+" Plug 'jaxbot/github-issues.vim', { 'on': 'Gissue' } " {1
+  " let g:gissues_lazy_load = 1
+  " let g:gissues_async_omni = 1
+  " " list git issue
+  " nnoremap <Leader>gi :silent! Gissue<cr>
+  " " create new github issue
+  " nnoremap <Leader>ga :silent! Giadd<cr>
+
+Plug 'rhysd/github-complete.vim',{'for': ['gitcommit', 'markdown']} " {1
+  " if filereadable($VIMFILES.'/.github_token')
+  "     let g:github_access_token = readfile($VIMFILES.'/.github_token', '')[0]
+  " endif

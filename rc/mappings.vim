@@ -45,7 +45,7 @@ vnoremap [p "0p
 nnoremap Y y$
 
 " Insert new line in normal mode
-nnoremap tt o<c-[>0Dk
+nnoremap tt o<c-[>0"6Dk
 
 " nnoremap <silent> <BS> <C-o>
 
