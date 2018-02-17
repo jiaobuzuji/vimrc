@@ -4,8 +4,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
-" misc_group {1
-augroup misc_group
+augroup misc_group " {1
   autocmd!
   autocmd GUIEnter * call te#tools#max_win()
   autocmd CmdwinEnter * set ft= | noremap <buffer> q :q<cr> | nmap <buffer><silent> <cr> <Enter>
@@ -15,8 +14,7 @@ augroup misc_group
   "             \ endif "jump to last position last open in vim
 augroup END
 
-" filetype_group {1
-augroup filetype_group
+augroup filetype_group " {1
   autocmd!
   " RTL files
   autocmd BufRead,BufNewFile *.xdc,*.sdc setlocal filetype=javascript
