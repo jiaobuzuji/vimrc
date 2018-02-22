@@ -25,8 +25,9 @@ call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
   source $VIMFILES/rc/complete.vim
   source $VIMFILES/rc/markdown.vim
   source $VIMFILES/rc/git.vim
-  source $VIMFILES/rc/writing.vim
+  " source $VIMFILES/rc/writing.vim
   source $VIMFILES/rc/airline.vim
+  source $VIMFILES/rc/tools.vim
 call plug#end() " All of your Plugins must be added before the following line
 
 filetype plugin indent on
