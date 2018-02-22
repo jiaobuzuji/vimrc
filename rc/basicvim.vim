@@ -18,3 +18,6 @@ endif
 source $VIMRUNTIME/delmenu.vim
 set pyxversion=3
 
+if has('win64') || has('win32')
+ let g:python3_host_prog = "D:\\Program\\Python36-32\\python.exe"
+endif
