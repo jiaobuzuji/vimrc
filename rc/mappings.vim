@@ -40,7 +40,7 @@ inoremap f<Space>     f
 
 " current Date & Time
 nnoremap <Leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-inoremap <Leader>dt <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+" inoremap <Leader>dt <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
 " always use "0" register
 vnoremap [p "0p
