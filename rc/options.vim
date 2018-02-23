@@ -212,6 +212,7 @@ endif
 " 27 various {1
 set sessionoptions-=folds
 set sessionoptions-=options
+set sessionoptions-=buffers
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 
