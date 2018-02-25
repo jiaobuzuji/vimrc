@@ -80,7 +80,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
   "   let g:deoplete#sources#clang#libclang_path='/usr/local/lib/libclang.so'
   " endif
   let g:deoplete#enable_at_startup = 1
-  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
+  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
   " let g:deoplete#sources#clang#flags=[]
   " function! s:AddCFlags(dir)
   "   let l:dir=a:dir.'/'
@@ -97,7 +97,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
   "   return 0
   " endfunction
   " call s:AddCFlags('')
-  let g:deoplete#omni#functions = {}
+  "let g:deoplete#omni#functions = {}
   "let g:deoplete#omni#functions.zsh = ['zsh_completion#Complete']
   "let g:deoplete#omni_patterns = {}
   "let g:deoplete#omni_patterns.zsh = '[^\t ]\+'
