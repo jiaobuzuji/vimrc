@@ -97,7 +97,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
   "   return 0
   " endfunction
   " call s:AddCFlags('')
-  "let g:deoplete#omni#functions = {}
+  let g:deoplete#omni#functions = {}
   "let g:deoplete#omni#functions.zsh = ['zsh_completion#Complete']
   "let g:deoplete#omni_patterns = {}
   "let g:deoplete#omni_patterns.zsh = '[^\t ]\+'
