@@ -30,7 +30,7 @@ if executable('rg')
   " For ripgrep
   " Note: It is slower than ag
   call denite#custom#var('file_rec', 'command',
-        \ ['rg', '--hidden', '--files', '--glob', '!.git', '--glob', '']
+        \ ['rg', '--hidden', '--files', '--glob', '!.svn',  '--glob', '!.git', '--glob', '']
         \ )
 elseif executable('ag')
   " Change file_rec command.
