@@ -17,7 +17,7 @@ augroup END
 augroup filetype_group " {1
   autocmd!
   " RTL files
-  autocmd BufRead,BufNewFile *.ucf,*.xdc,*.sdc setlocal filetype=perl
+  autocmd BufRead,BufNewFile *.ucf,*.xdc, setlocal filetype=sdc
   autocmd FileType verilog,systemverilog setlocal foldmethod=indent
 
   autocmd BufRead,BufNewFile *.make,*.mk setlocal filetype=make
