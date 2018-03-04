@@ -1,6 +1,6 @@
 " Vim Jump
-" Author    jiaobuzuji,jiaobuzuji@163.com
-" Github    https://github.com/jiaobuzuji
+" Author:   jiaobuzuji,jiaobuzuji@163.com
+" Github:   https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 

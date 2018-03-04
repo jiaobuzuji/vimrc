@@ -1,6 +1,6 @@
 " Vimrc
-" Author    jiaobuzuji,jiaobuzuji@163.com
-" Github    https://github.com/jiaobuzuji
+" Author:   jiaobuzuji,jiaobuzuji@163.com
+" Github:   https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
