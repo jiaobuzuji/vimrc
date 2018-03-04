@@ -9,9 +9,9 @@ augroup misc_group " {1
   autocmd GUIEnter * call te#tools#max_win()
   autocmd CmdwinEnter * set ft= | noremap <buffer> q :q<cr> | nmap <buffer><silent> <cr> <Enter>
   autocmd VimResized * wincmd = 
-  " autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
-  "             \ exe "normal! g'\"" |
-  "             \ endif "jump to last position last open in vim
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
+              \ exe "normal! g'\"" |
+              \ endif "jump to last position last open in vim
 augroup END
 
 augroup filetype_group " {1
