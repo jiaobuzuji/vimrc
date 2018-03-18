@@ -4,17 +4,19 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
-" YouCompleteMe {1
+" " YouCompleteMe {1
 " if te#env#IsUnix()
 "     Plug 'Valloric/YouCompleteMe', { 'on': [], 'commit': '32f1eae9cb8b8c7793f632fd24b2289839bf768e' }
 " elseif te#env#IsWin32()
-"     Plug 'snakeleon/YouCompleteMe-x86', { 'on': [] }
+"     Plug 'snakeleon/YouCompleteMe-x86', { 'on': [], 'as': 'YouCompleteMe' }
 " else
-"     Plug 'snakeleon/YouCompleteMe-x64', { 'on': [] }
+"     Plug 'snakeleon/YouCompleteMe-x64', { 'on': [], 'as': 'YouCompleteMe' }
 " endif
 " Plug 'tenfyzhong/CompleteParameter.vim', { 'on': [] }
 "   " generate .ycm_extra_conf.py for current directory
 "   " lazyload ultisnips and YouCompleteMe
+"   let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'YouCompleteMe')
+"   let g:plugins_lazyload_list = add(g:plugins_lazyload_list,'CompleteParameter.vim')
 
 "   " jume to definition (YCM)
 "   function! s:enable_ycm()
@@ -69,7 +71,7 @@
 "         \ 'infolog' : 1,
 "         \ 'mail' : 1
 "         \}
-"   let g:ycm_global_ycm_extra_conf = g:vinux_plugin_dir.cur_val.'/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"   let g:ycm_global_ycm_extra_conf = '$VIMFILES/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 Plug 'Shougo/deoplete.nvim', { 'on': [] } " {1
 " Plug 'zchee/deoplete-clang',{'for':['c', 'cpp']}
