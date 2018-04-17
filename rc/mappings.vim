@@ -80,8 +80,8 @@ nnoremap <Leader>mj :m .+1<CR>==
 nnoremap <leader>mk :m .-2<CR>==
 
 " Using <Plug> instead of
-" vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-" vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 
 " copy,paste and cut 
 nnoremap <S-Insert> "+gP

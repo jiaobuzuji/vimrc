@@ -43,15 +43,15 @@ Plug 'osyo-manga/vim-over',{'on': 'OverCommandLine'} " {1
 "   let g:incsearch#auto_nohlsearch = 1
 "   map n  <Plug>(incsearch-nohl-n)zz
 "   map N  <Plug>(incsearch-nohl-N)zz
-Plug 'haya14busa/vim-asterisk' " {1
-  " map *   <Plug>(incsearch-nohl)<Plug>(asterisk-*)
-  " map g*  <Plug>(incsearch-nohl)<Plug>(asterisk-g*)
-  " map #   <Plug>(incsearch-nohl)<Plug>(asterisk-#)
-  " map g#  <Plug>(incsearch-nohl)<Plug>(asterisk-g#)
-  map *   <Plug>(asterisk-*)
-  map g*  <Plug>(asterisk-g*)
-  map #   <Plug>(asterisk-#)
-  map g#  <Plug>(asterisk-g#)
+" Plug 'haya14busa/vim-asterisk' " {1
+"   " map *   <Plug>(incsearch-nohl)<Plug>(asterisk-*)
+"   " map g*  <Plug>(incsearch-nohl)<Plug>(asterisk-g*)
+"   " map #   <Plug>(incsearch-nohl)<Plug>(asterisk-#)
+"   " map g#  <Plug>(incsearch-nohl)<Plug>(asterisk-g#)
+"   map *   <Plug>(asterisk-*)
+"   map g*  <Plug>(asterisk-g*)
+"   map #   <Plug>(asterisk-#)
+"   map g#  <Plug>(asterisk-g#)
 
 Plug 'mbbill/undotree',  { 'on': 'UndotreeToggle' } " {1
   nnoremap <leader>tu :UndotreeToggle<cr>
