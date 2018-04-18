@@ -28,7 +28,7 @@ set lazyredraw  " Don't update the display while executing macros
 " set number	" show the line number for each line
 set relativenumber " show the relative line number for each line
 set cmdheight=1  "number of lines used for the command-line
-"set nowrap   "don't auto linefeed
+set nowrap   "don't auto linefeed
 "set linebreak "wrap long lines at a character in 'breakat'
 
 "  5 syntax, highlighting and spelling {1
