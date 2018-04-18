@@ -28,15 +28,15 @@ cnoremap j<Space>     j
 cnoremap <expr> j
       \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
 
-" map ee to Save Current File
+" map ff to Save Current File
 "in terminal ctrl-s is used to stop printf..
 " noremap <C-S>	:call te#utils#SaveFiles()<cr>
 " vnoremap <C-S>	<C-C>:call te#utils#SaveFiles()<cr>
 " inoremap <C-S>	<C-O>:call te#utils#SaveFiles()<cr>
-nnoremap ee	  :update<cr>
-vnoremap ee	  <C-C>:update<cr>
-inoremap ee	  <C-[>:update<cr>
-inoremap e<Space>     e
+nnoremap ff	  :update<cr>
+vnoremap ff	  <C-C>:update<cr>
+inoremap ff	  <C-[>:update<cr>
+inoremap f<Space>     f
 
 " current Date & Time
 nnoremap <Leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
