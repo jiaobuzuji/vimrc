@@ -19,12 +19,12 @@ source $VIMFILES/rc/mappings.vim
 call plug#begin($VIMFILES.'/bundle') " 'junegunn/vim-plug'
   source $VIMFILES/rc/gui.vim
   source $VIMFILES/rc/basic.vim
+  source $VIMFILES/rc/git.vim
   source $VIMFILES/rc/jump.vim
   source $VIMFILES/rc/help.vim
   source $VIMFILES/rc/edit.vim
   source $VIMFILES/rc/complete.vim
   source $VIMFILES/rc/markdown.vim
-  source $VIMFILES/rc/git.vim
   " source $VIMFILES/rc/writing.vim
   source $VIMFILES/rc/airline.vim
   source $VIMFILES/rc/tools.vim
