@@ -57,8 +57,10 @@ Plug 'mbbill/undotree',  { 'on': 'UndotreeToggle' } " {1
   nnoremap <leader>tu :UndotreeToggle<cr>
   let g:undotree_WindowLayout=2
   let g:undotree_DiffpanelHeight=8
+  let g:undotree_SetFocusWhenToggle=1
   set undofile undodir=$VIMFILES/undodir/
   autocmd misc_group BufWritePre $VIMFILES/undodir/* set noundofile
+  autocmd filetype_group FileType undotree setlocal rnu
 
 Plug 'tweekmonster/spellrotate.vim', {'on': ['<Plug>(SpellRotateForward)']} " {1
   nmap <silent> <leader>zn <Plug>(SpellRotateForward)
