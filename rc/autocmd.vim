@@ -45,7 +45,7 @@ augroup filetype_group " {1
   autocmd FileType vimcalc,man setlocal nonu nornu nofoldenable | imap <buffer> <c-d> :q<cr>
               \ | nmap <buffer> q :bdelete<cr>
 
-  autocmd FileType markdown setlocal wrap
+  autocmd FileType markdown setlocal wrap tw=0
 augroup END
 
 augroup lazy_load_group " {1
