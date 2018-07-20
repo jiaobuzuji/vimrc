@@ -32,7 +32,7 @@ set nowrap   "don't auto linefeed
 "set linebreak "wrap long lines at a character in 'breakat'
 
 "  5 syntax, highlighting and spelling {1
-" set cursorline " highlight the screen line of the cursor
+set cursorline " highlight the screen line of the cursor
 " set cursorcolumn " Don't highlight the screen column of the cursor
 " set spell          " Spell checking on
 

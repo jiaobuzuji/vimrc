@@ -6,7 +6,6 @@
 
 " Gui releate {1
 if te#env#IsGui()
-  set cursorline " highlight the screen line of the cursor
   set spell          " Spell checking on
 
   " Font setting {2
