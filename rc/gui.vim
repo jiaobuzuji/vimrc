@@ -57,8 +57,7 @@ if te#env#IsGui()
   " }
 
 else
-  " Disable highlight, Disable spell
-  set nocul novb nospell
+  set novb nospell " Disable bell, Disable spell
   set termguicolors     " enable true colors support
   set t_vb=
   set t_ut=
