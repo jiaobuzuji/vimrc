@@ -11,7 +11,7 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle','NERDTreeFind'] } " {1
   let g:NERDTreeWinSize='30'
   let g:NERDTreeShowBookmarks=1
   let g:NERDTreeChDirMode=2
-  let g:NERDTreeQuitOnOpen=1
+  let g:NERDTreeQuitOnOpen=0
   let g:NERDTreeMouseMode=2
   " Open nerd tree
   nnoremap <F12> :NERDTreeToggle .<CR>
