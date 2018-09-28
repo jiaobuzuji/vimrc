@@ -11,7 +11,7 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle','NERDTreeFind'] } " {1
   let g:NERDTreeWinSize='30'
   let g:NERDTreeShowBookmarks=1
   let g:NERDTreeChDirMode=2
-  let g:NERDTreeQuitOnOpen=0
+  let g:NERDTreeQuitOnOpen=1
   let g:NERDTreeMouseMode=2
   " Open nerd tree
   nnoremap <F12> :NERDTreeToggle .<CR>
@@ -20,6 +20,8 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle','NERDTreeFind'] } " {1
   nnoremap <leader>nf :NERDTreeFind<CR>
   "map <2-LeftMouse>  *N "double click highlight the current cursor word
   inoremap <F12> <c-[>:NERDTreeToggle<CR>
+
+  nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
 Plug 'majutsushi/tagbar' " {1
   let g:tagbar_left=0
