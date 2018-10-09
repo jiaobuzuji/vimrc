@@ -227,7 +227,7 @@ let g:t_bool=v:t_bool
 let g:t_none=v:t_none
 let g:t_job=v:t_job
 let g:t_channel=v:t_channel
-set termkey=<s-n>
+" set termkey=<s-n>
 
 " TODO {1
 " if te#env#IsVim8()
