@@ -121,8 +121,8 @@ set selection=inclusive  ""old", "inclusive" or "exclusive"; how selecting text 
 
 " 14 editing text {1
 set showmatch "when inserting a bracket, briefly jump to its match
-set matchtime=2  
-set textwidth=80
+set matchtime=2
+set textwidth=0 "80
 set backspace=indent,eol,start  "specifies what <BS>, CTRL-W, etc. can do in Insert mode
 
 " 15 tabs and indenting {1
