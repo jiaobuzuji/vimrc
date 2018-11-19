@@ -93,6 +93,10 @@ inoremap <c-v>	    <C-o>"+gp
 " nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
 nnoremap <c-F7> :cd %:h<cr> 
 
+" verilog instance {1
+vnoremap <silent> <c-F3> :s#^\s\+\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\+\]\s*\)\?#    .<CR>
+vnoremap <silent> <c-F4> :s#\.\(\<.\+\>\)\(\s*\)#.\1\2(\1\2)<CR>
+
 " Move cursor {1
 " move cursor in Insert mode
 call te#meta#map('inoremap','h','<Left>')
