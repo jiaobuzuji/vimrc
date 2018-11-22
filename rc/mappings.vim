@@ -94,7 +94,7 @@ inoremap <c-v>	    <C-o>"+gp
 nnoremap <c-F7> :cd %:h<cr> 
 
 " verilog instance {1
-vnoremap <silent> <c-F3> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\+\]\s*\)\?#.<CR>gv:s#^\s*\(\/\/.*\)#    \1<CR>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<CR>
+vnoremap <silent> <c-F4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\+\]\s*\)\?#.<CR>gv:s#^\s*\(\/\/.*\)#    \1<CR>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<CR>
 
 " Move cursor {1
 " move cursor in Insert mode
