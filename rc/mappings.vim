@@ -93,6 +93,10 @@ inoremap <c-v>	    <C-o>"+gp
 " nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
 nnoremap <c-F7> :cd %:h<cr> 
 
+"replace
+nnoremap ss :%s/<C-R>//
+vnoremap ss :s/<C-R>//
+
 " verilog instance {1
 vnoremap <silent> <c-F4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<CR>gv:s#^\s*\(\/\/.*\)#    \1#e<CR>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<CR>
 

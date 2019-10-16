@@ -33,11 +33,11 @@ Plug 'junegunn/vim-easy-align',{'on': [ '<Plug>(EasyAlign)', '<Plug>(LiveEasyAli
   endif
   let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
-Plug 'osyo-manga/vim-over',{'on': 'OverCommandLine'} " {1
-  nnoremap <c-h> :OverCommandLine<cr>:%s/<C-R>=expand("<cword>")<cr>/
-  vnoremap <c-h> :OverCommandLine<cr>:<c-u>%s/<C-R>=getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]-1]<cr>/
-  nnoremap ss :OverCommandLine<cr>%s//<left>
-  "vnoremap : :OverCommandLine<cr>s//<left>
+" Plug 'osyo-manga/vim-over',{'on': 'OverCommandLine'} " {1
+  " nnoremap <c-h> :OverCommandLine<cr>:%s/<C-R>=expand("<cword>")<cr>/
+  " vnoremap <c-h> :OverCommandLine<cr>:<c-u>%s/<C-R>=getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]-1]<cr>/
+  " nnoremap ss :OverCommandLine<cr>%s//<left>
+  " "vnoremap : :OverCommandLine<cr>s//<left>
 
 " Plug 'haya14busa/incsearch.vim' " {1
 "   let g:incsearch#auto_nohlsearch = 1
