@@ -123,7 +123,7 @@ nnoremap <Leader>wd :q<cr>
 " the information of plugins, then performs the task.
 command! PackUpdate source $MYVIMRC | call bundle#PackInit() | call minpac#update()
 command! PackClean  source $MYVIMRC | call bundle#PackInit() | call minpac#clean()
-command! PackStatus packadd minpac | call minpac#status()
+command! PackStatus packadd minpac | call minpac#init() | call minpac#status()
 
 " =======================================================
 filetype plugin indent on
