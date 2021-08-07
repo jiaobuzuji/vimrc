@@ -1,0 +1,132 @@
+set nocompatible
+
+" Allow backspacing over everything in insert mode.
+set backspace=indent,eol,start
+
+set history=200		" keep 200 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set wildmenu		" display completion matches in a status line
+
+set ttimeout		" time out for key codes
+set ttimeoutlen=100	" wait up to 100ms after Esc for special key
+
+" Show @@@ in the last line if it is truncated.
+set display=truncate
+
+" Show a few lines of context around the cursor.  Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+set incsearch
+
+" Do not recognize octal numbers for Ctrl-A and Ctrl-X, most users find it
+" confusing.
+set nrformats-=octal
+
+set guioptions-=t
+set nolangremap
+
+
+" Don't use Ex mode, use Q for formatting.
+" Revert with ":unmap Q".
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+" Revert with ":iunmap <C-U>".
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine.  By enabling it you
+" can position the cursor, Visually select and scroll with the mouse.
+" Only xterm can grab the mouse events when using the shift key, for other
+" terminals use ":", select text and press Esc.
+if &term =~ 'xterm'
+  set mouse=a
+else
+  set mouse=nvi
+endif
+
+
+" Put these in an autocmd group, so that you can revert them with:
+" ":augroup vimStartup | au! | augroup END"
+augroup vimStartup
+  au!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid, when inside an event handler
+  " (happens when dropping a file on gvim) and for a commit message (it's
+  " likely a different one than last time).
+  autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+        \ |   exe "normal! g`\""
+        \ | endif
+
+augroup END
+
+" I like highlighting strings inside C comments.
+" Revert with ":unlet c_comment_strings".
+let c_comment_strings=1
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+        \ | wincmd p | diffthis
+endif
+
+" Options
+se nowrap hls rnu ic scs cf
+se sw=2 ts=2 sts=2 et sta sr si ci
+
+" leader key
+let g:mapleader="\<Space>"
+let g:maplocalleader=','
+
+inoremap j<space> j 
+inoremap jj <esc>
+
+inoremap v<space> v 
+nnoremap vv	  :update<cr>
+vnoremap vv	  <C-C>:update<cr>
+inoremap vv	  <C-[>:update<cr>
+
+nnoremap Y y$
+nnoremap tt o<c-[>
+
+nnoremap <Leader>/ :nohlsearch<CR>
+
+"visual mode hit tab forward indent ,hit shift-tab backward indent
+"Reselect visual block after indent/outdent.
+vnoremap <TAB>    >gv  
+vnoremap <s-TAB>  <gv 
+vnoremap <        <gv
+vnoremap >        >gv
+
+" Using <Plug> instead of
+vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+
+"replace
+nnoremap ss :%s/<C-R>//
+vnoremap ss :s/<C-R>//
+
+" multiple windows and tabs {1
+nnoremap <Leader>qa :qa<cr>
+nnoremap <Leader>wd :q<cr>
+
+" =======================================================
+" Define user commands for updating/cleaning the plugins.
+" Each of them calls PackInit() to load minpac and register
+" the information of plugins, then performs the task.
+command! PackUpdate source $MYVIMRC | call bundle#PackInit() | call minpac#update()
+command! PackClean  source $MYVIMRC | call bundle#PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
+
+" =======================================================
+filetype plugin indent on
+syntax on
+colorscheme desert
+
