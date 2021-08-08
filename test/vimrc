@@ -1,4 +1,12 @@
+" Vimrc
+" Author:   jiaobuzuji,jiaobuzuji@163.com
+" Github:   https://github.com/jiaobuzuji
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set nocompatible
+let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
+" set runtimepath^=$VIMFILES " Source vimrc at anywhere
+" set runtimepath+=$VIMFILES/after
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
@@ -128,5 +136,9 @@ command! PackStatus packadd minpac | call minpac#init() | call minpac#status()
 " =======================================================
 filetype plugin indent on
 syntax on
-colorscheme desert
+
+let g:lightline = {'colorscheme': 'jellybeans'}
+set termguicolors " use GUI colors for the terminal
+set background=dark   " "dark" or "light"; the background color brightness
+colorscheme jellybeans
 

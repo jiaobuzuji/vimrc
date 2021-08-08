@@ -12,9 +12,19 @@ function! bundle#PackInit(...) abort
   call minpac#init()
   call minpac#add(l:host . 'k-takata/minpac', {'type': 'opt'})
   " Additional plugins here.
-  call minpac#add(l:host . 'vim-airline/vim-airline')
   call minpac#add(l:host . 'mbbill/undotree')
   call minpac#add(l:host . 'scrooloose/nerdcommenter')
+  call minpac#add(l:host . 'nanotech/jellybeans.vim') " colorscheme
+  call minpac#add(l:host . 'itchyny/lightline.vim')
+ "" colorscheme
+ "call minpac#add(l:host . 'sjl/badwolf', {'type': 'opt'})
+ "call minpac#add(l:host . 'altercation/vim-colors-solarized', {'type': 'opt'})
+ "call minpac#add(l:host . 'tomasr/molokai', {'type': 'opt'})
+ "call minpac#add(l:host . 'morhetz/gruvbox', {'type': 'opt'})
+ "call minpac#add(l:host . 'NLKNguyen/papercolor-theme', {'type': 'opt'})
+ "call minpac#add(l:host . 'KabbAmine/yowish.vim', {'type': 'opt'})
+ "" status line
+ "call minpac#add(l:host . 'vim-airline/vim-airline', {'type': 'opt'})
   call minpac#add(l:host . 'yianwillis/vimcdoc', {'type': 'opt'})
 
 endfunction
