@@ -14,6 +14,7 @@ function! bundle#PackInit(...) abort
   " Additional plugins here.
   call minpac#add(l:host . 'mbbill/undotree')
   call minpac#add(l:host . 'scrooloose/nerdcommenter')
+  call minpac#add(l:host . 'scrooloose/nerdtree')
   call minpac#add(l:host . 'nanotech/jellybeans.vim') " colorscheme
   call minpac#add(l:host . 'itchyny/lightline.vim')
  "" colorscheme
