@@ -23,3 +23,9 @@
 
   nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
+"'mbbill/undotree' {1
+  nnoremap <leader>tu :UndotreeToggle<cr>
+  let g:undotree_WindowLayout=2
+  let g:undotree_DiffpanelHeight=8
+  let g:undotree_SetFocusWhenToggle=1
+  set undofile undodir=$VIMFILES/undodir/
