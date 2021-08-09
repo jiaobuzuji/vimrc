@@ -141,4 +141,7 @@ let g:lightline = {'colorscheme': 'jellybeans'}
 set termguicolors " use GUI colors for the terminal
 set background=dark   " "dark" or "light"; the background color brightness
 colorscheme jellybeans
-
+" let g:jellybeans_use_term_italics = 1
+" highlight Comment cterm=italic
+" set t_ZH=[3m
+" set t_ZR=[23m
