@@ -175,7 +175,6 @@ endfunction
 set foldtext=MyFoldText()
 
 " 17 diff mode {1
-set diffopt=vertical
 
 " 18 mapping {1
 " 19 reading and writing files {1
