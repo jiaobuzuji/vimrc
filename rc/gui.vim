@@ -1,6 +1,6 @@
 " Vim Gui : colorscheme,menu,font...
-" Author:   jiaobuzuji,jiaobuzuji@163.com
-" Github:   https://github.com/jiaobuzuji
+" Author: jiaobuzuji@163.com
+" Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
@@ -80,11 +80,17 @@ endif
 " Plug 'vim-scripts/desert256.vim' " {2
 "   set background=dark
 
-" Plug 'liuchengxu/space-vim-dark' " {2
+" Plug(l:host . 'KabbAmine/yowish.vim', {'type': 'opt'})
 " Plug 'ayu-theme/ayu-vim' " {2
 "   " let ayucolor="light"  " for light version of theme
 "   " let ayucolor="mirage" " for mirage version of theme
 "   let ayucolor="dark"   " for dark version of theme
+
+ "call minpac#add(l:host . 'sjl/badwolf', {'type': 'opt'})
+ "call minpac#add(l:host . 'altercation/vim-colors-solarized', {'type': 'opt'})
+ "call minpac#add(l:host . 'tomasr/molokai', {'type': 'opt'})
+ "call minpac#add(l:host . 'morhetz/gruvbox', {'type': 'opt'})
+ "call minpac#add(l:host . 'NLKNguyen/papercolor-theme', {'type': 'opt'})
 
 "}
 
