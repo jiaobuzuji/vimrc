@@ -70,20 +70,31 @@ function repo_sync() {
 
 # Jiaobuzuji vimrc
 repo_sync  "${REPO_PATH}" \
-            "https://${GITSRVURL}/jiaobuzuji/vimrc" \
-            "master" \
-            "vimrc.git"
+           "https://${GITSRVURL}/jiaobuzuji/vimrc" \
+           "master" \
+           "vimrc.git"
 
 rm -f "${HOME}/.vim" # remove link
 lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
-mkdir -p "${HOME}/.vim/{undodir,bundle}"
+mkdir -p ${HOME}/.vim/{undodir,bundle}
 
 # Shougo dein
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" ${HOME}/.vim/bundle
-repo_sync  "${HOME}/.vim/pack/dein/start" \
-            "https://${GITSRVURL}/Shougo/dein.vim/" \
-            "master" \
-            "dein.vim"
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${HOME}/.vim/bundle"
+repo_sync  "${HOME}/.vim/bundle/repos/${GITSRVURL}/Shougo" \
+           "https://${GITSRVURL}/Shougo/dein.vim" \
+           "master" \
+           "dein.vim"
+
+# # junegunn vim-plug
+# curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
+#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# # K-takata minpac
+# git clone --depth=1 https://github.com/ ~/.vim//
+# repo_sync  "${HOME}/.vim/pack/minpac/opt" \
+#            "https://${GITSRVURL}/k-takata/minpac" \
+#            "master" \
+#            "minpac"
 
 # # YouCompleteMe
 # repo_sync  "${HOME}/.vim/bundle" \
@@ -92,11 +103,6 @@ repo_sync  "${HOME}/.vim/pack/dein/start" \
 #             "YouCompleteMe"
 # cd  ${HOME}/.vim/bundle/YouCompleteMe
 # git submodule update --init --recursive && python3 ./install.py --clang-completer || return 1 # TODO
-
-# # junegunn vim-plug
-# curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# vim +'PlugInstall' +':q'
 
 # -----------------------------------------------------------------
 # vim:fdm=marker

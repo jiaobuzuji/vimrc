@@ -11,6 +11,9 @@ else
     set path=.,/usr/include/,$PWD/**
 endif
 
+set pyxversion=3
+
+
 "  2 moving around, searching and patterns {1
 set whichwrap=b,h,l,<,>,[,]  " list of flags specifying which commands wrap to another line
 set ignorecase  "ignore case when using a search pattern
