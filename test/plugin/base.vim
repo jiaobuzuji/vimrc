@@ -3,6 +3,9 @@
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
+"
+
+  let g:NERDSpaceDelims=1
 
 "'scrooloose/nerdtree' {1
   let g:NERDTreeShowLineNumbers=1	"show line number
