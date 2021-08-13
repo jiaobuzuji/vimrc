@@ -13,5 +13,10 @@ language ctype en_US.utf-8
 
 source $VIMRUNTIME/delmenu.vim
 
-colorscheme jellybeans
+colorscheme PaperColor
+" colorscheme gruvbox
 
+" " terminal italic
+" highlight Comment cterm=italic
+" set t_ZH=[3m
+" set t_ZR=[23m

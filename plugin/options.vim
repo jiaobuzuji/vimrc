@@ -36,6 +36,8 @@ set nowrap   "don't auto linefeed
 
 "  5 syntax, highlighting and spelling {1
 set cursorline " highlight the screen line of the cursor
+set background=dark
+set termguicolors
 " set cursorcolumn " Don't highlight the screen column of the cursor
 " set spell          " Spell checking on
 
@@ -96,6 +98,7 @@ set winminheight=0              " Windows can be 0 line high
 set guitablabel=%N\ %t%m  "do not show dir in tab
 
 "  8 terminal {1
+
 "  9 using the mouse {1
 set mouse=a "list of menu_flags for using the mouse,support all
 

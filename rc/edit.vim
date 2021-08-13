@@ -13,12 +13,6 @@ Plug 'Raimondi/delimitMate',{'on':[]} " {1
   let g:delimitMate_expand_space = 0
 
 Plug 'thinca/vim-qfreplace',{'on': 'Qfreplace'} " {1
-Plug 'scrooloose/nerdcommenter' " {1
-  let g:NERDSpaceDelims=1
-  let g:NERDMenuMode=1
-  "toggle comment
-  nmap <Leader>;; <plug>NERDCommenterComment
-  nmap <Leader>cc <plug>NERDCommenterComment
 
 Plug 'tpope/vim-surround' " {1
 Plug 'junegunn/vim-easy-align',{'on': [ '<Plug>(EasyAlign)', '<Plug>(LiveEasyAlign)' ]} " {1
