@@ -1,18 +1,22 @@
 *.swp
 *.swn
 *.swo
+.viminfo
 
 .netrwhist
 .github_token
 
 test/pack/
 pack/
-bundle/
+bundle/repos
+bundle/.cache
 autoload/plug.vim
 
 sessions/
 undodir/
 spell/
+backup/
+swap/
 
 .yank_history_v2.txt
 .easyclip
