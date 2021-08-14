@@ -4,18 +4,19 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,} fen
 
-"leader key
-let g:mapleader="\<Space>"
-let g:maplocalleader=','
-
 set timeout timeoutlen=1000 ttimeoutlen=100  " allow timing out halfway into a mapping
 
 " in mac osx please set your option key as meta key
 
-" Make something not work {1 
 " Don't use Ex mode, use Q for formatting.
 " Revert with ":unmap Q".
 noremap Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+" Revert with ":iunmap <C-U>".
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
 
 " Because TMUX, we make Ctrl-tab not work in vim
 nnoremap <silent><c-TAB> :AT<cr>

@@ -12,7 +12,7 @@ bundle/repos
 bundle/.cache
 autoload/plug.vim
 
-sessions/
+session/
 undodir/
 spell/
 backup/

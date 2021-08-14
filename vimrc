@@ -4,13 +4,18 @@
 " Date:   2021 Aug 11
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Importance
 set nocompatible
+" runtimepath
 " let $MYVIMRC=fnamemodify(expand('<sfile>'), ":p") " | echom expand('<sfile>')
 " let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
 " set runtimepath^=$VIMFILES " Source vimrc at anywhere
 " set runtimepath+=$VIMFILES/after
 let $MYVIMRC='~/.vim/vimrc' " for dein
 let $VIMFILES='~/.vim'
+"leader key
+let g:mapleader="\<Space>"
+let g:maplocalleader=','
 
 " Plugins
 let g:host = 'https://github.com.cnpmjs.org/' " mirror
@@ -32,4 +37,8 @@ call dein#end() " All of your Plugins must be added before the following line
 
 filetype plugin indent on
 syntax on
+
+" I like highlighting strings inside C comments. TODO
+" Revert with ":unlet c_comment_strings".
+let c_comment_strings=1
 

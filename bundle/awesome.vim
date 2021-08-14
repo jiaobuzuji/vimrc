@@ -5,29 +5,30 @@
 " vim:fdm=marker fmr={,} fen
 
 call dein#add(g:host.'mhinz/vim-startify') " {1
-let g:startify_session_dir = $VIMFILES .'/sessions'
-" let g:startify_list_order = [
-"             \ 'commands',
-"             \ ['   These are my sessions:'],
-"             \ 'sessions',
-"             \ ['   My most recently used files in the current directory:'],
-"             \ 'dir',
-"             \ ['   My most recently used files (Mru) :'],
-"             \ 'files',
-"             \ ]
+let g:startify_session_dir = $VIMFILES .'/session'
+let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
+" let g:startify_bookmarks = [ {'v': $VIMFILES}]
+let g:startify_files_number = 5
 let g:startify_change_to_dir = 1
-let g:startify_files_number = 5 
 let g:startify_change_to_vcs_root = 0
-let g:startify_session_sort = 1
 let g:startify_custom_header = []
+let g:startify_session_sort = 1
 let g:startify_session_persistence = 1
+let g:startify_enable_special = 0 " Show <empty buffer> and <quit>.
+" let g:startify_update_oldfiles = 1
 nnoremap <Leader>sl :Startify<cr>
 nnoremap <Leader>ss :SSave<cr>
 nnoremap <Leader>sd :SDelete<cr>
 
 
 call dein#add(g:host.'preservim/nerdtree') " {1 TODO
-" { 'on': ['NERDTreeToggle','NERDTreeFind'] } " {1
+" { 'on': ['NERDTreeToggle','NERDTreeFind'] }
 let g:NERDTreeShowLineNumbers=1 "show line number
 let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
 let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']

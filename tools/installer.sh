@@ -76,7 +76,7 @@ repo_sync  "${REPO_PATH}" \
 
 rm -f "${HOME}/.vim" # remove link
 lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
-mkdir -p "${HOME}/.vim/undodir"
+mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
 
 # Shougo dein
 # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${HOME}/.vim/bundle"
