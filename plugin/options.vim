@@ -132,8 +132,8 @@ set showmatch "when inserting a bracket, briefly jump to its match
 set matchtime=2 " tenth of a second to show a match for 'showmatch'
 set textwidth=0 "80
 set backspace=indent,eol,start  "specifies what <BS>, CTRL-W, etc. can do in Insert mode
-" set undofile
-" set undodir     =$HOME/.vim/undodir/
+set undofile " automatically save and restore undo history
+set undodir=~/.vim/undodir/ " list of directories for undo files
 set completeopt=preview,menuone,popup
 set completepopup=height:10,width:60,highlight:Pmenu,border:off
 

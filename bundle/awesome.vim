@@ -41,9 +41,21 @@ nnoremap <leader>te :NERDTreeToggle .<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
+
 call dein#add(g:host.'preservim/nerdcommenter') " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
+
+
+call dein#add(g:host.'mbbill/undotree') " {1 TODO
+" ,  { 'on': 'UndotreeToggle' }
+let g:undotree_WindowLayout=2
+let g:undotree_DiffpanelHeight=8
+let g:undotree_SetFocusWhenToggle=1
+nnoremap <leader>tu :UndotreeToggle<cr>
+" autocmd misc_group BufWritePre $VIMFILES/undodir/* set noundofile " TODO
+" autocmd filetype_group FileType undotree setlocal rnu
+
 
 " Plug 'hecal3/vim-leader-guide' " {1
 "   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>

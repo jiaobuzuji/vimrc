@@ -13,7 +13,7 @@ set nocompatible
 " set runtimepath+=$VIMFILES/after
 let $MYVIMRC='~/.vim/vimrc' " for dein
 let $VIMFILES='~/.vim'
-"leader key
+" leader key
 let g:mapleader="\<Space>"
 let g:maplocalleader=','
 
