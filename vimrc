@@ -8,11 +8,9 @@
 set nocompatible
 " runtimepath
 " let $MYVIMRC=fnamemodify(expand('<sfile>'), ":p") " | echom expand('<sfile>')
-" let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
+let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
 " set runtimepath^=$VIMFILES " Source vimrc at anywhere
 " set runtimepath+=$VIMFILES/after
-let $MYVIMRC='~/.vim/vimrc' " for dein
-let $VIMFILES='~/.vim'
 " leader key
 let g:mapleader="\<Space>"
 let g:maplocalleader=','

@@ -2,7 +2,7 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
+" vim:fdm=marker fmr={,}
 
 call dein#add(g:host.'mhinz/vim-startify') " {1
 let g:startify_session_dir = $VIMFILES .'/session'

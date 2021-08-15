@@ -2,7 +2,7 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
+" vim:fdm=marker fmr={,}
 
 " if te#env#IsWindows()
 "     set makeprg=mingw32-make
@@ -124,7 +124,7 @@ set more "pause listings when the screen is full
 
 " 13 selecting text {1
 " set clipboard=unnamed,unnamedplus "autoselect" to always put selected text on the clipboardset
-set clipboard+=unnamed
+set clipboard+=unnamed,unnamedplus
 set selection=inclusive  ""old", "inclusive" or "exclusive"; how selecting text behaves
 
 " 14 editing text {1
@@ -133,7 +133,7 @@ set matchtime=2 " tenth of a second to show a match for 'showmatch'
 set textwidth=0 "80
 set backspace=indent,eol,start  "specifies what <BS>, CTRL-W, etc. can do in Insert mode
 set undofile " automatically save and restore undo history
-set undodir=~/.vim/undodir/ " list of directories for undo files
+set undodir=$VIMFILES/undodir " list of directories for undo files " $VIMFILES/undodir/ XXX Error
 set completeopt=preview,menuone,popup
 set completepopup=height:10,width:60,highlight:Pmenu,border:off
 
