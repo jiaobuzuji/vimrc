@@ -19,7 +19,7 @@ let g:maplocalleader=','
 let g:host = 'https://github.com.cnpmjs.org/' " mirror
 set runtimepath+=$VIMFILES/bundle/repos/github.com.cnpmjs.org/Shougo/dein.vim
 call dein#begin($VIMFILES.'/bundle')
-  call dein#add($VIMFILES.'/bundle/repos/github.com.cnpmjs.org/Shougo/dein.vim')
+  call dein#add('Shougo/dein.vim',{'rtp':''})
   source $VIMFILES/bundle/colorscheme.vim
   " source $VIMFILES/bundle/statusline.vim
   source $VIMFILES/bundle/awesome.vim " miscellaneous lifechange
