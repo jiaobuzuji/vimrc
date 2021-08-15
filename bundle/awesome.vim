@@ -47,14 +47,14 @@ let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
 
 
-call dein#add(g:host.'mbbill/undotree') " {1 TODO
+call dein#add(g:host.'mbbill/undotree') " {1
 " ,  { 'on': 'UndotreeToggle' }
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
 nnoremap <leader>tu :UndotreeToggle<cr>
-" autocmd misc_group BufWritePre $VIMFILES/undodir/* set noundofile " TODO
-" autocmd filetype_group FileType undotree setlocal rnu
+autocmd BufWritePre $VIMFILES/undodir/* set noundofile
+autocmd FileType undotree setlocal rnu
 
 
 " Plug 'hecal3/vim-leader-guide' " {1
@@ -230,11 +230,6 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 "     augroup END
 "     function! s:interactive_settings()
 "     endfunction
-"     if te#env#IsWin64()
-"         let g:vimproc#dll_path=$VIMRUNTIME.'/vimproc_win64.dll'
-"     elseif te#env#IsWin32()
-"         let g:vimproc#dll_path=$VIMRUNTIME.'/vimproc_win32.dll'
-"     endif
 " endif
 " }
 

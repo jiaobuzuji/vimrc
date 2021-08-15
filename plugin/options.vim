@@ -130,10 +130,11 @@ set selection=inclusive  ""old", "inclusive" or "exclusive"; how selecting text 
 " 14 editing text {1
 set showmatch "when inserting a bracket, briefly jump to its match
 set matchtime=2 " tenth of a second to show a match for 'showmatch'
+set matchpairs+=":" " list of pairs that match for the "%" command
 set textwidth=0 "80
 set backspace=indent,eol,start  "specifies what <BS>, CTRL-W, etc. can do in Insert mode
 set undofile " automatically save and restore undo history
-set undodir=$VIMFILES/undodir " list of directories for undo files " $VIMFILES/undodir/ XXX Error
+set undodir=$VIMFILES/undodir " list of directories for undo files " $VIMFILES/undodir/ or '$VIMFILES/undodir', XXX It's Error!!
 set completeopt=preview,menuone,popup
 set completepopup=height:10,width:60,highlight:Pmenu,border:off
 

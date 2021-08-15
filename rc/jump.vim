@@ -2,14 +2,7 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
-
-" Matchit.vim {1
-"extend %
-runtime macros/matchit.vim "important 
-let b:match_ignorecase=1
-set mps+=<:>
-set mps+=":"
+" vim:fdm=marker fmr={,}
 
 " jump to somewhere:file,mru,bookmark
 " Plug 'Yggdroot/LeaderF' " {1
