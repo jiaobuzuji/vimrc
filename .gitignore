@@ -8,8 +8,7 @@
 
 test/pack/
 pack/
-bundle/repos
-bundle/.cache
+bundle/
 autoload/plug.vim
 
 session/

@@ -4,7 +4,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
-call dein#add(g:host.'mhinz/vim-startify') " {1
+Plug g:host.'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Sessions']       },
@@ -27,8 +27,7 @@ nnoremap <Leader>ss :SSave<cr>
 nnoremap <Leader>sd :SDelete<cr>
 
 
-call dein#add(g:host.'preservim/nerdtree',{'lazy':1}) " {1 TODO
-" { 'on': ['NERDTreeToggle','NERDTreeFind'] }
+Plug g:host.'preservim/nerdtree' " {1
 let g:NERDTreeShowLineNumbers=1 "show line number
 let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
 let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
@@ -42,12 +41,12 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
 
-call dein#add(g:host.'preservim/nerdcommenter',{'lazy':1}) " {1
+Plug g:host.'preservim/nerdcommenter' " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
 
 
-call dein#add(g:host.'mbbill/undotree',{'lazy':1}) " {1
+Plug g:host.'mbbill/undotree' " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1

@@ -7,4 +7,5 @@ This configuration may no be appropriate for you.
 ## Setup
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/jiaobuzuji/vimrc/master/install.sh)"
+vim --startuptime startuptime.log
 ```

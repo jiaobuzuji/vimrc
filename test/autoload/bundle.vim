@@ -40,3 +40,24 @@ endfunction
 "Plug 'scrooloose/nerdcommenter'
 "call plug#end()
 
+" " Plugins
+" let g:host = 'https://github.com.cnpmjs.org/' " mirror
+" set runtimepath+=$VIMFILES/bundle/repos/github.com.cnpmjs.org/Shougo/dein.vim
+" call dein#begin($VIMFILES.'/bundle')
+"   call dein#add(g:host.'Shougo/dein.vim',{'rtp':''})
+"   source $VIMFILES/bundle/colorscheme.vim
+"   " source $VIMFILES/bundle/statusline.vim
+"   source $VIMFILES/bundle/awesome.vim " miscellaneous lifechange
+"   " source $VIMFILES/bundle/git.vim
+"   " source $VIMFILES/bundle/jump.vim
+"   " source $VIMFILES/bundle/help.vim
+"   " source $VIMFILES/bundle/edit.vim
+"   " source $VIMFILES/bundle/complete.vim " snippet lsp
+"   " source $VIMFILES/bundle/markdown.vim
+"   " source $VIMFILES/bundle/writing.vim
+"   " source $VIMFILES/bundle/tools.vim
+" call dein#end() " All of your Plugins must be added before the following line
+" 
+" filetype plugin indent on
+" syntax on
+" 

@@ -78,16 +78,16 @@ rm -f "${HOME}/.vim" # remove link
 lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
 mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
 
-# Shougo dein
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${HOME}/.vim/bundle"
-repo_sync  "${HOME}/.vim/bundle/repos/${GITSRVURL}/Shougo" \
-           "https://${GITSRVURL}/Shougo/dein.vim" \
-           "master" \
-           "dein.vim"
+# # Shougo dein
+# # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${HOME}/.vim/bundle"
+# repo_sync  "${HOME}/.vim/bundle/repos/${GITSRVURL}/Shougo" \
+#            "https://${GITSRVURL}/Shougo/dein.vim" \
+#            "master" \
+#            "dein.vim"
 
-# # junegunn vim-plug
-# curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# junegunn vim-plug
+curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # # K-takata minpac
 # git clone --depth=1 https://github.com/ ~/.vim//
