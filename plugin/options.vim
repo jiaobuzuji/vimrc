@@ -201,5 +201,7 @@ set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 set signcolumn=number " whether to show the signcolumn
 set pyxversion=3
 
+set viminfofile=$VIMFILES/.viminfo
+
 " scriptencoding must be placed encoding
 scriptencoding utf-8
