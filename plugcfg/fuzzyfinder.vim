@@ -7,9 +7,26 @@
 Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
 Plug g:host.'junegunn/fzf.vim'
 let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
-nnoremap  <silent><Leader><Leader> :Files<cr>
-nnoremap  <silent><c-l>  :History<cr>
-nnoremap  <silent><c-j>  :Buffers<cr>
+let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup '.'
+            \ --ignore "*.[odODaA]"
+            \ --ignore "*.exe"
+            \ --ignore "*.out"
+            \ --ignore "*.hex"
+            \ --ignore "cscope*"
+            \ --ignore "*.so"
+            \ --ignore "*.dll"
+            \ --ignore ".git"
+            \ -g ""'
+let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
+nnoremap <Leader><Leader> :Files<cr>
+nnoremap <c-l>  :History<cr>
+nnoremap <c-j>  :Buffers<cr>
+nnoremap <Leader>pf :Ag<cr>
+nnoremap <Leader>pgc  :Commits<cr>
+nnoremap <Leader>ps  :Snippets<cr>
+" nnoremap  <Leader>fw :Windows<cr>
+" nnoremap  <Leader>ph :Helptags<cr>
+
 
 " Plug 'Yggdroot/LeaderF' " {1
 " Plug 'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
