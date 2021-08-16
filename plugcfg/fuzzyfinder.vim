@@ -22,9 +22,9 @@ nnoremap <Leader><Leader> :Files<cr>
 nnoremap <c-l>  :History<cr>
 nnoremap <c-j>  :Buffers<cr>
 nnoremap <Leader>pf :Ag<cr>
-nnoremap <Leader>pgc  :Commits<cr>
-nnoremap <Leader>ps  :Snippets<cr>
-" nnoremap  <Leader>fw :Windows<cr>
+nnoremap <Leader>ps :Snippets<cr>
+nnoremap <Leader>pw :Windows<cr>
+nnoremap <Leader>pgc :Commits<cr>
 " nnoremap  <Leader>ph :Helptags<cr>
 
 

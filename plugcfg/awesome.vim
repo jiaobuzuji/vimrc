@@ -58,14 +58,16 @@ nnoremap <leader>tu :UndotreeToggle<cr
 Plug g:host.'dyng/ctrlsf.vim' " {1
 let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_default_root = 'project'
-nmap <Leader>vf <Plug>CtrlSFPrompt
-vmap <Leader>vf <Plug>CtrlSFVwordPath
-vmap <Leader>vF <Plug>CtrlSFVwordExec
-nmap <Leader>vn <Plug>CtrlSFCwordPath
-nmap <Leader>vp <Plug>CtrlSFPwordPath
-" nnoremap <C-F>o :CtrlSFOpen<CR>
-" nnoremap <C-F>t :CtrlSFToggle<CR>
-" inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+let g:ctrlsf_auto_focus = {
+    \ "at" : "done",
+    \ "duration_less_than": 1000
+    \ }
+vmap <Leader>vs <Plug>CtrlSFVwordPath
+vmap <Leader>vv <Plug>CtrlSFVwordExec
+nmap <Leader>vs <Plug>CtrlSFCwordPath
+nmap <Leader>vv <Plug>CtrlSFCwordExec
+nmap <Leader>vV <Plug>CtrlSFCCwordExec
+
 
 " Plug g:host.'mhinz/vim-grepper' " {1
 " Plug 'dkprice/vim-easygrep' " {1

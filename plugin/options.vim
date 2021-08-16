@@ -158,6 +158,11 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set diffopt+=vertical
 
 " 18 mapping {1
+set timeout  " allow timing out halfway into a mapping
+set ttimeout " allow timing out halfway into a key code
+set timeoutlen=1000 " time in msec for 'timeout'
+set ttimeoutlen=100 " time in msec for 'ttimeout'
+
 " 19 reading and writing files {1
 set modeline
 set autoread   "autoread when a file is changed from the outside

@@ -2,9 +2,7 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
-
-set timeout timeoutlen=1000 ttimeoutlen=100  " allow timing out halfway into a mapping
+" vim:fdm=marker fmr={,}
 
 " in mac osx please set your option key as meta key
 
@@ -18,14 +16,14 @@ noremap Q gq
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-" Because TMUX, we make Ctrl-tab not work in vim
-nnoremap <silent><c-TAB> :AT<cr>
+" " Because TMUX, we make Ctrl-tab not work in vim
+" nnoremap <silent><c-TAB> :AT<cr>
 
 " Miscellaneous {1
 " map jj to "ESC"
 inoremap jj           <c-[>
-inoremap j<Space>     j
-cnoremap j<Space>     j
+inoremap j<Space>     j 
+cnoremap j<Space>     j 
 cnoremap <expr> j
       \ getcmdline()[getcmdpos()-2] ==# 'j' ? "\<BS>\<C-c>" : 'j'
 
@@ -37,11 +35,7 @@ cnoremap <expr> j
 nnoremap vv	  :update<cr>
 vnoremap vv	  <C-C>:update<cr>
 inoremap vv	  <C-[>:update<cr>
-" inoremap v<Space>     v
-
-" current Date & Time
-nnoremap <Leader>dt "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-" inoremap <Leader>dt <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+inoremap v<Space>     v 
 
 " always use "0" register
 vnoremap [p "0p
@@ -63,8 +57,8 @@ nnoremap <Leader>/ :nohlsearch<CR>
 
 "visual mode hit tab forward indent ,hit shift-tab backward indent
 "Reselect visual block after indent/outdent.
-vnoremap <TAB>    >gv  
-vnoremap <s-TAB>  <gv 
+vnoremap <TAB>    >gv
+vnoremap <s-TAB>  <gv
 vnoremap <        <gv
 vnoremap >        >gv
  
@@ -89,10 +83,6 @@ nnoremap <S-Insert> "+gP
 cnoremap <S-Insert>	<C-R>+
 cnoremap <C-V>	    <C-R>+
 inoremap <c-v>	    <C-o>"+gp
-
-"cd to current buffer's path
-" nnoremap <silent> <leader>fc :call te#utils#goto_cur_file(2)<cr> 
-nnoremap <c-F7> :cd %:h<cr> 
 
 "replace
 nnoremap ss :%s/<C-R>//
@@ -122,88 +112,66 @@ cnoremap   <C-X><C-A> <C-A>
 " multiple windows and tabs {1
 " Quit Vim
 nnoremap <Leader>qa :qa<cr>
-" " close all buffer
-" map <Leader>ba :bufdo bd<cr>
-
-nnoremap <leader>mw :call te#tools#max_win()<cr>
 
 " open quickfix windows
 nnoremap <leader>qf :botright copen<cr>
 nnoremap <leader>qc q:
 nnoremap <leader>qd q/
 
-" move between windows
-call te#meta#map('nnoremap','h','<C-w>h')
-call te#meta#map('nnoremap','l','<C-w>l')
-call te#meta#map('nnoremap','j','<C-w>j')
-call te#meta#map('nnoremap','k','<C-w>k')
-" vertical open window
-nnoremap <Leader>wv :vsp<cr>
-" vertical open window then focus the new one
-nnoremap <Leader>wV :vsp<cr><C-w>l
-" horizontal open window 
-nnoremap <Leader>ws :sp<cr>
-" horizontal open window then focus the new one
-nnoremap <Leader>wS :sp<cr><C-w>j
-" maxsize of current windows
-nnoremap <Leader>wo :only<cr>
-" quit current windows
-nnoremap <Leader>wd <C-w>q
-" switch between two windows alternately
-nnoremap <Leader>w<tab> <C-w><C-p>
-" switch between two windows.
-nnoremap <Leader>ww <C-w><C-w>
-" move to left win
-nnoremap <Leader>wh <C-w>h
-" move to right win
-nnoremap <Leader>wl <C-w>l
-" move down win
-nnoremap <Leader>wj <C-w>j
-" move up win
-nnoremap <Leader>wk <C-w>k
-" move to very left win
-nnoremap <Leader>wH <C-w>H
-" move to very right win
-nnoremap <Leader>wL <C-w>L
-" move to very down win
-nnoremap <Leader>wJ <C-w>J
-" move to very up win
-nnoremap <Leader>wK <C-w>K
-" rotate the window backward
-nnoremap <Leader>wR <C-w>R
-" rotate the window forward
-nnoremap <Leader>wr <C-w>r
-" Move the current window to a new tab page.
-nnoremap <Leader>wt <C-w>T
+" " move between windows
+" call te#meta#map('nnoremap','h','<C-w>h')
+" call te#meta#map('nnoremap','l','<C-w>l')
+" call te#meta#map('nnoremap','j','<C-w>j')
+" call te#meta#map('nnoremap','k','<C-w>k')
+" " vertical open window
+" nnoremap <Leader>wv :vsp<cr>
+" " vertical open window then focus the new one
+" nnoremap <Leader>wV :vsp<cr><C-w>l
+" " horizontal open window 
+" nnoremap <Leader>ws :sp<cr>
+" " horizontal open window then focus the new one
+" nnoremap <Leader>wS :sp<cr><C-w>j
+" " maxsize of current windows
+" nnoremap <Leader>wo :only<cr>
+" " quit current windows
+" nnoremap <Leader>wd <C-w>q
+" " switch between two windows alternately
+" nnoremap <Leader>w<tab> <C-w><C-p>
+" " switch between two windows.
+" nnoremap <Leader>ww <C-w><C-w>
+" " move to left win
+" nnoremap <Leader>wh <C-w>h
+" " move to right win
+" nnoremap <Leader>wl <C-w>l
+" " move down win
+" nnoremap <Leader>wj <C-w>j
+" " move up win
+" nnoremap <Leader>wk <C-w>k
+" " move to very left win
+" nnoremap <Leader>wH <C-w>H
+" " move to very right win
+" nnoremap <Leader>wL <C-w>L
+" " move to very down win
+" nnoremap <Leader>wJ <C-w>J
+" " move to very up win
+" nnoremap <Leader>wK <C-w>K
+" " rotate the window backward
+" nnoremap <Leader>wR <C-w>R
+" " rotate the window forward
+" nnoremap <Leader>wr <C-w>r
+" " Move the current window to a new tab page.
+" nnoremap <Leader>wt <C-w>T
 
-" change the windows size. f9, f10, f11, f12 --> h, j, k, l
-noremap <silent> <C-F9>  :vertical resize -10<CR>
-noremap <silent> <C-F10> :resize +10<CR>
-noremap <silent> <C-F11> :resize -10<CR>
-noremap <silent> <C-F12> :vertical resize +10<CR>
+" " change the windows size. f9, f10, f11, f12 --> h, j, k, l
+" noremap <silent> <C-F9>  :vertical resize -10<CR>
+" noremap <silent> <C-F10> :resize +10<CR>
+" noremap <silent> <C-F11> :resize -10<CR>
+" noremap <silent> <C-F12> :vertical resize +10<CR>
 " noremap <silent> <leader>w. :vertical resize +10<CR>
 " noremap <silent> <leader>w, :vertical resize -10<CR>
 " noremap <silent> <leader>w- :resize -10<CR>
 " noremap <silent> <leader>w= :resize +10<CR>
 
-" call te#meta#map('noremap','1',':call te#utils#tab_buf_switch(1)<cr>')
-" call te#meta#map('noremap','2',':call te#utils#tab_buf_switch(2)<cr>')
-" call te#meta#map('noremap','3',':call te#utils#tab_buf_switch(3)<cr>')
-" call te#meta#map('noremap','4',':call te#utils#tab_buf_switch(4)<cr>')
-" call te#meta#map('noremap','5',':call te#utils#tab_buf_switch(5)<cr>')
-" call te#meta#map('noremap','6',':call te#utils#tab_buf_switch(6)<cr>')
-" call te#meta#map('noremap','7',':call te#utils#tab_buf_switch(7)<cr>')
-" call te#meta#map('noremap','8',':call te#utils#tab_buf_switch(8)<cr>')
-" call te#meta#map('noremap','9',':call te#utils#tab_buf_switch(9)<cr>')
-" nnoremap <leader>1 :call te#utils#tab_buf_switch(1)<cr>
-" nnoremap <leader>2 :call te#utils#tab_buf_switch(2)<cr>
-" nnoremap  <leader>3 :call te#utils#tab_buf_switch(3)<cr>
-" nnoremap  <leader>4 :call te#utils#tab_buf_switch(4)<cr>
-" nnoremap  <leader>5 :call te#utils#tab_buf_switch(5)<cr>
-" nnoremap  <leader>6 :call te#utils#tab_buf_switch(6)<cr>
-" nnoremap  <leader>7 :call te#utils#tab_buf_switch(7)<cr>
-" nnoremap  <leader>8 :call te#utils#tab_buf_switch(8)<cr>
-" nnoremap  <leader>9 :call te#utils#tab_buf_switch(9)<cr>
 
 " " switch to last open tab or buffer
 " nnoremap <Leader><tab> :call te#utils#tab_buf_switch(-2)<cr>
@@ -220,13 +188,12 @@ noremap <silent> <C-F12> :vertical resize +10<CR>
 " "buffer only
 " nnoremap <leader>bo :call te#tools#buf_only('', '')<cr>
 
-" VimScript Help {1
-" open eval.txt
-nnoremap <Leader>he :tabnew<cr>:h eval.txt<cr>:only<cr>
-" open vim script help
-nnoremap <Leader>hp :tabnew<cr>:h usr_41.txt<cr>:only<cr>
-" open vim function list
-nnoremap <Leader>hf :tabnew<cr>:h function-list<cr>:only<cr>
+" " open eval.txt
+" nnoremap <Leader>he :tab h eval.txt<cr>
+" " open vim script help
+" nnoremap <Leader>hp :tab h usr_41.txt<cr>
+" " open vim function list
+" nnoremap <Leader>hf :tab h function-list<cr>
 
 " }
 
