@@ -17,9 +17,10 @@ spell/
 backup/
 swap/
 
+.fzf-history/
+org/
 .yank_history_v2.txt
 .easyclip
 .complete_plugin
 .vim-bookmarks
-org/
 .screenlock

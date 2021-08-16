@@ -105,7 +105,7 @@ set ttyfast " terminal connection is fast
 set mouse=a "list of menu_flags for using the mouse,support all
 
 " 10 GUI {1
-set guioptions-=t
+set guioptions-=T
 
 " 11 printing {1
 set printfont=Yahei_Mono:h10:cGB2312  "name of the font to be used for :hardcopy
@@ -123,7 +123,7 @@ set shortmess=filnxtToOI " list of flags to make messages shorter
 set more "pause listings when the screen is full
 
 " 13 selecting text {1
-set clipboard^=unnamed "autoselect" to always put selected text on the clipboardset
+set clipboard^=unnamed,unnamedplus "autoselect" to always put selected text on the clipboardset
 set selection=inclusive  ""old", "inclusive" or "exclusive"; how selecting text behaves
 
 " 14 editing text {1

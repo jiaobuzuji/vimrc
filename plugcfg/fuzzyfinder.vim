@@ -6,6 +6,7 @@
 
 Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
 Plug g:host.'junegunn/fzf.vim'
+let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
 nnoremap  <silent><Leader><Leader> :Files<cr>
 nnoremap  <silent><c-l>  :History<cr>
 nnoremap  <silent><c-j>  :Buffers<cr>

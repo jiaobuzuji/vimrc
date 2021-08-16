@@ -4,6 +4,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
+" Plug g:host.'yianwillis/vimcdoc' " {1
+
+
 Plug g:host.'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
@@ -27,7 +30,7 @@ nnoremap <Leader>ss :SSave<cr>
 nnoremap <Leader>sd :SDelete<cr>
 
 
-Plug g:host.'preservim/nerdtree' " {1
+Plug g:host.'preservim/nerdtree',{'on':'NERDTreeFind'} " {1
 let g:NERDTreeShowLineNumbers=1 "show line number
 let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
 let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
@@ -36,7 +39,6 @@ let g:NERDTreeShowBookmarks=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeMouseMode=2
-nnoremap <leader>te :NERDTreeToggle .<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
@@ -50,9 +52,49 @@ Plug g:host.'mbbill/undotree' " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
-nnoremap <leader>tu :UndotreeToggle<cr>
-autocmd BufWritePre $VIMFILES/undodir/* set noundofile
-autocmd FileType undotree setlocal rnu
+nnoremap <leader>tu :UndotreeToggle<cr
+
+
+Plug g:host.'dyng/ctrlsf.vim' " {1
+
+
+" Plug g:host.'mhinz/vim-grepper' " {1
+" Plug 'dkprice/vim-easygrep' " {1
+"   " Search tools
+"   set grepprg=rg\ -H\ --no-heading\ --vimgrep\ $*
+"   let g:EasyGrepCommand="rg"
+"   set grepformat=%f:%l:%c:%m
+
+"   " let g:EasyGrepCommand="ag"
+"   " let g:EasyGrepCommand=1 | let g:EasyGrepPerlStyle=1 | set grepprg=grep\ -n\ $*\ /dev/null
+
+"   " let g:EasyGrepRoot = "search:.git,.svn,.hg" " FIXME may involve some mistake (windows error; linux twice search)
+"   let g:EasyGrepFilesToExclude=".git,.svn,.hg,*.swp,*.~"
+"   let g:EasyGrepRecursive=1
+"   let g:EasyGrepJumpToMatch=0
+"   " let g:EasyGrepMode=2 " FIXME incompatible 'ag' and 'rg' tools
+"   let g:EasyGrepMode=0
+"   let g:EasyGrepIgnoreCase=0
+"   let g:EasyGrepReplaceWindowMode=2
+
+"   function s:search_in_opened_buffer()
+"     let g:EasyGrepMode=1
+"     execute 'normal '."\<plug>EgMapGrepCurrentWord_v"
+"     let g:EasyGrepMode=0
+"   endfunction
+"   " map <silent> <Leader>vV <plug>EgMapGrepCurrentWord_v
+"   " vmap <silent> <Leader>vV <plug>EgMapGrepSelection_v
+"   " map <silent> <Leader>vv <plug>EgMapGrepCurrentWord_V
+"   " vmap <silent> <Leader>vv <plug>EgMapGrepSelection_V
+"   " map <silent> <Leader>vi <plug>EgMapReplaceCurrentWord_r
+"   " map <silent> <Leader>vI <plug>EgMapReplaceCurrentWord_R
+"   " vmap <silent> <Leader>vi <plug>EgMapReplaceSelection_r
+"   " vmap <silent> <Leader>vI <plug>EgMapReplaceSelection_R
+"   " map <silent> <Leader>vo <plug>EgMapGrepOptions
+"   noremap <silent> <Leader>vb :call <SID>search_in_opened_buffer()<cr>
+"   nnoremap  <Leader>vs :Grep 
+"
+
 
 " " vim-easymotion {1
 " Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
@@ -192,41 +234,6 @@ autocmd FileType undotree setlocal rnu
 "   " set grepprg=rg\ -H\ --no-heading\ --vimgrep\ $*
 "   " set grepformat=%f:%l:%c:%m
 " 
-" Plug 'dkprice/vim-easygrep' " {1
-"   " Search tools
-"   set grepprg=rg\ -H\ --no-heading\ --vimgrep\ $*
-"   let g:EasyGrepCommand="rg"
-"   set grepformat=%f:%l:%c:%m
-
-"   " let g:EasyGrepCommand="ag"
-"   " let g:EasyGrepCommand=1 | let g:EasyGrepPerlStyle=1 | set grepprg=grep\ -n\ $*\ /dev/null
-
-"   " let g:EasyGrepRoot = "search:.git,.svn,.hg" " FIXME may involve some mistake (windows error; linux twice search)
-"   let g:EasyGrepFilesToExclude=".git,.svn,.hg,*.swp,*.~"
-"   let g:EasyGrepRecursive=1
-"   let g:EasyGrepJumpToMatch=0
-"   " let g:EasyGrepMode=2 " FIXME incompatible 'ag' and 'rg' tools
-"   let g:EasyGrepMode=0
-"   let g:EasyGrepIgnoreCase=0
-"   let g:EasyGrepReplaceWindowMode=2
-
-"   function s:search_in_opened_buffer()
-"     let g:EasyGrepMode=1
-"     execute 'normal '."\<plug>EgMapGrepCurrentWord_v"
-"     let g:EasyGrepMode=0
-"   endfunction
-"   " map <silent> <Leader>vV <plug>EgMapGrepCurrentWord_v
-"   " vmap <silent> <Leader>vV <plug>EgMapGrepSelection_v
-"   " map <silent> <Leader>vv <plug>EgMapGrepCurrentWord_V
-"   " vmap <silent> <Leader>vv <plug>EgMapGrepSelection_V
-"   " map <silent> <Leader>vi <plug>EgMapReplaceCurrentWord_r
-"   " map <silent> <Leader>vI <plug>EgMapReplaceCurrentWord_R
-"   " vmap <silent> <Leader>vi <plug>EgMapReplaceSelection_r
-"   " vmap <silent> <Leader>vI <plug>EgMapReplaceSelection_R
-"   " map <silent> <Leader>vo <plug>EgMapGrepOptions
-"   noremap <silent> <Leader>vb :call <SID>search_in_opened_buffer()<cr>
-"   nnoremap  <Leader>vs :Grep 
-" "}
 " TODO {1
 "
 " if te#env#IsMac()
