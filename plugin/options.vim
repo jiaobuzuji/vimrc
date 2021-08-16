@@ -123,8 +123,7 @@ set shortmess=filnxtToOI " list of flags to make messages shorter
 set more "pause listings when the screen is full
 
 " 13 selecting text {1
-" set clipboard=unnamed,unnamedplus "autoselect" to always put selected text on the clipboardset
-set clipboard+=unnamed,unnamedplus
+set clipboard^=unnamed "autoselect" to always put selected text on the clipboardset
 set selection=inclusive  ""old", "inclusive" or "exclusive"; how selecting text behaves
 
 " 14 editing text {1

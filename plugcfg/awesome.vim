@@ -54,6 +54,70 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 autocmd BufWritePre $VIMFILES/undodir/* set noundofile
 autocmd FileType undotree setlocal rnu
 
+" " vim-easymotion {1
+" Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
+"             \ '<Plug>(easymotion-linebackward)','<Plug>(easymotion-overwin-w)' ]}
+"   map W <Plug>(easymotion-lineforward)
+"   map B <Plug>(easymotion-linebackward)
+"   " MultiWindow easymotion for word
+"   nmap <Leader>jw <Plug>(easymotion-overwin-w)
+"   xmap <Leader>jw <Plug>(easymotion-bd-w)
+"   omap <Leader>jw <Plug>(easymotion-bd-w)
+"   " Multi Input Find Motion:s
+"   nmap <Leader>js <Plug>(easymotion-sn)
+"   xmap <Leader>js <Plug>(easymotion-sn)
+"   omap <Leader>js <Plug>(easymotion-sn)
+"   " Multi Input Find Motion:t
+"   nmap <Leader>jt <Plug>(easymotion-tn)
+"   xmap <Leader>jt <Plug>(easymotion-tn)
+"   omap <Leader>jt <Plug>(easymotion-tn)
+"   " MultiWindow easymotion for line
+"   nmap <Leader>jl <Plug>(easymotion-overwin-line)
+"   xmap <Leader>jl <Plug>(easymotion-bd-jk)
+"   omap <Leader>jl <Plug>(easymotion-bd-jk)
+"   " MultiWindow easymotion for char
+"   nmap <Leader>jj <Plug>(easymotion-overwin-f)
+"   xmap <Leader>jj <Plug>(easymotion-bd-f)
+"   omap <Leader>jj <Plug>(easymotion-bd-f)
+"   map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
+
+"   let g:EasyMotion_startofline = 0
+"   let g:EasyMotion_show_prompt = 0
+"   let g:EasyMotion_verbose = 0
+
+" Plug 't9md/vim-choosewin',{'on': '<Plug>(choosewin)'} " {1
+"   let g:choosewin_overlay_enable = 1
+"   nmap <Leader>wc <Plug>(choosewin)
+
+" Plug 'kshenoy/vim-signature' " {1
+"   let g:SignatureEnabledAtStartup    = 1
+"   let g:SignatureMarkTextHLDynamic   = 1
+"   let g:SignatureMarkerTextHLDynamic = 1
+
+" Plug 'MattesGroeger/vim-bookmarks', { 'on': ['BookmarkShowAll', 'BookmarkToggle', 'BookmarkAnnotate']} " {1
+"   let g:bookmark_auto_save = 1
+"   let g:bookmark_no_default_key_mappings = 1
+"   let g:bookmark_save_per_working_dir = 1
+"   let g:bookmark_sign = '>>'
+"   let g:bookmark_annotation_sign = '##'
+"   let g:bookmark_auto_close = 1
+"   "Bookmark annotate
+"   nnoremap <leader>mi :BookmarkAnnotate<CR>
+"   "Bookmark toggle
+"   nnoremap <leader>ma :BookmarkToggle<cr>
+"   "Bookmark annotate 
+"   vnoremap <leader>mi :<c-u>exec ':BookmarkAnnotate '.getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]-1]<cr>
+"   "Bookmark clear
+"   nnoremap <leader>mc :BookmarkClear<cr>
+"   "Bookmark show all
+"   nnoremap <leader>mb :BookmarkShowAll<CR>
+
+" Plug 'ronakg/quickr-preview.vim', { 'for': ['qf']} " {1
+"   let g:quickr_preview_keymaps = 0
+"   autocmd filetype_group FileType qf nmap <buffer> <down> <down><plug>(quickr_preview)
+"   autocmd filetype_group FileType qf nmap <buffer> <up> <up><plug>(quickr_preview)
+"   autocmd filetype_group FileType qf nmap <buffer> <Space><Space>  <plug>(quickr_preview)
+
 
 " Plug 'hecal3/vim-leader-guide' " {1
 "   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
