@@ -52,7 +52,7 @@ Plug g:host.'mbbill/undotree' " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
-nnoremap <leader>tu :UndotreeToggle<cr
+nnoremap <leader>tu :UndotreeToggle<cr>
 
 
 Plug g:host.'dyng/ctrlsf.vim' " {1
