@@ -25,3 +25,4 @@ Plug 'mzlogin/vim-markdown-toc',{'for': 'markdown'}
   nnoremap <leader>mt :silent GenTocGFM<cr>
   " update markdown TOC
   nnoremap <leader>mu :silent UpdateToc<cr>
+

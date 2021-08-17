@@ -2,7 +2,24 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
+" vim:fdm=marker fmr={,}
+
+" Put these in an autocmd group, so that you can revert them with:
+" ":augroup vimStartup | au! | augroup END"
+augroup vimStartup
+  au!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid, when inside an event handler
+  " (happens when dropping a file on gvim) and for a commit message (it's
+  " likely a different one than last time).
+  autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+        \ |   exe "normal! g`\""
+        \ | endif
+
+augroup END
+
 
 augroup misc_group " {1
   autocmd!
@@ -55,5 +72,5 @@ augroup lazy_load_group " {1
 augroup END
 
 " {1
-autocmd filetype_group BufWritePost,BufEnter *.php,*.sh,*.js Neomake
+" autocmd filetype_group BufWritePost,BufEnter *.php,*.sh,*.js Neomake
 

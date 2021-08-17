@@ -76,3 +76,4 @@ Plug 'chrisbra/NrrwRgn',{'on': 'NR'}
 " " copy/yank link
 " nnoremap gL Utl cl<CR>
 " xnoremap gL Utl cl v<CR>
+
