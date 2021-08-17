@@ -112,11 +112,7 @@ cnoremap   <C-X><C-A> <C-A>
 " multiple windows and tabs {1
 " Quit Vim
 nnoremap <Leader>qa :qa<cr>
-
-" open quickfix windows
-nnoremap <leader>qf :botright copen<cr>
-nnoremap <leader>qc q:
-nnoremap <leader>qd q/
+nnoremap <Leader>wd <C-w>q
 
 " " move between windows
 " call te#meta#map('nnoremap','h','<C-w>h')

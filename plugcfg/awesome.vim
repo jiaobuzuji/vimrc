@@ -64,7 +64,7 @@ let g:ctrlsf_auto_focus = {
     \ }
 vmap <Leader>vs <Plug>CtrlSFVwordPath
 vmap <Leader>vv <Plug>CtrlSFVwordExec
-nmap <Leader>vs <Plug>CtrlSFCwordPath
+nmap <Leader>vs <Plug>CtrlSFPrompt
 nmap <Leader>vv <Plug>CtrlSFCwordExec
 nmap <Leader>vV <Plug>CtrlSFCCwordExec
 

@@ -8,15 +8,11 @@ Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
 Plug g:host.'junegunn/fzf.vim'
 let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
 let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup '.'
-            \ --ignore "*.[odODaA]"
-            \ --ignore "*.exe"
-            \ --ignore "*.out"
-            \ --ignore "*.hex"
-            \ --ignore "cscope*"
-            \ --ignore "*.so"
-            \ --ignore "*.dll"
-            \ --ignore ".git"
-            \ -g ""'
+  \ --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex"
+  \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
+  \ --ignore "cscope*"
+  \ --ignore ".git" --ignore ".svn" --ignore ".hg"
+  \ -g ""'
 let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
 nnoremap <Leader><Leader> :Files<cr>
 nnoremap <c-l>  :History<cr>
