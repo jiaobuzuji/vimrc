@@ -5,12 +5,7 @@
 
 set nocompatible
 let $VIMFILES=fnamemodify(expand('<sfile>'), ":p:h")
-" set runtimepath^=$VIMFILES " Source vimrc at anywhere
-" set runtimepath+=$VIMFILES/after
-
-" Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
-
 set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -19,19 +14,11 @@ set wildmenu		" display completion matches in a status line
 set ttimeout		" time out for key codes
 set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 
-" Show @@@ in the last line if it is truncated.
-set display=truncate
-
 " Show a few lines of context around the cursor.  Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
 set incsearch
-
-" Do not recognize octal numbers for Ctrl-A and Ctrl-X, most users find it
-" confusing.
-set nrformats-=octal
-
 set guioptions-=t
 set nolangremap
 
@@ -49,12 +36,7 @@ inoremap <C-U> <C-G>u<C-U>
 " can position the cursor, Visually select and scroll with the mouse.
 " Only xterm can grab the mouse events when using the shift key, for other
 " terminals use ":", select text and press Esc.
-if &term =~ 'xterm'
   set mouse=a
-else
-  set mouse=nvi
-endif
-
 
 " Put these in an autocmd group, so that you can revert them with:
 " ":augroup vimStartup | au! | augroup END"
@@ -122,21 +104,12 @@ nnoremap <Leader>qa :qa<cr>
 nnoremap <Leader>wd :q<cr>
 
 " =======================================================
-" Define user commands for updating/cleaning the plugins.
-" Each of them calls PackInit() to load minpac and register
-" the information of plugins, then performs the task.
-command! PackUpdate source $MYVIMRC | call bundle#PackInit() | call minpac#update()
-command! PackClean  source $MYVIMRC | call bundle#PackInit() | call minpac#clean()
-command! PackStatus packadd minpac | call minpac#init() | call minpac#status()
-
-" =======================================================
 filetype plugin indent on
 syntax on
 
-let g:lightline = {'colorscheme': 'jellybeans'}
 set termguicolors " use GUI colors for the terminal
 set background=dark   " "dark" or "light"; the background color brightness
-colorscheme jellybeans
+colorscheme desert
 " let g:jellybeans_use_term_italics = 1
 " highlight Comment cterm=italic
 " set t_ZH=[3m

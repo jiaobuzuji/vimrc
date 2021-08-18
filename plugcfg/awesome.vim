@@ -11,7 +11,7 @@ Plug g:host.'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'files',     'header': ['   MRU [e]mpty, [q]uit']},
       \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
       \ { 'type': 'commands',  'header': ['   Commands']       },
