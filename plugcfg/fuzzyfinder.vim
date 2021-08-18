@@ -6,6 +6,7 @@
 
 Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
 Plug g:host.'junegunn/fzf.vim'
+Plug g:host.'tracyone/fzf-funky',{'on': 'FzfFunky'}
 let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
 let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup -U'.'
   \ --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
@@ -21,6 +22,7 @@ nnoremap <Leader>pv :Ag<cr>
 nnoremap <Leader>ps :Snippets<cr>
 nnoremap <Leader>pw :Windows<cr>
 nnoremap <Leader>pgc :Commits<cr>
+nnoremap  <silent><Leader>pf  :FzfFunky<cr>
 " nnoremap  <Leader>ph :Helptags<cr>
 
 
