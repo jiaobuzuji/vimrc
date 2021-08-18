@@ -23,10 +23,10 @@ call plug#begin($VIMFILES.'/bundle')
   " source $VIMFILES/plugcfg/statusline.vim
   source $VIMFILES/plugcfg/awesome.vim " miscellaneous lifechange
   source $VIMFILES/plugcfg/fuzzyfinder.vim
+  source $VIMFILES/plugcfg/complete.vim " snippet lsp
   " source $VIMFILES/plugcfg/git.vim
   " source $VIMFILES/plugcfg/help.vim
   " source $VIMFILES/plugcfg/edit.vim
-  " source $VIMFILES/plugcfg/complete.vim " snippet lsp
   " source $VIMFILES/plugcfg/markdown.vim
   " source $VIMFILES/plugcfg/writing.vim
   " source $VIMFILES/plugcfg/tools.vim

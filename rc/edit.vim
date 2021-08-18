@@ -2,7 +2,7 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
+" vim:fdm=marker fmr={,}
 
 Plug 'terryma/vim-multiple-cursors' " {1
 Plug 'terryma/vim-expand-region' " {1

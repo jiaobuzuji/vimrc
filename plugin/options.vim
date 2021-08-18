@@ -119,7 +119,7 @@ set confirm  "start a dialog when a command fails
 "set rulerformat=%30(%=\:b%n%y\[%{&fenc}\|%{&ff}\]%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set showcmd "show (partial) command keys in the status line
 set showmode "display the current mode in the status line
-set shortmess=filnxtToOI " list of flags to make messages shorter
+set shortmess-=S shortmess+=I " list of flags to make messages shorter
 set more "pause listings when the screen is full
 
 " 13 selecting text {1
@@ -172,7 +172,8 @@ set fileformats=unix,dos,mac
 " set backupext=-vimbackup
 
 " 20 the swap file {1
-" set directory   =$HOME/.vim/swap/
+set updatetime=300 " time in msec after which the swap file will be updated
+" set directory=$HOME/.vim/swap/
 
 " 21 command line editing {1
 set history=200  " keep 50 lines of command line history
