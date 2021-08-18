@@ -57,7 +57,7 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 
 Plug g:host.'dyng/ctrlsf.vim' " {1
 let g:ctrlsf_regex_pattern = 1
-let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_default_root = 'project+ww'
 let g:ctrlsf_extra_root_markers = ['.git']
 let g:ctrlsf_indent = 2
 let g:ctrlsf_auto_focus = {"at":"start"}
@@ -65,14 +65,13 @@ let g:ctrlsf_mapping = {
   \ "next": "n",
   \ "prev": "N",
   \ }
-
+" let g:ctrlsf_debug_mode = 1
 let g:ctrlsf_ignore_dir = ['.git','.svn','.hg']
-" let g:ctrlsf_extra_backend_args = {
-"   \ 'pt': '--home-ptignore',
-"   \ 'ag': '--ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
-"          \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
-"          \ --ignore "cscope*"'
-"   \ }
+let g:ctrlsf_extra_backend_args = {
+  \ 'ag': '-U --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
+         \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
+         \ --ignore "cscope*"'
+  \ }
 vmap <Leader>vs <Plug>CtrlSFVwordPath
 vmap <Leader>vv <Plug>CtrlSFVwordExec
 nmap <Leader>vs <Plug>CtrlSFPrompt

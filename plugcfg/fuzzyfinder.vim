@@ -7,7 +7,7 @@
 Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'}
 Plug g:host.'junegunn/fzf.vim'
 let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
-let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup '.'
+let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup -U'.'
   \ --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
   \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
   \ --ignore "cscope*"
