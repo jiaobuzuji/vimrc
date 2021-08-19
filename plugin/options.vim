@@ -198,9 +198,7 @@ if v:lang=~? '^\(zh\)\|\(ja\)\|\(ko\)'
   set ambiwidth=double
 endif
 
-set sessionoptions-=folds
-set sessionoptions-=options
-set sessionoptions-=buffers
+set sessionoptions=curdir,tabpages,terminal,winsize,resize
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 set signcolumn=number " whether to show the signcolumn
