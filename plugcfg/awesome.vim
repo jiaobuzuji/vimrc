@@ -115,39 +115,38 @@ nnoremap <Leader>vj :CtrlSFToggle<CR>
 "   " map <silent> <Leader>vo <plug>EgMapGrepOptions
 "   noremap <silent> <Leader>vb :call <SID>search_in_opened_buffer()<cr>
 "   nnoremap  <Leader>vs :Grep 
-"
 
 
-" " vim-easymotion {1
-" Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
-"             \ '<Plug>(easymotion-linebackward)','<Plug>(easymotion-overwin-w)' ]}
-"   map W <Plug>(easymotion-lineforward)
-"   map B <Plug>(easymotion-linebackward)
-"   " MultiWindow easymotion for word
-"   nmap <Leader>jw <Plug>(easymotion-overwin-w)
-"   xmap <Leader>jw <Plug>(easymotion-bd-w)
-"   omap <Leader>jw <Plug>(easymotion-bd-w)
-"   " Multi Input Find Motion:s
-"   nmap <Leader>js <Plug>(easymotion-sn)
-"   xmap <Leader>js <Plug>(easymotion-sn)
-"   omap <Leader>js <Plug>(easymotion-sn)
-"   " Multi Input Find Motion:t
-"   nmap <Leader>jt <Plug>(easymotion-tn)
-"   xmap <Leader>jt <Plug>(easymotion-tn)
-"   omap <Leader>jt <Plug>(easymotion-tn)
-"   " MultiWindow easymotion for line
-"   nmap <Leader>jl <Plug>(easymotion-overwin-line)
-"   xmap <Leader>jl <Plug>(easymotion-bd-jk)
-"   omap <Leader>jl <Plug>(easymotion-bd-jk)
-"   " MultiWindow easymotion for char
-"   nmap <Leader>jj <Plug>(easymotion-overwin-f)
-"   xmap <Leader>jj <Plug>(easymotion-bd-f)
-"   omap <Leader>jj <Plug>(easymotion-bd-f)
-"   map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
+Plug g:host.'easymotion/vim-easymotion' " {1
+" , {'on':['<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)','<Plug>(easymotion-overwin-w)' ]}
+  map W <Plug>(easymotion-lineforward)
+  map B <Plug>(easymotion-linebackward)
+  " MultiWindow easymotion for word
+  nmap <Leader>jw <Plug>(easymotion-overwin-w)
+  xmap <Leader>jw <Plug>(easymotion-bd-w)
+  omap <Leader>jw <Plug>(easymotion-bd-w)
+  " Multi Input Find Motion:s
+  nmap <Leader>js <Plug>(easymotion-sn)
+  xmap <Leader>js <Plug>(easymotion-sn)
+  omap <Leader>js <Plug>(easymotion-sn)
+  " Multi Input Find Motion:t
+  nmap <Leader>jt <Plug>(easymotion-tn)
+  xmap <Leader>jt <Plug>(easymotion-tn)
+  omap <Leader>jt <Plug>(easymotion-tn)
+  " MultiWindow easymotion for line
+  nmap <Leader>jl <Plug>(easymotion-overwin-line)
+  xmap <Leader>jl <Plug>(easymotion-bd-jk)
+  omap <Leader>jl <Plug>(easymotion-bd-jk)
+  " MultiWindow easymotion for char
+  nmap <Leader>jj <Plug>(easymotion-overwin-f)
+  xmap <Leader>jj <Plug>(easymotion-bd-f)
+  omap <Leader>jj <Plug>(easymotion-bd-f)
+  map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
-"   let g:EasyMotion_startofline = 0
-"   let g:EasyMotion_show_prompt = 0
-"   let g:EasyMotion_verbose = 0
+  let g:EasyMotion_startofline = 0
+  let g:EasyMotion_show_prompt = 0
+  let g:EasyMotion_verbose = 0
+
 
 " Plug 't9md/vim-choosewin',{'on': '<Plug>(choosewin)'} " {1
 "   let g:choosewin_overlay_enable = 1
