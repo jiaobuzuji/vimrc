@@ -16,28 +16,30 @@ let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup -U'.'
   \ -g ""'
 let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
 " CtrlP
-nnoremap <Leader>pp :Files<cr>
-nnoremap <Leader>ph :History<cr>
-nnoremap <Leader>pb :Buffers<cr>
-nnoremap <Leader>pv :Ag<cr>
-nnoremap <Leader>ps :Snippets<cr>
-nnoremap <Leader>pw :Windows<cr>
-nnoremap <Leader>pm :Marks<cr>
-" nnoremap <Leader>pht :Helptags<cr>
-nnoremap <Leader>pgc :Commits<cr>
-nnoremap  <silent><Leader>pf  :FzfFunky<cr>
+nnoremap <Leader>kk :Files<cr>
+nnoremap <Leader>kh :History<cr>
+nnoremap <Leader>kb :Buffers<cr>
+nnoremap <Leader>kv :Rg<cr>
+nnoremap <Leader>ks :Snippets<cr>
+nnoremap <Leader>kw :Windows<cr>
+nnoremap <Leader>km :Marks<cr>
+nnoremap <Leader>kl :Lines<cr>
+" nnoremap <Leader>kht :Helptags<cr>
+nnoremap <Leader>kgc :Commits<cr>
+nnoremap  <silent><Leader>kf  :FzfFunky<cr>
 
 
 " Plug g:host.'Yggdroot/LeaderF' " {1
 " Plug g:host.'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
-" nnoremap <Leader>pp :LeaderfFile<cr>
-" nnoremap <Leader>ph :LeaderfMru<cr>
-" nnoremap <Leader>pb :LeaderfBuffer<Cr>
-" nnoremap <leader>pm :LeaderfMarks<Cr>
-" nnoremap <leader>pf :LeaderfFunction<cr>
+" nnoremap <Leader>kk :LeaderfFile<cr>
+" nnoremap <Leader>kh :LeaderfMru<cr>
+" nnoremap <Leader>kb :LeaderfBuffer<Cr>
+" nnoremap <leader>km :LeaderfMarks<Cr>
+" nnoremap <leader>kf :LeaderfFunction<cr>
+" nnoremap <Leader>kl :LeaderfLines<cr>
 " "leaderf cmd
-" nnoremap <Leader>ps :LeaderfSelf<cr>
-" nnoremap <Leader>pt :LeaderfBufTag<cr>
+" nnoremap <Leader>ks :LeaderfSelf<cr>
+" nnoremap <Leader>kt :LeaderfBufTag<cr>
 " "CtrlP cmd
 " let g:Lf_CacheDiretory=$VIMFILES
 " let g:Lf_DefaultMode='FullPath'
