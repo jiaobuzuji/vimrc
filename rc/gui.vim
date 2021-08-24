@@ -2,7 +2,7 @@
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,} fen
+" vim:fdm=marker fmr={,}
 
 " Gui releate {1
 if te#env#IsGui()

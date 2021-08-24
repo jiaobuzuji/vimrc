@@ -38,7 +38,9 @@ set cursorline " highlight the screen line of the cursor
 set background=dark
 set termguicolors
 " set cursorcolumn " Don't highlight the screen column of the cursor
-" set spell          " Spell checking on
+if has('gui_running')+has('gui_macvim')
+  set spell " Spell checking on
+endif
 set synmaxcol=500 " maximum column to look for syntax items
 
 "  6 multiple windows {1
@@ -96,7 +98,7 @@ endif
 "  7 multiple tab pages {1
 set showtabline=1 " 0, 1 or 2; when to use a tab pages line
 set tabpagemax=50 "maximum number of tab pages to open for -p and "tab all"
-set guitablabel=%N\ %t%m  "do not show dir in tab
+" set guitablabel=%N\ %t%m  "do not show dir in tab
 
 "  8 terminal {1
 set ttyfast " terminal connection is fast
@@ -105,7 +107,12 @@ set ttyfast " terminal connection is fast
 set mouse=a "list of menu_flags for using the mouse,support all
 
 " 10 GUI {1
-set guioptions-=T
+if has('win32')+has('win64')
+  set guifont=Consolas:h12:cANSI
+else
+  set guifont=Monospace\ 12
+endif
+set guioptions=!acd " External commands are executed in a terminal window.
 
 " 11 printing {1
 set printfont=Yahei_Mono:h10:cGB2312  "name of the font to be used for :hardcopy
