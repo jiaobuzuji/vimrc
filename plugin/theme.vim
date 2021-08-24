@@ -23,10 +23,11 @@ source $VIMRUNTIME/delmenu.vim
 "   let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 " endif
 
-colorscheme PaperColor
-" colorscheme gruvbox
-
 " " terminal italic
 " highlight Comment cterm=italic
 " set t_ZH=[3m
 " set t_ZR=[23m
+
+" colorscheme PaperColor
+colorscheme gruvbox
+
