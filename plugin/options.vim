@@ -119,7 +119,7 @@ set confirm  "start a dialog when a command fails
 "set rulerformat=%30(%=\:b%n%y\[%{&fenc}\|%{&ff}\]%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set showcmd "show (partial) command keys in the status line
 set showmode "display the current mode in the status line
-set shortmess-=S shortmess+=I " list of flags to make messages shorter
+set shortmess-=S " list of flags to make messages shorter
 set more "pause listings when the screen is full
 
 " 13 selecting text {1

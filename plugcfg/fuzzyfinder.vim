@@ -28,20 +28,20 @@ nnoremap <Leader>pgc :Commits<cr>
 nnoremap  <silent><Leader>pf  :FzfFunky<cr>
 
 
-" Plug 'Yggdroot/LeaderF' " {1
-" Plug 'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
-"   nnoremap <Leader>pp :LeaderfFile<cr>
-"   nnoremap <Leader>ph :LeaderfMru<cr>
-"   nnoremap <Leader>pb :LeaderfBuffer<Cr>
-"   nnoremap <leader>pm :LeaderfMarks<Cr>
-"   nnoremap <leader>pf :LeaderfFunction<cr>
-"   "leaderf cmd
-"   nnoremap <Leader>ps :LeaderfSelf<cr>
-"   nnoremap <Leader>pt :LeaderfBufTag<cr>
-"   "CtrlP cmd
-"   let g:Lf_CacheDiretory=$VIMFILES
-"   let g:Lf_DefaultMode='FullPath'
-"   let g:Lf_StlSeparator = { 'left': '', 'right': '' }
-"   let g:Lf_UseMemoryCache = 0
+" Plug g:host.'Yggdroot/LeaderF' " {1
+" Plug g:host.'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
+" nnoremap <Leader>pp :LeaderfFile<cr>
+" nnoremap <Leader>ph :LeaderfMru<cr>
+" nnoremap <Leader>pb :LeaderfBuffer<Cr>
+" nnoremap <leader>pm :LeaderfMarks<Cr>
+" nnoremap <leader>pf :LeaderfFunction<cr>
+" "leaderf cmd
+" nnoremap <Leader>ps :LeaderfSelf<cr>
+" nnoremap <Leader>pt :LeaderfBufTag<cr>
+" "CtrlP cmd
+" let g:Lf_CacheDiretory=$VIMFILES
+" let g:Lf_DefaultMode='FullPath'
+" let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+" let g:Lf_UseMemoryCache = 0
 
 
