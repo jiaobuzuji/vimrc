@@ -61,11 +61,12 @@ let g:ctrlsf_default_root = 'project+ww'
 let g:ctrlsf_extra_root_markers = ['.git']
 let g:ctrlsf_indent = 2
 let g:ctrlsf_auto_focus = {"at":"start"}
+let g:ctrlsf_confirm_save = 0
+" let g:ctrlsf_debug_mode = 1
 let g:ctrlsf_mapping = {
   \ "next": "n",
   \ "prev": "N",
   \ }
-" let g:ctrlsf_debug_mode = 1
 let g:ctrlsf_ignore_dir = ['.git','.svn','.hg']
 let g:ctrlsf_extra_backend_args = {
   \ 'ag': '-U --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
