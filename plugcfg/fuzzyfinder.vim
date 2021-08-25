@@ -15,7 +15,6 @@ let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup -U'.'
   \ --ignore ".git" --ignore ".svn" --ignore ".hg"
   \ -g ""'
 let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
-" CtrlP
 nnoremap <Leader>kk :Files<cr>
 nnoremap <Leader>kh :History<cr>
 nnoremap <Leader>kb :Buffers<cr>
@@ -37,10 +36,8 @@ nnoremap  <silent><Leader>kf  :FzfFunky<cr>
 " nnoremap <leader>km :LeaderfMarks<Cr>
 " nnoremap <leader>kf :LeaderfFunction<cr>
 " nnoremap <Leader>kl :LeaderfLines<cr>
-" "leaderf cmd
 " nnoremap <Leader>ks :LeaderfSelf<cr>
 " nnoremap <Leader>kt :LeaderfBufTag<cr>
-" "CtrlP cmd
 " let g:Lf_CacheDiretory=$VIMFILES
 " let g:Lf_DefaultMode='FullPath'
 " let g:Lf_StlSeparator = { 'left': '', 'right': '' }

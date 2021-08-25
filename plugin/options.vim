@@ -38,9 +38,9 @@ set cursorline " highlight the screen line of the cursor
 set background=dark
 set termguicolors
 " set cursorcolumn " Don't highlight the screen column of the cursor
-if has('gui_running')+has('gui_macvim')
-  set spell " Spell checking on
-endif
+" if has('gui_running')+has('gui_macvim')
+"   set spell " Spell checking on
+" endif
 set synmaxcol=500 " maximum column to look for syntax items
 
 "  6 multiple windows {1
