@@ -69,7 +69,7 @@ let g:ctrlsf_mapping = {
   \ }
 let g:ctrlsf_ignore_dir = ['.git','.svn','.hg']
 let g:ctrlsf_extra_backend_args = {
-  \ 'ag': '-U --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
+  \ 'ag': '--ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
          \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
          \ --ignore "cscope*"'
   \ }

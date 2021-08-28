@@ -205,8 +205,8 @@ if v:lang=~? '^\(zh\)\|\(ja\)\|\(ko\)'
   set ambiwidth=double
 endif
 
-set sessionoptions=curdir,tabpages,terminal,winsize,resize
-set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set sessionoptions=curdir,unix,slash,tabpages,terminal,winsize,resize
+set viewoptions=cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 set signcolumn=number " whether to show the signcolumn
 set pyxversion=3
