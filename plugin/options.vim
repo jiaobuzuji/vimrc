@@ -174,7 +174,8 @@ set ttimeoutlen=100 " time in msec for 'ttimeout'
 set modeline
 set autoread   "autoread when a file is changed from the outside
 set fileformats=unix,dos,mac
-" set backup
+set nowritebackup " write a backup file before overwriting a file
+set nobackup
 " set backupdir=$HOME/.vim/backup/
 " set backupext=-vimbackup
 
@@ -208,7 +209,7 @@ endif
 set sessionoptions=curdir,unix,slash,tabpages,terminal,winsize,resize
 set viewoptions=cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=block         " Use virtual editing in <C-v>  (block select)
-set signcolumn=number " whether to show the signcolumn
+set signcolumn=yes " whether to show the signcolumn
 set pyxversion=3
 
 set viminfofile=$VIMFILES/.viminfo
