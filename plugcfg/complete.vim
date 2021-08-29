@@ -5,6 +5,11 @@
 " vim:fdm=marker fmr={,}
 
 Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
+" :CocInstall coc-marketplace coc-highlight coc-pairs coc-yank
+" \ coc-word coc-omni coc-snippets coc-tabnine
+" \ coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python
+" :CocCommand clangd.install
+
 set shortmess+=c " Don't pass messages to |ins-completion-menu|.
 
 " Use tab for trigger completion with characters ahead and navigate.

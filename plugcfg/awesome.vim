@@ -150,7 +150,7 @@ xmap <Leader>jj <Plug>(easymotion-bd-f)
 omap <Leader>jj <Plug>(easymotion-bd-f)
 map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
-Plug g:host.'jiangmiao/auto-pairs' " {1
+" Plug g:host.'jiangmiao/auto-pairs' " {1
 
 
 " Plug g:host.'Raimondi/delimitMate' " {1
@@ -159,8 +159,8 @@ Plug g:host.'jiangmiao/auto-pairs' " {1
 " let g:delimitMate_expand_space = 0
 
 
-Plug g:host.'luochen1990/rainbow' " {1
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" Plug g:host.'luochen1990/rainbow' " {1
+" let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 
 " Plug 't9md/vim-choosewin',{'on': '<Plug>(choosewin)'} " {1

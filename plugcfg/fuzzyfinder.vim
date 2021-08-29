@@ -15,7 +15,7 @@ let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
 "   \ --ignore ".git" --ignore ".svn" --ignore ".hg"
 "   \ -g ""'
 let s:fzf_custom_command = 'rg -H --hidden -l'.'
-  \ -g "!*.[odODaA]" -g "!*.out" -g "!*.hex" -g "!*.bin"
+  \ -g "!*.out" -g "!*.hex" -g "!*.bin"
   \ -g "!*.exe" -g "!*.so" -g "!*.dll"
   \ -g "!cscope*"
   \ -g "!.git/*" -g "!.svn/*" -g "!.hg/*"
