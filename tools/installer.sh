@@ -86,8 +86,13 @@ mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
 #            "dein.vim"
 
 # junegunn vim-plug
+repo_sync  "${REPO_PATH}" \
+           "https://${GITSRVURL}/junegunn/vim-plug" \
+           "master" \
+           "vim-plug.git"
 curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c 'PlugInstall|q'
 
 # # K-takata minpac
 # git clone --depth=1 https://github.com/ ~/.vim//
@@ -102,7 +107,11 @@ curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
 #             "master" \
 #             "YouCompleteMe"
 # cd  ${HOME}/.vim/bundle/YouCompleteMe
-# git submodule update --init --recursive && python3 ./install.py --clang-completer || return 1 # TODO
+# --clang-completer
+# git submodule update --init --recursive && python3 ./install.py --all || return 1 # TODO
+
+# coc.nvim
+vim -c 'CocInstall -sync coc-marketplace coc-highlight coc-pairs coc-yank coc-word coc-omni coc-snippets coc-tabnine coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python|q'
 
 # -----------------------------------------------------------------
 # vim:fdm=marker

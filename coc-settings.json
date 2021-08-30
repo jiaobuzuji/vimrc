@@ -2,5 +2,6 @@
   "coc.source.buffer.firstMatch": false,
   "coc.source.around.firstMatch": false,
   "suggest.enablePreview": true,
+  "coc.preferences.extensionUpdateCheck":"weekly",
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd"
 }
