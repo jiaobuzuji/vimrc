@@ -16,7 +16,7 @@
 #     libgnome-devel libgnomeui-devel gtk2-devel atk-devel libbonoboui-devel cairo-devel \
 #     libX11-devel ncurses-devel libXpm-devel libXt-devel libcxx \
 #     libsodium libsodium-devel \
-#     gcc ctags cscope git
+#     gcc ctags cscope
 # sudo yum remove -y vim vim-runtime vim-common vim-enhanced
 
 # Ubuntu TODO
@@ -33,9 +33,8 @@
 sudo make uninstall
 sudo make clean distclean
 
-  # --with-python3-config-dir=/usr/lib/python3.4/config-3.4m
-  # --with-python-config-dir=/usr/lib/python2.6/config
-  # --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu
+  # --with-python-command=python \
+  # --enable-pythoninterp=dynamic \
   # --with-x
   # CFLAGS="-g -DDEBUG -Wall -Wshadow -Wmissing-prototypes"
 ./configure \
@@ -49,7 +48,7 @@ sudo make clean distclean
   --enable-luainterp=dynamic \
   --enable-mzschemeinterp \
   --enable-perlinterp=dynamic \
-  --enable-pythoninterp=dynamic \
+  --with-python3-command=python3 \
   --enable-python3interp=dynamic \
   --enable-rubyinterp=dynamic \
   --enable-tclinterp=dynamic \
