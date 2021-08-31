@@ -46,6 +46,8 @@ nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 Plug g:host.'preservim/nerdcommenter' " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
+let g:NERDAltDelims_c = 0
+let g:NERDAltDelims_cpp = 0
 
 
 Plug g:host.'mbbill/undotree' " {1
