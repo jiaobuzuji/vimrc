@@ -5,8 +5,8 @@
 " vim:fdm=marker fmr={,}
 
 Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
-" :CocInstall coc-marketplace coc-highlight coc-pairs coc-yank
-" \ coc-word coc-omni coc-snippets coc-tabnine
+" :CocInstall coc-marketplace coc-highlight coc-pairs coc-explorer
+" \ coc-yank coc-word coc-omni coc-snippets coc-tabnine
 " \ coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python
 " :CocCommand clangd.install
 
@@ -33,10 +33,10 @@ endfunction
 "   inoremap <silent><expr> <c-@> coc#refresh()
 " endif
 
-" " Make <CR> auto-select the first completion item and notify coc.nvim to
-" " format on enter, <cr> could be remapped by other vim plugin
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -254,3 +254,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "   let g:UltiSnipsJumpBackwardTrigge='<c-k>'
 "   let g:UltiSnipsSnippetDirectories=['bundle/snippets/ultisnips']
 "   let g:UltiSnipsSnippetsDir=$VIMFILES.'bundle/snippets'
+
+
+" Plug g:host.'vhda/verilog_systemverilog.vim' " {1
+
