@@ -46,7 +46,8 @@ nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 Plug g:host.'preservim/nerdcommenter' " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
-let g:NERDAltDelims_c = 1 " default delimiter
+" let g:NERDAltDelims_c = 1 " default delimiter NOTE BUG!!!
+let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
 
 
 Plug g:host.'mbbill/undotree' " {1
