@@ -46,7 +46,7 @@ nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 Plug g:host.'preservim/nerdcommenter' " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
-let g:NERDAllowAnyVisualDelims = 0 " doc discription doest meeting the "source code" BUG!!!
+let g:NERDAllowAnyVisualDelims = 0 " doc discription doest meet the "source code" BUG!!!
 " let g:NERDAltDelims_c = 1 " default delimiter NOTE BUG!!!
 let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
 
