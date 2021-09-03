@@ -4,6 +4,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
+"-----------------------------------------------------------------------------
 Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
 " :CocInstall coc-marketplace coc-highlight coc-pairs coc-explorer
 " \ coc-yank coc-word coc-omni coc-snippets coc-tabnine
@@ -147,6 +148,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
+"-----------------------------------------------------------------------------
 " " YouCompleteMe {1
 " if te#env#IsUnix()
 "     Plug g:host.'ycm-core/YouCompleteMe' " , {'commit': '85c11d3a875b02a7ac28fb96d0c7a02782f60410' }
