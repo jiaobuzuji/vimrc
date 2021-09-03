@@ -74,18 +74,18 @@ let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String']
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'preservim/nerdtree' " {1
-" let g:NERDTreeShowLineNumbers=1 "show line number
-" let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
-" let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-" let g:NERDTreeWinSize='30'
-" let g:NERDTreeShowBookmarks=1
-" let g:NERDTreeChDirMode=2
-" let g:NERDTreeQuitOnOpen=1
-" let g:NERDTreeMouseMode=2
-" nnoremap <leader>nf :NERDTreeFind<CR>
-" nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
-nnoremap <leader>nf :CocCommand explorer<CR>
+Plug g:host.'preservim/nerdtree' " {1
+let g:NERDTreeShowLineNumbers=1 "show line number
+let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
+let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let g:NERDTreeWinSize='30'
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeMouseMode=2
+nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
+" nnoremap <leader>nf :CocCommand explorer<CR>
 
 
 "-----------------------------------------------------------------------------
