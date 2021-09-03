@@ -71,7 +71,16 @@
 " autocmd misc_group BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 
-
 Plug g:host.'itchyny/lightline.vim' "(
-let g:lightline = {'colorscheme':'PaperColor'}
+let g:lightline = {
+\   'colorscheme':'jellybeans',
+\   'active': {
+\     'left': [['mode', 'paste'],['relativepath','modified']],
+\     'right': [['lineinfo'], ['percent'], ['filetype']]
+\   },
+\   'mode_map': {
+\     'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'VL', "\<C-v>": 'VB',
+\     'c': 'C', 's': 'S', 'S': 'SL', "\<C-s>": 'SB', 't': 'T'
+\   },
+\ }
 
