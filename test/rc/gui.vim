@@ -53,7 +53,7 @@ if te#env#IsGui()
       endif
   endfunc
   nnoremap <c-F8>     :call <SID>MenuToggle()<cr>
-  nnoremap <Leader>tg :call <SID>MenuToggle()<cr>
+  nnoremap <leader>tg :call <SID>MenuToggle()<cr>
   " }
 
 else

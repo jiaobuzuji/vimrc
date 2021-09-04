@@ -82,7 +82,7 @@ inoremap vv	  <C-[>:update<cr>
 nnoremap Y y$
 nnoremap tt o<c-[>
 
-nnoremap <Leader>/ :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<CR>
 
 "visual mode hit tab forward indent ,hit shift-tab backward indent
 "Reselect visual block after indent/outdent.
@@ -100,8 +100,8 @@ nnoremap ss :%s/<C-R>//
 vnoremap ss :s/<C-R>//
 
 " multiple windows and tabs {1
-nnoremap <Leader>qa :qa<cr>
-nnoremap <Leader>wd :q<cr>
+nnoremap <leader>qa :qa<cr>
+nnoremap <leader>wd :q<cr>
 
 " =======================================================
 filetype plugin indent on

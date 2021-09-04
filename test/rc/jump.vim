@@ -12,19 +12,19 @@
 
 "   "function
 "   nnoremap <c-k> :LeaderfFunction<cr>
-"   nnoremap <Leader>pk :LeaderfFunction<cr>
+"   nnoremap <leader>pk :LeaderfFunction<cr>
 "   " buffer 
-"   nnoremap <Leader>pb :LeaderfBuffer<Cr>
+"   nnoremap <leader>pb :LeaderfBuffer<Cr>
 "   " recent file 
 "   nnoremap <c-l> :LeaderfMru<cr>
-"   nnoremap <Leader>pr :LeaderfMru<cr>
+"   nnoremap <leader>pr :LeaderfMru<cr>
 "   "file
-"   nnoremap <Leader>pp :LeaderfFile<cr>
+"   nnoremap <leader>pp :LeaderfFile<cr>
 "   "leaderf cmd
-"   nnoremap <Leader>ps :LeaderfSelf<cr>
-"   nnoremap <Leader>pt :LeaderfBufTag<cr>
+"   nnoremap <leader>ps :LeaderfSelf<cr>
+"   nnoremap <leader>pt :LeaderfBufTag<cr>
 "   "colorsceme
-"   nnoremap <Leader>pc :LeaderfColorscheme<cr>
+"   nnoremap <leader>pc :LeaderfColorscheme<cr>
 "   "CtrlP cmd
 "   let g:Lf_ShortcutF = '<C-P>'
 "   let g:Lf_ShortcutB = '<C-j>'
@@ -33,31 +33,31 @@
 "   let g:Lf_StlColorscheme = 'default'
 "   let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 "   let g:Lf_UseMemoryCache = 0
-"   nnoremap <Leader><Leader> :LeaderfFile<cr>
+"   nnoremap <leader><Leader> :LeaderfFile<cr>
 
 " Plug 'Shougo/denite.nvim' " {1
 " Plug 'Shougo/neomru.vim'
   " autocmd  misc_group VimEnter * silent! source $VIMFILES/rc/denite.vim
   " "keymapping for denite
   " nnoremap <c-p> :Denite file_rec<cr>
-  " nnoremap <Leader><Leader> :Denite file_rec<cr>
+  " nnoremap <leader><Leader> :Denite file_rec<cr>
   " nnoremap <c-j> :Denite buffer<cr>
   " nnoremap <c-l> :Denite file_mru<cr>
   " nnoremap <c-k> :Denite outline<cr>
-  " nnoremap <Leader>pc :Denite colorscheme -no-quit<cr>
-  " nnoremap <Leader>ff :Denite file<cr>
+  " nnoremap <leader>pc :Denite colorscheme -no-quit<cr>
+  " nnoremap <leader>ff :Denite file<cr>
   " "mru
-  " nnoremap <Leader>pr :Denite file_mru<cr>
+  " nnoremap <leader>pr :Denite file_mru<cr>
   " "file
-  " nnoremap <Leader>pp :Denite file_rec<cr>
+  " nnoremap <leader>pp :Denite file_rec<cr>
   " "function
-  " nnoremap <Leader>pp :Denite outline<cr>
+  " nnoremap <leader>pp :Denite outline<cr>
   " "vim help
-  " nnoremap <Leader>ph :Denite help<cr>
+  " nnoremap <leader>ph :Denite help<cr>
   " "command history
-  " nnoremap <Leader>p: :Denite command_history<cr>
+  " nnoremap <leader>p: :Denite command_history<cr>
   " "fly on grep
-  " nnoremap <Leader>pf :call denite#start([{'name': 'grep', 'args': ['', '', '!']}])<cr>
+  " nnoremap <leader>pf :call denite#start([{'name': 'grep', 'args': ['', '', '!']}])<cr>
 
   " " call denite#custom#var('file_rec', 'command',
   " "       \ ['rg', '--hidden', '--files', '--glob', '!.git', '--glob', '']
@@ -139,34 +139,34 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
   " show global mark
   nnoremap <leader>pm :SignatureListGlobalMarks<Cr>
   " ctrlp buffer 
-  nnoremap <Leader>pb :CtrlPBuffer<Cr>
+  nnoremap <leader>pb :CtrlPBuffer<Cr>
   nnoremap <c-l> :CtrlPMRUFiles<cr>
   "CtrlP mru
-  nnoremap <Leader>pr :CtrlPMRUFiles<cr>
+  nnoremap <leader>pr :CtrlPMRUFiles<cr>
   "CtrlP file
-  nnoremap <Leader>pp :CtrlP<cr>
+  nnoremap <leader>pp :CtrlP<cr>
   " narrow the list down with a word under cursor
   "CtrlP function 
-  nnoremap <Leader>pU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+  nnoremap <leader>pU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
   "CtrlP colorsceme
-  "nnoremap <Leader>pc :call te#ctrlp#colorscheme#start()<cr>
+  "nnoremap <leader>pc :call te#ctrlp#colorscheme#start()<cr>
   "CtrlP function
-  nnoremap <Leader>pk :CtrlPFunky<cr>
+  nnoremap <leader>pk :CtrlPFunky<cr>
   "CtrlP cmd
-  nnoremap <Leader><Leader> :CtrlP<cr>
+  nnoremap <leader><Leader> :CtrlP<cr>
   "spacemacs :SPC ff
-  nnoremap <Leader>ff :call te#ctrlp#dir#start()<cr>
+  nnoremap <leader>ff :call te#ctrlp#dir#start()<cr>
   " CtrlP TODO {2
   " "CtrlP git branch
-  " nnoremap <Leader>pgb :call te#ctrlp#git#start(1)<cr>
+  " nnoremap <leader>pgb :call te#ctrlp#git#start(1)<cr>
   " "CtrlP git show diff of specified commit
-  " nnoremap <Leader>pgl :call te#ctrlp#git#start(2)<cr>
+  " nnoremap <leader>pgl :call te#ctrlp#git#start(2)<cr>
   " "CtrlP git log checkout
-  " nnoremap <Leader>pgc :call te#ctrlp#git#start(3)<cr>
+  " nnoremap <leader>pgc :call te#ctrlp#git#start(3)<cr>
   " "CtrlP git remote branch
-  " nnoremap <Leader>pgr :call te#ctrlp#git#start(4)<cr>
+  " nnoremap <leader>pgr :call te#ctrlp#git#start(4)<cr>
   "vim help
-  nnoremap <Leader>ph :CtrlPHelp<cr>
+  nnoremap <leader>ph :CtrlPHelp<cr>
 
 " vim-easymotion {1
 Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
@@ -174,25 +174,25 @@ Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
   map W <Plug>(easymotion-lineforward)
   map B <Plug>(easymotion-linebackward)
   " MultiWindow easymotion for word
-  nmap <Leader>jw <Plug>(easymotion-overwin-w)
-  xmap <Leader>jw <Plug>(easymotion-bd-w)
-  omap <Leader>jw <Plug>(easymotion-bd-w)
+  nmap <leader>jw <Plug>(easymotion-overwin-w)
+  xmap <leader>jw <Plug>(easymotion-bd-w)
+  omap <leader>jw <Plug>(easymotion-bd-w)
   " Multi Input Find Motion:s
-  nmap <Leader>js <Plug>(easymotion-sn)
-  xmap <Leader>js <Plug>(easymotion-sn)
-  omap <Leader>js <Plug>(easymotion-sn)
+  nmap <leader>js <Plug>(easymotion-sn)
+  xmap <leader>js <Plug>(easymotion-sn)
+  omap <leader>js <Plug>(easymotion-sn)
   " Multi Input Find Motion:t
-  nmap <Leader>jt <Plug>(easymotion-tn)
-  xmap <Leader>jt <Plug>(easymotion-tn)
-  omap <Leader>jt <Plug>(easymotion-tn)
+  nmap <leader>jt <Plug>(easymotion-tn)
+  xmap <leader>jt <Plug>(easymotion-tn)
+  omap <leader>jt <Plug>(easymotion-tn)
   " MultiWindow easymotion for line
-  nmap <Leader>jl <Plug>(easymotion-overwin-line)
-  xmap <Leader>jl <Plug>(easymotion-bd-jk)
-  omap <Leader>jl <Plug>(easymotion-bd-jk)
+  nmap <leader>jl <Plug>(easymotion-overwin-line)
+  xmap <leader>jl <Plug>(easymotion-bd-jk)
+  omap <leader>jl <Plug>(easymotion-bd-jk)
   " MultiWindow easymotion for char
-  nmap <Leader>jj <Plug>(easymotion-overwin-f)
-  xmap <Leader>jj <Plug>(easymotion-bd-f)
-  omap <Leader>jj <Plug>(easymotion-bd-f)
+  nmap <leader>jj <Plug>(easymotion-overwin-f)
+  xmap <leader>jj <Plug>(easymotion-bd-f)
+  omap <leader>jj <Plug>(easymotion-bd-f)
   map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
   let g:EasyMotion_startofline = 0
@@ -201,7 +201,7 @@ Plug 'easymotion/vim-easymotion', { 'on': [ '<Plug>(easymotion-lineforward)',
 
 " Plug 't9md/vim-choosewin',{'on': '<Plug>(choosewin)'} " {1
 "   let g:choosewin_overlay_enable = 1
-"   nmap <Leader>wc <Plug>(choosewin)
+"   nmap <leader>wc <Plug>(choosewin)
 
 Plug 'kshenoy/vim-signature' " {1
   let g:SignatureEnabledAtStartup    = 1

@@ -34,10 +34,10 @@ let g:startify_enable_special = 0 " Show <empty buffer> and <quit>.
 "         \ '/project/.*/documentation',
 "         \ escape(fnamemodify($HOME, ':p'), '\') .'mysecret.txt',
 "         \ ]
-nnoremap <Leader>sl :Startify<cr>
-nnoremap <Leader>ss :SSave<cr>
-nnoremap <Leader>sd :SDelete<cr>
-nnoremap <Leader>sc :SClose<cr>
+nnoremap <leader>sl :Startify<cr>
+nnoremap <leader>ss :SSave<cr>
+nnoremap <leader>sd :SDelete<cr>
+nnoremap <leader>sc :SClose<cr>
 
 
 "-----------------------------------------------------------------------------
@@ -84,7 +84,7 @@ let g:NERDTreeChDirMode=2
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeMouseMode=2
 nnoremap <leader>nf :NERDTreeFind<CR>
-nnoremap <Leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
+nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 " nnoremap <leader>nf :CocCommand explorer<CR>
 
 
@@ -112,12 +112,12 @@ let g:ctrlsf_extra_backend_args = {
         \ -g "!*.exe" -g "!*.so" -g "!*.dll"
         \ -g "!cscope*"'
   \ }
-vmap <Leader>vs <Plug>CtrlSFVwordPath
-vmap <Leader>vv <Plug>CtrlSFVwordExec
-nmap <Leader>vs <Plug>CtrlSFPrompt
-nmap <Leader>vv <Plug>CtrlSFCwordExec
-nmap <Leader>vV <Plug>CtrlSFCCwordExec
-nnoremap <Leader>vj :CtrlSFToggle<CR>
+vmap <leader>vs <Plug>CtrlSFVwordPath
+vmap <leader>vv <Plug>CtrlSFVwordExec
+nmap <leader>vs <Plug>CtrlSFPrompt
+nmap <leader>vv <Plug>CtrlSFCwordExec
+nmap <leader>vV <Plug>CtrlSFCCwordExec
+nnoremap <leader>vj :CtrlSFToggle<CR>
 
 
 "-----------------------------------------------------------------------------
@@ -128,25 +128,25 @@ let g:EasyMotion_verbose = 0
 map W <Plug>(easymotion-lineforward)
 map B <Plug>(easymotion-linebackward)
 " MultiWindow easymotion for word
-nmap <Leader>jw <Plug>(easymotion-overwin-w)
-xmap <Leader>jw <Plug>(easymotion-bd-w)
-omap <Leader>jw <Plug>(easymotion-bd-w)
+nmap <leader>jw <Plug>(easymotion-overwin-w)
+xmap <leader>jw <Plug>(easymotion-bd-w)
+omap <leader>jw <Plug>(easymotion-bd-w)
 " Multi Input Find Motion:s
-nmap <Leader>js <Plug>(easymotion-sn)
-xmap <Leader>js <Plug>(easymotion-sn)
-omap <Leader>js <Plug>(easymotion-sn)
+nmap <leader>js <Plug>(easymotion-sn)
+xmap <leader>js <Plug>(easymotion-sn)
+omap <leader>js <Plug>(easymotion-sn)
 " Multi Input Find Motion:t
-nmap <Leader>jt <Plug>(easymotion-tn)
-xmap <Leader>jt <Plug>(easymotion-tn)
-omap <Leader>jt <Plug>(easymotion-tn)
+nmap <leader>jt <Plug>(easymotion-tn)
+xmap <leader>jt <Plug>(easymotion-tn)
+omap <leader>jt <Plug>(easymotion-tn)
 " MultiWindow easymotion for line
-nmap <Leader>jl <Plug>(easymotion-overwin-line)
-xmap <Leader>jl <Plug>(easymotion-bd-jk)
-omap <Leader>jl <Plug>(easymotion-bd-jk)
+nmap <leader>jl <Plug>(easymotion-overwin-line)
+xmap <leader>jl <Plug>(easymotion-bd-jk)
+omap <leader>jl <Plug>(easymotion-bd-jk)
 " MultiWindow easymotion for char
-nmap <Leader>jj <Plug>(easymotion-overwin-f)
-xmap <Leader>jj <Plug>(easymotion-bd-f)
-omap <Leader>jj <Plug>(easymotion-bd-f)
+nmap <leader>jj <Plug>(easymotion-overwin-f)
+xmap <leader>jj <Plug>(easymotion-bd-f)
+omap <leader>jj <Plug>(easymotion-bd-f)
 map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
 "-----------------------------------------------------------------------------
@@ -167,7 +167,7 @@ map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 "-----------------------------------------------------------------------------
 " Plug 't9md/vim-choosewin',{'on': '<Plug>(choosewin)'} " {1
 "   let g:choosewin_overlay_enable = 1
-"   nmap <Leader>wc <Plug>(choosewin)
+"   nmap <leader>wc <Plug>(choosewin)
 
 " Plug 'kshenoy/vim-signature' " {1
 "   let g:SignatureEnabledAtStartup    = 1
@@ -222,9 +222,9 @@ map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 "   nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
 "   nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
 "   nmap <leader>mm <Plug>MarkSet
-"   xmap <Leader>mm <Plug>MarkSet
+"   xmap <leader>mm <Plug>MarkSet
 "   nmap <leader>mr <Plug>MarkRegex
-"   xmap <Leader>mr <Plug>MarkRegex
+"   xmap <leader>mr <Plug>MarkRegex
 "   nmap <leader>mn <Plug>MarkClear
 "   xmap <leader>mn <Plug>MarkClear
 "   nmap <leader>m? <Plug>MarkSearchAnyPrev

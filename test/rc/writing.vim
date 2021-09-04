@@ -9,30 +9,30 @@
 " Plug 'jceb/vim-orgmode', {'for': 'org'}
 " Plug 'tpope/vim-speeddating'
 Plug 'chrisbra/NrrwRgn',{'on': 'NR'}
-  xnoremap <Leader>nl :NR<cr>
-  nnoremap <Leader>nl vip:NR<cr>
-  nnoremap <Leader>nw :NW<cr>
+  xnoremap <leader>nl :NR<cr>
+  nnoremap <leader>nl vip:NR<cr>
+  nnoremap <leader>nw :NW<cr>
 
 " Plug 'tracyone/utl.vim', { 'on': 'Utl'}
 
 " " toggle free writing in vim (Goyo)
-" nnoremap <Leader>to :Goyo<cr>
+" nnoremap <leader>to :Goyo<cr>
 " " org open index.org
-" nmap <Leader>ow :call <SID>open_index_org()<cr>
+" nmap <leader>ow :call <SID>open_index_org()<cr>
 " " org show todo
-" nmap <Leader>ot <Plug>OrgAgendaTodo
+" nmap <leader>ot <Plug>OrgAgendaTodo
 " " org change todo type
-" nmap <Leader>od <Plug>OrgTodoToggleInteractive
+" nmap <leader>od <Plug>OrgTodoToggleInteractive
 " " org inster a new date
-" nmap <Leader>os <Plug>OrgDateInsertTimestampInactiveCmdLine
+" nmap <leader>os <Plug>OrgDateInsertTimestampInactiveCmdLine
 " " org new check box
-" nmap <Leader>oc <Plug>OrgCheckBoxNewBelow
+" nmap <leader>oc <Plug>OrgCheckBoxNewBelow
 " " org instert new url
-" nmap <Leader>on <Plug>OrgHyperlinkInsert
+" nmap <leader>on <Plug>OrgHyperlinkInsert
 " " org checkbox toggle
-" nmap <Leader>ob <Plug>OrgCheckBoxToggle
+" nmap <leader>ob <Plug>OrgCheckBoxToggle
 " " org checkbox update
-" nmap <Leader>ou <Plug>OrgCheckBoxUpdate
+" nmap <leader>ou <Plug>OrgCheckBoxUpdate
 
 " let g:org_agenda_files = [$VIMFILES.'/org/*.org']
 " let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],

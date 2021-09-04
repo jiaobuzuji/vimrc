@@ -21,33 +21,33 @@ let s:fzf_custom_command = 'rg -H --hidden -l'.'
   \ -g "!.git/*" -g "!.svn/*" -g "!.hg/*"
   \ ""'
 let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
-nnoremap <Leader>kk :Files<cr>
-nnoremap <Leader>kh :History<cr>
-nnoremap <Leader>kb :Buffers<cr>
-nnoremap <Leader>kr :Rg<cr>
-nnoremap <Leader>ks :Snippets<cr>
-nnoremap <Leader>kw :Windows<cr>
-nnoremap <Leader>km :Marks<cr>
-nnoremap <Leader>kl :Lines<cr>
-nnoremap <Leader>kt :Tags<cr>
-nnoremap <Leader>kc :Commands<cr>
-nnoremap <Leader>kgc :Commits<cr>
-nnoremap <Leader>kgf :GFiles<cr>
-nnoremap <Leader>kf  :FzfFunky<cr>
-" nnoremap <Leader>kmp :Maps<cr>
-" nnoremap <Leader>kht :Helptags<cr>
+nnoremap <leader>kk :Files<cr>
+nnoremap <leader>kh :History<cr>
+nnoremap <leader>kb :Buffers<cr>
+nnoremap <leader>kr :Rg<cr>
+nnoremap <leader>ks :Snippets<cr>
+nnoremap <leader>kw :Windows<cr>
+nnoremap <leader>km :Marks<cr>
+nnoremap <leader>kl :Lines<cr>
+nnoremap <leader>kt :Tags<cr>
+nnoremap <leader>kc :Commands<cr>
+nnoremap <leader>kgc :Commits<cr>
+nnoremap <leader>kgf :GFiles<cr>
+nnoremap <leader>kf  :FzfFunky<cr>
+" nnoremap <leader>kmp :Maps<cr>
+" nnoremap <leader>kht :Helptags<cr>
 
 
 " Plug g:host.'Yggdroot/LeaderF' " {1
 " Plug g:host.'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
-" nnoremap <Leader>kk :LeaderfFile<cr>
-" nnoremap <Leader>kh :LeaderfMru<cr>
-" nnoremap <Leader>kb :LeaderfBuffer<Cr>
+" nnoremap <leader>kk :LeaderfFile<cr>
+" nnoremap <leader>kh :LeaderfMru<cr>
+" nnoremap <leader>kb :LeaderfBuffer<Cr>
 " nnoremap <leader>km :LeaderfMarks<Cr>
 " nnoremap <leader>kf :LeaderfFunction<cr>
-" nnoremap <Leader>kl :LeaderfLines<cr>
-" nnoremap <Leader>ks :LeaderfSelf<cr>
-" nnoremap <Leader>kt :LeaderfBufTag<cr>
+" nnoremap <leader>kl :LeaderfLines<cr>
+" nnoremap <leader>ks :LeaderfSelf<cr>
+" nnoremap <leader>kt :LeaderfBufTag<cr>
 " let g:Lf_CacheDiretory=$VIMFILES
 " let g:Lf_DefaultMode='FullPath'
 " let g:Lf_StlSeparator = { 'left': '', 'right': '' }

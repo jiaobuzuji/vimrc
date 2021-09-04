@@ -5,24 +5,24 @@
 " vim:fdm=marker fmr={,} fen
 
 " git config -e
-nnoremap <Leader>ge :sp .git/config<cr>
+nnoremap <leader>ge :sp .git/config<cr>
 
 " Plug 'lambdalisue/gina.vim' " {1
 "   nnoremap <F3> :Gina status<cr>
 "   " Open git status window
-"   nnoremap <Leader>gs :Gina status<cr>
+"   nnoremap <leader>gs :Gina status<cr>
 "   " Open github url
-"   nnoremap <Leader>gh :Gina browse<cr>
+"   nnoremap <leader>gh :Gina browse<cr>
 "   " Open git blame windows
-"   nnoremap <Leader>gb :Gina blame --use-author-instead :<cr>
+"   nnoremap <leader>gb :Gina blame --use-author-instead :<cr>
 "   " show branch
-"   nnoremap <Leader>sb :Gina branch -a<cr>
+"   nnoremap <leader>sb :Gina branch -a<cr>
 "   " show tag
-"   nnoremap <Leader>st :Gina tag<cr>
+"   nnoremap <leader>st :Gina tag<cr>
 "   " git diff current file
-"   nnoremap <Leader>gd :Gina compare :<cr>
+"   nnoremap <leader>gd :Gina compare :<cr>
 "   " git cd
-"   nnoremap <Leader>gc :Gina cd<cr>
+"   nnoremap <leader>gc :Gina cd<cr>
 
 "   function! StageNext(count) abort
 "       for i in range(a:count)
@@ -201,37 +201,37 @@ Plug 'airblade/vim-gitgutter'
   let g:fugitive_no_maps=0
   nnoremap <F3> :only<cr>:Gstatus<cr>
   " Open git status window
-  nnoremap <Leader>gs :only<cr>:Gstatus<cr>gg<C-n>
+  nnoremap <leader>gs :only<cr>:Gstatus<cr>gg<C-n>
   " Open git log( browser mode)
   " Open git log(file mode)
-  nnoremap <Leader>gL :Gitv! --all<cr>
+  nnoremap <leader>gL :Gitv! --all<cr>
   " Open git log(file mode)
   vnoremap <leader>gL :Gitv! --all<cr>
-  nnoremap <Leader>gl :Gitv<cr>
-  " nnoremap <Leader>gl :call te#git#show_log(".")<cr>
+  nnoremap <leader>gl :Gitv<cr>
+  " nnoremap <leader>gl :call te#git#show_log(".")<cr>
   " Open git blame windows
-  nnoremap <Leader>gb :Gblame<cr>
+  nnoremap <leader>gb :Gblame<cr>
   " git diff current file (vimdiff)
-  nnoremap <Leader>gd :Gdiff<cr>
+  nnoremap <leader>gd :Gdiff<cr>
   " git cd
-  nnoremap <Leader>gc :Gcd<cr>
+  nnoremap <leader>gc :Gcd<cr>
   " git merge
-  nnoremap <Leader>gm :call te#git#git_merge()<cr>
+  nnoremap <leader>gm :call te#git#git_merge()<cr>
   " git push origin master
-  nnoremap <Leader>gp :call te#git#GitPush("heads")<cr>
+  nnoremap <leader>gp :call te#git#GitPush("heads")<cr>
   " git push to gerrit
-  nnoremap <Leader>gg :call te#git#GitPush("for")<cr>
+  nnoremap <leader>gg :call te#git#GitPush("for")<cr>
   " git fetch all
-  nnoremap <Leader>gf :call te#utils#run_command('git fetch --all')<cr>
+  nnoremap <leader>gf :call te#utils#run_command('git fetch --all')<cr>
 
 
 " Plug 'jaxbot/github-issues.vim', { 'on': 'Gissue' } " {1
   " let g:gissues_lazy_load = 1
   " let g:gissues_async_omni = 1
   " " list git issue
-  " nnoremap <Leader>gi :silent! Gissue<cr>
+  " nnoremap <leader>gi :silent! Gissue<cr>
   " " create new github issue
-  " nnoremap <Leader>ga :silent! Giadd<cr>
+  " nnoremap <leader>ga :silent! Giadd<cr>
 
 Plug 'rhysd/github-complete.vim',{'for': ['gitcommit', 'markdown']} " {1
   " if filereadable($VIMFILES.'/.github_token')

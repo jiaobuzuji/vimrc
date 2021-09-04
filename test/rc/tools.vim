@@ -5,11 +5,11 @@
 " vim:fdm=marker fmr={,} fen
 
 Plug 'fedorenchik/VimCalc3',{'on': 'Calc'} " {1
-  nnoremap <Leader>ac :Calc<cr>
+  nnoremap <leader>ac :Calc<cr>
 
 " Plug 'ianva/vim-youdao-translater', {'do': 'pip install requests --user','on': ['Ydc','Ydv']} " {1
-"   nnoremap <Leader>ay <esc>:Ydc<cr>
-"   vnoremap <Leader>ay <esc>:Ydv<cr>
+"   nnoremap <leader>ay <esc>:Ydc<cr>
+"   vnoremap <leader>ay <esc>:Ydv<cr>
 "   nnoremap <F10> <esc>:Ydc<cr>
 "   vnoremap <F10> <esc>:Ydv<cr>
 
@@ -28,7 +28,7 @@ Plug 'mbbill/VimExplorer',{'on': 'VE'} " {1
   let g:VEConf_systemEncoding = 'cp936'
   noremap <F11> :silent! VE .<cr>
   " Open Vim File Explorer
-  nnoremap <Leader>fj :silent! VE .<cr>
+  nnoremap <leader>fj :silent! VE .<cr>
 
 Plug 'qpkorr/vim-renamer',{'on': 'Ren'} " {1
 Plug 'Shougo/vinarise.vim',{'on': 'Vinarise'} " {1
