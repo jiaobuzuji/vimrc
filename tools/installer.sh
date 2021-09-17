@@ -85,28 +85,28 @@ mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
 #            "master" \
 #            "dein.vim"
 
-# # junegunn vim-plug
-# repo_sync  "${REPO_PATH}" \
-#            "https://${GITSRVURL}/junegunn/vim-plug" \
-#            "master" \
-#            "vim-plug.git"
-# curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# vim -c 'PlugInstall|q'
+# junegunn vim-plug
+repo_sync  "${REPO_PATH}" \
+           "https://${GITSRVURL}/junegunn/vim-plug" \
+           "master" \
+           "vim-plug.git"
+curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c 'PlugInstall|q'
 
-# K-takata minpac
-# git clone --depth=1 https://github.com/ ~/.vim//
-repo_sync  "${HOME}/.vim/pack/minpac/opt" \
-           "https://${GITSRVURL}/k-takata/minpac" \
-           "master" \
-           "minpac"
-vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
-repo_sync  "${HOME}/.fzf" \
-           "https://${GITSRVURL}/junegunn/fzf" \
-           "master" \
-           "fzf"
-cd  ${HOME}/.fzf/
-./install --all
+# # K-takata minpac
+# # git clone --depth=1 https://github.com/ ~/.vim//
+# repo_sync  "${HOME}/.vim/pack/minpac/opt" \
+#            "https://${GITSRVURL}/k-takata/minpac" \
+#            "master" \
+#            "minpac"
+# vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
+# repo_sync  "${HOME}/.fzf" \
+#            "https://${GITSRVURL}/junegunn/fzf" \
+#            "master" \
+#            "fzf"
+# cd  ${HOME}/.fzf/
+# ./install --all
 
 # # YouCompleteMe
 # repo_sync  "${HOME}/.vim/bundle" \

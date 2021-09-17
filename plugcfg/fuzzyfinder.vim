@@ -4,9 +4,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
-" Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'} " {1
-" Plug g:host.'junegunn/fzf.vim'
-" Plug g:host.'tracyone/fzf-funky',{'on': 'FzfFunky'}
+Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'} " {1
+Plug g:host.'junegunn/fzf.vim'
+Plug g:host.'tracyone/fzf-funky',{'on': 'FzfFunky'}
 let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
 " let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup'.'
 "   \ --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"

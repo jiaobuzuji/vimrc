@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'mhinz/vim-startify' " {1
+Plug g:host.'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab']},
@@ -37,7 +37,7 @@ nnoremap <leader>sc :SClose<cr>
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'preservim/nerdcommenter' " {1
+Plug g:host.'preservim/nerdcommenter' " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
 " let g:NERDAltDelims_c = 1 " default delimiter NOTE BUG!!!
@@ -45,7 +45,7 @@ let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': 
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'mbbill/undotree' " {1
+Plug g:host.'mbbill/undotree' " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
@@ -53,7 +53,7 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'tpope/vim-surround' " {1
+Plug g:host.'tpope/vim-surround' " {1
 
 
 " "-----------------------------------------------------------------------------
@@ -83,9 +83,18 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 " nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 " " nnoremap <leader>nf :CocCommand explorer<CR>
 
+" Netrw " {1
+let g:netrw_browse_split = 3
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 30
+nnoremap <leader>nf :Vexplore<CR>
+
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'dyng/ctrlsf.vim' " {1
+" Plug g:host.'mhinz/vim-grepper' " {1
+
+Plug g:host.'dyng/ctrlsf.vim' " {1
 " let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_default_root = 'project+ww'
 let g:ctrlsf_extra_root_markers = ['.git']
@@ -115,7 +124,7 @@ nnoremap <leader>vj :CtrlSFToggle<CR>
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'easymotion/vim-easymotion' " {1
+Plug g:host.'easymotion/vim-easymotion' " {1
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_show_prompt = 0
 let g:EasyMotion_verbose = 0
