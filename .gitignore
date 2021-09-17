@@ -1,8 +1,9 @@
 *.swp
 *.swn
 *.swo
-.viminfo
+*.log
 
+.viminfo
 .netrwhist
 .github_token
 
@@ -17,4 +18,3 @@ spell/
 backup/
 swap/
 .fzf-history/
-.vim-bookmarks

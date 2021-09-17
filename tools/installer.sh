@@ -68,15 +68,15 @@ function repo_sync() {
 [ -z "${CURR_PATH}" ] && CURR_PATH=$(pwd)
 [ -z "${GITSRVURL}" ] && GITSRVURL="github.com.cnpmjs.org" # mirror0: github.com.cnpmjs.org   mirror1: gitee.com(not work)
 
-# # Jiaobuzuji vimrc
-# repo_sync  "${REPO_PATH}" \
-#            "https://${GITSRVURL}/jiaobuzuji/vimrc" \
-#            "master" \
-#            "vimrc.git"
+# Jiaobuzuji vimrc
+repo_sync  "${REPO_PATH}" \
+           "https://${GITSRVURL}/jiaobuzuji/vimrc" \
+           "master" \
+           "vimrc.git"
 
-# rm -f "${HOME}/.vim" # remove link
-# lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
-# mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
+rm -f "${HOME}/.vim" # remove link
+lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
+mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
 
 # # Shougo dein
 # # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${HOME}/.vim/bundle"
@@ -96,11 +96,17 @@ function repo_sync() {
 
 # K-takata minpac
 # git clone --depth=1 https://github.com/ ~/.vim//
-# repo_sync  "${HOME}/.vim/pack/minpac/opt" \
-#            "https://${GITSRVURL}/k-takata/minpac" \
-#            "master" \
-#            "minpac"
+repo_sync  "${HOME}/.vim/pack/minpac/opt" \
+           "https://${GITSRVURL}/k-takata/minpac" \
+           "master" \
+           "minpac"
 vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
+repo_sync  "${HOME}/.fzf" \
+           "https://${GITSRVURL}/junegunn/fzf" \
+           "master" \
+           "fzf"
+cd  ${HOME}/.fzf/
+./install --all
 
 # # YouCompleteMe
 # repo_sync  "${HOME}/.vim/bundle" \
@@ -112,7 +118,7 @@ vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
 # git submodule update --init --recursive && python3 ./install.py --all || return 1 # TODO
 
 # coc.nvim
-# vim -c 'CocInstall -sync coc-marketplace coc-highlight coc-pairs coc-yank coc-word coc-omni coc-snippets coc-tabnine coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python|q'
+vim -c 'CocInstall -sync coc-marketplace coc-highlight coc-pairs coc-yank coc-word coc-omni coc-snippets coc-tabnine coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python|q'
 
 # -----------------------------------------------------------------
 # vim:fdm=marker
