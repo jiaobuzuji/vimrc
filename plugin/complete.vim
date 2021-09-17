@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
+" Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
 " :CocInstall coc-marketplace coc-highlight coc-pairs coc-explorer
 " \ coc-yank coc-word coc-omni coc-snippets coc-tabnine
 " \ coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python
