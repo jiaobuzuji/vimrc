@@ -174,7 +174,7 @@ set ttimeoutlen=100 " time in msec for 'ttimeout'
 " 19 reading and writing files {1
 set modeline
 set autowrite " automatically write a file when leaving a modified buffer
-set autowriteall " as 'autowrite', but works with more commands
+" set autowriteall " as 'autowrite', but works with more commands
 set autoread   "autoread when a file is changed from the outside
 set fileformats=unix,dos,mac
 set nowritebackup " write a backup file before overwriting a file

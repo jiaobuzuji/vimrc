@@ -95,11 +95,12 @@ curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
 vim -c 'PlugInstall|q'
 
 # # K-takata minpac
-# git clone --depth=1 https://github.com/ ~/.vim//
+# # git clone --depth=1 https://github.com/ ~/.vim//
 # repo_sync  "${HOME}/.vim/pack/minpac/opt" \
 #            "https://${GITSRVURL}/k-takata/minpac" \
 #            "master" \
 #            "minpac"
+# vim -c 'helptags $HOME/.vim/pack/minpac/opt/doc|q'
 
 # # YouCompleteMe
 # repo_sync  "${HOME}/.vim/bundle" \
@@ -107,7 +108,7 @@ vim -c 'PlugInstall|q'
 #             "master" \
 #             "YouCompleteMe"
 # cd  ${HOME}/.vim/bundle/YouCompleteMe
-# --clang-completer
+# --clangd-completer
 # git submodule update --init --recursive && python3 ./install.py --all || return 1 # TODO
 
 # coc.nvim
