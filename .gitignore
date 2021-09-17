@@ -6,7 +6,7 @@
 .netrwhist
 .github_token
 
-test/pack/
+test/
 pack/
 bundle/
 autoload/plug.vim
@@ -16,11 +16,5 @@ undodir/
 spell/
 backup/
 swap/
-
 .fzf-history/
-org/
-.yank_history_v2.txt
-.easyclip
-.complete_plugin
 .vim-bookmarks
-.screenlock

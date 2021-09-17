@@ -4,13 +4,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
-" if te#env#IsWindows()
-"     set makeprg=mingw32-make
-" else
-"     set keywordprg=""
-"     set path=.,/usr/include/,$PWD/**
-" endif
-
 "  2 moving around, searching and patterns {1
 set whichwrap=b,h,l,<,>,[,]  " list of flags specifying which commands wrap to another line
 set ignorecase  "ignore case when using a search pattern
@@ -49,51 +42,6 @@ set splitbelow " a new window is put below the current one
 set splitright " a new window is put right of the current one
 set winminheight=0  " Windows can be 0 line high
 set termwinkey=<c-y> " key that precedes Vim commands in a terminal window
-
-let s:seperator=' | '
-" if get(g:,'feat_enable_basic') == 1
-"     if te#env#check_requirement()
-"         let s:function_name="%{exists(':TagbarToggle')?\ tagbar#currenttag('%s".s:seperator."'".",'')\ :\ ''}"
-"     else
-"         let s:function_name="%{Tlist_Get_Tagname_By_Line()}".s:seperator
-"     endif
-" else
-"     let s:function_name=""
-" endif
-
-if get(g:,'feat_enable_git') == 1
-    if g:git_plugin_name.cur_val ==# 'gina.vim'
-        let s:git_branch="[%{gina#component#repo#branch()}]%= "
-    else
-        let s:git_branch="%{exists('*fugitive#statusline')?\ fugitive#statusline()\ :\ ''}%= "
-    endif
-else
-    let s:git_branch='%= '
-endif
-
-if get(g:,'feat_enable_airline') != 1
-    function! MyStatusLine(type) abort
-        let l:mystatus_line='%<%t%m%r%h%w'
-        if a:type == 1
-            let l:mystatus_line.=s:git_branch
-            " let l:mystatus_line.=s:function_name
-        elseif a:type == 3
-            "for win32 ctags make gvim slow...
-            let l:mystatus_line.=s:git_branch
-        endif
-        let l:mystatus_line.="%{&ft}".s:seperator."%{(&fenc!=''?&fenc:&enc)}[%{&ff}]".s:seperator."%p%%[%l,%v]"
-        " let l:mystatus_line.=s:seperator."%{strftime(\"%m/%d\-\%H:%M\")} "
-        if exists('*neomakemp#run_status') && neomakemp#run_status() !=# ''
-            let l:mystatus_line.=s:seperator.neomakemp#run_status().' '
-        endif
-        return l:mystatus_line
-    endfunction
-    if te#env#IsWindows()
-        set statusline=%!MyStatusLine(3)
-    else
-        set statusline=%!MyStatusLine(1)
-    endif
-endif
 
 "  7 multiple tab pages {1
 set showtabline=1 " 0, 1 or 2; when to use a tab pages line
@@ -219,3 +167,4 @@ set viminfofile=$VIMFILES/.viminfo
 
 " scriptencoding must be placed encoding
 scriptencoding utf-8
+

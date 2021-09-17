@@ -32,6 +32,11 @@ call plug#begin($VIMFILES.'/bundle')
   " source $VIMFILES/plugcfg/tools.vim
 call plug#end() " All of your Plugins must be added before the following line
 
+
+command! PackUpdate source $MYVIMRC | call pack#PackInit() | call minpac#update()
+command! PackClean  source $MYVIMRC | call pack#PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
+
 filetype plugin indent on
 syntax on
 

@@ -5,10 +5,6 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'yianwillis/vimcdoc' " {1
-
-
-"-----------------------------------------------------------------------------
 Plug g:host.'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
