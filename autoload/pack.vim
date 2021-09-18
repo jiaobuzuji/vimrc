@@ -1,4 +1,4 @@
-" colorscheme
+" Built-in Package Manager
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
