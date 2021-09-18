@@ -153,8 +153,9 @@ omap <leader>jj <Plug>(easymotion-bd-f)
 map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
 "-----------------------------------------------------------------------------
-" packadd auto-pairs " {1
+packadd matchit
 
+" packadd auto-pairs " {1
 
 " packadd delimitMate " {1
 " let g:delimitMate_nesting_quotes = ['"','`']
