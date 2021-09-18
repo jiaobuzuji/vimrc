@@ -68,7 +68,6 @@ endfunction
 " call plug#begin($VIMFILES.'/bundle')
 "   " Plug g:host.'junegunn/vim-plug' " vim-plug doc
 "   source $VIMFILES/plugcfg/colorscheme.vim
-"   source $VIMFILES/plugcfg/statusline.vim
 "   source $VIMFILES/plugcfg/awesome.vim " miscellaneous lifechange
 "   source $VIMFILES/plugcfg/fuzzyfinder.vim
 "   source $VIMFILES/plugcfg/complete.vim " snippet lsp
