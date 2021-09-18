@@ -56,8 +56,6 @@ vnoremap <        <gv
 vnoremap >        >gv
  
 " Move the lines to below/before
-call te#meta#map('xnoremap','j',":m '>+1<CR>gv=gv")
-call te#meta#map('xnoremap','k',":m '<-2<CR>gv=gv")
 xnoremap <leader>mj :m '>+1<CR>gv=gv
 xnoremap <leader>mk :m '<-2<CR>gv=gv
 nnoremap <leader>mj :m .+1<CR>==
@@ -82,32 +80,32 @@ vnoremap <silent> <c-F4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\
 
 " Move cursor {1
 " move cursor in Insert mode
-call te#meta#map('inoremap','h','<Left>')
-call te#meta#map('inoremap','l','<Right>')
-call te#meta#map('inoremap','j','<Down>')
-call te#meta#map('inoremap','k','<Up>')
+inoremap <m-h> <Left>
+inoremap <m-l> <Right>
+inoremap <m-j> <Down>
+inoremap <m-k> <Up>
 inoremap        <C-A> <C-O>^
 inoremap   <C-X><C-A> <C-A>
 inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"
 
 " move cursor in Command line
-call te#meta#map('cnoremap','l','<right>')
-call te#meta#map('cnoremap','j','<down>')
-call te#meta#map('cnoremap','k','<up>')
-call te#meta#map('cnoremap','b','<S-left>')
-cnoremap        <C-A> <Home>
-cnoremap   <C-X><C-A> <C-A>
+" call te#meta#map('cnoremap','l','<right>')
+" call te#meta#map('cnoremap','j','<down>')
+" call te#meta#map('cnoremap','k','<up>')
+" call te#meta#map('cnoremap','b','<S-left>')
+" cnoremap        <C-A> <Home>
+" cnoremap   <C-X><C-A> <C-A>
 
 " multiple windows and tabs {1
 " Quit Vim
 nnoremap <leader>qa :qa<cr>
 nnoremap <leader>wd <C-w>q
 
-" " move between windows
-" call te#meta#map('nnoremap','h','<C-w>h')
-" call te#meta#map('nnoremap','l','<C-w>l')
-" call te#meta#map('nnoremap','j','<C-w>j')
-" call te#meta#map('nnoremap','k','<C-w>k')
+" move between windows
+cnoremap <m-h> <c-w>h
+cnoremap <m-l> <c-w>l
+cnoremap <m-j> <c-w>j
+cnoremap <m-k> <c-w>k
 " " vertical open window
 " nnoremap <leader>wv :vsp<cr>
 " " vertical open window then focus the new one
