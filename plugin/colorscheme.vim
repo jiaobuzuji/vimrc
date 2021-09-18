@@ -1,14 +1,57 @@
-" statusline + tabline
+" colorscheme
 " Author: jiaobuzuji@163.com
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
+
 "-----------------------------------------------------------------------------
+" colorscheme config
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italic=0 " disable italic
+
+let g:PaperColor_Theme_Options = {
+\   'theme': {
+\     'default.dark': {
+\       'override' : {
+\         'color00' : ['#080808', '232'],
+\         'linenumber_bg' : ['#080808', '232']
+\       }
+\     }
+\   }
+\ }
+
+" let g:jellybeans_overrides = {
+" \ 'background': { 'guibg': '000000' },
+" \ 'StatusLine': {'guibg': '282828', 'guifg': 'c7c7c7', 'ctermbg': '235', 'ctermfg': '255'},
+" \ 'StatusLineNC': {'guibg': '3a3a3a', 'guifg': '808080', 'ctermbg': '236', 'ctermfg': '244'},
+" \}
+" let g:jellybeans_use_term_italics = 1
+
+
+" let g:ayucolor="dark"   " dart, mirage, light
+
+
+"-----------------------------------------------------------------------------
+packadd lightline.vim "{1
+let g:lightline = {
+\   'colorscheme':'jellybeans',
+\   'active': {
+\     'left': [['mode', 'paste'],['relativepath','modified']],
+\     'right': [['lineinfo'], ['percent'], ['filetype']]
+\   },
+\   'mode_map': {
+\     'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'VL', "\<C-v>": 'VB',
+\     'c': 'C', 's': 'S', 'S': 'SL', "\<C-s>": 'SB', 't': 'T'
+\   },
+\ }
+
+
+" "-----------------------------------------------------------------------------
 " vim-airline "{1
 " powerline font: https://github.com/Magnetic2014/YaHei-Consolas-Hybrid-For-Powerline
-" Plug g:host.'vim-airline/vim-airline'
-" Plug g:host.'vim-airline/vim-airline-themes'
+" packadd vim-airline
+" packadd vim-airline-themes
 
 " let g:airline_extensions = []
 " let g:airline_extensions = ['tabline', 'tagbar']
@@ -71,7 +114,7 @@
 " " "https://github.com/vim-airline/vim-airline/issues/399
 " autocmd misc_group BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
-"-----------------------------------------------------------------------------
+" "-----------------------------------------------------------------------------
 " " built-in statusline "{1
 " let s:seperator=' | '
 " " if get(g:,'feat_enable_basic') == 1
@@ -118,19 +161,5 @@
 "     endif
 " endif
 
-
-" "-----------------------------------------------------------------------------
-Plug g:host.'itchyny/lightline.vim' "{1
-let g:lightline = {
-\   'colorscheme':'jellybeans',
-\   'active': {
-\     'left': [['mode', 'paste'],['relativepath','modified']],
-\     'right': [['lineinfo'], ['percent'], ['filetype']]
-\   },
-\   'mode_map': {
-\     'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'VL', "\<C-v>": 'VB',
-\     'c': 'C', 's': 'S', 'S': 'SL', "\<C-s>": 'SB', 't': 'T'
-\   },
-\ }
 
 

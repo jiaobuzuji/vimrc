@@ -4,9 +4,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
-Plug g:host.'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'} " {1
-Plug g:host.'junegunn/fzf.vim'
-Plug g:host.'tracyone/fzf-funky',{'on': 'FzfFunky'}
+"-----------------------------------------------------------------------------
+packadd fzf " {1
+packadd fzf.vim
+packadd fzf-funky
 let g:fzf_history_dir = $VIMFILES.'/.fzf-history'
 " let s:fzf_custom_command = 'ag --hidden -l --nocolor --nogroup'.'
 "   \ --ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
@@ -23,6 +24,8 @@ let s:fzf_custom_command = 'rg -H --hidden -l'.'
 let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
 nnoremap <leader>kk :Files<cr>
 nnoremap <leader>kh :History<cr>
+nnoremap <leader>k; :History:<cr>
+nnoremap <leader>k/ :History/<cr>
 nnoremap <leader>kb :Buffers<cr>
 nnoremap <leader>kr :Rg<cr>
 nnoremap <leader>ks :Snippets<cr>
@@ -38,8 +41,9 @@ nnoremap <leader>kf  :FzfFunky<cr>
 " nnoremap <leader>kht :Helptags<cr>
 
 
-" Plug g:host.'Yggdroot/LeaderF' " {1
-" Plug g:host.'Yggdroot/LeaderF-marks',{'on': 'LeaderfMarks'}
+"-----------------------------------------------------------------------------
+" packadd LeaderF " {1
+" packadd LeaderF-marks
 " nnoremap <leader>kk :LeaderfFile<cr>
 " nnoremap <leader>kh :LeaderfMru<cr>
 " nnoremap <leader>kb :LeaderfBuffer<Cr>

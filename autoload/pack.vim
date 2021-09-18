@@ -24,34 +24,35 @@ function! pack#PackInit() abort
   call minpac#add(s:host.'morhetz/gruvbox')
   call minpac#add(s:host.'NLKNguyen/papercolor-theme')
   " Statusline
-  " call minpac#add(s:host.'vim-airline/vim-airline')
-  " call minpac#add(s:host.'vim-airline/vim-airline-themes')
-  call minpac#add(s:host.'itchyny/lightline.vim')
+  " call minpac#add(s:host.'vim-airline/vim-airline', {'type':'opt'})
+  " call minpac#add(s:host.'vim-airline/vim-airline-themes', {'type':'opt'})
+  call minpac#add(s:host.'itchyny/lightline.vim', {'type':'opt'})
 
   " Awesome : miscellaneous lifechange {1
   call minpac#add(s:host.'yianwillis/vimcdoc', {'type':'opt'})
-  call minpac#add(s:host.'mhinz/vim-startify')
-  call minpac#add(s:host.'preservim/nerdcommenter')
-  call minpac#add(s:host.'mbbill/undotree')
-  call minpac#add(s:host.'tpope/vim-surround')
-  " call minpac#add(s:host.'junegunn/vim-easy-align')
-  " call minpac#add(s:host.'preservim/nerdtree')
-  " call minpac#add(s:host.'mhinz/vim-grepper')
-  call minpac#add(s:host.'dyng/ctrlsf.vim')
-  call minpac#add(s:host.'easymotion/vim-easymotion')
-  " call minpac#add(s:host.'jiangmiao/auto-pairs')
-  " call minpac#add(s:host.'luochen1990/rainbow')
-  " call minpac#add(s:host.'hecal3/vim-leader-guide')
+  call minpac#add(s:host.'mhinz/vim-startify', {'type':'opt'})
+  call minpac#add(s:host.'preservim/nerdcommenter', {'type':'opt'})
+  call minpac#add(s:host.'mbbill/undotree', {'type':'opt'})
+  call minpac#add(s:host.'tpope/vim-surround', {'type':'opt'})
+  " call minpac#add(s:host.'junegunn/vim-easy-align', {'type':'opt'})
+  " call minpac#add(s:host.'preservim/nerdtree', {'type':'opt'})
+  " call minpac#add(s:host.'mhinz/vim-grepper', {'type':'opt'})
+  call minpac#add(s:host.'dyng/ctrlsf.vim', {'type':'opt'})
+  call minpac#add(s:host.'easymotion/vim-easymotion', {'type':'opt'})
+  " call minpac#add(s:host.'jiangmiao/auto-pairs', {'type':'opt'})
+  " call minpac#add(s:host.'Raimondi/delimitMate', {'type':'opt'})
+  " call minpac#add(s:host.'luochen1990/rainbow', {'type':'opt'})
+  " call minpac#add(s:host.'hecal3/vim-leader-guide', {'type':'opt'})
 
   " FuzzyFinder {1
-  " call minpac#add(s:host.'junegunn/fzf', {'do':'./install --all'}) " 'dir':'~/.fzf',
-  call minpac#add(s:host.'junegunn/fzf.vim')
-  call minpac#add(s:host.'tracyone/fzf-funky')
-  " call minpac#add(s:host.'Yggdroot/LeaderF'))
-  " call minpac#add(s:host.'Yggdroot/LeaderF-marks')
+  call minpac#add(s:host.'junegunn/fzf', {'type':'opt'}) " {'dir':'~/.fzf','do':'./install --all'}
+  call minpac#add(s:host.'junegunn/fzf.vim', {'type':'opt'})
+  call minpac#add(s:host.'tracyone/fzf-funky', {'type':'opt'})
+  " call minpac#add(s:host.'Yggdroot/LeaderF', {'type':'opt'}))
+  " call minpac#add(s:host.'Yggdroot/LeaderF-marks', {'type':'opt'})
 
   " Complete : snippet lsp {1
-  call minpac#add(s:host.'neoclide/coc.nvim', {'branch':'release'})
+  call minpac#add(s:host.'neoclide/coc.nvim', {'type':'opt','branch':'release'})
   " if has('win64')
   "     call minpac#add(s:host.'snakeleon/YouCompleteMe-x64', {'as': 'YouCompleteMe' }
   " elseif has('win32')

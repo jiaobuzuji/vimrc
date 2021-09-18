@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
+packadd coc.nvim " {1
 " :CocInstall coc-marketplace coc-highlight coc-pairs coc-explorer
 " \ coc-yank coc-word coc-omni coc-snippets coc-tabnine
 " \ coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python
@@ -150,13 +150,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 "-----------------------------------------------------------------------------
 " " YouCompleteMe {1
-" if te#env#IsUnix()
-"     Plug g:host.'ycm-core/YouCompleteMe' " , {'commit': '85c11d3a875b02a7ac28fb96d0c7a02782f60410' }
-" elseif te#env#IsWin32()
-"     Plug g:host.'snakeleon/YouCompleteMe-x86', {'as': 'YouCompleteMe' }
-" else
-"     Plug g:host.'snakeleon/YouCompleteMe-x64', {'as': 'YouCompleteMe' }
-" endif
+"     packadd YouCompleteMe " , {'commit': '85c11d3a875b02a7ac28fb96d0c7a02782f60410' }
 "     nnoremap  <silent><leader>yj :YcmCompleter GoTo<CR>
 "     nnoremap  <silent><leader>yd :YcmDiags<cr>
 "     nnoremap  <silent><leader>yt :YcmCompleter GetType<cr>
@@ -257,6 +251,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "   let g:UltiSnipsSnippetDirectories=['bundle/snippets/ultisnips']
 "   let g:UltiSnipsSnippetsDir=$VIMFILES.'bundle/snippets'
 
-
-" Plug g:host.'vhda/verilog_systemverilog.vim' " {1
+"-----------------------------------------------------------------------------
+" packadd verilog_systemverilog.vim " {1
 

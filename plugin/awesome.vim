@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-Plug g:host.'mhinz/vim-startify' " {1
+packadd vim-startify " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab']},
@@ -37,7 +37,7 @@ nnoremap <leader>sc :SClose<cr>
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'preservim/nerdcommenter' " {1
+packadd nerdcommenter " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
 " let g:NERDAltDelims_c = 1 " default delimiter NOTE BUG!!!
@@ -45,7 +45,7 @@ let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': 
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'mbbill/undotree' " {1
+packadd undotree " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
@@ -53,11 +53,11 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'tpope/vim-surround' " {1
+packadd vim-surround " {1
 
 
-" "-----------------------------------------------------------------------------
-" Plug g:host.'junegunn/vim-easy-align' " {1
+"-----------------------------------------------------------------------------
+" packadd vim-easy-align " {1
 " xmap ga <Plug>(EasyAlign)
 " nmap ga <Plug>(EasyAlign)
 " xmap <leader>al <Plug>(LiveEasyAlign)
@@ -69,8 +69,8 @@ Plug g:host.'tpope/vim-surround' " {1
 " let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
 
-" "-----------------------------------------------------------------------------
-" Plug g:host.'preservim/nerdtree' " {1
+"-----------------------------------------------------------------------------
+" packadd nerdtree " {1
 " let g:NERDTreeShowLineNumbers=1 "show line number
 " let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
 " let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
@@ -83,7 +83,7 @@ Plug g:host.'tpope/vim-surround' " {1
 " nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 " " nnoremap <leader>nf :CocCommand explorer<CR>
 
-" Netrw " {1
+" Built-in Netrw " {1
 let g:netrw_browse_split = 3
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -92,9 +92,9 @@ nnoremap <leader>nf :Vexplore<CR>
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'mhinz/vim-grepper' " {1
+" packadd vim-grepper " {1
 
-Plug g:host.'dyng/ctrlsf.vim' " {1
+packadd ctrlsf.vim " {1
 " let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_default_root = 'project+ww'
 let g:ctrlsf_extra_root_markers = ['.git']
@@ -124,7 +124,7 @@ nnoremap <leader>vj :CtrlSFToggle<CR>
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'easymotion/vim-easymotion' " {1
+packadd vim-easymotion " {1
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_show_prompt = 0
 let g:EasyMotion_verbose = 0
@@ -153,21 +153,22 @@ omap <leader>jj <Plug>(easymotion-bd-f)
 map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'jiangmiao/auto-pairs' " {1
+" packadd auto-pairs " {1
 
 
-" Plug g:host.'Raimondi/delimitMate' " {1
+" packadd delimitMate " {1
 " let g:delimitMate_nesting_quotes = ['"','`']
 " let g:delimitMate_expand_cr = 0
 " let g:delimitMate_expand_space = 0
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'luochen1990/rainbow' " {1
+" packadd rainbow " {1
 " let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 
 "-----------------------------------------------------------------------------
+" TODO
 " Plug 't9md/vim-choosewin',{'on': '<Plug>(choosewin)'} " {1
 "   let g:choosewin_overlay_enable = 1
 "   nmap <leader>wc <Plug>(choosewin)
