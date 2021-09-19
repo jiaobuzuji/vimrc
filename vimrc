@@ -16,7 +16,7 @@ let g:mapleader="\<Space>"
 let g:maplocalleader=','
 
 " Plugins
-let g:host = 'https://github.com.cnpmjs.org/' " mirror
+let g:plug_url_format='https://git::@github.com.cnpmjs.org/%s.git' " mirror
 call plug#begin($VIMFILES.'/bundle')
   " Plug g:host.'junegunn/vim-plug' " vim-plug doc
   source $VIMFILES/plugcfg/colorscheme.vim

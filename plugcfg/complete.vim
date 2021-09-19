@@ -4,7 +4,7 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-Plug g:host.'neoclide/coc.nvim',{'branch':'release'} " {1
+Plug 'neoclide/coc.nvim',{'branch':'release'} " {1
 " :CocInstall coc-marketplace coc-highlight coc-pairs coc-explorer
 " \ coc-yank coc-word coc-omni coc-snippets coc-tabnine
 " \ coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python
@@ -68,9 +68,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" " Formatting selected code.
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -150,11 +150,11 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "-----------------------------------------------------------------------------
 " " YouCompleteMe {1
 " if te#env#IsUnix()
-"     Plug g:host.'ycm-core/YouCompleteMe' " , {'commit': '85c11d3a875b02a7ac28fb96d0c7a02782f60410' }
+"     Plug 'ycm-core/YouCompleteMe' " , {'commit': '85c11d3a875b02a7ac28fb96d0c7a02782f60410' }
 " elseif te#env#IsWin32()
-"     Plug g:host.'snakeleon/YouCompleteMe-x86', {'as': 'YouCompleteMe' }
+"     Plug 'snakeleon/YouCompleteMe-x86', {'as': 'YouCompleteMe' }
 " else
-"     Plug g:host.'snakeleon/YouCompleteMe-x64', {'as': 'YouCompleteMe' }
+"     Plug 'snakeleon/YouCompleteMe-x64', {'as': 'YouCompleteMe' }
 " endif
 "     nnoremap  <silent><leader>yj :YcmCompleter GoTo<CR>
 "     nnoremap  <silent><leader>yd :YcmDiags<cr>
@@ -257,5 +257,5 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "   let g:UltiSnipsSnippetsDir=$VIMFILES.'bundle/snippets'
 
 
-" Plug g:host.'vhda/verilog_systemverilog.vim' " {1
+" Plug 'vhda/verilog_systemverilog.vim' " {1
 

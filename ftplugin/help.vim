@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <silent><buffer> q <c-w>q
-nnoremap <silent><buffer> <cr> <c-]>
-nnoremap <silent><buffer> <bs> <c-T>
+" nnoremap <silent><buffer> <cr> <c-]>
+" nnoremap <silent><buffer> <bs> <c-T>
 
 

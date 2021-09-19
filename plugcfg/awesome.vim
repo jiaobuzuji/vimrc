@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,}
 
 "-----------------------------------------------------------------------------
-Plug g:host.'mhinz/vim-startify' " {1
+Plug 'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab']},
@@ -37,7 +37,7 @@ nnoremap <leader>sc :SClose<cr>
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'preservim/nerdcommenter' " {1
+Plug 'preservim/nerdcommenter' " {1
 let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
 " let g:NERDAltDelims_c = 1 " default delimiter NOTE BUG!!!
@@ -45,7 +45,7 @@ let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': 
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'mbbill/undotree' " {1
+Plug 'mbbill/undotree' " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
@@ -53,11 +53,11 @@ nnoremap <leader>tu :UndotreeToggle<cr>
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'tpope/vim-surround' " {1
+Plug 'tpope/vim-surround' " {1
 
 
 " "-----------------------------------------------------------------------------
-" Plug g:host.'junegunn/vim-easy-align' " {1
+" Plug 'junegunn/vim-easy-align' " {1
 " xmap ga <Plug>(EasyAlign)
 " nmap ga <Plug>(EasyAlign)
 " xmap <leader>al <Plug>(LiveEasyAlign)
@@ -70,7 +70,7 @@ Plug g:host.'tpope/vim-surround' " {1
 
 
 " "-----------------------------------------------------------------------------
-" Plug g:host.'preservim/nerdtree' " {1
+" Plug 'preservim/nerdtree' " {1
 " let g:NERDTreeShowLineNumbers=1 "show line number
 " let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
 " let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
@@ -92,9 +92,9 @@ nnoremap <leader>nf :Vexplore<CR>
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'mhinz/vim-grepper' " {1
+" Plug 'mhinz/vim-grepper' " {1
 
-Plug g:host.'dyng/ctrlsf.vim' " {1
+Plug 'dyng/ctrlsf.vim' " {1
 " let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_default_root = 'project+ww'
 let g:ctrlsf_extra_root_markers = ['.git']
@@ -130,16 +130,22 @@ let g:ctrlsf_extra_backend_args = {
         \ -g "!*.exe" -g "!*.so" -g "!*.dll"
         \ -g "!cscope*"'
   \ }
+
 vmap <leader>vs <Plug>CtrlSFVwordPath
 vmap <leader>vv <Plug>CtrlSFVwordExec
 nmap <leader>vs <Plug>CtrlSFPrompt
 nmap <leader>vv <Plug>CtrlSFCwordExec
 nmap <leader>vV <Plug>CtrlSFCCwordExec
-nnoremap <leader>vj :CtrlSFToggle<CR>
+nnoremap <leader>vh :call ctrlsf#Search('-hidden '.expand('<cword>'))<cr>
+nnoremap <leader>vH :call ctrlsf#Search('-hidden -R \b'.expand('<cword>').'\b')<cr>
+" current Direction
+nnoremap <leader>vd :call ctrlsf#Search(expand('<cword>').' .')<cr>
+nnoremap <leader>vD :call ctrlsf#Search('-R \b'.expand('<cword>').'\b'.' .')<cr>
+nnoremap <leader>vt :CtrlSFToggle<CR>
 
 
 "-----------------------------------------------------------------------------
-Plug g:host.'easymotion/vim-easymotion' " {1
+Plug 'easymotion/vim-easymotion' " {1
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_show_prompt = 0
 let g:EasyMotion_verbose = 0
@@ -169,17 +175,17 @@ map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
 "-----------------------------------------------------------------------------
 packadd matchit
-" Plug g:host.'jiangmiao/auto-pairs' " {1
+" Plug 'jiangmiao/auto-pairs' " {1
 
 
-" Plug g:host.'Raimondi/delimitMate' " {1
+" Plug 'Raimondi/delimitMate' " {1
 " let g:delimitMate_nesting_quotes = ['"','`']
 " let g:delimitMate_expand_cr = 0
 " let g:delimitMate_expand_space = 0
 
 
 "-----------------------------------------------------------------------------
-" Plug g:host.'luochen1990/rainbow' " {1
+" Plug 'luochen1990/rainbow' " {1
 " let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 
