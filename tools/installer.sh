@@ -94,13 +94,13 @@ curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim -c 'PlugInstall|q'
 
-# # K-takata minpac
-# # git clone --depth=1 https://github.com/ ~/.vim//
-# repo_sync  "${HOME}/.vim/pack/minpac/opt" \
-#            "https://${GITSRVURL}/k-takata/minpac" \
-#            "master" \
-#            "minpac"
-# vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
+# K-takata minpac
+# git clone --depth=1 https://github.com/ ~/.vim//
+repo_sync  "${HOME}/.vim/pack/minpac/opt" \
+           "https://${GITSRVURL}/k-takata/minpac" \
+           "master" \
+           "minpac"
+vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
 # repo_sync  "${HOME}/.fzf" \
 #            "https://${GITSRVURL}/junegunn/fzf" \
 #            "master" \
