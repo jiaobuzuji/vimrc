@@ -103,9 +103,24 @@ let g:ctrlsf_auto_focus = {"at":"start"}
 let g:ctrlsf_confirm_save = 0
 " let g:ctrlsf_debug_mode = 1
 let g:ctrlsf_mapping = {
-  \ "popen"   : "<C-P>",
-  \ "popenf"  : "",
-  \ }
+      \ "open"    : ["<CR>", "o"],
+      \ "openb"   : "O",
+      \ "split"   : "<C-O>",
+      \ "vsplit"  : "",
+      \ "tab"     : "t",
+      \ "tabb"    : "T",
+      \ "popen"   : "<C-P>",
+      \ "popenf"  : "",
+      \ "quit"    : "q",
+      \ "next"    : "<C-J>",
+      \ "prev"    : "<C-K>",
+      \ "nfile"   : "<C-N>",
+      \ "pfile"   : "<C-P>",
+      \ "pquit"   : "q",
+      \ "loclist" : "",
+      \ "chgmode" : "M",
+      \ "stop"    : "<C-C>",
+      \ }
 let g:ctrlsf_ignore_dir = ['.git','.svn','.hg']
 let g:ctrlsf_extra_backend_args = {
   \ 'ag':'--ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
