@@ -34,15 +34,15 @@ function! s:fzfrun_dir_sink(item) abort
     " :redraw!
     execute 'cd '. l:file_path
     call s:fzfrun_dir()
-  " elseif TODO
-  "   execute 'cd ..'
+  elseif a:item[0] ==? 'shift-tab'
+    execute 'cd ..'
+    call s:fzfrun_dir()
   else
     execute 'cd '. l:file_path
   endif
 endfunction
 
 function! s:fzfrun_dir() abort
-
   let short = fnamemodify(getcwd(), ':~:.')
   if !has('win32unix')
     let short = pathshorten(short)
@@ -54,11 +54,11 @@ function! s:fzfrun_dir() abort
         \ 'source': 'find -maxdepth 2 -type d',
         \ 'sink*' : function('<SID>fzfrun_dir_sink'),
         \ 'window':{'width':0.8,'height':0.6},
-        \ 'options':'--ansi --expect=tab --delimiter : '. '--prompt '. prompts,
+        \ 'options':'--ansi --expect=tab,shift-tab --delimiter : '. '--prompt '. prompts,
         \ }
-  " if s:is_win TODO
-  "   call extend();
-  " endif
+  if s:is_win
+    call extend(l:run_dict,{'source':'dir /a:d'})
+  endif
   call fzf#run(l:run_dict)
 endfunction
 
