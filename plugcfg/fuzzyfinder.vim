@@ -2,6 +2,9 @@
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
+"
+"-----------------------------------------------------------------------------
+let s:is_win = has('win32') || has('win64')
 
 "-----------------------------------------------------------------------------
 Plug 'junegunn/fzf',{'dir':'~/.fzf','do':'./install --all'} " {1
@@ -23,33 +26,41 @@ let s:fzf_custom_command = 'rg -H --hidden -l'.'
   \ ""'
 let $FZF_DEFAULT_COMMAND=s:fzf_custom_command
 
-" function! s:fzfrun_dir_sink(item) abort
-"   if len(a:item) < 2 | return | endif
-"   let l:pos = stridx(a:item[1], ' ')
-"   let l:file_path = a:item[1][pos+1:-1]
-"   let l:cmd = get({'ctrl-x': 'split',
-"         \ 'ctrl-v': 'vsplit',
-"         \ 'ctrl-t': 'tabedit'}, a:item[0], 'e')
-"   if isdirectory(l:file_path)
-"     " execute 'echohl WarningMsg | echomsg "cd to "' . fnamemodify(l:file_path, ":p:h") . ' | echohl None'
-"     :redraw!
-"     execute 'cd 'l:file_path
-"     let l:id = timer_start(20, function('<SID>start_fzf_dir'))
-"   else
-"     execute 'silent  '.l:cmd.' ' . l:file_path
-"   endif
-" endfunction
+function! s:fzfrun_dir_sink(item) abort
+  if len(a:item) < 2 | return | endif
+  let l:pos = stridx(a:item[1], ' ')
+  let l:file_path = a:item[1][pos+1:-1]
+  if a:item[0] ==? 'tab'
+    " :redraw!
+    execute 'cd '. l:file_path
+    call s:fzfrun_dir()
+  " elseif TODO
+  "   execute 'cd ..'
+  else
+    execute 'cd '. l:file_path
+  endif
+endfunction
 
-" function! s:fzfrun_dir() abort
-"   let l:run_dict = {
-"         \ 'source': 'ls -a -F', 
-"         \ 'sink*' : function('<SID>fzfrun_dir_sink'),
-"         \ 'window':{'width':0.8,'height':0.6},
-"         \ 'options':' --ansi --expect=tab,ctrl-t,ctrl-v,ctrl-x --delimiter : '.
-"         \           '-m --prompt "Dir> "',
-"         \ }
-"   call fzf#run(l:run_dict)
-" endfunction
+function! s:fzfrun_dir() abort
+
+  let short = fnamemodify(getcwd(), ':~:.')
+  if !has('win32unix')
+    let short = pathshorten(short)
+  endif
+  let slash = (s:is_win && !&shellslash) ? '\' : '/'
+  let dir =  empty(short) ? '~'.slash : short . (short =~ escape(slash, '\').'$' ? '' : slash)
+  let l:prompts = strwidth(dir) < &columns / 2 - 20 ? dir : '> '
+  let l:run_dict = {
+        \ 'source': 'find -maxdepth 2 -type d',
+        \ 'sink*' : function('<SID>fzfrun_dir_sink'),
+        \ 'window':{'width':0.8,'height':0.6},
+        \ 'options':'--ansi --expect=tab --delimiter : '. '--prompt '. prompts,
+        \ }
+  " if s:is_win TODO
+  "   call extend();
+  " endif
+  call fzf#run(l:run_dict)
+endfunction
 
 nnoremap <leader><leader> :Files<cr>
 nnoremap <leader>fk :History:<cr>
@@ -68,7 +79,7 @@ nnoremap <leader>fgf :GFiles<cr>
 nnoremap <leader>ff  :FzfFunky<cr>
 " nnoremap <leader>fmp :Maps<cr>
 " nnoremap <leader>fht :Helptags<cr>
-" nnoremap <leader>fd  :call <SID>fzfrun_dir()<cr>
+nnoremap <leader>fd  :call <SID>fzfrun_dir()<cr>
 
 
 "-----------------------------------------------------------------------------

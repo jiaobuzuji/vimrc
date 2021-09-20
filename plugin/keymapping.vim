@@ -102,10 +102,10 @@ nnoremap <leader>qa :qa<cr>
 nnoremap <leader>wd <C-w>q
 
 " move between windows
-cnoremap <m-h> <c-w>h
-cnoremap <m-l> <c-w>l
-cnoremap <m-j> <c-w>j
-cnoremap <m-k> <c-w>k
+nnoremap <m-h> <c-w>h
+nnoremap <m-l> <c-w>l
+nnoremap <m-j> <c-w>j
+nnoremap <m-k> <c-w>k
 " " vertical open window
 " nnoremap <leader>wv :vsp<cr>
 " " vertical open window then focus the new one
