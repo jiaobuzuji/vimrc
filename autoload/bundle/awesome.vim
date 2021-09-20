@@ -49,11 +49,13 @@ let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': 
 
 
 "-----------------------------------------------------------------------------
-Plug 'mbbill/undotree' " {1
+Plug 'mbbill/undotree', {'on':'UndotreeToggle'} " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
 nnoremap <leader>tu :UndotreeToggle<cr>
+autocmd BufWritePre $VIMFILES/undodir/* set noundofile
+autocmd FileType undotree setlocal rnu
 
 
 "-----------------------------------------------------------------------------
