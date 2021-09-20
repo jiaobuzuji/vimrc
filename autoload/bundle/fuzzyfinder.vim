@@ -2,7 +2,11 @@
 " Github: https://github.com/jiaobuzuji
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
-"
+
+function! bundle#fuzzyfinder#load() abort
+  return 1
+endfunction
+
 "-----------------------------------------------------------------------------
 let s:is_win = has('win32') || has('win64')
 

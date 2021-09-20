@@ -4,6 +4,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
+function! bundle#awesome#load() abort
+  return 1
+endfunction
+
 "-----------------------------------------------------------------------------
 Plug 'mhinz/vim-startify' " {1
 let g:startify_session_dir = $VIMFILES .'/session'

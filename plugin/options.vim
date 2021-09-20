@@ -92,6 +92,8 @@ set undofile " automatically save and restore undo history
 set undodir=$VIMFILES/undodir " list of directories for undo files " $VIMFILES/undodir/ or '$VIMFILES/undodir', XXX It's Error!!
 set completeopt=preview,menuone,popup
 set completepopup=height:10,width:60,highlight:Pmenu,border:off
+" set completefunc " user defined function for Insert mode completion
+" set omnifunc " function for filetype-specific Insert mode completion
 
 " 15 tabs and indenting {1
 set smartindent "do clever autoindenting

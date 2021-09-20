@@ -4,6 +4,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim:fdm=marker fmr={,}
 
+function! bundle#colorscheme#load() abort
+  return 1
+endfunction
+
 "-----------------------------------------------------------------------------
 " colorscheme config "{1
 " Plug 'sjl/badwolf'

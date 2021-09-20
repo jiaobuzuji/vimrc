@@ -3,18 +3,18 @@
 *.swo
 *.log
 
-.viminfo
-.netrwhist
-.github_token
+/.viminfo
+/.netrwhist
+/.github_token
 
-test/
-pack/
-bundle/
-autoload/plug.vim
+/test/
+/pack/
+/bundle/
+/autoload/plug.vim
 
-session/
-undodir/
-spell/
-backup/
-swap/
-.fzf-history/
+/session/
+/undodir/
+/spell/
+/backup/
+/swap/
+/.fzf-history/
