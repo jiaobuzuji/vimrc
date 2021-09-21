@@ -8,21 +8,21 @@ function! bundle#vimlsp#load() abort
 endfunction
 
 "-----------------------------------------------------------------------------
-Plug 'prabirshrestha/vim-lsp' " {1
+" Plug 'prabirshrestha/vim-lsp' " {1
 " Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " register source
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-    \ 'name': 'buffer',
-    \ 'allowlist': ['*'],
-    \ 'blocklist': ['go'],
-    \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ 'config': {
-    \    'max_buffer_size': 5000000,
-    \  },
-    \ }))
+" Plug 'prabirshrestha/asyncomplete-buffer.vim'
+" autocmd BufReadPre call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+"     \ 'name': 'buffer',
+"     \ 'allowlist': ['*'],
+"     \ 'blocklist': ['go'],
+"     \ 'completor': function('asyncomplete#sources#buffer#completor'),
+"     \ 'config': {
+"     \    'max_buffer_size': 5000000,
+"     \  },
+"     \ }))
 Plug 'prabirshrestha/asyncomplete-file.vim'
 autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
     \ 'name': 'file',
@@ -48,16 +48,23 @@ if executable('clangd')
         \ })
 endif
 
-let g:asyncomplete_auto_popup = 0
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ asyncomplete#force_refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+set shortmess+=c
+" let g:asyncomplete_auto_popup = 0
+" function! s:check_back_space() abort
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
+" inoremap <silent><expr> <TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ <SID>check_back_space() ? "\<TAB>" :
+"   \ asyncomplete#force_refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 
 " -----------------------------------------------------------------------------

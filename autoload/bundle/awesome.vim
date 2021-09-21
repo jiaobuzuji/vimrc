@@ -53,7 +53,10 @@ Plug 'mbbill/undotree', {'on':'UndotreeToggle'} " {1
 let g:undotree_WindowLayout=2
 let g:undotree_DiffpanelHeight=8
 let g:undotree_SetFocusWhenToggle=1
-nnoremap <leader>tu :UndotreeToggle<cr>
+" 'Press ENTER or type command to continue' for gvim. It may has bug in
+" 'undotree' plugin
+" nnoremap <leader>tu :UndotreeToggle<cr>
+nnoremap <leader>tu :silent UndotreeToggle<cr>
 autocmd BufWritePre $VIMFILES/undodir/* set noundofile
 autocmd FileType undotree setlocal rnu
 
