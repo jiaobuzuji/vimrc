@@ -8,10 +8,12 @@ function! bundle#vimlsp#load() abort
 endfunction
 
 "-----------------------------------------------------------------------------
-" Plug 'prabirshrestha/vim-lsp' " {1
-" Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp' " {1
+Plug 'mattn/vim-lsp-settings'
+let g:lsp_settings_servers_dir = $VIMFILES.'/vim-lsp-settings/servers'
+let g:lsp_settings_global_settings_dir = $VIMFILES.'/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " register source
 " Plug 'prabirshrestha/asyncomplete-buffer.vim'
 " autocmd BufReadPre call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
