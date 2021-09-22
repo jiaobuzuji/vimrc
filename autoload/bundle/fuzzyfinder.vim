@@ -61,7 +61,7 @@ function! s:fzfrun_dir() abort
         \ 'options':'--ansi --expect=tab,shift-tab --delimiter : '. '--prompt '. prompts,
         \ }
   if s:is_win
-    call extend(l:run_dict,{'source':'dir /a:d'})
+    call extend(l:run_dict,{'source':'dir /b /a:d'})
   endif
   call fzf#run(l:run_dict)
 endfunction

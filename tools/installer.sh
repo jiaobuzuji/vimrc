@@ -115,8 +115,5 @@ vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
 # cd  ${HOME}/.vim/bundle/YouCompleteMe
 # git submodule update --init --recursive && python3 ./install.py --all || return 1 # TODO --clangd-completer
 
-# coc.nvim
-vim -c 'CocInstall -sync coc-marketplace coc-highlight coc-pairs coc-yank coc-word coc-omni coc-snippets coc-tabnine coc-json coc-git coc-sh coc-vimlsp coc-clangd coc-cmake coc-python|q'
-
 # -----------------------------------------------------------------
 # vim:fdm=marker

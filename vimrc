@@ -21,9 +21,9 @@ call plug#begin($VIMFILES.'/bundle')
   call bundle#colorscheme#load()
   call bundle#awesome#load() " miscellaneous lifechange
   call bundle#fuzzyfinder#load()
-  call bundle#vimlsp#load() " lsp snippet (lua)
+  " call bundle#vimlsp#load() " lsp snippet (lua)
   " call bundle#ycm#load() " YouCompleteMe (python3)
-  " call bundle#coc#load() " neoclide coc.nvim, lsp snippet (node)
+  call bundle#coc#load() " neoclide coc.nvim, lsp snippet (node)
 call plug#end() " All of your Plugins must be added before the following line
 
 filetype plugin indent on

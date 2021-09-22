@@ -76,6 +76,7 @@ set confirm  "start a dialog when a command fails
 set showcmd "show (partial) command keys in the status line
 set showmode "display the current mode in the status line
 set shortmess-=S " list of flags to make messages shorter
+set shortmess+=c " list of flags to make messages shorter
 set more "pause listings when the screen is full
 
 " 13 selecting text {1
@@ -89,7 +90,7 @@ set matchpairs+=":" " list of pairs that match for the "%" command
 set textwidth=0 "80
 set backspace=indent,eol,start  "specifies what <BS>, CTRL-W, etc. can do in Insert mode
 set undofile " automatically save and restore undo history
-set undodir=$VIMFILES/undodir " list of directories for undo files " $VIMFILES/undodir/ or '$VIMFILES/undodir', XXX It's Error!!
+set undodir=$VIMFILES/undodir " list of directories for undo files  " $VIMFILES/undodir/ or '$VIMFILES/undodir', XXX It's Error!!
 set completeopt=preview,menuone,popup
 set completepopup=height:10,width:60,highlight:Pmenu,border:off
 " set completefunc " user defined function for Insert mode completion

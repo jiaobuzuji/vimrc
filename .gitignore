@@ -11,6 +11,8 @@
 /pack/
 /bundle/
 /autoload/plug.vim
+/vim-lsp-settings/servers
+/coc/
 
 /session/
 /undodir/

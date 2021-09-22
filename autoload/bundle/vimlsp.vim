@@ -33,7 +33,7 @@ autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#s
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 " Plug 'yami-beta/asyncomplete-omni.vim'
-" autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
+" call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
 "       \ 'name': 'omni',
 "       \ 'allowlist': ['*'],
 "       \ 'blocklist': ['c', 'cpp', 'html'],
@@ -50,7 +50,6 @@ if executable('clangd')
         \ })
 endif
 
-set shortmess+=c
 " let g:asyncomplete_auto_popup = 0
 " function! s:check_back_space() abort
 "     let col = col('.') - 1
