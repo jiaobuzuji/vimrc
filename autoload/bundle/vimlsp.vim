@@ -14,6 +14,7 @@ let g:lsp_settings_servers_dir = $VIMFILES.'/vim-lsp-settings/servers'
 let g:lsp_settings_global_settings_dir = $VIMFILES.'/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 " register source
 " Plug 'prabirshrestha/asyncomplete-buffer.vim'
 " autocmd BufReadPre call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
