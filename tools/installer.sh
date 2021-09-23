@@ -68,7 +68,7 @@ function repo_sync() {
 [ -z "${CURR_PATH}" ] && CURR_PATH=$(pwd)
 [ -z "${GITSRVURL}" ] && GITSRVURL="github.com.cnpmjs.org" # mirror0: github.com.cnpmjs.org   mirror1: gitee.com(not work)
 
-# Jiaobuzuji vimrc
+Jiaobuzuji vimrc
 repo_sync  "${REPO_PATH}" \
            "https://${GITSRVURL}/jiaobuzuji/vimrc" \
            "master" \
@@ -76,27 +76,11 @@ repo_sync  "${REPO_PATH}" \
 
 rm -f "${HOME}/.vim" # remove link
 lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
-mkdir -p ${HOME}/.vim/{undodir,session} # ,backup}
-
-# # Shougo dein
-# # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${HOME}/.vim/bundle"
-# repo_sync  "${HOME}/.vim/bundle/repos/${GITSRVURL}/Shougo" \
-#            "https://${GITSRVURL}/Shougo/dein.vim" \
-#            "master" \
-#            "dein.vim"
-
-# junegunn vim-plug
-repo_sync  "${REPO_PATH}" \
-           "https://${GITSRVURL}/junegunn/vim-plug" \
-           "master" \
-           "vim-plug.git"
-curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim -c 'PlugInstall|q'
+mkdir -p ${REPO_PATH}/vimrc.git/{undodir,session} # ,backup}
 
 # K-takata minpac
 # git clone --depth=1 https://github.com/ ~/.vim//
-repo_sync  "${HOME}/.vim/pack/minpac/opt" \
+repo_sync  "${REPO_PATH}/vimrc.git/pack/minpac/opt" \
            "https://${GITSRVURL}/k-takata/minpac" \
            "master" \
            "minpac"
@@ -107,12 +91,24 @@ vim -c 'helptags $HOME/.vim/pack/minpac/opt/minpac/doc|q'
 #            "fzf"
 # cd  ${HOME}/.fzf/ && ./install --all
 
+# junegunn vim-plug
+curl -fLo ${REPO_PATH}/vimrc.git/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c 'PlugInstall|q'
+
+# # Shougo dein
+# # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" "${REPO_PATH}/vimrc.git/bundle"
+# repo_sync  "${REPO_PATH}/vimrc.git/bundle/repos/${GITSRVURL}/Shougo" \
+#            "https://${GITSRVURL}/Shougo/dein.vim" \
+#            "master" \
+#            "dein.vim"
+
 # # YouCompleteMe
-# repo_sync  "${HOME}/.vim/bundle" \
+# repo_sync  "${REPO_PATH}/vimrc.git/bundle" \
 #             "https://${GITSRVURL}/Valloric/YouCompleteMe/" \
 #             "master" \
 #             "YouCompleteMe"
-# cd  ${HOME}/.vim/bundle/YouCompleteMe
+# cd  ${REPO_PATH}/vimrc.git/bundle/YouCompleteMe
 # git submodule update --init --recursive && python3 ./install.py --all || return 1 # TODO --clangd-completer
 
 # -----------------------------------------------------------------
