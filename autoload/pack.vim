@@ -12,6 +12,7 @@ function! pack#fresh() abort
   call minpac#add(s:host.'k-takata/minpac', {'type':'opt'})
   call minpac#add(s:host.'junegunn/vim-plug', {'type':'opt'}) " vim-plug doc
   call minpac#add(s:host.'yianwillis/vimcdoc', {'type':'opt'})
+  call minpac#add(s:host.'vim/killersheep', {'type':'opt'})
 
   " call minpac#add(s:host.'skywind3000/vim-auto-popmenu', {'type':'opt'})
 
