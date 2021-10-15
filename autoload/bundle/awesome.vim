@@ -66,16 +66,16 @@ Plug 'tpope/vim-surround' " {1
 
 
 " "-----------------------------------------------------------------------------
-" Plug 'junegunn/vim-easy-align' " {1
-" xmap ga <Plug>(EasyAlign)
-" nmap ga <Plug>(EasyAlign)
-" xmap <leader>al <Plug>(LiveEasyAlign)
-" " Live easy align
-" nmap <leader>al <Plug>(LiveEasyAlign)
-" if !exists('g:easy_align_delimiters')
-"     let g:easy_align_delimiters = {}
-" endif
-" let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
+Plug 'junegunn/vim-easy-align' " {1 TODO
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+xmap <leader>al <Plug>(LiveEasyAlign)
+" Live easy align
+nmap <leader>al <Plug>(LiveEasyAlign)
+if !exists('g:easy_align_delimiters')
+    let g:easy_align_delimiters = {}
+endif
+let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
 
 " "-----------------------------------------------------------------------------
@@ -90,14 +90,13 @@ Plug 'tpope/vim-surround' " {1
 " let g:NERDTreeMouseMode=2
 " nnoremap <leader>nf :NERDTreeFind<CR>
 " nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
-" " nnoremap <leader>nf :CocCommand explorer<CR>
 
-" Built-in Netrw " {1
+" Netrw " {1 TODO
 let g:netrw_browse_split = 3
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
-nnoremap <leader>nf :Vexplore<CR>
+nnoremap <leader>nf :Vexplore .<CR>
 
 
 "-----------------------------------------------------------------------------
