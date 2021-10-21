@@ -41,7 +41,7 @@ nnoremap <leader>9  9gt
 vnoremap [p "0p
  
 " Insert new line in normal mode
-nnoremap tt o<c-u><c-[>
+nnoremap tt o<Home><c-o>D<c-[>
 
 " nnoremap <silent> <BS> <C-o>
 
