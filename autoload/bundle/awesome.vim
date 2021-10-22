@@ -92,10 +92,10 @@ let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String']
 " nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
 " Netrw " {1 TODO
-let g:netrw_browse_split = 3
+let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
+" let g:netrw_banner = 0
+" let g:netrw_winsize = 25
 nnoremap <leader>nf :Vexplore .<CR>
 
 
