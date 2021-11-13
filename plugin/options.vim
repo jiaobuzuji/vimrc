@@ -138,7 +138,7 @@ set updatetime=300 " time in msec after which the swap file will be updated
 " set directory=$HOME/.vim/swap/
 
 " 21 command line editing {1
-set history=200  " keep 50 lines of command line history
+set history=1000  " keep 50 lines of command line history
 set wildmenu
 set wildmode=longest,full
 set wildignore=*.swp,*.bak

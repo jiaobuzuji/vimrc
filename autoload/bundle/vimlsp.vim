@@ -16,16 +16,16 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 " register source
-" Plug 'prabirshrestha/asyncomplete-buffer.vim'
-" autocmd BufReadPre call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-"     \ 'name': 'buffer',
-"     \ 'allowlist': ['*'],
-"     \ 'blocklist': ['go'],
-"     \ 'completor': function('asyncomplete#sources#buffer#completor'),
-"     \ 'config': {
-"     \    'max_buffer_size': 5000000,
-"     \  },
-"     \ }))
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'allowlist': ['*'],
+    \ 'blocklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
 Plug 'prabirshrestha/asyncomplete-file.vim'
 autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
     \ 'name': 'file',
