@@ -48,7 +48,7 @@ let g:PaperColor_Theme_Options = {
 "-----------------------------------------------------------------------------
 Plug 'itchyny/lightline.vim' "{1
 let g:lightline = {
-\   'colorscheme':'jellybeans',
+\   'colorscheme':'onedark',
 \   'active': {
 \     'left': [['mode', 'paste'],['relativepath','modified']],
 \     'right': [['lineinfo'], ['percent'], ['filetype']]

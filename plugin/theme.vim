@@ -30,4 +30,5 @@ source $VIMRUNTIME/delmenu.vim
 
 colorscheme PaperColor
 " colorscheme gruvbox
+" colorscheme onedark
 
