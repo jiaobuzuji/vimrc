@@ -1,6 +1,6 @@
 {
   "coc.source.buffer.firstMatch": false,
   "coc.source.around.firstMatch": false,
-  "suggest.enablePreview": true,
-  "clangd.semanticHighlighting":true
+  "coc.preferences.semanticTokensHighlights":true,
+  "suggest.enablePreview": true
 }
