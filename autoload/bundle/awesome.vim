@@ -62,10 +62,6 @@ autocmd FileType undotree setlocal rnu
 
 
 "-----------------------------------------------------------------------------
-Plug 'tpope/vim-surround' " {1
-
-
-" "-----------------------------------------------------------------------------
 Plug 'junegunn/vim-easy-align' " {1 TODO
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -78,25 +74,25 @@ endif
 let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
 
-" "-----------------------------------------------------------------------------
-" Plug 'preservim/nerdtree' " {1
-" let g:NERDTreeShowLineNumbers=1 "show line number
-" let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
-" let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-" let g:NERDTreeWinSize='30'
-" let g:NERDTreeShowBookmarks=1
-" let g:NERDTreeChDirMode=2
-" let g:NERDTreeQuitOnOpen=1
-" let g:NERDTreeMouseMode=2
-" nnoremap <leader>nf :NERDTreeFind<CR>
-" nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
+"-----------------------------------------------------------------------------
+Plug 'preservim/nerdtree', {'on':'NERDTreeFind'} " {1
+let g:NERDTreeShowLineNumbers=1 "show line number
+let g:NERDTreeWinPos='left' "show nerdtree in the rigth side
+let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let g:NERDTreeWinSize='30'
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeMouseMode=2
+nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>nq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
-" Netrw " {1 TODO
-let g:netrw_browse_split = 4
-let g:netrw_liststyle = 3
-" let g:netrw_banner = 0
-" let g:netrw_winsize = 25
-nnoremap <leader>nf :Vexplore .<CR>
+" " Netrw " {1
+" let g:netrw_browse_split = 4
+" let g:netrw_liststyle = 3
+" " let g:netrw_banner = 0
+" " let g:netrw_winsize = 25
+" nnoremap <leader>nf :Vexplore .<CR>
 
 
 "-----------------------------------------------------------------------------
@@ -182,9 +178,11 @@ omap <leader>jj <Plug>(easymotion-bd-f)
 map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 
 "-----------------------------------------------------------------------------
-packadd matchit
-" Plug 'jiangmiao/auto-pairs' " {1
+" packadd matchit
+Plug 'andymass/vim-matchup' " {1
+Plug 'tpope/vim-surround' " {1
 
+" Plug 'jiangmiao/auto-pairs' " {1
 
 " Plug 'Raimondi/delimitMate' " {1
 " let g:delimitMate_nesting_quotes = ['"','`']

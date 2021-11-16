@@ -16,6 +16,13 @@ let g:mapleader="\<Space>"
 let g:maplocalleader=','
 
 " Plugins
+let g:loaded_matchit = 1
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+let loaded_gzip = 1
+let g:loaded_zipPlugin = 1
+let g:loaded_vimballPlugin = 1
+
 let g:plug_url_format='https://git::@github.com.cnpmjs.org/%s.git' " mirror
 " other mirror : https://hub.fastgit.org/
 call plug#begin($VIMFILES.'/bundle')
