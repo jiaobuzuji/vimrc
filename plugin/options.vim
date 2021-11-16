@@ -135,7 +135,7 @@ set nobackup
 
 " 20 the swap file {1
 set updatetime=300 " time in msec after which the swap file will be updated
-" set directory=$HOME/.vim/swap/
+set directory=$VIMFILES/swap//
 
 " 21 command line editing {1
 set history=1000  " keep 50 lines of command line history
