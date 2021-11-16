@@ -17,6 +17,7 @@ let g:maplocalleader=','
 
 " Plugins
 let g:plug_url_format='https://git::@github.com.cnpmjs.org/%s.git' " mirror
+" other mirror : https://hub.fastgit.org/
 call plug#begin($VIMFILES.'/bundle')
   call bundle#colorscheme#load()
   call bundle#awesome#load() " miscellaneous lifechange
