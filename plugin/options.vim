@@ -55,10 +55,15 @@ set ttyfast " terminal connection is fast
 set mouse=a "list of menu_flags for using the mouse,support all
 
 " 10 GUI {1
+" if has('win32')+has('win64')
+"   set guifont=Consolas:h12:cANSI
+" else
+"   set guifont=Monospace\ 12
+" endif
 if has('win32')+has('win64')
-  set guifont=Consolas:h12:cANSI
+  set guifont=Hack\ Nerd\ Font\ Mono:h12
 else
-  set guifont=Monospace\ 12
+  set guifont=Hack\ Nerd\ Font\ Mono\ 12
 endif
 set guioptions=!cdi " External commands are executed in a terminal window.
 set winaltkeys=no " "no", "yes" or "menu"; how to use the ALT key
