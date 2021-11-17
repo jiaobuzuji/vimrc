@@ -76,7 +76,7 @@ repo_sync  "${REPO_PATH}" \
 
 rm -f "${HOME}/.vim" # remove link
 lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
-mkdir -p ${REPO_PATH}/vimrc.git/{undodir,session} # ,backup}
+mkdir -p ${REPO_PATH}/vimrc.git/{undodir,session,swap} # ,backup}
 
 # K-takata minpac
 # git clone --depth=1 https://github.com/ ~/.vim//
