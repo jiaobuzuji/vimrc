@@ -154,9 +154,8 @@ set wildignorecase
 
 " 22 executing external commands {1
 " 23 running make and jumping to errors (quickfix) {1
-" 24 system specific {1
-" 25 language specific {1
-" 26 multi-byte characters {1
+" 24 language specific {1
+" 25 multi-byte characters {1
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -166,12 +165,11 @@ if v:lang=~? '^\(zh\)\|\(ja\)\|\(ko\)'
   set ambiwidth=double
 endif
 
-" 27 various {1
+" 26 various {1
+set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 set sessionoptions=curdir,unix,slash,tabpages,terminal,winsize,resize
 set viewoptions=cursor,unix,slash " Better Unix / Windows compatibility
-set virtualedit=block         " Use virtual editing in <C-v>  (block select)
 set signcolumn=yes " whether to show the signcolumn
-set pyxversion=3
 
 set viminfofile=$VIMFILES/.viminfo
 
