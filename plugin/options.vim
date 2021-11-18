@@ -14,7 +14,6 @@ set wrapscan " search commands wrap around the end of the buffer
 
 "  3 tags {1
 "  4 displaying text {1
-set hlsearch "highlight all matches for the last used search pattern
 set list  "display unprintable characters by set list
 set listchars=tab:>\ ,extends:>,precedes:<,nbsp:.,trail:-  " Strings to use in 'list' mode and for the |:list| command
 set scrolloff=5 " number of screen lines to show around the cursor
@@ -27,6 +26,7 @@ set nowrap   "don't auto linefeed
 "set linebreak "wrap long lines at a character in 'breakat'
 
 "  5 syntax, highlighting and spelling {1
+set hlsearch "highlight all matches for the last used search pattern
 set cursorline " highlight the screen line of the cursor
 set background=dark
 set termguicolors
