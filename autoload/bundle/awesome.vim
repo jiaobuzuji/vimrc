@@ -180,7 +180,7 @@ map <LocalLeader><LocalLeader> <Plug>(easymotion-prefix)
 "-----------------------------------------------------------------------------
 " packadd matchit
 Plug 'andymass/vim-matchup' " {1
-Plug 'gcmt/wildfire.vim' " {1
+" Plug 'gcmt/wildfire.vim' " {1
 Plug 'tpope/vim-surround' " {1
 
 " Plug 'jiangmiao/auto-pairs' " {1
