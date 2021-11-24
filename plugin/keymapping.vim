@@ -93,8 +93,10 @@ inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>
 " call te#meta#map('cnoremap','j','<down>')
 " call te#meta#map('cnoremap','k','<up>')
 " call te#meta#map('cnoremap','b','<S-left>')
-" cnoremap        <C-A> <Home>
-" cnoremap   <C-X><C-A> <C-A>
+cnoremap        <C-A> <Home>
+cnoremap   <C-X><C-A> <C-A>
+cnoremap   <C-P> <Up>
+cnoremap   <C-N> <Down>
 
 " multiple windows and tabs {1
 " Quit Vim
