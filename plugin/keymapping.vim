@@ -38,7 +38,7 @@ nnoremap <leader>9  9gt
 
 " Miscellaneous {1
 " always use "0" register
-vnoremap [p "0p
+vnoremap p "_dP
  
 " Insert new line in normal mode
 nnoremap tt o<space><c-u><c-[>
@@ -56,10 +56,10 @@ vnoremap <        <gv
 vnoremap >        >gv
  
 " Move the lines to below/before
-xnoremap <leader>mj :m '>+1<CR>gv=gv
-xnoremap <leader>mk :m '<-2<CR>gv=gv
-nnoremap <leader>mj :m .+1<CR>==
-nnoremap <leader>mk :m .-2<CR>==
+" xnoremap <leader>mj :m '>+1<CR>gv=gv
+" xnoremap <leader>mk :m '<-2<CR>gv=gv
+" nnoremap <leader>mj :m .+1<CR>==
+" nnoremap <leader>mk :m .-2<CR>==
 
 " Using <Plug> instead of
 vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
@@ -89,10 +89,10 @@ inoremap   <C-X><C-A> <C-A>
 inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"
 
 " move cursor in Command line
-" call te#meta#map('cnoremap','l','<right>')
-" call te#meta#map('cnoremap','j','<down>')
-" call te#meta#map('cnoremap','k','<up>')
-" call te#meta#map('cnoremap','b','<S-left>')
+cnoremap   <m-h> <s-left>
+cnoremap   <m-j> <down>
+cnoremap   <m-k> <up>
+cnoremap   <m-l> <s-right>
 cnoremap        <C-A> <Home>
 cnoremap   <C-X><C-A> <C-A>
 cnoremap   <C-P> <Up>
