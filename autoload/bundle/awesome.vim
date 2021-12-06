@@ -46,6 +46,7 @@ let g:NERDSpaceDelims=1
 let g:NERDMenuMode=1
 " let g:NERDAltDelims_c = 1 " default delimiter NOTE BUG!!!
 let g:NERDCustomDelimiters = {'c': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
+let g:NERDAltDelims_dosbatch = 1
 
 
 "-----------------------------------------------------------------------------
