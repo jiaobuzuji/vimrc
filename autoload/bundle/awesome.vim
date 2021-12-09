@@ -196,6 +196,10 @@ Plug 'tpope/vim-surround' " {1
 " Plug 'luochen1990/rainbow' " {1
 " let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
+Plug 'Yggdroot/indentLine' " {1
+" let g:indentLine_concealcursor = 'inc'
+" let g:indentLine_conceallevel = 2
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 "-----------------------------------------------------------------------------
 " TODO
