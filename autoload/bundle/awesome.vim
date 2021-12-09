@@ -148,6 +148,10 @@ nnoremap <leader>vd :call ctrlsf#Search(expand('<cword>').' .')<cr>
 nnoremap <leader>vD :call ctrlsf#Search('-R \b'.expand('<cword>').'\b'.' .')<cr>
 nnoremap <leader>vt :CtrlSFToggle<CR>
 
+" Plug 'thinca/vim-qfreplace'
+" Plug 'brooth/far.vim'
+" " let g:far#source='rg'
+" let g:far#enable_undo=1
 
 "-----------------------------------------------------------------------------
 Plug 'easymotion/vim-easymotion' " {1
@@ -200,6 +204,14 @@ Plug 'Yggdroot/indentLine' " {1
 " let g:indentLine_concealcursor = 'inc'
 " let g:indentLine_conceallevel = 2
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['▏']
+
+
+"-----------------------------------------------------------------------------
+" Plug 'hecal3/vim-leader-guide' " {1
+"   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+" 
+" Plug 'liuchengxu/vim-which-key'
 
 "-----------------------------------------------------------------------------
 " TODO
@@ -237,10 +249,6 @@ Plug 'Yggdroot/indentLine' " {1
 "   autocmd filetype_group FileType qf nmap <buffer> <Space><Space>  <plug>(quickr_preview)
 
 
-" Plug 'hecal3/vim-leader-guide' " {1
-"   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-" 
-" Plug 'liuchengxu/vim-which-key'
 "
 " Plug 'majutsushi/tagbar' " {1
 "   let g:tagbar_left=0
