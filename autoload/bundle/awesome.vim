@@ -149,9 +149,9 @@ nnoremap <leader>vD :call ctrlsf#Search('-R \b'.expand('<cword>').'\b'.' .')<cr>
 nnoremap <leader>vt :CtrlSFToggle<CR>
 
 " Plug 'thinca/vim-qfreplace'
-" Plug 'brooth/far.vim'
-" " let g:far#source='rg'
-" let g:far#enable_undo=1
+Plug 'brooth/far.vim', {'on':['F','Far','Farf']}
+" let g:far#source='rg'
+let g:far#enable_undo=1
 
 "-----------------------------------------------------------------------------
 Plug 'easymotion/vim-easymotion' " {1
