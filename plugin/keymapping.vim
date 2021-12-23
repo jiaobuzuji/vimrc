@@ -100,7 +100,7 @@ cnoremap   <C-N> <Down>
 
 " multiple windows and tabs {1
 " Quit Vim
-nnoremap <leader>qa :qa<cr>
+nnoremap <leader>ww :qa<cr>
 nnoremap <leader>wd <C-w>q
 
 " move between windows
