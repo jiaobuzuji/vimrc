@@ -98,6 +98,11 @@ cnoremap   <C-X><C-A> <C-A>
 cnoremap   <C-P> <Up>
 cnoremap   <C-N> <Down>
 
+nnoremap <m-h> 8h
+nnoremap <m-j> 8j
+nnoremap <m-k> 8k
+nnoremap <m-l> 8l
+
 " multiple windows and tabs {1
 " Quit Vim
 nnoremap <leader>ww :qa<cr>
