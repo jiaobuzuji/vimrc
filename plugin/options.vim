@@ -158,7 +158,7 @@ set wildignorecase
 " 25 multi-byte characters {1
 set encoding=utf-8
 set fileencoding=utf-8
-set termencoding=utf-8
+" set termencoding=utf-8
 " set fileencodings=ucs-bom,utf-8,gb2312,gb1830,cp936,ansi,utf-16le,cp1252,iso-8859-15,big5,euc-jp,euc-kr,gbk
 set fileencodings=ucs-bom,utf-8,cp936,gb1830,big5,euc-jp,euc-kr,gbk
 " if v:lang=~? '^\(zh\)\|\(ja\)\|\(ko\)'
