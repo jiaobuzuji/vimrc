@@ -7,6 +7,7 @@
 " Basic {1
 " Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
 noremap Q gq
+noremap , :
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.  Revert with ":iunmap <C-U>".
@@ -102,6 +103,11 @@ nnoremap <m-h> 8h
 nnoremap <m-j> 8j
 nnoremap <m-k> 8k
 nnoremap <m-l> 8l
+
+vnoremap <m-h> 8h
+vnoremap <m-j> 8j
+vnoremap <m-k> 8k
+vnoremap <m-l> 8l
 
 " multiple windows and tabs {1
 " Quit Vim
