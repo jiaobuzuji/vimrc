@@ -57,7 +57,7 @@ let g:undotree_SetFocusWhenToggle=1
 " 'Press ENTER or type command to continue' for gvim. It may has bug in
 " 'undotree' plugin
 " nnoremap <leader>tu :UndotreeToggle<cr>
-nnoremap <leader>tu :silent UndotreeToggle<cr>
+nnoremap <leader>ou :silent UndotreeToggle<cr>
 autocmd BufWritePre $VIMFILES/undodir/* set noundofile
 autocmd FileType undotree setlocal rnu
 
