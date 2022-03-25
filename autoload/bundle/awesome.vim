@@ -35,9 +35,9 @@ let g:startify_enable_special = 0 " Show <empty buffer> and <quit>.
 "         \ escape(fnamemodify($HOME, ':p'), '\') .'mysecret.txt',
 "         \ ]
 nnoremap <leader>sl :Startify<cr>
-nnoremap <leader>ss :SSave<cr>
+nnoremap <leader>sc :SSave<cr>
 nnoremap <leader>sd :SDelete<cr>
-nnoremap <leader>sc :SClose<cr>
+" nnoremap <leader>sc :SClose<cr>
 
 
 "-----------------------------------------------------------------------------
