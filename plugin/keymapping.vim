@@ -39,7 +39,7 @@ nnoremap <leader>9  9gt
 
 " Miscellaneous {1
 " always use "0" register
-vnoremap p "_dP
+" vnoremap p "_dP
  
 " Insert new line in normal mode
 nnoremap tt o<space><c-u><c-[>
