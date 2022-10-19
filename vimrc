@@ -38,6 +38,7 @@ g:loaded_zip = 1
 g:loaded_zipPlugin = 1
 
 # load plugin
+g:plug_url_format='https://git::@hub.nuaa.cf/%s.git' " mirror
 plug#begin($VIMFILES .. '/bundle')
   bundle#colorscheme#load()
   bundle#awesome#load() # miscellaneous lifechange
