@@ -1,220 +1,106 @@
 vim9script
-#  Vim Key Mapping
-#  Author: jiaobuzuji@163.com
-#  Github: https://github.com/jiaobuzuji
-# ======================================================================
-#  vim:fdm=marker fmr={,}
+# vim:fdm=marker fmr={,}
+#=======================================================================
+# Vim Key Mapping
+# Author: jiaobuzuji@163.com
+# Github: https://github.com/jiaobuzuji
+#=======================================================================
 
-#  Basic {1
-#  Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
-noremap Q gq
-noremap , :
+# Misc {1
+# Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
+noremap <silent> Q gq
 
-#  CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-#  so that you can undo CTRL-U after inserting a line break.  Revert with ":iunmap <C-U>".
+# CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+# so that you can undo CTRL-U after inserting a line break.  Revert with ":iunmap <C-U>".
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
-
-nnoremap Y y$
-nnoremap <leader>/ :nohlsearch<CR>
-
-#  'Save' and 'Esc'
-inoremap jj           <c-[>
-inoremap j<Space>     j 
-
-nnoremap vv   :update<cr>
-vnoremap vv   <C-C>:update<cr>
-inoremap vv   <C-[>:update<cr>
-inoremap v<Space>     v 
-
-#  tab selection
-nnoremap <leader>1  1gt
-nnoremap <leader>2  2gt
-nnoremap <leader>3  3gt
-nnoremap <leader>4  4gt
-nnoremap <leader>5  5gt
-nnoremap <leader>6  6gt
-nnoremap <leader>7  7gt
-nnoremap <leader>8  8gt
-nnoremap <leader>9  9gt
-
-#  Miscellaneous {1
-#  always use "0" register
-#  vnoremap p "_dP
- 
-#  Insert new line in normal mode
+# faster enter command line mode
+noremap , :
+nnoremap <silent> Y y$
+nnoremap <leader>/ <cmd>nohlsearch<cr>
+# Insert new line in normal mode
 nnoremap tt o<space><c-u><c-[>
-
-#  nnoremap <silent> <BS> <C-o>
-
-#  Format Current File
-nnoremap <silent> <c-F3> :set ff=unix<CR>:%s/\s\+$//<CR>
-
 # visual mode hit tab forward indent ,hit shift-tab backward indent
 # Reselect visual block after indent/outdent.
-vnoremap <TAB>    >gv
-vnoremap <s-TAB>  <gv
-vnoremap <        <gv
-vnoremap >        >gv
- 
-#  Move the lines to below/before
-#  xnoremap <leader>mj :m '>+1<CR>gv=gv
-#  xnoremap <leader>mk :m '<-2<CR>gv=gv
-#  nnoremap <leader>mj :m .+1<CR>==
-#  nnoremap <leader>mk :m .-2<CR>==
+vnoremap < <gv
+vnoremap > >gv
+# Format Current File
+nnoremap <silent> <c-F3> <cmd>set ff=unix<cr><cmd>%s/\s\+$//<cr>
 
-#  Using <Plug> instead of
-vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+# 'Save' and 'Esc' {1
+inoremap jj           <c-[>
+inoremap j<space>     j 
 
-#  copy,paste and cut 
-nnoremap <S-Insert> "+gP
-cnoremap <S-Insert> <C-R>+
-cnoremap <C-V>      <C-R>+
-inoremap <c-v>      <C-o>"+gp
+nnoremap vv   <cmd>update<cr>
+vnoremap vv   <c-c><cmd>update<cr>
+inoremap vv   <c-[><cmd>update<cr>
+inoremap v<space>     v 
 
-# replace
-nnoremap <leader>ss :%s/<C-R>//
-vnoremap <leader>ss :s/<C-R>//
+# search, substitute,copy,paste and cut {1
+nnoremap <leader>ss <cmd>%s/<C-R>//
+vnoremap <leader>ss <cmd>s/<C-R>//
+# Using <Plug> instead of
+vnoremap  *  y/<c-r>=escape(@", '\\/.*$^~[]')<cr><cr>
+vnoremap  #  y?<c-r>=escape(@", '\\/.*$^~[]')<cr><cr>
+# copy,paste and cut 
+nnoremap <s-insert> "+gp
+cnoremap <s-insert> <c-r>+
+cnoremap <c-v>      <c-r>+
+inoremap <c-v>      <c-o>"+gp
 
-#  verilog instance {1
-vnoremap <silent> <c-F4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<CR>gv:s#^\s*\(\/\/.*\)#    \1#e<CR>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<CR>
+# Quit Vim {1
+nnoremap <silent> <leader>ww <cmd>qa<cr>
+nnoremap <silent> <leader>wd <C-w>q
+nnoremap <silent> <leader>wh <c-w>h
+nnoremap <silent> <leader>wj <c-w>j
+nnoremap <silent> <leader>wk <c-w>k
+nnoremap <silent> <leader>wl <c-w>l
 
-#  Move cursor {1
-#  move cursor in Insert mode
-inoremap <m-h> <Left>
-inoremap <m-l> <Right>
-inoremap <m-j> <Down>
-inoremap <m-k> <Up>
-inoremap        <C-A> <C-O>^
-inoremap   <C-X><C-A> <C-A>
-inoremap <expr> <C-E> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"
-
-#  move cursor in Command line
+# tab,windows, cursor move {1
+nnoremap <silent> <leader>1  1gt
+nnoremap <silent> <leader>2  2gt
+nnoremap <silent> <leader>3  3gt
+nnoremap <silent> <leader>4  4gt
+nnoremap <silent> <leader>5  5gt
+nnoremap <silent> <leader>6  6gt
+nnoremap <silent> <leader>7  7gt
+nnoremap <silent> <leader>8  8gt
+nnoremap <silent> <leader>9  9gt
+# faster scroll
+nnoremap <silent> <m-h> 8h
+nnoremap <silent> <m-j> 8j
+nnoremap <silent> <m-k> 8k
+nnoremap <silent> <m-l> 8l
+xnoremap <silent> <m-h> 8h
+xnoremap <silent> <m-j> 8j
+xnoremap <silent> <m-k> 8k
+xnoremap <silent> <m-l> 8l
+# move cursor in Insert mode
+inoremap <silent> <m-h> <left>
+inoremap <silent> <m-l> <right>
+inoremap <silent> <m-k> <up>
+inoremap <silent> <m-j> <down>
+inoremap        <c-a> <c-o>^
+inoremap   <c-x><c-a> <c-a>
+inoremap <expr> <c-e> col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<lt>c-e>":"\<lt>end>"
+# move cursor in Command line
 cnoremap   <m-h> <s-left>
-cnoremap   <m-j> <down>
-cnoremap   <m-k> <up>
 cnoremap   <m-l> <s-right>
-cnoremap        <C-A> <Home>
-cnoremap   <C-X><C-A> <C-A>
-cnoremap   <C-P> <Up>
-cnoremap   <C-N> <Down>
+cnoremap   <m-k> <up>
+cnoremap   <m-j> <down>
+cnoremap        <c-a> <home>
+cnoremap   <c-x><c-a> <c-a>
+# Emacs like
+cnoremap   <c-b> <left>
+cnoremap   <c-f> <right>
+cnoremap   <c-p> <up>
+cnoremap   <c-n> <down>
+# last cursor position
+# nnoremap <silent> <BS> <C-o>
 
-nnoremap <m-h> 8h
-nnoremap <m-j> 8j
-nnoremap <m-k> 8k
-nnoremap <m-l> 8l
-
-vnoremap <m-h> 8h
-vnoremap <m-j> 8j
-vnoremap <m-k> 8k
-vnoremap <m-l> 8l
-
-#  multiple windows and tabs {1
-#  Quit Vim
-nnoremap <leader>ww :qa<cr>
-nnoremap <leader>wd <C-w>q
-
-#  move between windows
-nnoremap <leader>wh <c-w>h
-nnoremap <leader>wj <c-w>j
-nnoremap <leader>wk <c-w>k
-nnoremap <leader>wl <c-w>l
-#  " vertical open window
-#  nnoremap <leader>wv :vsp<cr>
-#  " vertical open window then focus the new one
-#  nnoremap <leader>wV :vsp<cr><C-w>l
-#  " horizontal open window 
-#  nnoremap <leader>ws :sp<cr>
-#  " horizontal open window then focus the new one
-#  nnoremap <leader>wS :sp<cr><C-w>j
-#  " maxsize of current windows
-#  nnoremap <leader>wo :only<cr>
-#  " quit current windows
-#  nnoremap <leader>wd <C-w>q
-#  " switch between two windows alternately
-#  nnoremap <leader>w<tab> <C-w><C-p>
-#  " switch between two windows.
-#  nnoremap <leader>ww <C-w><C-w>
-#  " move to left win
-#  nnoremap <leader>wh <C-w>h
-#  " move to right win
-#  nnoremap <leader>wl <C-w>l
-#  " move down win
-#  nnoremap <leader>wj <C-w>j
-#  " move up win
-#  nnoremap <leader>wk <C-w>k
-#  " move to very left win
-#  nnoremap <leader>wH <C-w>H
-#  " move to very right win
-#  nnoremap <leader>wL <C-w>L
-#  " move to very down win
-#  nnoremap <leader>wJ <C-w>J
-#  " move to very up win
-#  nnoremap <leader>wK <C-w>K
-#  " rotate the window backward
-#  nnoremap <leader>wR <C-w>R
-#  " rotate the window forward
-#  nnoremap <leader>wr <C-w>r
-#  " Move the current window to a new tab page.
-#  nnoremap <leader>wt <C-w>T
-
-
-#  " switch to last open tab or buffer
-#  nnoremap <leader><tab> :call te#utils#tab_buf_switch(-2)<cr>
-#  "switch previous tab or buftab
-#  nnoremap <Left> :call te#utils#tab_buf_switch(0)<cr>
-#  "switch next tab or buftab
-#  nnoremap <Right> :call te#utils#tab_buf_switch(-1)<cr>
-#  " next buffer or tab
-#  nnoremap <leader>bn :call te#utils#tab_buf_switch(-1)<cr>
-#  " previous buffer or tab
-#  nnoremap <leader>bp :call te#utils#tab_buf_switch(0)<cr>
-#  " delete buffer
-#  nnoremap <leader>bk :bdelete<cr>
-#  "buffer only
-#  nnoremap <leader>bo :call te#tools#buf_only('', '')<cr>
-
-#  }
-
-#  TODO {1
-#  noremap! <expr> <SID>transposition getcmdpos()>strlen(getcmdline())?"\<Left>":getcmdpos()>1?'':"\<Right>"
-#  noremap! <expr> <SID>transpose "\<BS>\<Right>".matchstr(getcmdline()[0 : getcmdpos()-2], '.$')
-#  cmap   <script> <C-T> <SID>transposition<SID>transpose
-# 
-#  "generate tags and cscope
-#  nnoremap <localleader>u :call te#pg#do_cs_tags(getcwd(), 0x3)<cr>
-#  
-#  "run command from input
-#  nnoremap <leader>rc :call te#utils#run_command("", 1)<cr>
-# 
-#  if te#env#SupportTerminal()
-#      "terminal-emulator setting
-#      "execute 'tnoremap <Esc> <C-\><C-n>' "effect <a-> key?
-#      silent! execute 'tnoremap <Esc><Esc> '.&termkey.'N'
-#      call te#meta#map('tmap','h',&termkey.'h')
-#      call te#meta#map('tmap','j',&termkey.'j')
-#      call te#meta#map('tmap','k',&termkey.'k')
-#      call te#meta#map('tmap','l',&termkey.'l')
-#      silent! execute 'tmap <c-v> '.&termkey.'"*'
-#      call te#meta#map('tnoremap','b','<C-left>')
-#      call te#meta#map('tnoremap','f','<C-right>')
-#  endif
-#  
-#  " Open vimshell or neovim's emulator in split window
-#  nnoremap <leader>as :call te#tools#shell_pop(0x1)<cr>
-#  noremap <F4> :call te#tools#shell_pop(0x1)<cr>
-#  " Open vimshell or neovim's emulator in vertical window
-#  nnoremap <leader>av :call te#tools#shell_pop(0x2)<cr>
-#  " Open vimshell or neovim's emulator in new tab
-#  nnoremap <leader>ns :call te#tools#shell_pop(0x4)<cr>
-#  
-#  call te#meta#map('inoremap','u','<c-\><c-o>:call te#tools#PreviousCursor(6)<cr>')
-#  call te#meta#map('inoremap','d','<c-\><c-o>:call te#tools#PreviousCursor(7)<cr>')
-#  call te#meta#map('nnoremap','d',':call te#tools#PreviousCursor(7)<cr>')
-#  call te#meta#map('nnoremap','u',':call te#tools#PreviousCursor(6)<cr>')
-#  call te#meta#map('inoremap','m','<c-\><c-o>:call te#tools#PreviousCursor(0)<cr>')
-#  call te#meta#map('inoremap','n','<c-\><c-o>:call te#tools#PreviousCursor(1)<cr>')
-#  call te#meta#map('nnoremap','m',':call te#tools#PreviousCursor(0)<cr>')
-#  call te#meta#map('nnoremap','n',':call te#tools#PreviousCursor(1)<cr>')
+# terminal
+tnoremap <silent> <m-h> <left>
+tnoremap <silent> <m-l> <right>
+tnoremap <silent> <m-k> <up>
+tnoremap <silent> <m-j> <down>
 

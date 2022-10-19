@@ -1,9 +1,10 @@
 vim9script
+# vim:fdm=marker fmr={,}
+#=======================================================================
 # Vim options setting
 # Author: jiaobuzuji@163.com
 # Github: https://github.com/jiaobuzuji
-# ======================================================================
-# vim:fdm=marker fmr={,}
+#=======================================================================
 
 #  2 moving around, searching and patterns {1
 set whichwrap=b,h,l,<,>,[,]  # list of flags specifying which commands wrap to another line
@@ -57,7 +58,7 @@ set ttyfast # terminal connection is fast
 set mouse=a #list of menu_flags for using the mouse,support all
 
 # 10 GUI {1
-# if has('win32')+has('win64')
+# if has('win32') + has('win64')
 #   set guifont=Consolas:h12:cANSI
 # else
 #   set guifont=Monospace\ 12
@@ -97,7 +98,7 @@ set matchpairs+=":" # list of pairs that match for the "%" command
 set textwidth=0 #80
 set backspace=indent,eol,start  #specifies what <BS>, CTRL-W, etc. can do in Insert mode
 set undofile # automatically save and restore undo history
-set undodir=$VIMFILES/undodir # list of directories for undo files  " $VIMFILES/undodir/ or '$VIMFILES/undodir', XXX It's Error!!
+set undodir=$VIMFILES/undo # list of directories for undo files  " $VIMFILES/undodir/ or '$VIMFILES/undodir', XXX It's Error!!
 set completeopt=preview,menuone,popup
 set completepopup=height:10,width:60,highlight:Pmenu,border:off
 # set completefunc # user defined function for Insert mode completion
@@ -137,8 +138,7 @@ set autoread   #autoread when a file is changed from the outside
 set fileformats=unix,dos,mac
 set nowritebackup # write a backup file before overwriting a file
 set nobackup
-# set backupdir=$HOME/.vim/backup/
-# set backupext=-vimbackup
+set backupdir=$VIMFILES/backup
 
 # 20 the swap file {1
 set updatetime=300 # time in msec after which the swap file will be updated

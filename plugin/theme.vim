@@ -1,8 +1,9 @@
 vim9script
+#=======================================================================
 # Vim Theme
 # Author: jiaobuzuji@163.com
 # Github: https://github.com/jiaobuzuji
-# ======================================================================
+#=======================================================================
 # scriptencoding must be placed encoding
 # scriptencoding utf-8
 

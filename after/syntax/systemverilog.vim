@@ -3,5 +3,9 @@ vim9script
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
 
-setlocal wrap spell
+syn keyword systemverilogType   logic integer string
 
+# The default highlighting.
+# hi def link systemverilogType  Type
+
+# vim: ts=8

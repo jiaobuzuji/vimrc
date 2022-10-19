@@ -3,5 +3,6 @@ vim9script
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
 
-setlocal wrap spell
+nnoremap <buffer><silent> q <cmd>ccl<cr>
+nnoremap <buffer><silent> r <cmd>Qfreplace<cr>
 

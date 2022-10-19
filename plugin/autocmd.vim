@@ -1,10 +1,11 @@
 vim9script
-#  Author: jiaobuzuji@163.com
-#  Github: https://github.com/jiaobuzuji
-# ======================================================================
+#=======================================================================
+# Author: jiaobuzuji@163.com
+# Github: https://github.com/jiaobuzuji
+#=======================================================================
 
-#  Put these in an autocmd group, so that you can revert them with:
-#  ":augroup vimStartup | au! | augroup END"
+# Put these in an autocmd group, so that you can revert them with:
+# ":augroup vimStartup | au! | augroup END"
 augroup vimStartup
   autocmd!
   # When editing a file, always jump to the last known cursor position.
@@ -18,8 +19,9 @@ augroup vimStartup
 
 augroup END
 
+#-----------------------------------------------------------------------
 augroup edaGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.ucf,*.xdc, setlocal filetype=sdc
+  autocmd BufRead,BufNewFile *.xdc, setlocal filetype=sdc
 augroup END
 
