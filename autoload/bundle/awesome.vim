@@ -1,8 +1,10 @@
-" Awesome Plugins
-" Author: jiaobuzuji@163.com
-" Github: https://github.com/jiaobuzuji
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim:fdm=marker fmr={,}
+" vim9script
+" # vim:fdm=marker fmr={,}
+" #=======================================================================
+" # Awesome Plugins
+" # Author: jiaobuzuji@163.com
+" # Github: https://github.com/jiaobuzuji
+" #=======================================================================
 
 function! bundle#awesome#load() abort
   return 1

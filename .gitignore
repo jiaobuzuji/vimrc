@@ -11,6 +11,7 @@
 /pack/
 /bundle/
 /autoload/plug.vim
+/autoload/plug.vim.old
 /vim-lsp-settings/servers
 /coc/
 

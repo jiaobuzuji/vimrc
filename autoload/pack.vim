@@ -5,7 +5,7 @@
 " vim:fdm=marker fmr={,}
 
 function! pack#fresh() abort
-  let s:host = 'https://github.com.cnpmjs.org/' " mirror
+  let s:host = 'https://github.com/' " mirror
   packadd minpac
 
   call minpac#init()
@@ -25,7 +25,6 @@ endfunction
 
 " Deprecated !!
 " function! pack#PackInit() abort
-"   let s:host = 'https://github.com.cnpmjs.org/' " mirror
 "   packadd minpac
 
 "   call minpac#init()
