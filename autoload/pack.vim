@@ -5,19 +5,18 @@
 " vim:fdm=marker fmr={,}
 
 function! pack#fresh() abort
-  let s:host = 'https://github.com/' " mirror
   packadd minpac
 
   call minpac#init()
-  call minpac#add(s:host.'k-takata/minpac', {'type':'opt'})
-  call minpac#add(s:host.'junegunn/vim-plug', {'type':'opt'}) " vim-plug doc
-  call minpac#add(s:host.'yianwillis/vimcdoc', {'type':'opt'})
-  call minpac#add(s:host.'vim/killersheep', {'type':'opt'})
+  call minpac#add('k-takata/minpac', {'type':'opt'})
+  call minpac#add('junegunn/vim-plug', {'type':'opt'}) " vim-plug doc
+  call minpac#add('yianwillis/vimcdoc', {'type':'opt'})
+  call minpac#add('vim/killersheep', {'type':'opt'})
 
-  call minpac#add(s:host.'vim-scripts/DrawIt', {'type':'opt'})
-  call minpac#add(s:host.'qpkorr/vim-renamer', {'type':'opt'})
+  call minpac#add('vim-scripts/DrawIt', {'type':'opt'})
+  call minpac#add('qpkorr/vim-renamer', {'type':'opt'})
 
-  " call minpac#add(s:host.'skywind3000/vim-auto-popmenu', {'type':'opt'})
+  " call minpac#add('skywind3000/vim-auto-popmenu', {'type':'opt'})
 
   call minpac#clean()
   call minpac#update()

@@ -66,9 +66,9 @@ function repo_sync() {
 # -----------------------------------------------------------------
 [ -z "${REPO_PATH}" ] && REPO_PATH="${HOME}/repos"
 [ -z "${CURR_PATH}" ] && CURR_PATH=$(pwd)
-[ -z "${GITSRVURL}" ] && GITSRVURL="github.com.cnpmjs.org" # mirror0: github.com.cnpmjs.org   mirror1: gitee.com(not work)
+[ -z "${GITSRVURL}" ] && GITSRVURL="github.com" # mirror0: github.com.cnpmjs.org(not working)   mirror1: gitee.com(not working)
 
-Jiaobuzuji vimrc
+# Jiaobuzuji vimrc
 repo_sync  "${REPO_PATH}" \
            "https://${GITSRVURL}/jiaobuzuji/vimrc" \
            "master" \
@@ -76,7 +76,7 @@ repo_sync  "${REPO_PATH}" \
 
 rm -f "${HOME}/.vim" # remove link
 lnif "${REPO_PATH}/vimrc.git"   "${HOME}/.vim" # relink
-mkdir -p ${REPO_PATH}/vimrc.git/{undodir,session,swap} # ,backup}
+mkdir -p ${REPO_PATH}/vimrc.git/{undo,session,swap} # ,backup}
 
 # K-takata minpac
 # git clone --depth=1 https://github.com/ ~/.vim//
