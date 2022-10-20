@@ -5,7 +5,8 @@
 " vim:fdm=marker fmr={,}
 
 function! pack#fresh() abort
-  let s:host = 'https://hub.nuaa.cf/' " mirror
+  " let s:host = 'https://hub.nuaa.cf/' " mirror
+  let s:host = ''
   packadd minpac
 
   call minpac#init()

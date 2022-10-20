@@ -30,8 +30,9 @@ source $VIMRUNTIME/delmenu.vim
 # set t_ZH=[3m
 # set t_ZR=[23m
 
-colorscheme habamax
+# colorscheme habamax
 # colorscheme PaperColor
 # colorscheme gruvbox
 # colorscheme onedark
+colorscheme mine
 
