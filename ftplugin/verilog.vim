@@ -4,6 +4,7 @@ vim9script
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
 
+setlocal foldmarker=indent
 vnoremap <silent> <c-f4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv:s#^\s*\(\/\/.*\)#    \1#e<cr>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
 # nnoremap <silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 
@@ -25,7 +26,7 @@ else
   #------------------------------------------------------------------------------------
   # vcs
   # list of formats for error messages
-  setlocal errorformat =%EError-\[%.%\\+\]\ %m
+  setlocal errorformat=%EError-\[%.%\\+\]\ %m
   setlocal errorformat+=%C%m\"%f\"\\,\ %l%.%#
   setlocal errorformat+=%C%f\\,\ %l
   setlocal errorformat+=%C%\\s%\\+%l:\ %m\\,\ column\ %c

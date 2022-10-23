@@ -37,8 +37,8 @@ inoremap vv   <c-[><cmd>update<cr>
 inoremap v<space>     v 
 
 # search, substitute,copy,paste and cut {1
-nnoremap <leader>ss <cmd>%s/<C-R>//
-vnoremap <leader>ss <cmd>s/<C-R>//
+nnoremap <leader>ss :%s/<C-R>//
+vnoremap <leader>ss :s/<C-R>//
 # Using <Plug> instead of
 vnoremap  *  y/<c-r>=escape(@", '\\/.*$^~[]')<cr><cr>
 vnoremap  #  y?<c-r>=escape(@", '\\/.*$^~[]')<cr><cr>
