@@ -1,17 +1,18 @@
-" Windows Vimrc
-" Author: jiaobuzuji@163.com
-" Github: https://github.com/jiaobuzuji
-" Date:   2021 Aug 11
-" Command: mklink vimrc d:\repos\vimrc.git\tools\vimrc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vim9script
+# Windows Vimrc
+# Author: jiaobuzuji@163.com
+# Github: https://github.com/jiaobuzuji
+# Date:   2021 Aug 11
+# Command: mklink vimrc d:/repos/vimrc.git/tools/vimrc
+#=======================================================================
 
 set runtimepath-=~/vimfiles
 set runtimepath-=~/vimfiles/after
 set packpath-=~/vimfiles
 
-set runtimepath^=d:\repos\vimrc.git
-set runtimepath+=d:\repos\vimrc.git/after
-set packpath^=d:\repos\vimrc.git
+set runtimepath^=d:/repos/vimrc.git
+set runtimepath+=d:/repos/vimrc.git/after
+set packpath^=d:/repos/vimrc.git
 
-let $MYVIMRC='d:\repos\vimrc.git/vimrc'
-execute 'source' 'd:\repos\vimrc.git/vimrc'
+$MYVIMRC = 'd:/repos/vimrc.git/vimrc'
+execute 'source' 'd:/repos/vimrc.git/vimrc'

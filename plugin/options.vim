@@ -63,7 +63,7 @@ set mouse=a #list of menu_flags for using the mouse,support all
 # else
 #   set guifont=Monospace\ 12
 # endif
-if has('win32') + has('win64')
+if has('win32') + has('win64') >= 1
   set guifont=Hack\ Nerd\ Font\ Mono:h12
 else
   set guifont=Hack\ Nerd\ Font\ Mono\ 12

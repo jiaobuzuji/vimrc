@@ -6,8 +6,8 @@ vim9script
 # Date:   2021 Aug 11
 #=======================================================================
 
-# Importance
-set nocompatible
+# Importance (default)
+# set nocompatible
 
 # runtimepath
 $MYVIMRC = fnamemodify(expand('<sfile>'), ":p")
