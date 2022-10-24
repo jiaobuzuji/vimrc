@@ -4,7 +4,7 @@ vim9script
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
 
-setlocal foldmarker=indent
+setlocal foldmethod=indent
 vnoremap <silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
 # nnoremap <silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 
@@ -15,7 +15,7 @@ if (exists("g:verilog_spyglass"))
   #------------------------------------------------------------------------------------
   # spyglass
   # Error level formats
-  setlocal errorformat =%.%#\ %\\+%tATAL\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
+  setlocal errorformat=%.%#\ %\\+%tATAL\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
   setlocal errorformat+=%.%#\ %\\+%tRROR\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
   setlocal errorformat+=%.%#\ %\\+Syntax\ %\\+%f\ %\\+%l\ %\\+%m
   # Warning level formats
