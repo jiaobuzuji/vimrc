@@ -5,7 +5,7 @@ vim9script
 #=======================================================================
 
 setlocal foldmarker=indent
-vnoremap <silent> <c-f4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv:s#^\s*\(\/\/.*\)#    \1#e<cr>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
+vnoremap <silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
 # nnoremap <silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 
 b:verilog_indent_modules = 1

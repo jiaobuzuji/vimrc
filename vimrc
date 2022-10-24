@@ -6,9 +6,6 @@ vim9script
 # Date:   2021 Aug 11
 #=======================================================================
 
-# Importance (default)
-# set nocompatible
-
 # runtimepath
 $MYVIMRC = fnamemodify(expand('<sfile>'), ":p")
 $VIMFILES = fnamemodify(expand('<sfile>'), ":p:h")

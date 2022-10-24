@@ -18,6 +18,8 @@ let s:t_Co = exists('&t_Co') && !has('gui_running') ? (&t_Co ?? 0) : -1
 if (has('termguicolors') && &termguicolors) || has('gui_running')
   let g:terminal_ansi_colors = ['#1c1c1c', '#d75f5f', '#87af87', '#afaf87', '#5f87af', '#af87af', '#5f8787', '#9e9e9e', '#767676', '#d7875f', '#afd7af', '#d7d787', '#87afd7', '#d7afd7', '#87afaf', '#bcbcbc']
 endif
+
+" habamax base {1
 hi! link Terminal Normal
 hi! link StatuslineTerm Statusline
 hi! link StatuslineTermNC StatuslineNC
@@ -68,7 +70,8 @@ hi ALEWarning guifg=#1c1c1c guibg=#af87af gui=NONE cterm=NONE
 hi ALEVirtualTextWarning guifg=#1c1c1c guibg=#af87af gui=NONE cterm=NONE
 hi ALEInfo guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
 hi ALEVirtualTextInfo guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
-hi Normal guifg=#bcbcbc guibg=#1c1c1c gui=NONE cterm=NONE
+" hi Normal guifg=#bcbcbc guibg=#1c1c1c gui=NONE cterm=NONE
+hi Normal guifg=#bcbcbc guibg=#080808 gui=NONE cterm=NONE
 hi Statusline guifg=#1c1c1c guibg=#9e9e9e gui=NONE cterm=NONE
 hi StatuslineNC guifg=#1c1c1c guibg=#767676 gui=NONE cterm=NONE
 hi VertSplit guifg=#767676 guibg=#767676 gui=NONE cterm=NONE
@@ -140,6 +143,13 @@ hi diffSubname guifg=#af87af guibg=NONE gui=NONE cterm=NONE
 hi DiffText guifg=#000000 guibg=#d7d7d7 gui=NONE cterm=NONE
 hi DiffChange guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 
+" verilog,systemverilog {1
+" hi verilogType guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
+hi def link verilogType  Type
+" hi systemverilogType guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
+hi def link systemverilogType  Type
+
+" color palette {1
 " Background: dark
 " Color: color00          #1C1C1C        234            black
 " Color: color08          #767676        243            darkgray
@@ -171,4 +181,5 @@ hi DiffChange guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 " Color: white            #FFFFFF        231            white
 " Term colors: color00 color01 color02 color03 color04 color05 color06 color07
 " Term colors: color08 color09 color10 color11 color12 color13 color14 color15
-" vim: et ts=2 sw=2
+
+" vim: et ts=2 sw=2 fdm=marker fmr={,}
