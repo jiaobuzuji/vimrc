@@ -99,36 +99,36 @@ nnoremap <leader>oq :let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>
 
 
 "-----------------------------------------------------------------------------
-" Plug 'mhinz/vim-grepper' " {1
-
 Plug 'dyng/ctrlsf.vim' " {1
 " let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_default_root = 'project+ww'
-let g:ctrlsf_extra_root_markers = ['.git']
+let g:ctrlsf_extra_root_markers = ['.git','.svn']
 let g:ctrlsf_indent = 2
 let g:ctrlsf_auto_focus = {"at":"start"}
 let g:ctrlsf_confirm_save = 0
+let g:ctrlsf_populate_qflist = 1 " for Qfreplace
 " let g:ctrlsf_debug_mode = 1
+let g:ctrlsf_ignore_dir = ['.git','.svn','.hg','node_modules']
 let g:ctrlsf_mapping = {
-      \ "open"    : ["<CR>", "o"],
+      \ "open"    : ["<CR>", "o", "<2-LeftMouse>"],
       \ "openb"   : "O",
-      \ "split"   : "<C-O>",
+      \ "split"   : "<m-O>",
       \ "vsplit"  : "",
       \ "tab"     : "t",
       \ "tabb"    : "T",
-      \ "popen"   : "<C-P>",
+      \ "popen"   : "<m-P>",
       \ "popenf"  : "",
       \ "quit"    : "q",
-      \ "next"    : "<C-J>",
-      \ "prev"    : "<C-K>",
-      \ "nfile"   : "<C-N>",
-      \ "pfile"   : "<C-P>",
+      \ "stop"    : "<c-c>",
+      \ "next"    : "<m-j>",
+      \ "prev"    : "<m-k>",
+      \ "nfile"   : "<c-n>",
+      \ "pfile"   : "<c-p>",
+      \ "chgmode" : "M",
       \ "pquit"   : "q",
       \ "loclist" : "",
-      \ "chgmode" : "M",
-      \ "stop"    : "<C-C>",
+      \ "fzf"     : "<m-f>",
       \ }
-let g:ctrlsf_ignore_dir = ['.git','.svn','.hg']
 let g:ctrlsf_extra_backend_args = {
   \ 'ag':'--ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
         \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
@@ -143,15 +143,17 @@ vmap <leader>vv <Plug>CtrlSFVwordExec
 nmap <leader>vs <Plug>CtrlSFPrompt
 nmap <leader>vv <Plug>CtrlSFCwordExec
 nmap <leader>vV <Plug>CtrlSFCCwordExec
-nnoremap <leader>vh :call ctrlsf#Search('-hidden '.expand('<cword>'))<cr>
-nnoremap <leader>vH :call ctrlsf#Search('-hidden -R \b'.expand('<cword>').'\b')<cr>
+nnoremap <leader>vt <cmd>CtrlSFToggle<CR>
+nnoremap <leader>vh <cmd>call ctrlsf#Search('-hidden '.expand('<cword>'))<cr>
+nnoremap <leader>vH <cmd>call ctrlsf#Search('-hidden -R \b'.expand('<cword>').'\b')<cr>
 " current Direction
-nnoremap <leader>vd :call ctrlsf#Search(expand('<cword>').' .')<cr>
-nnoremap <leader>vD :call ctrlsf#Search('-R \b'.expand('<cword>').'\b'.' .')<cr>
-nnoremap <leader>vt :CtrlSFToggle<CR>
+nnoremap <leader>vd <cmd>call ctrlsf#Search(expand('<cword>').' .')<cr>
+nnoremap <leader>vD <cmd>call ctrlsf#Search('-R \b'.expand('<cword>').'\b'.' .')<cr>
 
-" Plug 'thinca/vim-qfreplace'
-Plug 'brooth/far.vim', {'on':['F','Far','Farf']}
+Plug 'thinca/vim-qfreplace'
+Plug 'mhinz/vim-grepper', {'on':'Grepper'}
+
+Plug 'brooth/far.vim', {'on':['Far','Fardo']}
 " let g:far#source='rg'
 let g:far#enable_undo=1
 
@@ -213,7 +215,8 @@ let g:indentLine_char_list = ['▏']
 " Plug 'hecal3/vim-leader-guide' " {1
 "   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
 " 
-" Plug 'liuchengxu/vim-which-key'
+Plug 'liuchengxu/vim-which-key' " {1
+nnoremap <silent> <leader> <cmd>WhichKey '<Space>'<CR>
 
 "-----------------------------------------------------------------------------
 " TODO
