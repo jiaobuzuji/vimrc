@@ -14,11 +14,10 @@ let g:coc_config_home = $VIMFILES
 let g:coc_data_home = $VIMFILES.'/coc'
 let g:coc_global_extensions = [
       \ 'coc-marketplace', 'coc-highlight', 'coc-pairs', 'coc-git',
-      \ 'coc-yank', 'coc-omni',
+      \ 'coc-snippets', 'coc-yank', 'coc-omni',
       \ 'coc-json', 'coc-sh', 'coc-vimlsp', 'coc-clangd', 'coc-cmake', 'coc-lua',
       \ ]
 " :CocInstall coc-tabnine coc-word
- " 'coc-snippets', 'coc-ultisnips',
 " :CocCommand clangd.install
 
 " set hidden " TextEdit might fail if hidden is not set.
