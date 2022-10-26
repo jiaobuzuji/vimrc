@@ -212,11 +212,25 @@ let g:indentLine_char_list = ['▏']
 
 
 "-----------------------------------------------------------------------------
-" Plug 'hecal3/vim-leader-guide' " {1
-"   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-" 
 Plug 'liuchengxu/vim-which-key' " {1
 nnoremap <silent> <leader> <cmd>WhichKey '<Space>'<CR>
+
+" Plug 'hecal3/vim-leader-guide'
+"   nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+
+"-----------------------------------------------------------------------------
+Plug 'tracyone/mark.vim' " {1
+"remove mapping of * and # in mark.vim
+nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
+nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
+nmap <leader>mm <Plug>MarkSet
+xmap <leader>mm <Plug>MarkSet
+nmap <leader>mr <Plug>MarkRegex
+xmap <leader>mr <Plug>MarkRegex
+nmap <leader>mn <Plug>MarkClear
+xmap <leader>mn <Plug>MarkClear
+nmap <leader>m? <Plug>MarkSearchAnyPrev
+nmap <leader>m/ <Plug>MarkSearchAnyNext
 
 "-----------------------------------------------------------------------------
 " TODO
@@ -247,13 +261,6 @@ nnoremap <silent> <leader> <cmd>WhichKey '<Space>'<CR>
 "   "Bookmark show all
 "   nnoremap <leader>mb :BookmarkShowAll<CR>
 
-" Plug 'ronakg/quickr-preview.vim', { 'for': ['qf']} " {1
-"   let g:quickr_preview_keymaps = 0
-"   autocmd filetype_group FileType qf nmap <buffer> <down> <down><plug>(quickr_preview)
-"   autocmd filetype_group FileType qf nmap <buffer> <up> <up><plug>(quickr_preview)
-"   autocmd filetype_group FileType qf nmap <buffer> <Space><Space>  <plug>(quickr_preview)
-
-
 "
 " Plug 'majutsushi/tagbar' " {1
 "   let g:tagbar_left=0
@@ -269,21 +276,4 @@ nnoremap <silent> <leader> <cmd>WhichKey '<Space>'<CR>
 "   " Open tagbar
 "   nnoremap <silent><F9> :TagbarToggle<CR>
 "   nnoremap <leader>tt :TagbarToggle<CR>
-" 
-" Plug 'tracyone/mark.vim' " {1
-"   "remove mapping of * and # in mark.vim
-"   nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext
-"   nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
-"   nmap <leader>mm <Plug>MarkSet
-"   xmap <leader>mm <Plug>MarkSet
-"   nmap <leader>mr <Plug>MarkRegex
-"   xmap <leader>mr <Plug>MarkRegex
-"   nmap <leader>mn <Plug>MarkClear
-"   xmap <leader>mn <Plug>MarkClear
-"   nmap <leader>m? <Plug>MarkSearchAnyPrev
-"   nmap <leader>m/ <Plug>MarkSearchAnyNext
-" 
-" Plug 'itchyny/vim-cursorword' " {1
-"   " let g:cursorword = 0
-" 
 " 

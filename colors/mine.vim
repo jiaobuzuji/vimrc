@@ -143,6 +143,10 @@ hi diffSubname guifg=#af87af guibg=NONE gui=NONE cterm=NONE
 hi DiffText guifg=#000000 guibg=#d7d7d7 gui=NONE cterm=NONE
 hi DiffChange guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 
+" colorful {1
+hi Label guifg=#87af87 guibg=NONE gui=NONE cterm=NONE
+hi Conditional guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
+
 " verilog,systemverilog {1
 hi def link verilogType  Type
 hi def link systemverilogType  Type
