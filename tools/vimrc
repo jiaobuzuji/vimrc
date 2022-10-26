@@ -1,4 +1,5 @@
 vim9script
+#=======================================================================
 # Windows Vimrc
 # Author: jiaobuzuji@163.com
 # Github: https://github.com/jiaobuzuji
@@ -13,6 +14,9 @@ set packpath-=~/vimfiles
 set runtimepath^=d:/repos/vimrc.git
 set runtimepath+=d:/repos/vimrc.git/after
 set packpath^=d:/repos/vimrc.git
+
+set pythonthreedll=python311.dll
+# set pythonthreehome=
 
 $MYVIMRC = 'd:/repos/vimrc.git/vimrc'
 execute 'source' 'd:/repos/vimrc.git/vimrc'
