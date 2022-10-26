@@ -18,7 +18,8 @@ let g:coc_global_extensions = [
       \ 'coc-snippets', 'coc-yank', 'coc-omni',
       \ 'coc-json', 'coc-sh', 'coc-vimlsp', 'coc-clangd', 'coc-cmake', 'coc-lua', 'coc-pyright',
       \ ]
-" :CocInstall coc-tabnine coc-word coc-tsserver coc-yaml,coc-translator
+" :CocInstall coc-tabnine coc-word coc-tsserver coc-yaml coc-translator
+" :CocInstall coc-markdownlint coc-todolist
 " :CocCommand clangd.install
 
 "-----------------------------------------------------------------------------
