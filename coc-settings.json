@@ -3,8 +3,6 @@
     "$VIMFILES/bundle/vim-snippets/UltiSnips",
     "$VIMFILES/UltiSnips"
   ],
-  "coc.source.buffer.firstMatch": false,
-  "coc.source.around.firstMatch": false,
-  "coc.preferences.semanticTokensHighlights":true,
-  "suggest.enablePreview": true
+  "colors.filetypes": ["vim","lua","css"],
+  "suggest.noselect":true
 }

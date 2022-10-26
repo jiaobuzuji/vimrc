@@ -144,10 +144,14 @@ hi DiffText guifg=#000000 guibg=#d7d7d7 gui=NONE cterm=NONE
 hi DiffChange guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 
 " verilog,systemverilog {1
-" hi verilogType guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 hi def link verilogType  Type
-" hi systemverilogType guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 hi def link systemverilogType  Type
+
+" coc.nvim {1
+" hi def link CocFloating
+hi def link CocMenuSel MatchParen
+" hi def link CocUnderline
+
 
 " color palette {1
 " Background: dark
