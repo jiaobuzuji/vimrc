@@ -1,8 +1,4 @@
 {
-  "snippets.ultisnips.directories": [
-    "$VIMFILES/bundle/vim-snippets/UltiSnips",
-    "$VIMFILES/ultisnips"
-  ],
   "colors.filetypes": ["vim","lua","css"],
   "suggest.noselect":true
 }

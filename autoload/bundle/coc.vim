@@ -10,7 +10,6 @@ endfunction
 "-----------------------------------------------------------------------------
 Plug 'neoclide/coc.nvim',{'branch':'release'} " {1
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'honza/vim-snippets' " {1
 let g:coc_config_home = $VIMFILES
 let g:coc_data_home = $VIMFILES.'/coc'
 let g:coc_global_extensions = [

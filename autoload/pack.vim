@@ -12,6 +12,7 @@ function! pack#fresh() abort
   call minpac#add('junegunn/vim-plug', {'type':'opt'}) " vim-plug doc
   call minpac#add('yianwillis/vimcdoc', {'type':'opt'})
   call minpac#add('vim/killersheep', {'type':'opt'})
+  call minpac#add('honza/vim-snippets', {'type':'opt'})
 
   call minpac#add('vim-scripts/DrawIt', {'type':'opt'})
   call minpac#add('qpkorr/vim-renamer', {'type':'opt'})
