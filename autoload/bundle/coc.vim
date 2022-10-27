@@ -15,10 +15,11 @@ let g:coc_data_home = $VIMFILES.'/coc'
 let g:coc_global_extensions = [
       \ 'coc-marketplace', 'coc-highlight', 'coc-pairs', 'coc-git',
       \ 'coc-snippets', 'coc-yank', 'coc-omni',
-      \ 'coc-json', 'coc-sh', 'coc-vimlsp', 'coc-clangd', 'coc-cmake', 'coc-lua', 'coc-pyright',
+      \ 'coc-json', 'coc-sh', 'coc-vimlsp', 'coc-clangd', 'coc-cmake',
+      \ 'coc-lua', 'coc-pyright', 'coc-yaml',
       \ ]
-" :CocInstall coc-tabnine coc-word coc-tsserver coc-yaml coc-translator
-" :CocInstall coc-markdownlint coc-todolist
+" :CocInstall coc-tabnine coc-word coc-tsserver coc-translator
+" :CocInstall coc-markdownlint
 " :CocCommand clangd.install
 
 "-----------------------------------------------------------------------------
