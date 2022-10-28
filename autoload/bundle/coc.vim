@@ -16,7 +16,7 @@ let g:coc_global_extensions = [
       \ 'coc-marketplace', 'coc-highlight', 'coc-pairs', 'coc-git',
       \ 'coc-snippets', 'coc-yank', 'coc-omni',
       \ 'coc-json', 'coc-sh', 'coc-vimlsp', 'coc-clangd', 'coc-cmake',
-      \ 'coc-lua', 'coc-pyright', 'coc-yaml',
+      \ 'coc-lua', 'coc-pyright', 'coc-yaml', 'coc-perl',
       \ ]
 " :CocInstall coc-tabnine coc-word coc-tsserver coc-translator
 " :CocInstall coc-markdownlint
