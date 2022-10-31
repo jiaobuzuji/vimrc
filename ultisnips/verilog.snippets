@@ -74,6 +74,10 @@ always @(posedge clk, negedge rst_n) begin
 end
 endsnippet
 
+snippet ass "assignment""
+assign  ${1} = ${2};
+endsnippet
+
 snippet mod "Module block"
 module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
 	${0}

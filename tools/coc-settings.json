@@ -1,0 +1,20 @@
+{
+  "languageserver": {
+    "svlangserver": {
+      "command": "svlangserver",
+      "module": "C:/Users/xxx/AppData/Roaming/npm/node_modules/@imc-trading/svlangserver/bin/main.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["verilog","systemverilog"],
+      "settings": {
+        "systemverilog.includeIndexing": ["**/*.{v,vh,sv,svh}"],
+        "systemverilog.excludeIndexing": ["test/**/*.sv*"],
+        "systemverilog.defines" : [],
+        "systemverilog.linter": "icarus",
+        "systemverilog.launchConfiguration": "iverilog -t null",
+        "systemverilog.formatCommand": "verible-verilog-format"
+      }
+    }
+  }
+}
+
+

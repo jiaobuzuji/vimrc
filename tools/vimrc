@@ -18,5 +18,7 @@ set packpath^=d:/repos/vimrc.git
 set pythonthreedll=python311.dll
 # set pythonthreehome=
 
+g:verilog_iverilog = 1
+
 $MYVIMRC = 'd:/repos/vimrc.git/vimrc'
 execute 'source' 'd:/repos/vimrc.git/vimrc'
