@@ -60,13 +60,13 @@ casez (${1:/* variable */})
 endcase
 endsnippet
 
-snippet al "Combinational Always block"
+snippet alw "Combinational Always block"
 always @(${1:/* sensitive list */}) begin
 	${0}
 end
 endsnippet
 
-snippet alw "Sequential logic Always block"
+snippet al "Sequential logic Always block"
 always @(posedge clk, negedge rst_n) begin
 	if(!rst_n) begin
 		${1}
