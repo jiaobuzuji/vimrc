@@ -7,6 +7,3 @@ vim9script
 nnoremap <buffer><silent> q <cmd>ccl<cr>
 nnoremap <buffer><silent> r <cmd>Qfreplace<cr>
 
-nnoremap <buffer><silent> <m-j> <cmd>cn<cr>
-nnoremap <buffer><silent> <m-k> <cmd>cp<cr>
-

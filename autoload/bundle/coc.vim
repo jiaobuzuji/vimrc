@@ -13,12 +13,12 @@ Plug 'neoclide/coc.nvim',{'branch':'release'} " {1
 let g:coc_config_home = $VIMFILES
 let g:coc_data_home = $VIMFILES.'/coc'
 let g:coc_global_extensions = [
-      \ 'coc-marketplace', 'coc-highlight', 'coc-pairs', 'coc-git',
+      \ 'coc-marketplace', 'coc-highlight', 'coc-pairs', 'coc-git', 'coc-translator',
       \ 'coc-snippets', 'coc-yank', 'coc-omni',
       \ 'coc-json', 'coc-sh', 'coc-vimlsp', 'coc-clangd', 'coc-cmake',
-      \ 'coc-lua', 'coc-pyright', 'coc-yaml', 'coc-perl',
+      \ 'coc-lua', 'coc-pyright', 'coc-yaml', 'coc-perl', 'coc-tsserver'
       \ ]
-" :CocInstall coc-tabnine coc-word coc-tsserver coc-translator
+" :CocInstall coc-tabnine coc-word
 " :CocInstall coc-markdownlint
 " :CocCommand clangd.install
 

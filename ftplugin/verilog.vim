@@ -9,11 +9,14 @@ setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
 setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
 setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
 
-vnoremap <silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
-# nnoremap <silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
+vnoremap <buffer><silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
+# nnoremap <buffer><silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
+# nnoremap <buffer><silent> <m-j> <cmd>cn<cr>
+# nnoremap <buffer><silent> <m-k> <cmd>cp<cr>
 
-b:verilog_indent_modules = 1
+# b:verilog_indent_modules = 1
 
+#------------------------------------------------------------------------------------
 # g:verilog_spyglass = 1
 if (exists("g:verilog_spyglass"))
   #------------------------------------------------------------------------------------

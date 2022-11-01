@@ -146,6 +146,19 @@ hi DiffChange guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 " colorful {1
 hi Label guifg=#87af87 guibg=NONE gui=NONE cterm=NONE
 hi Conditional guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
+hi Delimiter guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
+
+" html {1
+hi htmlH1 guifg=#ff5faf guibg=NONE gui=bold cterm=bold
+hi htmlH2 guifg=#ff8700 guibg=NONE gui=bold cterm=bold
+hi htmlH3 guifg=#ffff00 guibg=NONE gui=bold cterm=bold
+hi htmlH4 guifg=#008000 guibg=NONE gui=bold cterm=bold
+hi htmlH5 guifg=#5fffff guibg=NONE gui=bold cterm=bold
+hi htmlH6 guifg=#5f005f guibg=NONE gui=bold cterm=bold
+hi htmlLink guifg=#ffaf00 guibg=NONE gui=NONE cterm=NONE
+
+" markdown {1
+hi def link markdownCode String
 
 " verilog,systemverilog {1
 hi def link verilogType  Type
