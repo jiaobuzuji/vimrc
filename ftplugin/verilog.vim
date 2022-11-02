@@ -11,13 +11,22 @@ setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
 
 vnoremap <buffer><silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
 # nnoremap <buffer><silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
-# nnoremap <buffer><silent> <m-j> <cmd>cn<cr>
-# nnoremap <buffer><silent> <m-k> <cmd>cp<cr>
+nnoremap <buffer><silent> <c-j> <cmd>cn<cr>
+nnoremap <buffer><silent> <c-k> <cmd>cp<cr>
 
 # b:verilog_indent_modules = 1
 
 #------------------------------------------------------------------------------------
 # g:verilog_spyglass = 1
+def MyCallMake()
+  cd sim
+  silent make
+  # echo "oh my god!"
+  cd ..
+  cw
+  wincmd k
+enddef
+
 if (exists("g:verilog_spyglass"))
   #------------------------------------------------------------------------------------
   # spyglass
@@ -28,7 +37,7 @@ if (exists("g:verilog_spyglass"))
   # Warning level formats
   setlocal errorformat+=%.%#\ %\\+%tARNING\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>cd lint<cr><cmd>make<cr><cmd>cd ..<cr><cmd>cw<cr>
+  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>MyCallMake()<cr>
 elseif (exists("g:verilog_iverilog"))
   #------------------------------------------------------------------------------------
   # iverilog
@@ -55,7 +64,7 @@ else
   # Lint level formats
   setlocal errorformat+=%I%tint-\[%.%\\+\]\ %m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>cd sim<cr><cmd>make<cr><cmd>cd ..<cr><cmd>cw<cr>
+  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>MyCallMake()<cr>
 endif
 
 #------------------------------------------------------------------------------------
