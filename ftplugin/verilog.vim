@@ -13,6 +13,7 @@ vnoremap <buffer><silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg
 # nnoremap <buffer><silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 nnoremap <buffer><silent> <c-j> <cmd>cn<cr>
 nnoremap <buffer><silent> <c-k> <cmd>cp<cr>
+nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 
 # b:verilog_indent_modules = 1
 
