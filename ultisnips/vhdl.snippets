@@ -1,0 +1,158 @@
+snippet lib "Libraries"
+	library ${1}
+	use $1.${2}
+endsnippet
+
+snippet libs "Standard Libraries"
+	library IEEE;
+	use IEEE.std_logic_1164.ALL;
+	use IEEE.numeric_std.ALL;
+endsnippet
+
+snippet libx "Xilinx Library"
+	library UNISIM;
+	use UNISIM.VCOMPONENTS.ALL;
+endsnippet
+
+snippet ent "Entity Declaration"
+	entity ${1:`vim_snippets#Filename()`} is
+		generic (
+			${2}
+		);
+		port (
+			${3}
+		);
+	end entity $1;
+endsnippet
+
+snippet arc "Architecture"
+	architecture ${1:behav} of ${2:`vim_snippets#Filename()`} is
+
+		${3}
+
+	begin
+
+
+	end $1;
+endsnippet
+
+#------------------------------------------------------------
+# Declarations
+snippet st "std_logic"
+	signal ${1} : std_logic;
+endsnippet
+
+snippet sv "std_logic_vector"
+	signal ${1} : std_logic_vector (${2} downto 0);
+endsnippet
+
+snippet ist "std_logic in"
+	${1} : in std_logic;
+endsnippet
+
+snippet isv "std_logic_vector in"
+	${1} : in std_logic_vector (${2} downto 0);
+endsnippet
+
+snippet ost "std_logic out"
+	${1} : out std_logic;
+endsnippet
+
+snippet osv "std_logic_vector out"
+	${1} : out std_logic_vector (${2} downto 0);
+endsnippet
+
+snippet un "unsigned"
+	signal ${1} : unsigned (${2} downto 0);
+endsnippet
+
+#------------------------------------------------------------
+# Process Statements
+snippet pr "process"
+process (${1})
+begin
+	${2}
+end process;
+endsnippet
+
+snippet prc "process with clock"
+process (${1:clk})
+begin
+	if rising_edge ($1) then
+		${2}
+	end if;
+end process;
+endsnippet
+
+snippet prcr "process with clock and reset"
+process (${1:clk}, ${2:nrst})
+begin
+	if ($2 = '${3:0}') then
+		${4}
+	elsif rising_edge($1) then
+		${5}
+	end if;
+end process;
+endsnippet
+
+snippet pra "process all"
+process (${1:all})
+begin
+	${2}
+end process;
+endsnippet
+
+#------------------------------------------------------------
+## Control Statements
+snippet if "if"
+if ${1} then
+	${2}
+end if;
+endsnippet
+
+snippet ife "if"
+if ${1} then
+	${2}
+else
+	${3}
+end if;
+endsnippet
+
+snippet el "else"
+else
+	${1}
+endsnippet
+
+snippet eif "if"
+elsif ${1} then
+	${2}
+endsnippet
+
+snippet ca "case"
+case ${1} is
+	${2}
+end case;
+endsnippet
+
+snippet wh "when"
+when ${1} =>
+	${2}
+endsnippet
+
+snippet for "for"
+for ${1:i} in ${2} ${3:to} ${4} loop
+	${5}
+end loop;
+endsnippet
+
+snippet wh "while"
+while ${1} loop
+	${2}
+end loop;
+endsnippet
+
+#------------------------------------------------------------
+## Misc
+snippet oth "others"
+(others => '${1:0}');
+endsnippet

@@ -12,7 +12,9 @@ function! pack#fresh() abort
   call minpac#add('junegunn/vim-plug', {'type':'opt'}) " vim-plug doc
   call minpac#add('yianwillis/vimcdoc', {'type':'opt'})
   call minpac#add('vim/killersheep', {'type':'opt'})
+
   call minpac#add('honza/vim-snippets', {'type':'opt'})
+  call minpac#add('SirVer/ultisnips', {'type':'opt'})
 
   call minpac#add('vim-scripts/DrawIt', {'type':'opt'})
   call minpac#add('qpkorr/vim-renamer', {'type':'opt'})
@@ -22,17 +24,4 @@ function! pack#fresh() abort
   call minpac#clean()
   call minpac#update()
 endfunction
-
-" Deprecated !!
-" function! pack#PackInit() abort
-"   packadd minpac
-
-"   call minpac#init()
-"   call minpac#add('k-takata/minpac', {'type':'opt'})
-"   call minpac#add('junegunn/vim-plug', {'type':'opt'}) " vim-plug doc
-"   call minpac#add('yianwillis/vimcdoc', {'type':'opt'})
-" endfunction
-" command! PackUpdate source $MYVIMRC | call pack#PackInit() | call minpac#update()
-" command! PackClean  source $MYVIMRC | call pack#PackInit() | call minpac#clean()
-" command! PackStatus packadd minpac | call minpac#status()
 
