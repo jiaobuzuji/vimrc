@@ -22,6 +22,7 @@ nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 def MyCallMake()
   cd sim
   silent make
+  sleep 100m
   # echo "oh my god!"
   cd ..
   cw
