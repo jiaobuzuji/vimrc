@@ -15,7 +15,7 @@ snippet libx "Xilinx Library"
 endsnippet
 
 snippet ent "Entity Declaration"
-	entity ${1:`!v expand("%:t")`} is
+	entity ${1:`!v expand("%:t:r")`} is
 		generic (
 			${2}
 		);
@@ -26,7 +26,7 @@ snippet ent "Entity Declaration"
 endsnippet
 
 snippet arc "Architecture"
-	architecture ${1:behav} of ${2:`!v expand("%:t")`} is
+	architecture ${1:behav} of ${2:`!v expand("%:t:r")`} is
 
 		${3}
 

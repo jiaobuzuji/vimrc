@@ -78,7 +78,7 @@ assign  ${1} = ${2};
 endsnippet
 
 snippet mod "Module block"
-module ${1:`!v expand("%:t")`} (${2});
+module ${1:`!v expand("%:t:r")`} (${2});
 	${0}
 endmodule
 endsnippet
@@ -116,7 +116,7 @@ endsnippet
 snippet tdsp "typedef struct packed"
 typedef struct packed {
 	int ${2:data};
-} ${1:`!v expand("%:t")`};
+} ${1:`!v expand("%:t:r")`};
 endsnippet
 
 snippet tde "typedef eum"
