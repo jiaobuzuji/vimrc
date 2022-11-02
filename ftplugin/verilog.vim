@@ -20,6 +20,7 @@ nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 #------------------------------------------------------------------------------------
 # g:verilog_spyglass = 1
 def MyCallMake()
+  ccl
   cd sim
   silent make
   # sleep 100m
