@@ -3,13 +3,22 @@ vim9script
 # Author: jiaobuzuji@163.com
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
+def MyHDLFormat()
+  var line = getline(".")
+  var repl = substitute(line, '^\s*\(input\|output\)\(\s\+\(wire\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?', ".", "")
+  setline(".", repl)
+
+  # s#^\s*\(\/\/.*\)#    \1#e
+  # s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )
+  # <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
+enddef
 
 setlocal foldmethod=indent
 setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
 setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
 setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
 
-vnoremap <buffer><silent> <c-f4> <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
+vnoremap <buffer><silent> <c-f4> <cmd>call <SID>MyHDLFormat()<cr>
 # nnoremap <buffer><silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 nnoremap <buffer><silent> <c-j> <cmd>cn<cr>
 nnoremap <buffer><silent> <c-k> <cmd>cp<cr>
@@ -19,7 +28,7 @@ nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 
 #------------------------------------------------------------------------------------
 # g:verilog_spyglass = 1
-def MyCallMake()
+def MyHDLMake()
   ccl
   cd sim
   silent make
@@ -40,7 +49,7 @@ if (exists("g:verilog_spyglass"))
   # Warning level formats
   setlocal errorformat+=%.%#\ %\\+%tARNING\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>MyCallMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>MyHDLMake()<cr>
 elseif (exists("g:verilog_iverilog"))
   #------------------------------------------------------------------------------------
   # iverilog
@@ -67,7 +76,7 @@ else
   # Lint level formats
   setlocal errorformat+=%I%tint-\[%.%\\+\]\ %m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>MyCallMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>call <SID>MyCallMake()<cr>
 endif
 
 #------------------------------------------------------------------------------------
