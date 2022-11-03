@@ -1,6 +1,7 @@
 {
   "languageserver": {
     "svlangserver": {
+      "command": "svlangserver",
       "filetypes": ["verilog","systemverilog"],
       "settings": {
         "systemverilog.linter": "icarus",
