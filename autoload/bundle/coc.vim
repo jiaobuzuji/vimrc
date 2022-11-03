@@ -19,7 +19,7 @@ let g:coc_global_extensions = [
       \ 'coc-lua', 'coc-pyright', 'coc-yaml', 'coc-perl', 'coc-tsserver'
       \ ]
 " :CocInstall coc-tabnine coc-word
-" :CocInstall coc-markdownlint
+" :CocInstall coc-markdownlint @yaegassy/coc-marksman 'coc-markdown-preview-enhanced'
 " :CocCommand clangd.install
 
 "-----------------------------------------------------------------------------

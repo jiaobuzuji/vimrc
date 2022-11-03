@@ -119,7 +119,7 @@ set nofoldenable # enable folding
 set foldmethod=syntax #folding type: "manual", "indent", "expr", "marker" or "syntax"
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 # set foldcolumn=1 #width of the column used to indicate folds
-# set foldtext=MyFoldText()
+# set foldtext=JbzjFoldText()
 
 # 17 diff mode {1
 set diffopt+=vertical

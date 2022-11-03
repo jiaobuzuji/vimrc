@@ -1,7 +1,6 @@
 " Name:         habamax
 " Description:  Hubba hubba hubba.
 " Author:       Maxim Kim <habamax@gmail.com>
-" Maintainer:   Maxim Kim <habamax@gmail.com>
 " Website:      https://github.com/vim/colorschemes
 " License:      Same as Vim
 " Last Updated: Fri 02 Sep 2022 09:45:11 MSK
@@ -11,13 +10,19 @@
 set background=dark
 
 hi clear
-let g:colors_name = 'mine'
+let g:colors_name = 'jbzjcolor'
 
 let s:t_Co = exists('&t_Co') && !has('gui_running') ? (&t_Co ?? 0) : -1
 
 if (has('termguicolors') && &termguicolors) || has('gui_running')
   let g:terminal_ansi_colors = ['#1c1c1c', '#d75f5f', '#87af87', '#afaf87', '#5f87af', '#af87af', '#5f8787', '#9e9e9e', '#767676', '#d7875f', '#afd7af', '#d7d787', '#87afd7', '#d7afd7', '#87afaf', '#bcbcbc']
 endif
+
+" echo highlight name {1
+" function! <SID>JbzjSynStack()
+"   echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
+" endfunc
+" nnoremap <leader>yi :call <SID>JbzjSynStack()<CR>
 
 " habamax base {1
 hi! link Terminal Normal
@@ -71,7 +76,7 @@ hi ALEVirtualTextWarning guifg=#1c1c1c guibg=#af87af gui=NONE cterm=NONE
 hi ALEInfo guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
 hi ALEVirtualTextInfo guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
 " hi Normal guifg=#bcbcbc guibg=#1c1c1c gui=NONE cterm=NONE
-hi Normal guifg=#bcbcbc guibg=#080808 gui=NONE cterm=NONE
+hi Normal guifg=#d0d0d0 guibg=#080808 gui=NONE cterm=NONE
 hi Statusline guifg=#1c1c1c guibg=#9e9e9e gui=NONE cterm=NONE
 hi StatuslineNC guifg=#1c1c1c guibg=#767676 gui=NONE cterm=NONE
 hi VertSplit guifg=#767676 guibg=#767676 gui=NONE cterm=NONE
@@ -147,6 +152,7 @@ hi DiffChange guifg=#000000 guibg=#afafaf gui=NONE cterm=NONE
 hi Label guifg=#87af87 guibg=NONE gui=NONE cterm=NONE
 hi Conditional guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
 " hi Delimiter guifg=#d7d787 guibg=NONE gui=NONE cterm=NONE
+hi Float guifg=#d7875f guibg=NONE gui=NONE cterm=NONE
 
 " html {1
 hi htmlH1 guifg=#ff5faf guibg=NONE gui=bold cterm=bold
@@ -158,17 +164,18 @@ hi htmlH6 guifg=#5f005f guibg=NONE gui=bold cterm=bold
 hi htmlLink guifg=#ffaf00 guibg=NONE gui=NONE cterm=NONE
 
 " markdown {1
-hi def link markdownCode String
-" hi def link markdownCodeDelimiter Delimiter
+hi link markdownCode String
+hi markdownCodeBlock  guifg=#F1FA8C guibg=NONE ctermfg=NONE ctermbg=NONE
+hi markdownUrl guifg=#00ffff guibg=NONE ctermfg=NONE ctermbg=NONE
 
 " verilog,systemverilog {1
-hi def link verilogType  Type
-hi def link systemverilogType  Type
+hi link verilogType  Type
+hi link systemverilogType  Type
 
 " coc.nvim {1
-" hi def link CocFloating
-hi def link CocMenuSel MatchParen
-" hi def link CocUnderline
+" hi link CocFloating
+hi link CocMenuSel MatchParen
+" hi link CocUnderline
 
 
 " color palette {1
@@ -203,5 +210,65 @@ hi def link CocMenuSel MatchParen
 " Color: white            #FFFFFF        231            white
 " Term colors: color00 color01 color02 color03 color04 color05 color06 color07
 " Term colors: color08 color09 color10 color11 color12 color13 color14 color15
+
+" color palette 2 {1
+" {'#000000',  0,'black'      } -- '#000000'
+" {'#800000',  1,'darkred'    } -- '#FF5555'
+" {'#008000',  2,'darkgreen'  } -- '#50FA7B'
+" {'#808000',  3,'darkyellow' } -- '#F1FA8C'
+" {'#000080',  4,'darkblue'   } -- '#BD93F9'
+" {'#800080',  5,'darkmagenta'} -- '#FF79C6'
+" {'#008080',  6,'darkcyan'   } -- '#8BE9FD'
+" {'#c0c0c0',  7,'gray'       } -- '#BFBFBF'
+" {'#808080',  8,'darkgray'   } -- '#4D4D4D'
+" {'#ff0000',  9,'red'        } -- '#FF6E67'
+" {'#00ff00', 10,'green'      } -- '#5AF78E'
+" {'#ffff00', 11,'yellow'     } -- '#F4F99D'
+" {'#0000ff', 12,'blue'       } -- '#CAA9FA'
+" {'#ff00ff', 13,'magenta'    } -- '#FF92D0'
+" {'#00ffff', 14,'cyan'       } -- '#9AEDFE'
+" {'#ffffff', 15,'white'      } -- '#ffffff'
+
+" Customize Palette
+" Aqua Olive Navy Tan Orange Pink Teal Purple Turquoise
+" {'#080808',232,'black'      }
+" {'#121212',233,'black'      }
+" {'#1c1c1c',234,'black'      }
+" {'#262626',235,'black'      }
+" {'#303030',236,'darkgray'   }
+" {'#3a3a3a',237,'darkgray'   }
+" {'#4e4e4e',239,'darkgray'   }
+" {'#585858',240,'darkgray'   }
+" {'#808080',244,'darkgray'   }
+" {'#bcbcbc',250,'gray'       }
+" {'#c6c6c6',251,'white'      }
+" {'#d0d0d0',252,'white'      }
+
+" {'#5f0000', 52,'darkred'    }
+" {'#5f005f', 53,'darkred'    }
+" {'#af005f',125,'red'        }
+" {'#ff5faf',205,'magenta'    }
+" {'#d787ff',177,'darkmagenta'}
+" {'#af87d7',140,'darkmagenta'}
+" {'#8787af',103,'darkmagenta'}
+" {'#d7875f',173,'darkyellow' }
+" {'#ff8700',208,'darkyellow' }
+" {'#ffaf00',214,'darkyellow' }
+" {'#d7af5f',179,'darkyellow' }
+" {'#d7af00',178,'darkyellow' }
+" {'#afd700',148,'darkgreen'  }
+" {'#87d700',112,'darkgreen'  }
+" {'#005f00', 22,'green'      }
+" {'#5faf00', 70,'darkgreen'  }
+" {'#5faf5f', 71,'darkgreen'  }
+" {'#00005f', 17,'darkblue'   }
+" {'#005f5f', 23,'darkblue'   }
+" {'#00875f', 29,'darkgreen'  }
+" {'#008787', 30,'darkcyan'   }
+" {'#00afaf', 37,'darkcyan'   }
+" {'#5fffff', 87,'cyan'       }
+" {'#5fafd7', 74,'darkcyan'   }
+" {'#5f8787', 66,'darkcyan'   }
+
 
 " vim: et ts=2 sw=2 fdm=marker fmr={,}

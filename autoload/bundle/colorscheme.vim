@@ -151,7 +151,7 @@ let g:lightline = {
 " endif
 
 " if get(g:,'feat_enable_airline') != 1
-"     function! MyStatusLine(type) abort
+"     function! JbzjStatusLine(type) abort
 "         let l:mystatus_line='%<%t%m%r%h%w'
 "         if a:type == 1
 "             let l:mystatus_line.=s:git_branch
@@ -168,9 +168,9 @@ let g:lightline = {
 "         return l:mystatus_line
 "     endfunction
 "     if te#env#IsWindows()
-"         set statusline=%!MyStatusLine(3)
+"         set statusline=%!JbzjStatusLine(3)
 "     else
-"         set statusline=%!MyStatusLine(1)
+"         set statusline=%!JbzjStatusLine(1)
 "     endif
 " endif
 

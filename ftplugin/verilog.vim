@@ -3,7 +3,7 @@ vim9script
 # Author: jiaobuzuji@163.com
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
-def MyHDLFormat()
+def JbzjHDLFormat()
   for lnum in range(line('v'), line('.'))
     var line = getline(lnum)
     var repl = substitute(substitute(substitute(line,
@@ -20,7 +20,7 @@ setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
 setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
 setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
 
-vnoremap <buffer><silent> <c-f4> <cmd>call <SID>MyHDLFormat()<cr>
+vnoremap <buffer><silent> <c-f4> <cmd>call <SID>JbzjHDLFormat()<cr>
 # nnoremap <buffer><silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 nnoremap <buffer><silent> <c-j> <cmd>cn<cr>
 nnoremap <buffer><silent> <c-k> <cmd>cp<cr>
@@ -30,7 +30,7 @@ nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 
 #------------------------------------------------------------------------------------
 # g:verilog_spyglass = 1
-def MyHDLMake()
+def JbzjHDLMake()
   ccl
   cd sim
   silent make
@@ -51,7 +51,7 @@ if (exists("g:verilog_spyglass"))
   # Warning level formats
   setlocal errorformat+=%.%#\ %\\+%tARNING\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>MyHDLMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>JbzjHDLMake()<cr>
 elseif (exists("g:verilog_iverilog"))
   #------------------------------------------------------------------------------------
   # iverilog
@@ -78,7 +78,7 @@ else
   # Lint level formats
   setlocal errorformat+=%I%tint-\[%.%\\+\]\ %m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>call <SID>MyCallMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>call <SID>JbzjCallMake()<cr>
 endif
 
 #------------------------------------------------------------------------------------
