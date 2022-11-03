@@ -10,6 +10,8 @@ endfunction
 "-----------------------------------------------------------------------------
 Plug 'neoclide/coc.nvim',{'branch':'release'} " {1
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
+" Plug 'github/copilot.vim'  "Github OpenAI Codex"
+
 let g:coc_config_home = $VIMFILES
 let g:coc_data_home = $VIMFILES.'/coc'
 let g:coc_global_extensions = [
@@ -181,3 +183,9 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 
 "-----------------------------------------------------------------------------
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+"-----------------------------------------------------------------------------
+command! SvBuildIndex call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.build_index'})
+command! -range SvReportHierarchy call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.report_hierarchy', 'arguments': [input('Module/interface: ', <range> == 0 ? "" : expand("<cword>"))]})
+
+
