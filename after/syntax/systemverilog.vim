@@ -6,7 +6,7 @@ vim9script
 #=======================================================================
 
 # runtime! syntax/verilog.vim
-syn keyword systemverilogType   logic integer string
+syn keyword systemverilogType   bit logic integer string
 
 # The default highlighting.
 # hi def link systemverilogType  Type
