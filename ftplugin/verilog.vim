@@ -4,12 +4,14 @@ vim9script
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
 def MyHDLFormat()
-  var line = getline(".")
-  var repl = substitute(line, '^\s*\(input\|output\)\(\s\+\(wire\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?', ".", "")
-  setline(".", repl)
-
-  # s#^\s*\(\/\/.*\)#    \1#e
-  # s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )
+  for lnum in range(line('v'), line('.'))
+    var line = getline(lnum)
+    var repl = substitute(substitute(substitute(line,
+      '^\s*\(input\|output\)\(\s\+\(wire\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?', '.', ''),
+      '^\s*\(\/\/.*\)', '    \1', 'e'),
+      '^\.\(\<\w\+\>\)\(\s*\)', '    .\1\2   (\1\2   )', '')
+    setline(lnum, repl)
+  endfor
   # <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
 enddef
 
