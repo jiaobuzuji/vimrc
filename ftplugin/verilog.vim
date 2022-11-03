@@ -7,7 +7,7 @@ def JbzjHDLFormat()
   for lnum in range(line('v'), line('.'))
     var line = getline(lnum)
     var repl = substitute(substitute(substitute(line,
-      '^\s*\(input\|output\)\(\s\+\(wire\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?', '.', ''),
+      '^\s*\(input\|output\|logic\|bit\)\(\s\+\(wire\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?', '.', ''),
       '^\s*\(\/\/.*\)', '    \1', 'e'),
       '^\.\(\<\w\+\>\)\(\s*\)', '    .\1\2   (\1\2   )', '')
     setline(lnum, repl)
