@@ -78,7 +78,7 @@ else
   # Lint level formats
   setlocal errorformat+=%I%tint-\[%.%\\+\]\ %m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>call <SID>JbzjCallMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>call <SID>JbzjHDLMake()<cr>
 endif
 
 #------------------------------------------------------------------------------------
