@@ -20,7 +20,8 @@ function! pack#fresh()
 
   call minpac#add('vim-scripts/DrawIt', {'type':'opt'})
   call minpac#add('qpkorr/vim-renamer', {'type':'opt'})
-  call minpac#add('imc-trading/svlangserver', {'type':'opt', 'do':'npm install'}) " npm install -g @imc-trading/svlangserver
+  " npm install -g @imc-trading/svlangserver
+  " call minpac#add('imc-trading/svlangserver', {'type':'opt', 'do':'npm install'})
 
   " call minpac#add('skywind3000/vim-auto-popmenu', {'type':'opt'})
 
