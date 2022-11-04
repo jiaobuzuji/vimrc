@@ -3,6 +3,13 @@ vim9script
 # Author: jiaobuzuji@163.com
 # Github: https://github.com/jiaobuzuji
 #=======================================================================
+
+setlocal foldmethod=indent
+setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
+setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
+setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
+
+#------------------------------------------------------------------------------------
 def JbzjHDLFormat()
   for lnum in range(line('v'), line('.'))
     var line = getline(lnum)
@@ -15,11 +22,7 @@ def JbzjHDLFormat()
   # <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
 enddef
 
-setlocal foldmethod=indent
-setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
-setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
-setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
-
+nnoremap <buffer><silent> <c-f5> <cmd>SvBuildIndex<cr>
 vnoremap <buffer><silent> <c-f4> <cmd>call <SID>JbzjHDLFormat()<cr>
 # nnoremap <buffer><silent> <c-f2> a<c-r>=strftime("%y-%m-%d %h:%m:%s")<cr>
 nnoremap <buffer><silent> <c-j> <cmd>cn<cr>
@@ -81,6 +84,8 @@ else
   nnoremap <buffer><silent> <f5> <cmd>call <SID>JbzjHDLMake()<cr>
 endif
 
-#------------------------------------------------------------------------------------
 # set makeprg = make
+
+#------------------------------------------------------------------------------------
+
 
