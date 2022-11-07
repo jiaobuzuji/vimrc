@@ -1,14 +1,4 @@
 {
-  "languageserver": {
-    "svlangserver": {
-      "command": "svlangserver",
-      "filetypes": ["verilog","systemverilog"],
-      "settings": {
-        "systemverilog.linter": "icarus",
-        "systemverilog.launchConfiguration": "iverilog -g2012 -t null"
-      }
-    }
-  },
   "snippets.userSnippetsDirectory": "$VIMFILES/ultisnips",
   "colors.filetypes": ["vim","lua","css"],
   "suggest.noselect":true,
