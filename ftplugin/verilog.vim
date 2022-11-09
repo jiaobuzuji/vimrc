@@ -13,10 +13,15 @@ setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
 def JbzjHDLFormat()
   for lnum in range(line('v'), line('.'))
     var line = getline(lnum)
-    var repl = substitute(substitute(substitute(line,
+    # instance 'IO' port
+    var repl0 = substitute(substitute(substitute(line,
       '^\s*\(input\|output\|logic\|bit\)\(\s\+\(wire\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?', '.', ''),
       '^\s*\(\/\/.*\)', '    \1', 'e'),
       '^\.\(\<\w\+\>\)\(\s*\)', '    .\1\2   (\1\2   )', '')
+    # instance 'prarameter'
+    var repl = substitute(substitute(repl0,
+      '=\s\+\(.*\)\(,\s*$\|,\s*\/\/\)', '(\1)\2', ''),
+      '^\s*prarameter\s\+', '.', '')
     setline(lnum, repl)
   endfor
   # <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
