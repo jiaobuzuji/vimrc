@@ -21,7 +21,7 @@ def JbzjHDLFormat()
     # instance 'prarameter'
     var repl = substitute(substitute(repl0,
       '=\s\+\(.*\)\(,\s*$\|,\s*\/\/\)', '(\1)\2', ''),
-      '^\s*prarameter\s\+', '.', '')
+      '^\s*parameter\s\+', '    .', '')
     setline(lnum, repl)
   endfor
   # <cmd>s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<cr>gv<cmd>s#^\s*\(\/\/.*\)#    \1#e<cr>gv<cmd>s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<cr>
