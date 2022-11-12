@@ -1,4 +1,9 @@
 {
+  "translator.engines": [
+    "bing",
+    "youdao",
+    "haici"
+  ],
   "snippets.userSnippetsDirectory": "$VIMFILES/ultisnips",
   "colors.filetypes": ["vim","lua","css"],
   "suggest.noselect":true,

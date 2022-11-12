@@ -188,4 +188,13 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 command! SvBuildIndex call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.build_index'})
 command! -range SvReportHierarchy call CocRequest("svlangserver", 'workspace/executeCommand', {'command': 'systemverilog.report_hierarchy', 'arguments': [input('Module/interface: ', <range> == 0 ? "" : expand("<cword>"))]})
 
-
+"-----------------------------------------------------------------------------
+" popup
+" nmap <Leader>t <Plug>(coc-translator-p)
+" vmap <Leader>t <Plug>(coc-translator-pv)
+" echo
+nmap <Leader>ot <Plug>(coc-translator-e)
+vmap <Leader>ot <Plug>(coc-translator-ev)
+" replace
+" nmap <Leader>r <Plug>(coc-translator-r)
+" vmap <Leader>r <Plug>(coc-translator-rv)
