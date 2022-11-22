@@ -60,16 +60,16 @@ endcase
 endsnippet
 
 snippet alw "Combinational Always block"
-always @(${1:/* sensitive list */}) begin
-	${0}
+always @(*) begin
+	${1}
 end
 endsnippet
 
 snippet al "Sequential logic Always block"
-always @(posedge clk, negedge rst_n) begin
-	if(!rst_n) begin
+always @(posedge clk, negedge ${2:rst_n}) begin
+	if(!$2) begin
 		${1}
-	end
+	end ${0}
 end
 endsnippet
 
