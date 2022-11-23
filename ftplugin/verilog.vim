@@ -37,10 +37,10 @@ nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 # b:verilog_indent_modules = 1
 
 #------------------------------------------------------------------------------------
-# g:verilog_spyglass = 1
-def JbzjHDLMake()
+g:verilog_spyglass = 1
+def JbzjHDLMake(lint: string)
   ccl
-  cd sim
+  execute 'cd ' .. lint
   silent make
   # sleep 100m
   # echo "oh my god!"
@@ -59,7 +59,7 @@ if (exists("g:verilog_spyglass"))
   # Warning level formats
   setlocal errorformat+=%.%#\ %\\+%tARNING\ %\\+%[a-zA-Z0-9]%\\+\ %\\+%f\ %\\+%l\ %\\+%n\ %\\+%m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>JbzjHDLMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>vim9 <SID>JbzjHDLMake('lint')<cr>
 elseif (exists("g:verilog_iverilog"))
   #------------------------------------------------------------------------------------
   # iverilog
@@ -86,7 +86,7 @@ else
   # Lint level formats
   setlocal errorformat+=%I%tint-\[%.%\\+\]\ %m
   # keymapping
-  nnoremap <buffer><silent> <f5> <cmd>call <SID>JbzjHDLMake()<cr>
+  nnoremap <buffer><silent> <f5> <cmd>call <SID>JbzjHDLMake('sim')<cr>
 endif
 
 # set makeprg = make
