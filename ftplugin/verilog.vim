@@ -37,7 +37,7 @@ nnoremap <buffer><silent> <c-l> <cmd>ccl<cr>
 # b:verilog_indent_modules = 1
 
 #------------------------------------------------------------------------------------
-g:verilog_spyglass = 1
+# g:verilog_spyglass = 1
 def JbzjHDLMake(lint: string)
   ccl
   execute 'cd ' .. lint
