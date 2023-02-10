@@ -5,9 +5,9 @@ vim9script
 #=======================================================================
 
 setlocal foldmethod=indent
-setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
-setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
-setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
+# setlocal tabstop=4  #number of spaces a <Tab> in the text stands for
+# setlocal shiftwidth=4 #number of spaces used for each step of (auto)indent
+# setlocal softtabstop=4  #if non-zero, number of spaces to insert for a <Tab>
 
 #------------------------------------------------------------------------------------
 def JbzjHDLFormat()

@@ -24,7 +24,7 @@ nnoremap tt o<space><c-u><c-[>
 # Reselect visual block after indent/outdent.
 vnoremap < <gv
 vnoremap > >gv
-# Format Current File
+# Format Current File (without <cmd>retab<cr>)
 nnoremap <silent> <c-F3> <cmd>set ff=unix<cr><cmd>%s/\s\+$//<cr>
 
 # 'Save' and 'Esc' {1
