@@ -42,10 +42,11 @@ repeat (${1}) begin
 end
 endsnippet
 
-snippet case "Case statement"
+snippet ca "Case statement"
 case (${1:/* variable */})
-	${2:/* value */}: ${3}
-	default: ${4}
+	${2:/* value 0 */} : ${3}
+	${4:/* value 1 */} : ${5}
+	default : ${6}
 endcase
 endsnippet
 
