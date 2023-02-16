@@ -1,3 +1,9 @@
+snippet beg "block delimiter"
+begin
+	${0}
+end
+endsnippet
+
 snippet if "if statement"
 if (${1}) begin
 	${0}
@@ -20,7 +26,7 @@ endsnippet
 
 snippet el "Else statement"
 else begin
-	${1}
+	${0}
 end
 endsnippet
 
@@ -38,12 +44,8 @@ endsnippet
 
 snippet case "Case statement"
 case (${1:/* variable */})
-	${2:/* value */}: begin
-		${3}
-	end
-	default: begin
-		${4}
-	end
+	${2:/* value */}: ${3}
+	default: ${4}
 endcase
 endsnippet
 
@@ -79,7 +81,7 @@ endsnippet
 snippet mod "Module block"
 module ${1:`!v expand("%:t:r")`} (${2});
 	${0}
-endmodule
+endmodule // $1
 endsnippet
 
 snippet for "For"
